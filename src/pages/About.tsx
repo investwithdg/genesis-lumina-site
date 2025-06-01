@@ -1,30 +1,33 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white text-foreground">
-      {/* Navigation */}
-      <nav className="px-8 py-6 max-w-6xl mx-auto">
-        <Link to="/" className="text-xl font-medium hover-underline">
-          Genesis Lumina
-        </Link>
-      </nav>
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="px-8 py-16 md:py-24 max-w-4xl mx-auto text-center">
+      {/* Enhanced Hero Section */}
+      <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center relative">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
-            Why We Exist
+          <div className="mb-8">
+            <span className="inline-block px-4 py-2 text-sm font-medium bg-black/5 rounded-full">
+              Our Story & Mission
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-12 tracking-tight">
+            Why We <span className="text-foreground/70">Exist</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
             Genesis Lumina is more than an AI consultancy—it's a movement to steward AI fluency with integrity and clarity.
           </p>
         </div>
       </section>
 
+      {/* ... keep existing content sections */}
+      
       {/* Narrative Section */}
       <section className="px-8 py-16 max-w-4xl mx-auto">
         <div className="animate-slide-in space-y-8 text-lg leading-relaxed">

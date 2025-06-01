@@ -1,32 +1,35 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const Compass = () => {
   return (
     <div className="min-h-screen bg-white text-foreground">
-      {/* Navigation */}
-      <nav className="px-8 py-6 max-w-6xl mx-auto">
-        <Link to="/" className="text-xl font-medium hover-underline">
-          Genesis Lumina
-        </Link>
-      </nav>
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="px-8 py-16 md:py-24 max-w-4xl mx-auto text-center">
+      {/* Enhanced Hero Section */}
+      <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center relative">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
-            Integrate AI with Precision and Purpose.
+          <div className="mb-8">
+            <span className="inline-block px-4 py-2 text-sm font-medium bg-black text-white rounded-full">
+              ✫ Elite 4-Week AI Sprint
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-12 tracking-tight">
+            Integrate AI with <span className="text-foreground/70">Precision & Purpose</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
-            A 4-week private advisory sprint for leaders who already know AI matters—and want to do it right.
+          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+            A private advisory sprint for leaders who already know AI matters—and want to do it right.
           </p>
         </div>
       </section>
 
+      {/* ... keep existing sections with same content structure */}
+      
       {/* Benefits Overview Section */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">

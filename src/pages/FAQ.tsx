@@ -6,23 +6,29 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const FAQ = () => {
   return (
     <div className="min-h-screen bg-white text-foreground">
-      {/* Navigation */}
-      <nav className="px-8 py-6 max-w-6xl mx-auto">
-        <Link to="/" className="text-xl font-medium hover-underline">
-          Genesis Lumina
-        </Link>
-      </nav>
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="px-8 py-16 md:py-24 max-w-4xl mx-auto text-center">
+      {/* Enhanced Hero Section */}
+      <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 tracking-tight">
-            Frequently Asked Questions
+          <div className="mb-8">
+            <span className="inline-block px-4 py-2 text-sm font-medium bg-black/5 rounded-full">
+              Common Questions
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-12 tracking-tight">
+            Frequently Asked <span className="text-foreground/70">Questions</span>
           </h1>
+          
+          <p className="text-xl text-foreground/70 leading-relaxed max-w-2xl mx-auto">
+            Everything you need to know about our AI advisory programs.
+          </p>
         </div>
       </section>
 

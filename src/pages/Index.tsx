@@ -1,29 +1,38 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white text-foreground">
-      {/* Hero Section */}
-      <section className="px-8 py-24 md:py-32 max-w-6xl mx-auto text-center">
+      <Navigation />
+
+      {/* Enhanced Hero Section */}
+      <section className="px-8 py-32 md:py-40 max-w-6xl mx-auto text-center relative">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8 tracking-tight">
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 text-sm font-medium bg-black/5 rounded-full mb-8">
+              AI Strategy & Ethics for Modern Teams
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-12 tracking-tight">
             Clarity, Not Chaos.<br />
-            Guidance, Not Gimmicks.
+            <span className="text-foreground/80">Guidance, Not Gimmicks.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            AI fluency and ethical transformation for values-aligned teams.
+          <p className="text-xl md:text-2xl text-foreground/70 mb-16 max-w-3xl mx-auto leading-relaxed">
+            AI fluency and ethical transformation for values-aligned teams who refuse to compromise on integrity.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/compass">
               <Button 
                 size="lg" 
-                className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-8 py-6 text-lg font-medium"
+                className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
               >
                 Apply for The Compass
               </Button>
@@ -32,7 +41,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-8 py-6 text-lg font-medium"
+                className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
               >
                 Start Ignite
               </Button>
@@ -41,57 +50,129 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Offer Cards Section */}
+      {/* Why Genesis Lumina Section */}
       <section className="px-8 py-24 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
+            Why Genesis Lumina?
+          </h2>
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            We're not another AI consultancy selling you the latest tools. We're stewards of responsible AI transformation.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-16">
+          <div className="text-center animate-slide-in">
+            <div className="w-16 h-16 bg-black/5 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-medium mb-4">Ethics First</h3>
+            <p className="text-foreground/70 leading-relaxed">
+              Every strategy we build puts human values at the center. AI should amplify your integrity, not compromise it.
+            </p>
+          </div>
+          
+          <div className="text-center animate-slide-in [animation-delay:200ms]">
+            <div className="w-16 h-16 bg-black/5 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Target className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-medium mb-4">Precision Focus</h3>
+            <p className="text-foreground/70 leading-relaxed">
+              No generic playbooks. We craft bespoke AI strategies that align with your specific goals and constraints.
+            </p>
+          </div>
+          
+          <div className="text-center animate-slide-in [animation-delay:400ms]">
+            <div className="w-16 h-16 bg-black/5 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Users className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-medium mb-4">Team Fluency</h3>
+            <p className="text-foreground/70 leading-relaxed">
+              We don't just implement AI—we teach your team to master it with confidence and clarity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Offer Cards Section */}
+      <section className="px-8 py-32 max-w-6xl mx-auto bg-black/2">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
+            Choose Your Path
+          </h2>
+          <p className="text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+            Whether you need ongoing guidance or an intensive transformation, we have the right program for your team.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
           {/* Ignite Program Card */}
-          <Card className="border-0 shadow-none bg-transparent animate-slide-in">
-            <CardContent className="p-0">
-              <h3 className="text-2xl md:text-3xl font-medium mb-4">
-                ✴ Lumina Ignite
-              </h3>
-              <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-                Ongoing monthly AI advisory for teams who know they need clarity—without chaos.
-              </p>
-              <ul className="space-y-3 mb-8 text-foreground/80">
-                <li>• One 60–90 min strategy session/month</li>
-                <li>• Custom Notion portal + toolkits</li>
-                <li>• Monthly "Fluency Brief" report</li>
+          <Card className="border-2 border-foreground/10 shadow-lg bg-white animate-slide-in hover:shadow-xl transition-shadow duration-300">
+            <CardContent className="p-12">
+              <div className="text-center mb-8">
+                <div className="text-6xl mb-6">✴</div>
+                <h3 className="text-3xl md:text-4xl font-medium mb-6">
+                  Lumina Ignite
+                </h3>
+                <p className="text-xl text-foreground/70 leading-relaxed">
+                  Monthly AI advisory for teams building sustainable fluency—without the overwhelm.
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-12 text-lg text-foreground/80">
+                <li>• Strategic 60–90 min sessions monthly</li>
+                <li>• Custom Notion portal with frameworks</li>
+                <li>• AI Fluency Brief with actionable insights</li>
+                <li>• Async support when you need it</li>
               </ul>
-              <Link to="/ignite">
+              
+              <div className="text-center mb-8">
+                <div className="text-3xl font-medium mb-2">$2,000/month</div>
+                <p className="text-foreground/60">3-month minimum</p>
+              </div>
+              
+              <Link to="/ignite" className="block">
                 <Button 
-                  variant="ghost" 
-                  className="group text-lg font-medium p-0 h-auto hover:bg-transparent"
+                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-6 text-lg font-medium"
                 >
-                  <span className="hover-underline">Start Ignite</span>
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Start Ignite
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </CardContent>
           </Card>
 
           {/* Compass Program Card */}
-          <Card className="border-0 shadow-none bg-transparent animate-slide-in [animation-delay:200ms]">
-            <CardContent className="p-0">
-              <h3 className="text-2xl md:text-3xl font-medium mb-4">
-                ✫ The Lumina Compass
-              </h3>
-              <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-                A 4-week private AI sprint for leaders ready to integrate AI with precision and purpose.
-              </p>
-              <ul className="space-y-3 mb-8 text-foreground/80">
-                <li>• 90-min deep calibration call</li>
-                <li>• Precision workshop: prompts, tools, decision layers</li>
-                <li>• Ethics & culture alignment session</li>
-                <li>• Final strategic memo + Loom walkthrough</li>
+          <Card className="border-2 border-black shadow-xl bg-black text-white animate-slide-in [animation-delay:200ms] hover:shadow-2xl transition-shadow duration-300">
+            <CardContent className="p-12">
+              <div className="text-center mb-8">
+                <div className="text-6xl mb-6">✫</div>
+                <h3 className="text-3xl md:text-4xl font-medium mb-6">
+                  The Lumina Compass
+                </h3>
+                <p className="text-xl text-white/80 leading-relaxed">
+                  Intensive 4-week sprint for leaders ready to integrate AI with precision and purpose.
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-12 text-lg text-white/80">
+                <li>• Deep 90-min calibration session</li>
+                <li>• Hands-on precision workshops</li>
+                <li>• Ethics & culture alignment</li>
+                <li>• Strategic memo + implementation guide</li>
               </ul>
-              <Link to="/compass">
+              
+              <div className="text-center mb-8">
+                <div className="text-3xl font-medium mb-2">$15,000</div>
+                <p className="text-white/60">One client at a time</p>
+              </div>
+              
+              <Link to="/compass" className="block">
                 <Button 
-                  variant="ghost" 
-                  className="group text-lg font-medium p-0 h-auto hover:bg-transparent"
+                  className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-6 text-lg font-medium"
                 >
-                  <span className="hover-underline">Apply for Compass</span>
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Apply for Compass
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </CardContent>
@@ -99,21 +180,80 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Founder Quote Section */}
-      <section className="px-8 py-24 max-w-4xl mx-auto text-center">
+      {/* Enhanced Founder Quote Section */}
+      <section className="px-8 py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
-          <blockquote className="text-2xl md:text-3xl font-light italic leading-relaxed mb-8 text-foreground/90">
-            "AI without humans is like a car without a driver. We see how that's going."
+          <blockquote className="text-3xl md:text-4xl font-light italic leading-relaxed mb-12 text-foreground/90">
+            "AI without humans is like a car without a driver.<br />
+            <span className="text-foreground/70">We see how that's going."</span>
           </blockquote>
-          <p className="text-lg text-foreground/60 text-right">
-            – Donovan, Founder of Genesis Lumina
-          </p>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-16 h-16 bg-black/10 rounded-full"></div>
+            <div className="text-left">
+              <p className="text-xl font-medium">Donovan</p>
+              <p className="text-foreground/60">Founder, Genesis Lumina</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-8 py-16 max-w-6xl mx-auto text-center border-t border-foreground/10">
-        <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
+      {/* Social Proof Section */}
+      <section className="px-8 py-24 max-w-6xl mx-auto text-center bg-black/2">
+        <div className="animate-fade-in">
+          <h3 className="text-2xl font-medium mb-12">Trusted by Forward-Thinking Teams</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
+              <span className="font-medium">Company A</span>
+            </div>
+            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
+              <span className="font-medium">Company B</span>
+            </div>
+            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
+              <span className="font-medium">Company C</span>
+            </div>
+            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
+              <span className="font-medium">Company D</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="px-8 py-32 max-w-4xl mx-auto text-center">
+        <div className="animate-fade-in">
+          <h3 className="text-3xl md:text-4xl font-light mb-8 tracking-tight">
+            Stay Ahead of the Curve
+          </h3>
+          <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Get insights on responsible AI implementation, industry trends, and practical frameworks delivered to your inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-6 py-4 border-2 border-foreground/20 rounded-lg focus:border-black focus:outline-none text-lg"
+            />
+            <Button 
+              className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-8 py-4 text-lg font-medium"
+            >
+              Subscribe
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Footer */}
+      <footer className="px-8 py-24 max-w-6xl mx-auto text-center border-t border-foreground/10">
+        <div className="mb-12">
+          <Link to="/" className="text-2xl font-medium">
+            Genesis Lumina
+          </Link>
+          <p className="text-foreground/60 mt-4 max-w-md mx-auto">
+            AI fluency and ethical transformation for values-aligned teams.
+          </p>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-8 mb-12 text-lg">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/ignite" className="hover-underline">Ignite</Link>
@@ -122,7 +262,13 @@ const Index = () => {
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>
-        <p className="text-xs text-foreground/50">
+        
+        <div className="flex justify-center gap-8 mb-12">
+          <a href="#" className="text-foreground/60 hover:text-black transition-colors">LinkedIn</a>
+          <a href="#" className="text-foreground/60 hover:text-black transition-colors">Substack</a>
+        </div>
+        
+        <p className="text-sm text-foreground/50">
           © 2025 Genesis Lumina. All rights reserved.
         </p>
       </footer>
