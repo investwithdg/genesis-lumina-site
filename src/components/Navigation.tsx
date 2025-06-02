@@ -24,7 +24,7 @@ const Navigation = () => {
         <Link to="/" className="text-xl font-medium hover-underline flex items-center gap-3">
           <img 
             src="/lovable-uploads/3ea3582b-e144-456a-83c9-0103815342aa.png" 
-            alt="Genesis Lumina" 
+            alt="Genesis Lumina Icon" 
             className="w-8 h-8"
           />
           Genesis Lumina

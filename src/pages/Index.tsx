@@ -1,9 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Shield, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 
 const Index = () => {
   const handleIgniteCheckout = () => {
@@ -221,40 +221,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof Section with Carousel */}
       <section className="px-8 py-24 max-w-6xl mx-auto text-center bg-black/2">
         <div className="animate-fade-in">
           <h3 className="text-2xl font-medium mb-12">Trusted by Forward-Thinking Teams</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
-              <img 
-                src="/lovable-uploads/4ed02e3c-00f4-457f-b8b7-2e2653ca8d62.png" 
-                alt="BBEI" 
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
-              <img 
-                src="/lovable-uploads/fdf8d614-18c8-4ee0-80ca-9e24682a84a6.png" 
-                alt="Client Logo" 
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
-              <img 
-                src="/lovable-uploads/5c206288-ede5-4948-b56f-a0b7c00efd4b.png" 
-                alt="P30" 
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
-              <img 
-                src="/lovable-uploads/e71177cb-61cb-42da-a167-f6f9ecccd8f4.png" 
-                alt="Boot Real Estate Camp" 
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          </div>
+          <ClientLogoCarousel />
         </div>
       </section>
 

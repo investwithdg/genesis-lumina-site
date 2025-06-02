@@ -165,4 +165,30 @@
       transform: translateX(0) translateY(0) rotate(360deg);
     }
   }
+
+  /* Logo Carousel Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  /* Pause animation on hover for better UX */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll {
+      animation: none;
+    }
+  }
 }
