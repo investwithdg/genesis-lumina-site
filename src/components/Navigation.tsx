@@ -20,12 +20,13 @@ const Navigation = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-foreground/10">
       <nav className="px-8 py-6 max-w-6xl mx-auto flex justify-between items-center">
-        {/* Logo - TODO: Replace with actual logo */}
+        {/* Logo */}
         <Link to="/" className="text-xl font-medium hover-underline flex items-center gap-3">
-          {/* Placeholder for logo */}
-          <div className="w-8 h-8 bg-black/10 rounded flex items-center justify-center">
-            <span className="text-xs font-bold">GL</span>
-          </div>
+          <img 
+            src="/lovable-uploads/3ea3582b-e144-456a-83c9-0103815342aa.png" 
+            alt="Genesis Lumina" 
+            className="w-8 h-8"
+          />
           Genesis Lumina
         </Link>
 

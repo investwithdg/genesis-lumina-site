@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Shield, Target, Users } from "lucide-react";
@@ -5,6 +6,14 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 
 const Index = () => {
+  const handleIgniteCheckout = () => {
+    window.open('https://buy.stripe.com/3cIbJ11La1yq7Hr7AX1Fe00', '_blank');
+  };
+
+  const handleCompassCheckout = () => {
+    window.open('https://buy.stripe.com/dRmfZhcpOelc7Hr4oL1Fe01', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
@@ -48,23 +57,21 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/compass">
-              <Button 
-                size="lg" 
-                className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
-              >
-                Apply for The Compass
-              </Button>
-            </Link>
-            <Link to="/ignite">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
-              >
-                Start Ignite
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
+              onClick={handleCompassCheckout}
+            >
+              Apply for The Compass
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
+              onClick={handleIgniteCheckout}
+            >
+              Start Ignite
+            </Button>
           </div>
         </div>
       </section>
@@ -150,14 +157,13 @@ const Index = () => {
                 <p className="text-foreground/60">3-month minimum</p>
               </div>
               
-              <Link to="/ignite" className="block">
-                <Button 
-                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-6 text-lg font-medium"
-                >
-                  Start Ignite
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <Button 
+                className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-6 text-lg font-medium"
+                onClick={handleIgniteCheckout}
+              >
+                Start Ignite
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </CardContent>
           </Card>
 
@@ -186,14 +192,13 @@ const Index = () => {
                 <p className="text-white/60">One client at a time</p>
               </div>
               
-              <Link to="/compass" className="block">
-                <Button 
-                  className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-6 text-lg font-medium"
-                >
-                  Apply for Compass
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <Button 
+                className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-6 text-lg font-medium"
+                onClick={handleCompassCheckout}
+              >
+                Apply for Compass
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </CardContent>
           </Card>
         </div>
@@ -221,23 +226,39 @@ const Index = () => {
         <div className="animate-fade-in">
           <h3 className="text-2xl font-medium mb-12">Trusted by Forward-Thinking Teams</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
-              <span className="font-medium">Company A</span>
+            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
+              <img 
+                src="/lovable-uploads/4ed02e3c-00f4-457f-b8b7-2e2653ca8d62.png" 
+                alt="BBEI" 
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
-            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
-              <span className="font-medium">Company B</span>
+            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
+              <img 
+                src="/lovable-uploads/fdf8d614-18c8-4ee0-80ca-9e24682a84a6.png" 
+                alt="Client Logo" 
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
-            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
-              <span className="font-medium">Company C</span>
+            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
+              <img 
+                src="/lovable-uploads/5c206288-ede5-4948-b56f-a0b7c00efd4b.png" 
+                alt="P30" 
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
-            <div className="h-12 bg-black/10 rounded flex items-center justify-center">
-              <span className="font-medium">Company D</span>
+            <div className="h-16 bg-white rounded flex items-center justify-center p-4">
+              <img 
+                src="/lovable-uploads/e71177cb-61cb-42da-a167-f6f9ecccd8f4.png" 
+                alt="Boot Real Estate Camp" 
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section with Substack Embed */}
       <section className="px-8 py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <h3 className="text-3xl md:text-4xl font-light mb-8 tracking-tight">
@@ -246,17 +267,16 @@ const Index = () => {
           <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed">
             Get insights on responsible AI implementation, industry trends, and practical frameworks delivered to your inbox.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 border-2 border-foreground/20 rounded-lg focus:border-black focus:outline-none text-lg"
+          <div className="flex justify-center">
+            <iframe 
+              src="https://genesislumina.substack.com/embed" 
+              width="480" 
+              height="320" 
+              style={{border: "1px solid #EEE", background: "white"}} 
+              frameBorder="0" 
+              scrolling="no"
+              className="rounded-lg shadow-lg"
             />
-            <Button 
-              className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-8 py-4 text-lg font-medium"
-            >
-              Subscribe
-            </Button>
           </div>
         </div>
       </section>
@@ -283,8 +303,30 @@ const Index = () => {
         </div>
         
         <div className="flex justify-center gap-8 mb-12">
-          <a href="#" className="text-foreground/60 hover:text-black transition-colors">LinkedIn</a>
-          <a href="#" className="text-foreground/60 hover:text-black transition-colors">Substack</a>
+          <a 
+            href="https://www.linkedin.com/company/genesislumina?trk=public_post_reshare_feed-actor-name" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/60 hover:text-black transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a 
+            href="https://www.facebook.com/people/Genesis-Lumina/61576304277688/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/60 hover:text-black transition-colors"
+          >
+            Facebook
+          </a>
+          <a 
+            href="https://genesislumina.substack.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/60 hover:text-black transition-colors"
+          >
+            Substack
+          </a>
         </div>
         
         <p className="text-sm text-foreground/50">

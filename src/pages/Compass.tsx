@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -5,6 +6,10 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 
 const Compass = () => {
+  const handleCompassCheckout = () => {
+    window.open('https://buy.stripe.com/dRmfZhcpOelc7Hr4oL1Fe01', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
@@ -28,8 +33,6 @@ const Compass = () => {
         </div>
       </section>
 
-      {/* ... keep existing sections with same content structure */}
-      
       {/* Benefits Overview Section */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
@@ -124,6 +127,7 @@ const Compass = () => {
           <Button 
             size="lg" 
             className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium"
+            onClick={handleCompassCheckout}
           >
             Apply for Compass <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
