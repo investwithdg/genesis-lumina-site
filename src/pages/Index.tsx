@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Shield, Target, Users } from "lucide-react";
@@ -10,9 +9,29 @@ const Index = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      {/* Enhanced Hero Section */}
-      <section className="px-8 py-32 md:py-40 max-w-6xl mx-auto text-center relative">
-        <div className="animate-fade-in">
+      {/* Enhanced Hero Section with Animated Background */}
+      <section className="px-8 py-32 md:py-40 max-w-6xl mx-auto text-center relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="hero-particles">
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+        </div>
+        
+        <div className="geometric-bg">
+          <div className="geometric-shape shape-circle"></div>
+          <div className="geometric-shape shape-square"></div>
+          <div className="geometric-shape shape-triangle"></div>
+          <div className="geometric-shape shape-circle"></div>
+        </div>
+
+        <div className="animate-fade-in relative z-10">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 text-sm font-medium bg-black/5 rounded-full mb-8">
               AI Strategy & Ethics for Modern Teams

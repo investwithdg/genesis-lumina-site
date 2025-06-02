@@ -20,8 +20,12 @@ const Navigation = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-foreground/10">
       <nav className="px-8 py-6 max-w-6xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-xl font-medium hover-underline">
+        {/* Logo - TODO: Replace with actual logo */}
+        <Link to="/" className="text-xl font-medium hover-underline flex items-center gap-3">
+          {/* Placeholder for logo */}
+          <div className="w-8 h-8 bg-black/10 rounded flex items-center justify-center">
+            <span className="text-xs font-bold">GL</span>
+          </div>
           Genesis Lumina
         </Link>
 
@@ -48,7 +52,6 @@ const Navigation = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -56,7 +59,6 @@ const Navigation = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-white border-b border-foreground/10 md:hidden">
             <div className="px-8 py-6 space-y-4">
