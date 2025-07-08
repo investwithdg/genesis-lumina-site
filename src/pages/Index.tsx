@@ -4,22 +4,17 @@ import { ArrowRight, Shield, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import ClientLogoCarousel from "@/components/ClientLogoCarousel";
-
 const Index = () => {
   const handleFlashCheckout = () => {
     window.open('https://buy.stripe.com/7sYfZhdtScd46Dn5sP1Fe02', '_blank');
   };
-
   const handleIgniteCheckout = () => {
     window.open('https://buy.stripe.com/3cIbJ11La1yq7Hr7AX1Fe00', '_blank');
   };
-
   const handleCompassCheckout = () => {
     window.open('https://buy.stripe.com/dRmfZhcpOelc7Hr4oL1Fe01', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-white text-foreground">
+  return <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
       {/* Enhanced Hero Section with Animated Background */}
@@ -62,19 +57,12 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/newsletter">
-              <Button 
-                size="lg" 
-                className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
-              >
+              <Button size="lg" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium">
                 Sign up for our newsletter
               </Button>
             </Link>
             <Link to="/programs/flash">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
-              >
+              <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium">
                 Explore Flash
               </Button>
             </Link>
@@ -164,9 +152,7 @@ const Index = () => {
               </div>
               
               <Link to="/programs/flash">
-                <Button 
-                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium"
-                >
+                <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium">
                   Get Flash
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -200,9 +186,7 @@ const Index = () => {
               </div>
               
               <Link to="/programs/ignite">
-                <Button 
-                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium"
-                >
+                <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium">
                   Start Ignite
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -232,13 +216,11 @@ const Index = () => {
               
               <div className="text-center mb-6">
                 <div className="text-2xl font-medium mb-1">$15,000</div>
-                <p className="text-white/60 text-sm">One client at a time</p>
+                <p className="text-white/60 text-sm">Subject to application approval</p>
               </div>
               
               <Link to="/programs/compass">
-                <Button 
-                  className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-4 text-base font-medium"
-                >
+                <Button className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-4 text-base font-medium">
                   Apply for Compass
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -283,15 +265,10 @@ const Index = () => {
             Get insights on responsible AI implementation, industry trends, and practical frameworks delivered to your inbox.
           </p>
           <div className="flex justify-center">
-            <iframe 
-              src="https://genesislumina.substack.com/embed" 
-              width="480" 
-              height="320" 
-              style={{border: "1px solid #EEE", background: "white"}} 
-              frameBorder="0" 
-              scrolling="no"
-              className="rounded-lg shadow-lg"
-            />
+            <iframe src="https://genesislumina.substack.com/embed" width="480" height="320" style={{
+            border: "1px solid #EEE",
+            background: "white"
+          }} frameBorder="0" scrolling="no" className="rounded-lg shadow-lg" />
           </div>
         </div>
       </section>
@@ -320,28 +297,13 @@ const Index = () => {
         </div>
         
         <div className="flex justify-center gap-8 mb-12">
-          <a 
-            href="https://www.linkedin.com/company/genesislumina?trk=public_post_reshare_feed-actor-name" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-foreground/60 hover:text-black transition-colors"
-          >
+          <a href="https://www.linkedin.com/company/genesislumina?trk=public_post_reshare_feed-actor-name" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-black transition-colors">
             LinkedIn
           </a>
-          <a 
-            href="https://www.facebook.com/people/Genesis-Lumina/61576304277688/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-foreground/60 hover:text-black transition-colors"
-          >
+          <a href="https://www.facebook.com/people/Genesis-Lumina/61576304277688/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-black transition-colors">
             Facebook
           </a>
-          <a 
-            href="https://genesislumina.substack.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-foreground/60 hover:text-black transition-colors"
-          >
+          <a href="https://genesislumina.substack.com/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-black transition-colors">
             Substack
           </a>
         </div>
@@ -350,8 +312,6 @@ const Index = () => {
           © 2025 Genesis Lumina. All rights reserved.
         </p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
