@@ -152,10 +152,7 @@ const Index = () => {
               </div>
               
               <Link to="/programs/flash">
-                <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium">
-                  Get Flash
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                
               </Link>
             </CardContent>
           </Card>
@@ -185,7 +182,7 @@ const Index = () => {
                 <p className="text-foreground/60 text-sm">Per month</p>
               </div>
               
-              <Link to="/programs/ignite">
+              <Link to="/programs/ignite" className="text-2xl">
                 <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium">
                   Start Ignite
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -238,11 +235,7 @@ const Index = () => {
             <span className="text-foreground/70">We see how that's going."</span>
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <img 
-              src="/lovable-uploads/f552ec4f-6970-4548-ab52-33f1bb821143.png" 
-              alt="Donovan, Founder of Genesis Lumina"
-              className="w-16 h-16 rounded-full object-cover"
-            />
+            <div className="w-16 h-16 bg-black/10 rounded-full"></div>
             <div className="text-left">
               <p className="text-xl font-medium">Donovan</p>
               <p className="text-foreground/60">Founder, Genesis Lumina</p>
