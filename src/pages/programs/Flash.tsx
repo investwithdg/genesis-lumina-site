@@ -23,7 +23,7 @@ const Flash = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-12 tracking-tight">
-            Jump into AI & Automations <span className="text-foreground/70">With Confidence</span>
+            Jump into AI & Automations <span className="text-foreground/70">with Confidence</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
