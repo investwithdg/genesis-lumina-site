@@ -9,11 +9,21 @@ const Navigation = () => {
     name: "About",
     path: "/about"
   }, {
-    name: "Ignite",
-    path: "/ignite"
+    name: "Programs",
+    path: "/programs",
+    sublinks: [{
+      name: "Flash",
+      path: "/programs/flash"
+    }, {
+      name: "Ignite", 
+      path: "/programs/ignite"
+    }, {
+      name: "Compass",
+      path: "/programs/compass"
+    }]
   }, {
-    name: "Compass",
-    path: "/compass"
+    name: "Newsletter",
+    path: "/newsletter"
   }, {
     name: "FAQ",
     path: "/faq"
@@ -29,12 +39,29 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(link => <Link key={link.name} to={link.path} className={`text-sm font-medium transition-colors hover-underline ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`}>
-              {link.name}
-            </Link>)}
-          <Link to="/compass">
+          {navLinks.map(link => 
+            link.sublinks ? (
+              <div key={link.name} className="relative group">
+                <span className="text-sm font-medium transition-colors hover-underline text-foreground/70 cursor-pointer">
+                  {link.name}
+                </span>
+                <div className="absolute top-full left-0 bg-white border border-foreground/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-2 min-w-[120px]">
+                  {link.sublinks.map(sublink => (
+                    <Link key={sublink.name} to={sublink.path} className={`block px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${isCurrentPage(sublink.path) ? "text-black" : "text-foreground/70"}`}>
+                      {sublink.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link key={link.name} to={link.path} className={`text-sm font-medium transition-colors hover-underline ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`}>
+                {link.name}
+              </Link>
+            )
+          )}
+          <Link to="/newsletter">
             <Button size="sm" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
-              Get Started
+              Sign up for our newsletter
             </Button>
           </Link>
         </div>
@@ -45,12 +72,25 @@ const Navigation = () => {
 
         {isMenuOpen && <div className="absolute top-full left-0 right-0 bg-white border-b border-foreground/10 md:hidden">
             <div className="px-8 py-6 space-y-4">
-              {navLinks.map(link => <Link key={link.name} to={link.path} className={`block text-sm font-medium transition-colors ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`} onClick={() => setIsMenuOpen(false)}>
-                  {link.name}
-                </Link>)}
-              <Link to="/compass" onClick={() => setIsMenuOpen(false)}>
+              {navLinks.map(link => 
+                link.sublinks ? (
+                  <div key={link.name} className="space-y-2">
+                    <span className="block text-sm font-medium text-foreground/50">{link.name}</span>
+                    {link.sublinks.map(sublink => (
+                      <Link key={sublink.name} to={sublink.path} className={`block text-sm font-medium transition-colors ml-4 ${isCurrentPage(sublink.path) ? "text-black" : "text-foreground/70"}`} onClick={() => setIsMenuOpen(false)}>
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <Link key={link.name} to={link.path} className={`block text-sm font-medium transition-colors ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`} onClick={() => setIsMenuOpen(false)}>
+                    {link.name}
+                  </Link>
+                )
+              )}
+              <Link to="/newsletter" onClick={() => setIsMenuOpen(false)}>
                 <Button size="sm" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
-                  Get Started
+                  Sign up for our newsletter
                 </Button>
               </Link>
             </div>

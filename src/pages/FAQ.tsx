@@ -36,12 +36,23 @@ const FAQ = () => {
       <section className="px-8 py-16 max-w-4xl mx-auto">
         <div className="animate-slide-in">
           <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border border-foreground/10 rounded-lg px-6">
+            <AccordionItem value="item-0" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
-                What's the difference between Ignite and Compass?
+                What's the difference between Flash, Ignite, and Compass?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
-                Ignite is a monthly retainer ($2K/mo, 3-month minimum) for ongoing advisory, strategic briefs, and curated Notion portal access. Compass is a 4-week, $15K private sprint to build your custom AI strategy, including deep calls, hands-on workshops, and a final strategic memo.
+                <strong>Flash ($300):</strong> Entry-level automation installs delivered in 7-10 days. Perfect for testing AI with minimal risk.<br/><br/>
+                <strong>Ignite ($2K/mo):</strong> Monthly AI advisory with strategic sessions, Notion frameworks, and ongoing support. Month-to-month, cancel anytime.<br/><br/>
+                <strong>Compass ($15K):</strong> Elite 4-week AI integration sprint with deep calibration, hands-on workshops, and strategic implementation guide.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-1" className="border border-foreground/10 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
+                How many Flash automations can I purchase?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
+                You can purchase a maximum of 3 Flash automations at a time. Each automation focuses on one specific business process or bottleneck and is delivered within 7-10 days.
               </AccordionContent>
             </AccordionItem>
 
@@ -56,10 +67,10 @@ const FAQ = () => {
 
             <AccordionItem value="item-3" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
-                What if we want to cancel Ignite before 3 months?
+                Can I cancel Ignite anytime?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
-                Ignite has a 3-month minimum. After that, you can cancel with 30 days' notice. No long-term lock-in.
+                Yes! Ignite is now month-to-month with no minimum commitment. You can cancel anytime with 30 days' notice.
               </AccordionContent>
             </AccordionItem>
 
@@ -98,9 +109,13 @@ const FAQ = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/newsletter" className="hover-underline">Newsletter</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/compass" className="hover-underline">Compass</Link>
+          <Link to="/programs/flash" className="hover-underline">Flash</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

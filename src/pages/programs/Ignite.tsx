@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -54,10 +53,7 @@ const Ignite = () => {
             $2,000 / month
           </div>
           <p className="text-lg text-foreground/60 mb-12">
-            (3-month minimum commitment)
-          </p>
-          <p className="text-sm text-foreground/50 mb-12">
-            Cancel anytime after 3 months—no long-term lock-in.
+            Month to month, cancel anytime
           </p>
           
           <Button 
@@ -67,6 +63,15 @@ const Ignite = () => {
           >
             Start Ignite <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
+
+          <div className="mt-12 text-center">
+            <p className="text-sm text-foreground/70 mb-4">Need a quick start? Try our entry-level option:</p>
+            <Link to="/programs/flash">
+              <Button variant="outline" className="border-black hover:bg-black hover:text-white">
+                Flash Automation - $300
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -130,9 +135,11 @@ const Ignite = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/programs/flash" className="hover-underline">Flash</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/compass" className="hover-underline">Compass</Link>
+          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

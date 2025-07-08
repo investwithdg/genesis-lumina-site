@@ -6,6 +6,10 @@ import Navigation from "@/components/Navigation";
 import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 
 const Index = () => {
+  const handleFlashCheckout = () => {
+    window.open('https://buy.stripe.com/7sYfZhdtScd46Dn5sP1Fe02', '_blank');
+  };
+
   const handleIgniteCheckout = () => {
     window.open('https://buy.stripe.com/3cIbJ11La1yq7Hr7AX1Fe00', '_blank');
   };
@@ -57,21 +61,23 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
-              onClick={handleCompassCheckout}
-            >
-              Apply for The Compass
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
-              onClick={handleIgniteCheckout}
-            >
-              Start Ignite
-            </Button>
+            <Link to="/newsletter">
+              <Button 
+                size="lg" 
+                className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-8 text-xl font-medium"
+              >
+                Sign up for our newsletter
+              </Button>
+            </Link>
+            <Link to="/programs/flash">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
+              >
+                Try Flash - $300
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -131,74 +137,112 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
-          {/* Ignite Program Card */}
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+          {/* Flash Program Card */}
           <Card className="border-2 border-foreground/10 shadow-lg bg-white animate-slide-in hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-12">
-              <div className="text-center mb-8">
-                <div className="text-6xl mb-6">✴</div>
-                <h3 className="text-3xl md:text-4xl font-medium mb-6">
-                  Lumina Ignite
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">⚡</div>
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">
+                  Lumina Flash
                 </h3>
-                <p className="text-xl text-foreground/70 leading-relaxed">
-                  Monthly AI advisory for teams building sustainable fluency—without the overwhelm.
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  Entry-level AI automation. One process improved in 7-10 days.
                 </p>
               </div>
               
-              <ul className="space-y-4 mb-12 text-lg text-foreground/80">
-                <li>• Strategic 60–90 min sessions monthly</li>
-                <li>• Custom Notion portal with frameworks</li>
-                <li>• AI Fluency Brief with actionable insights</li>
-                <li>• Async support when you need it</li>
+              <ul className="space-y-3 mb-8 text-base text-foreground/80">
+                <li>• Single bottleneck automation</li>
+                <li>• 7-10 day delivery</li>
+                <li>• Maximum 3 at a time</li>
+                <li>• Complete implementation guide</li>
               </ul>
               
-              <div className="text-center mb-8">
-                <div className="text-3xl font-medium mb-2">$2,000/month</div>
-                <p className="text-foreground/60">3-month minimum</p>
+              <div className="text-center mb-6">
+                <div className="text-2xl font-medium mb-1">$300</div>
+                <p className="text-foreground/60 text-sm">Per automation</p>
               </div>
               
-              <Button 
-                className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-6 text-lg font-medium"
-                onClick={handleIgniteCheckout}
-              >
-                Start Ignite
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/programs/flash">
+                <Button 
+                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium"
+                >
+                  Get Flash
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          {/* Ignite Program Card */}
+          <Card className="border-2 border-foreground/10 shadow-lg bg-white animate-slide-in [animation-delay:100ms] hover:shadow-xl transition-shadow duration-300">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">✴</div>
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">
+                  Lumina Ignite
+                </h3>
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  Monthly AI advisory for sustainable team fluency.
+                </p>
+              </div>
+              
+              <ul className="space-y-3 mb-8 text-base text-foreground/80">
+                <li>• 60–90 min monthly sessions</li>
+                <li>• Custom Notion frameworks</li>
+                <li>• AI Fluency Brief insights</li>
+                <li>• Async support included</li>
+              </ul>
+              
+              <div className="text-center mb-6">
+                <div className="text-2xl font-medium mb-1">$2,000</div>
+                <p className="text-foreground/60 text-sm">Per month</p>
+              </div>
+              
+              <Link to="/programs/ignite">
+                <Button 
+                  className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 py-4 text-base font-medium"
+                >
+                  Start Ignite
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
           {/* Compass Program Card */}
           <Card className="border-2 border-black shadow-xl bg-black text-white animate-slide-in [animation-delay:200ms] hover:shadow-2xl transition-shadow duration-300">
-            <CardContent className="p-12">
-              <div className="text-center mb-8">
-                <div className="text-6xl mb-6">✫</div>
-                <h3 className="text-3xl md:text-4xl font-medium mb-6">
-                  The Lumina Compass
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">✫</div>
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">
+                  Lumina Compass
                 </h3>
-                <p className="text-xl text-white/80 leading-relaxed">
-                  Intensive 4-week sprint for leaders ready to integrate AI with precision and purpose.
+                <p className="text-lg text-white/80 leading-relaxed">
+                  Elite 4-week AI integration sprint.
                 </p>
               </div>
               
-              <ul className="space-y-4 mb-12 text-lg text-white/80">
-                <li>• Deep 90-min calibration session</li>
-                <li>• Hands-on precision workshops</li>
+              <ul className="space-y-3 mb-8 text-base text-white/80">
+                <li>• Deep 90-min calibration</li>
+                <li>• Precision workshops</li>
                 <li>• Ethics & culture alignment</li>
-                <li>• Strategic memo + implementation guide</li>
+                <li>• Strategic implementation memo</li>
               </ul>
               
-              <div className="text-center mb-8">
-                <div className="text-3xl font-medium mb-2">$15,000</div>
-                <p className="text-white/60">One client at a time</p>
+              <div className="text-center mb-6">
+                <div className="text-2xl font-medium mb-1">$15,000</div>
+                <p className="text-white/60 text-sm">One client at a time</p>
               </div>
               
-              <Button 
-                className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-6 text-lg font-medium"
-                onClick={handleCompassCheckout}
-              >
-                Apply for Compass
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/programs/compass">
+                <Button 
+                  className="w-full bg-white text-black hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 py-4 text-base font-medium"
+                >
+                  Apply for Compass
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -266,9 +310,13 @@ const Index = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-12 text-lg">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/newsletter" className="hover-underline">Newsletter</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/compass" className="hover-underline">Compass</Link>
+          <Link to="/programs/flash" className="hover-underline">Flash</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

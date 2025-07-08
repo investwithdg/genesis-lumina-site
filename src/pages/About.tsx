@@ -80,8 +80,10 @@ const About = () => {
         <div className="animate-fade-in">
           <h3 className="text-xl font-medium mb-8">Connect with Donovan</h3>
           <div className="flex justify-center gap-8">
-            <a href="#" className="text-lg hover-underline">LinkedIn</a>
-            <a href="#" className="text-lg hover-underline">Substack</a>
+            <a href="https://www.linkedin.com/in/donovan-r-green" target="_blank" rel="noopener noreferrer" className="text-lg hover-underline">LinkedIn</a>
+            <a href="https://thecanvasnewsletter.substack.com/" target="_blank" rel="noopener noreferrer" className="text-lg hover-underline">Substack</a>
+            <a href="https://www.instagram.com/investwithdg" target="_blank" rel="noopener noreferrer" className="text-lg hover-underline">Instagram</a>
+            <a href="https://www.facebook.com/investwithdg" target="_blank" rel="noopener noreferrer" className="text-lg hover-underline">Facebook</a>
           </div>
         </div>
       </section>
@@ -91,9 +93,13 @@ const About = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/newsletter" className="hover-underline">Newsletter</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/compass" className="hover-underline">Compass</Link>
+          <Link to="/programs/flash" className="hover-underline">Flash</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

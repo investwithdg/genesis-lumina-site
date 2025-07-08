@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -132,6 +131,15 @@ const Compass = () => {
             Apply for Compass <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
+          <div className="mt-12 text-center">
+            <p className="text-sm text-foreground/70 mb-4">Want to start with ongoing monthly support?</p>
+            <Link to="/programs/ignite">
+              <Button variant="outline" className="border-black hover:bg-black hover:text-white">
+                Explore Ignite - $2,000/month
+              </Button>
+            </Link>
+          </div>
+
           <p className="text-sm text-foreground/60 mt-8">
             Have questions? Check our <Link to="/faq" className="hover-underline">FAQ</Link> or contact us directly.
           </p>
@@ -143,9 +151,11 @@ const Compass = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/programs/flash" className="hover-underline">Flash</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/compass" className="hover-underline">Compass</Link>
+          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>
