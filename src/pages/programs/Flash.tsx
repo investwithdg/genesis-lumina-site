@@ -131,9 +131,7 @@ const Flash = () => {
                 <Button variant="outline" className="border-black hover:bg-black hover:text-white">Explore Ignite</Button>
               </Link>
               <Link to="/programs/compass">
-                <Button variant="outline" className="border-black hover:bg-black hover:text-white">
-                  Apply for Compass ($15,000)
-                </Button>
+                <Button variant="outline" className="border-black hover:bg-black hover:text-white">Apply for Compass</Button>
               </Link>
             </div>
           </div>
