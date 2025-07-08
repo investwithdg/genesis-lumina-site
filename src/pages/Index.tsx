@@ -238,7 +238,11 @@ const Index = () => {
             <span className="text-foreground/70">We see how that's going."</span>
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-16 bg-black/10 rounded-full"></div>
+            <img 
+              src="/lovable-uploads/f552ec4f-6970-4548-ab52-33f1bb821143.png" 
+              alt="Donovan, Founder of Genesis Lumina"
+              className="w-16 h-16 rounded-full object-cover"
+            />
             <div className="text-left">
               <p className="text-xl font-medium">Donovan</p>
               <p className="text-foreground/60">Founder, Genesis Lumina</p>

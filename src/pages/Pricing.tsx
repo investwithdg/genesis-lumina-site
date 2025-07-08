@@ -33,8 +33,13 @@ const Pricing = () => {
         <div className="animate-slide-in">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Flash */}
-            <Card className="border border-foreground/10 shadow-none bg-white">
-              <CardHeader className="text-center pb-8">
+            <Card className="border-2 border-black shadow-lg bg-white relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
+                  Most Popular
+                </span>
+              </div>
+              <CardHeader className="text-center pb-8 pt-8">
                 <CardTitle className="text-2xl font-medium mb-4">Flash</CardTitle>
                 <div className="mb-4">
                   <span className="text-4xl font-light">$300</span>
@@ -113,13 +118,8 @@ const Pricing = () => {
             </Card>
 
             {/* Compass */}
-            <Card className="border-2 border-black shadow-lg bg-white relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
-                  Most Popular
-                </span>
-              </div>
-              <CardHeader className="text-center pb-8 pt-8">
+            <Card className="border border-foreground/10 shadow-none bg-white">
+              <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl font-medium mb-4">Compass</CardTitle>
                 <div className="mb-4">
                   <span className="text-4xl font-light">$15,000</span>
