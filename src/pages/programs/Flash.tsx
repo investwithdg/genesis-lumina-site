@@ -3,14 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-
 const Flash = () => {
   const handleFlashCheckout = () => {
     window.open('https://buy.stripe.com/7sYfZhdtScd46Dn5sP1Fe02', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-white text-foreground">
+  return <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
       {/* Enhanced Hero Section */}
@@ -123,11 +120,7 @@ const Flash = () => {
             Perfect for teams wanting to test AI automation with minimal risk.
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium"
-            onClick={handleFlashCheckout}
-          >
+          <Button size="lg" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium" onClick={handleFlashCheckout}>
             Get Your Flash Automation <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
@@ -135,9 +128,7 @@ const Flash = () => {
             <p className="text-sm text-foreground/70 mb-4">Ready for more comprehensive AI strategy?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/programs/ignite">
-                <Button variant="outline" className="border-black hover:bg-black hover:text-white">
-                  Explore Ignite ($2,000/month)
-                </Button>
+                <Button variant="outline" className="border-black hover:bg-black hover:text-white">Explore Ignite</Button>
               </Link>
               <Link to="/programs/compass">
                 <Button variant="outline" className="border-black hover:bg-black hover:text-white">
@@ -166,8 +157,6 @@ const Flash = () => {
           © 2025 Genesis Lumina. All rights reserved.
         </p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Flash;
