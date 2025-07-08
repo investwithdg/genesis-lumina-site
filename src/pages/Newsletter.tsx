@@ -3,19 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Mail, TrendingUp, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-
 const Newsletter = () => {
-  return (
-    <div className="min-h-screen bg-white text-foreground">
+  return <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
       {/* Enhanced Hero Section */}
       <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center relative">
         <div className="animate-fade-in">
           <div className="mb-8">
-            <span className="inline-block px-4 py-2 text-sm font-medium bg-black text-white rounded-full">
-              📧 The Canvas Newsletter
-            </span>
+            <span className="inline-block px-4 py-2 text-sm font-medium bg-black text-white rounded-full">📧 The Genesis Lumina Newsletter</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-12 tracking-tight">
@@ -76,15 +72,10 @@ const Newsletter = () => {
           </p>
           
           <div className="flex justify-center mb-12">
-            <iframe 
-              src="https://genesislumina.substack.com/embed" 
-              width="480" 
-              height="320" 
-              style={{border: "1px solid #EEE", background: "white"}} 
-              frameBorder="0" 
-              scrolling="no"
-              className="rounded-lg shadow-lg"
-            />
+            <iframe src="https://genesislumina.substack.com/embed" width="480" height="320" style={{
+            border: "1px solid #EEE",
+            background: "white"
+          }} frameBorder="0" scrolling="no" className="rounded-lg shadow-lg" />
           </div>
           
           <p className="text-sm text-foreground/60">
@@ -145,8 +136,6 @@ const Newsletter = () => {
           © 2025 Genesis Lumina. All rights reserved.
         </p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Newsletter;
