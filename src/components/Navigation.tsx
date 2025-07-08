@@ -22,6 +22,9 @@ const Navigation = () => {
       path: "/programs/compass"
     }]
   }, {
+    name: "Pricing",
+    path: "/pricing"
+  }, {
     name: "Newsletter",
     path: "/newsletter"
   }, {

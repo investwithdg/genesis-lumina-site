@@ -11,6 +11,8 @@ import Compass from "./pages/programs/Compass";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
+import Programs from "./pages/Programs";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,9 +26,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/programs/flash" element={<Flash />} />
           <Route path="/programs/ignite" element={<Ignite />} />
           <Route path="/programs/compass" element={<Compass />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           {/* Redirects for old URLs */}

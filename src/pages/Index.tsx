@@ -75,7 +75,7 @@ const Index = () => {
                 variant="outline" 
                 className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 px-12 py-8 text-xl font-medium"
               >
-                Try Flash - $300
+                Explore Flash
               </Button>
             </Link>
           </div>
@@ -310,13 +310,11 @@ const Index = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-12 text-lg">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
+          <Link to="/programs" className="hover-underline">Programs</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/pricing" className="hover-underline">Pricing</Link>
+          <span className="text-foreground/30">│</span>
           <Link to="/newsletter" className="hover-underline">Newsletter</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/flash" className="hover-underline">Flash</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

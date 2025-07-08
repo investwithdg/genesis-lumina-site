@@ -77,7 +77,7 @@ const Newsletter = () => {
           
           <div className="flex justify-center mb-12">
             <iframe 
-              src="https://thecanvasnewsletter.substack.com/embed" 
+              src="https://genesislumina.substack.com/embed" 
               width="480" 
               height="320" 
               style={{border: "1px solid #EEE", background: "white"}} 
@@ -106,19 +106,19 @@ const Newsletter = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <Link to="/programs/flash">
                   <Button variant="outline" className="w-full border-black hover:bg-black hover:text-white">
-                    Flash - $300
+                    Flash
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/programs/ignite">
                   <Button variant="outline" className="w-full border-black hover:bg-black hover:text-white">
-                    Ignite - $2,000/mo
+                    Ignite
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/programs/compass">
                   <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
-                    Compass - $15,000
+                    Compass
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -133,13 +133,11 @@ const Newsletter = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
+          <Link to="/programs" className="hover-underline">Programs</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/pricing" className="hover-underline">Pricing</Link>
+          <span className="text-foreground/30">│</span>
           <Link to="/newsletter" className="hover-underline">Newsletter</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/flash" className="hover-underline">Flash</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

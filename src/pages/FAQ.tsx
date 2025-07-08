@@ -58,7 +58,7 @@ const FAQ = () => {
 
             <AccordionItem value="item-2" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
-                Who should apply for The Compass?
+                Who should apply for Compass?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
                 Leaders and founders who already understand AI's importance, want a laser-focused custom roadmap, and can commit to an intensive 4-week pace.
@@ -67,6 +67,15 @@ const FAQ = () => {
 
             <AccordionItem value="item-3" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
+                What exactly does Ignite include?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
+                Ignite includes monthly 90-minute strategic sessions, complete Notion workspace with AI frameworks and templates, priority email support, team workshop sessions, and access to our private community. You'll get hands-on guidance for implementing AI tools, process optimization strategies, and ongoing support for your AI initiatives. It's designed as ongoing partnership, not just consulting calls.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border border-foreground/10 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
                 Can I cancel Ignite anytime?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
@@ -74,7 +83,7 @@ const FAQ = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="border border-foreground/10 rounded-lg px-6">
+            <AccordionItem value="item-5" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
                 Can I customize either program?
               </AccordionTrigger>
@@ -83,7 +92,7 @@ const FAQ = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5" className="border border-foreground/10 rounded-lg px-6">
+            <AccordionItem value="item-6" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
                 Do you offer nonprofit or educational discounts?
               </AccordionTrigger>
@@ -92,7 +101,7 @@ const FAQ = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-6" className="border border-foreground/10 rounded-lg px-6">
+            <AccordionItem value="item-7" className="border border-foreground/10 rounded-lg px-6">
               <AccordionTrigger className="text-left text-lg font-medium py-6 hover:no-underline">
                 How soon can we start?
               </AccordionTrigger>
@@ -109,13 +118,11 @@ const FAQ = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
+          <Link to="/programs" className="hover-underline">Programs</Link>
+          <span className="text-foreground/30">│</span>
+          <Link to="/pricing" className="hover-underline">Pricing</Link>
+          <span className="text-foreground/30">│</span>
           <Link to="/newsletter" className="hover-underline">Newsletter</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/flash" className="hover-underline">Flash</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs/compass" className="hover-underline">Compass</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>

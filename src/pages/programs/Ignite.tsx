@@ -27,7 +27,7 @@ const Ignite = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-            A monthly clarity layer for values-aligned teams who know they need AI—but not the chaos.
+            Monthly AI advisory with strategic sessions, comprehensive frameworks, team workshops, and ongoing support to scale your AI capabilities. Month-to-month, cancel anytime.
           </p>
         </div>
       </section>
@@ -38,10 +38,12 @@ const Ignite = () => {
           <h2 className="text-3xl md:text-4xl font-medium mb-12">What You Get</h2>
           
           <ul className="space-y-6 text-lg leading-relaxed text-foreground/80 mb-16">
-            <li>• One 60–90 min strategy session each month</li>
-            <li>• Custom Notion portal stocked with frameworks and toolkits</li>
+            <li>• Monthly 90-minute strategic sessions with your team</li>
+            <li>• Complete Notion workspace with AI frameworks and templates</li>
             <li>• Monthly "AI Fluency Brief" with actionable insights and trends</li>
-            <li>• Optional: One async Loom or Notion thread reply per month</li>
+            <li>• Priority email support with 48-hour response time</li>
+            <li>• Team workshop sessions for hands-on implementation</li>
+            <li>• Access to private community for ongoing guidance</li>
           </ul>
         </div>
       </section>
@@ -68,7 +70,7 @@ const Ignite = () => {
             <p className="text-sm text-foreground/70 mb-4">Need a quick start? Try our entry-level option:</p>
             <Link to="/programs/flash">
               <Button variant="outline" className="border-black hover:bg-black hover:text-white">
-                Flash Automation - $300
+                Flash Automation
               </Button>
             </Link>
           </div>
@@ -135,11 +137,11 @@ const Ignite = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover-underline">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/programs/flash" className="hover-underline">Flash</Link>
+          <Link to="/programs" className="hover-underline">Programs</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/programs/ignite" className="hover-underline">Ignite</Link>
+          <Link to="/pricing" className="hover-underline">Pricing</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/programs/compass" className="hover-underline">Compass</Link>
+          <Link to="/newsletter" className="hover-underline">Newsletter</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover-underline">FAQ</Link>
         </div>
