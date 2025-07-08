@@ -116,9 +116,7 @@ const Compass = () => {
           <p className="text-lg text-foreground/60 mb-8">
             (50% deposit to begin)
           </p>
-          <p className="text-sm text-foreground/50 mb-12">
-            We accept only one Compass client at a time to ensure exclusivity and focus.
-          </p>
+          <p className="text-sm text-foreground/50 mb-12">We accept a limited number of Compass clients at a time to ensure exclusivity and focus.</p>
           
           <Button size="lg" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium" onClick={handleCompassCheckout}>
             Apply for Compass <ArrowRight className="ml-2 h-5 w-5" />
