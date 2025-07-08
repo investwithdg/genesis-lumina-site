@@ -3,14 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-
 const Compass = () => {
   const handleCompassCheckout = () => {
     window.open('https://buy.stripe.com/dRmfZhcpOelc7Hr4oL1Fe01', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-white text-foreground">
+  return <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
       {/* Enhanced Hero Section */}
@@ -123,20 +120,14 @@ const Compass = () => {
             We accept only one Compass client at a time to ensure exclusivity and focus.
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium"
-            onClick={handleCompassCheckout}
-          >
+          <Button size="lg" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300 px-12 py-6 text-lg font-medium" onClick={handleCompassCheckout}>
             Apply for Compass <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
           <div className="mt-12 text-center">
             <p className="text-sm text-foreground/70 mb-4">Want to start with ongoing monthly support?</p>
             <Link to="/programs/ignite">
-              <Button variant="outline" className="border-black hover:bg-black hover:text-white">
-                Explore Ignite - $2,000/month
-              </Button>
+              <Button variant="outline" className="border-black hover:bg-black hover:text-white">Explore Ignite</Button>
             </Link>
           </div>
 
@@ -163,8 +154,6 @@ const Compass = () => {
           © 2025 Genesis Lumina. All rights reserved.
         </p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Compass;
