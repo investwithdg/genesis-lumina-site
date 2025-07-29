@@ -3,8 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, ArrowRight, Zap, Target, Compass as CompassIcon, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import { useState } from "react";
+
+type ProgramType = 'spark' | 'ignite' | 'compass' | 'strategic';
 
 const Pricing = () => {
+  const [activeProgram, setActiveProgram] = useState<ProgramType>('spark');
   return (
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
@@ -31,194 +35,352 @@ const Pricing = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-16">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+            <button 
+              onClick={() => setActiveProgram('spark')}
+              className={`flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:scale-105 ${
+                activeProgram === 'spark' ? 'bg-primary/10 shadow-lg' : 'hover:bg-foreground/5'
+              }`}
+            >
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                activeProgram === 'spark' ? 'bg-primary' : 'bg-primary/70'
+              }`}>
                 <Zap className="w-8 h-8 text-primary-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Spark</h3>
               <p className="text-sm text-foreground/70">Quick automation win</p>
-            </div>
+            </button>
             
             <ArrowRight className="w-6 h-6 text-foreground/40 hidden md:block" />
             
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
+            <button 
+              onClick={() => setActiveProgram('ignite')}
+              className={`flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:scale-105 ${
+                activeProgram === 'ignite' ? 'bg-secondary/10 shadow-lg' : 'hover:bg-foreground/5'
+              }`}
+            >
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                activeProgram === 'ignite' ? 'bg-secondary' : 'bg-secondary/70'
+              }`}>
                 <Target className="w-8 h-8 text-secondary-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Ignite</h3>
               <p className="text-sm text-foreground/70">Ongoing optimization</p>
-            </div>
+            </button>
             
             <ArrowRight className="w-6 h-6 text-foreground/40 hidden md:block" />
             
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4">
+            <button 
+              onClick={() => setActiveProgram('compass')}
+              className={`flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:scale-105 ${
+                activeProgram === 'compass' ? 'bg-accent/10 shadow-lg' : 'hover:bg-foreground/5'
+              }`}
+            >
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                activeProgram === 'compass' ? 'bg-accent' : 'bg-accent/70'
+              }`}>
                 <CompassIcon className="w-8 h-8 text-accent-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Compass</h3>
               <p className="text-sm text-foreground/70">Complete transformation</p>
-            </div>
+            </button>
+          </div>
+          
+          <div className="text-center mb-8">
+            <button 
+              onClick={() => setActiveProgram('strategic')}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 ${
+                activeProgram === 'strategic' ? 'bg-foreground/10 shadow-lg' : 'hover:bg-foreground/5'
+              }`}
+            >
+              <Clock className="w-5 h-5" />
+              <span className="font-medium">Strategic Guidance</span>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Dynamic Content Section */}
       <section className="px-8 py-16 max-w-7xl mx-auto">
-        <div className="animate-slide-in">
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            
-            {/* Spark - Quick Win */}
-            <Card className="border-2 border-primary shadow-lg bg-white relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
-                  Most Popular
-                </span>
-              </div>
-              <CardHeader className="text-center pb-6 pt-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-6 h-6 text-primary" />
+        <div className="animate-fade-in">
+          {activeProgram === 'spark' && (
+            <div className="max-w-2xl mx-auto">
+              <Card className="border-2 border-primary shadow-lg bg-white relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
+                    Most Popular
+                  </span>
                 </div>
-                <CardTitle className="text-2xl font-medium mb-4">Spark</CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-light">$300</span>
-                </div>
-                <p className="text-foreground/70 text-sm mb-6">Perfect if you need one specific automation fast</p>
-                
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-primary" />
-                    <span className="text-sm">One automation built in 72 hours</span>
+                <CardHeader className="text-center pb-6 pt-8">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Save 5-10 hours per week immediately</span>
+                  <CardTitle className="text-3xl font-medium mb-4">Spark</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-5xl font-light">$300</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Perfect for testing AI automation</span>
+                  <p className="text-foreground/70 text-lg mb-8">Perfect if you need one specific automation fast</p>
+                  
+                  <div className="text-left space-y-4 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary" />
+                      <span>One automation built in 72 hours</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary" />
+                      <span>Save 5-10 hours per week immediately</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary" />
+                      <span>Perfect for testing AI automation</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary" />
+                      <span>Basic documentation included</span>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className="w-full mb-4">
-                  <a href="{{stripe_link_spark}}">Order Spark</a>
-                </Button>
-                <p className="text-xs text-center text-foreground/60">
-                  Great for: Solo founders, small teams, specific pain points
-                </p>
-              </CardContent>
-            </Card>
+                  
+                  <Button asChild className="w-full mb-4 text-lg py-6">
+                    <a href="{{stripe_link_spark}}">Order Spark Now</a>
+                  </Button>
+                  <p className="text-sm text-center text-foreground/60">
+                    Great for: Solo founders, small teams, specific pain points
+                  </p>
+                </CardHeader>
+              </Card>
+            </div>
+          )}
 
-            {/* Ignite - Ongoing Growth */}
-            <Card className="border-2 border-secondary shadow-lg bg-white">
-              <CardHeader className="text-center pb-6">
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-6 h-6 text-secondary" />
-                </div>
-                <CardTitle className="text-2xl font-medium mb-4">Ignite</CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-light">$1K-$5K</span>
-                  <span className="text-foreground/60 text-sm ml-2">/mo</span>
-                </div>
-                <p className="text-foreground/70 text-sm mb-6">Perfect if you want ongoing AI coaching and automation</p>
-                
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-secondary" />
-                    <span className="text-sm">Monthly 1:1 coaching calls</span>
+          {activeProgram === 'ignite' && (
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Core Tier */}
+              <Card className="border-2 border-secondary/50 shadow-lg bg-white">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-6 h-6 text-secondary" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-secondary" />
-                    <span className="text-sm">Automations built monthly</span>
+                  <CardTitle className="text-2xl font-medium mb-4">Core</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-4xl font-light">$1K</span>
+                    <span className="text-foreground/60 text-sm ml-2">/mo</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-secondary" />
-                    <span className="text-sm">Business systems optimization</span>
+                  <p className="text-foreground/70 text-sm mb-6">Perfect for getting started with AI coaching</p>
+                  
+                  <div className="text-left space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Monthly 1:1 coaching call</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">1 automation per month</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Email support</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-secondary" />
-                    <span className="text-sm">3 tiers: Core ($1K), Build ($3K), Architect ($5K)</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Button asChild variant="outline" className="w-full mb-4">
-                  <Link to="/programs/ignite">Choose Your Tier</Link>
-                </Button>
-                <p className="text-xs text-center text-foreground/60">
-                  Great for: Growing teams, ongoing optimization, system building
-                </p>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild variant="outline" className="w-full mb-4">
+                    <Link to="/programs/ignite">Start Core</Link>
+                  </Button>
+                </CardContent>
+              </Card>
 
-            {/* Compass - Complete Transformation */}
-            <Card className="border-2 border-accent shadow-lg bg-white">
-              <CardHeader className="text-center pb-6">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CompassIcon className="w-6 h-6 text-accent" />
+              {/* Build Tier */}
+              <Card className="border-2 border-secondary shadow-lg bg-white relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium">
+                    Popular
+                  </span>
                 </div>
-                <CardTitle className="text-2xl font-medium mb-4">Compass</CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-light">$15K</span>
-                </div>
-                <p className="text-foreground/70 text-sm mb-6">Perfect if you need complete AI transformation in 4 weeks</p>
-                
-                <div className="text-left space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-accent" />
-                    <span className="text-sm">4-week intensive sprint</span>
+                <CardHeader className="text-center pb-6 pt-8">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-6 h-6 text-secondary" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-accent" />
-                    <span className="text-sm">Complete business system overhaul</span>
+                  <CardTitle className="text-2xl font-medium mb-4">Build</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-4xl font-light">$3K</span>
+                    <span className="text-foreground/60 text-sm ml-2">/mo</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-accent" />
-                    <span className="text-sm">Multiple automations deployed</span>
+                  <p className="text-foreground/70 text-sm mb-6">Perfect for growing teams needing more automation</p>
+                  
+                  <div className="text-left space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Bi-weekly coaching calls</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">3 automations per month</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Priority support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">System optimization</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-accent" />
-                    <span className="text-sm">Team training included</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Button asChild variant="outline" className="w-full mb-4">
-                  <a href="{{stripe_link_compass}}">Launch Compass</a>
-                </Button>
-                <p className="text-xs text-center text-foreground/60">
-                  Great for: Funded startups, rapid scaling, complete transformation
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full mb-4">
+                    <Link to="/programs/ignite">Choose Build</Link>
+                  </Button>
+                </CardContent>
+              </Card>
 
-          {/* Hourly Consultation */}
-          <div className="max-w-2xl mx-auto">
-            <Card className="border border-foreground/20 bg-foreground/5">
-              <CardHeader className="text-center pb-6">
-                <div className="w-12 h-12 bg-foreground/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-foreground" />
-                </div>
-                <CardTitle className="text-xl font-medium mb-4">Need Strategic Guidance?</CardTitle>
-                <div className="mb-4">
-                  <span className="text-3xl font-light">$200</span>
-                  <span className="text-foreground/60 text-sm ml-2">/hour</span>
-                </div>
-                <p className="text-foreground/70 text-sm mb-4">Book a one-time consultation to get clarity on your AI strategy</p>
-                <Button asChild variant="outline" className="w-full max-w-xs mx-auto">
-                  <a href="{{stripe_link_hourly}}">Book Session</a>
-                </Button>
-              </CardHeader>
-            </Card>
-          </div>
+              {/* Architect Tier */}
+              <Card className="border-2 border-secondary/70 shadow-lg bg-white">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-6 h-6 text-secondary" />
+                  </div>
+                  <CardTitle className="text-2xl font-medium mb-4">Architect</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-4xl font-light">$5K</span>
+                    <span className="text-foreground/60 text-sm ml-2">/mo</span>
+                  </div>
+                  <p className="text-foreground/70 text-sm mb-6">Perfect for complete business transformation</p>
+                  
+                  <div className="text-left space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Weekly coaching calls</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">5+ automations per month</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">24/7 support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Complete system architecture</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-secondary" />
+                      <span className="text-sm">Team training included</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild variant="outline" className="w-full mb-4">
+                    <Link to="/programs/ignite">Start Architect</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {activeProgram === 'compass' && (
+            <div className="max-w-2xl mx-auto">
+              <Card className="border-2 border-accent shadow-lg bg-white">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CompassIcon className="w-6 h-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-3xl font-medium mb-4">Compass</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-5xl font-light">$15K</span>
+                  </div>
+                  <p className="text-foreground/70 text-lg mb-8">Perfect if you need complete AI transformation in 4 weeks</p>
+                  
+                  <div className="text-left space-y-4 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>4-week intensive sprint</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>Complete business system overhaul</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>Multiple automations deployed</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>Team training included</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>6 months of support included</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-accent" />
+                      <span>ROI guarantee</span>
+                    </div>
+                  </div>
+                  
+                  <Button asChild className="w-full mb-4 text-lg py-6">
+                    <a href="{{stripe_link_compass}}">Launch Compass</a>
+                  </Button>
+                  <p className="text-sm text-center text-foreground/60">
+                    Great for: Funded startups, rapid scaling, complete transformation
+                  </p>
+                </CardHeader>
+              </Card>
+            </div>
+          )}
+
+          {activeProgram === 'strategic' && (
+            <div className="max-w-2xl mx-auto">
+              <Card className="border-2 border-foreground/20 shadow-lg bg-foreground/5">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-12 h-12 bg-foreground/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-6 h-6 text-foreground" />
+                  </div>
+                  <CardTitle className="text-3xl font-medium mb-4">Strategic Guidance</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-5xl font-light">$200</span>
+                    <span className="text-foreground/60 text-lg ml-2">/hour</span>
+                  </div>
+                  <p className="text-foreground/70 text-lg mb-8">Book a one-time consultation to get clarity on your AI strategy</p>
+                  
+                  <div className="text-left space-y-4 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-foreground" />
+                      <span>1-hour focused consultation</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-foreground" />
+                      <span>AI readiness assessment</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-foreground" />
+                      <span>Custom roadmap provided</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-foreground" />
+                      <span>Implementation priorities</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-foreground" />
+                      <span>Tool recommendations</span>
+                    </div>
+                  </div>
+                  
+                  <Button asChild className="w-full mb-4 text-lg py-6">
+                    <a href="{{stripe_link_hourly}}">Book Session</a>
+                  </Button>
+                  <p className="text-sm text-center text-foreground/60">
+                    Perfect for: Quick clarity, specific questions, decision making
+                  </p>
+                </CardHeader>
+              </Card>
+            </div>
+          )}
           
           <div className="mt-12 text-center">
             <p className="text-lg text-foreground/70 mb-4">
               Payment plans available for Compass and Ignite tiers.
             </p>
             <p className="text-sm text-foreground/60">
-              Not sure which is right for you? <a href="{{stripe_link_hourly}}" className="text-primary hover:underline">Book a consultation</a> to discuss your needs.
+              Not sure which is right for you? <button onClick={() => setActiveProgram('strategic')} className="text-primary hover:underline">Book a consultation</button> to discuss your needs.
             </p>
           </div>
         </div>
