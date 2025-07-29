@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Compass = () => {
   return (
@@ -21,100 +28,118 @@ const Compass = () => {
         </div>
       </section>
 
-      {/* B) What the Offer Is */}
-      <section className="px-8 py-16 max-w-4xl mx-auto text-center">
-        <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8">What Compass Is</h2>
-          <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Compass is an intensive 4-week sprint where we audit your entire operation, design a custom AI system, 
-            build everything for you, and train your team. It's transformation, not just automation.
-          </p>
-        </div>
-      </section>
-
-      {/* C) Who It's For */}
-      <section className="px-8 py-16 max-w-4xl mx-auto">
-        <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">Perfect If You</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Have funding or revenue to invest seriously</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Need a complete system overhaul, not quick fixes</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Have a team ready to learn new systems</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Want custom architecture, not off-the-shelf tools</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Need fast results for growth or investor pressure</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Serious about AI transformation, not just testing</span>
-              </div>
-            </div>
+      {/* Zigzag Section 1: What Compass Is (Text Left, Image Right) */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-slide-in">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">What Compass Is</h2>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              An intensive 4-week sprint where we audit your entire operation, design a custom AI system, 
+              build everything for you, and train your team.
+            </p>
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              This is transformation, not just automation. Complete system overhaul for businesses 
+              ready to scale fast and invest seriously in AI infrastructure.
+            </p>
+          </div>
+          <div className="animate-fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+              alt="AI transformation workspace" 
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </section>
 
-      {/* D) What You Get - Four-Step Breakdown */}
+      {/* Carousel Section: Perfect If You */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">What You Get: Discovery → Design → Build → Deliver</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">Perfect If You</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="font-bold">1</span>
+          <Carousel className="w-full max-w-4xl mx-auto">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
+                <Card className="p-6 h-full">
+                  <CardContent className="p-0 h-full flex flex-col justify-center">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Have funding or revenue to invest seriously</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Need a complete system overhaul, not quick fixes</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Have a team ready to learn new systems</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+              
+              <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
+                <Card className="p-6 h-full">
+                  <CardContent className="p-0 h-full flex flex-col justify-center">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Want custom architecture, not off-the-shelf tools</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Need fast results for growth or investor pressure</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Serious about AI transformation, not just testing</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Zigzag Section 2: 4-Week Process (Image Left, Text Right) */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+              alt="Code development and automation" 
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="animate-slide-in">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">4-Week Process</h2>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              Discovery → Design → Build → Deliver
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">1.</span>
+                <span><strong>Discovery:</strong> We audit your mess and find what's costing you the most time</span>
               </div>
-              <h3 className="text-lg font-semibold mb-3">Discovery</h3>
-              <p className="text-sm text-foreground/80">
-                We audit your mess and find what's costing you the most time.
-              </p>
-            </Card>
-            
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="font-bold">2</span>
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">2.</span>
+                <span><strong>Design:</strong> Custom AI system designed to eliminate your biggest bottlenecks</span>
               </div>
-              <h3 className="text-lg font-semibold mb-3">Design</h3>
-              <p className="text-sm text-foreground/80">
-                Custom AI system designed to eliminate your biggest bottlenecks.
-              </p>
-            </Card>
-            
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="font-bold">3</span>
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">3.</span>
+                <span><strong>Build:</strong> We build and test everything while you keep running your business</span>
               </div>
-              <h3 className="text-lg font-semibold mb-3">Build</h3>
-              <p className="text-sm text-foreground/80">
-                We build and test everything while you keep running your business.
-              </p>
-            </Card>
-            
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="font-bold">4</span>
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">4.</span>
+                <span><strong>Deliver:</strong> Your team gets trained and you get 30 days of support</span>
               </div>
-              <h3 className="text-lg font-semibold mb-3">Deliver</h3>
-              <p className="text-sm text-foreground/80">
-                Your team gets trained and you get 30 days of support.
-              </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>

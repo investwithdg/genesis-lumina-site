@@ -4,6 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import BusinessSystemsSelector from "@/components/BusinessSystemsSelector";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Spark = () => {
   const [selectedSystem, setSelectedSystem] = useState<string | null>(null);
@@ -32,52 +39,82 @@ const Spark = () => {
         </div>
       </section>
 
-      {/* B) What the Offer Is */}
-      <section className="px-8 py-16 max-w-4xl mx-auto text-center">
-        <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8">What Spark Is</h2>
-          <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Spark is your fastest path to AI automation. We identify one critical bottleneck in your business, 
-            build a custom solution, and deliver it in 72 hours. No complexity, no long timelines—just results.
-          </p>
+      {/* Zigzag Section 1: What Spark Is (Text Left, Image Right) */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-slide-in">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">What Spark Is</h2>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              Rapid AI automation delivered in 72 hours. You give us your messy process, 
+              we give you a working automation that saves hours every week.
+            </p>
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              Perfect for testing AI automation without huge commitment. One specific process, 
+              one clean solution, guaranteed to work.
+            </p>
+          </div>
+          <div className="animate-fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+              alt="AI automation and circuit board" 
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
-      {/* C) Who It's For */}
-      <section className="px-8 py-16 max-w-4xl mx-auto">
+      {/* Carousel Section: Perfect If You */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">Perfect If You're</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">Perfect If You</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Drowning in manual tasks that should be automated</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Ready to test AI automation without huge risk</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Want results fast, not months of planning</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Solo founder or small team feeling overwhelmed</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Making money but fighting messy workflows</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-primary">•</span>
-                <span>Need one specific problem solved immediately</span>
-              </div>
-            </div>
-          </div>
+          <Carousel className="w-full max-w-4xl mx-auto">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
+                <Card className="p-6 h-full">
+                  <CardContent className="p-0 h-full flex flex-col justify-center">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Drowning in manual tasks that should be automated</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Ready to test AI automation without huge risk</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Want results fast, not months of planning</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+              
+              <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
+                <Card className="p-6 h-full">
+                  <CardContent className="p-0 h-full flex flex-col justify-center">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Solo founder or small team feeling overwhelmed</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Making money but fighting messy workflows</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span>Need one specific problem solved immediately</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
@@ -87,39 +124,33 @@ const Spark = () => {
         onSystemSelect={setSelectedSystem}
       />
 
-      {/* D) What You Get */}
-      <section className="px-8 py-16 max-w-4xl mx-auto">
-        <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">What You Get</h2>
-          
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-sm font-bold">1</span>
+      {/* Zigzag Section 2: What You Get (Image Left, Text Right) */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+              alt="MacBook with code automation" 
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="animate-slide-in">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">What You Get</h2>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              Complete form-to-automation transformation in 72 hours.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">•</span>
+                <span><strong>Quick Assessment:</strong> Tell us your biggest time-waster through our simple form</span>
               </div>
-              <div>
-                <h3 className="text-xl font-medium mb-2">Quick Assessment Form</h3>
-                <p className="text-foreground/80">Tell us your biggest time-waster through our simple form. We design the perfect automation solution.</p>
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">•</span>
+                <span><strong>Custom Build:</strong> Automation built, tested, and deployed in 72 hours</span>
               </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-sm font-bold">2</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium mb-2">Custom Automation Built</h3>
-                <p className="text-foreground/80">Your automation gets built, tested, and deployed—ready to save you hours every week.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-sm font-bold">3</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium mb-2">Training & Handoff</h3>
-                <p className="text-foreground/80">You get a walkthrough, simple instructions, and confidence to use your new automation immediately.</p>
+              <div className="flex items-start gap-3">
+                <span className="text-primary font-bold">•</span>
+                <span><strong>Training & Handoff:</strong> Walkthrough, documentation, and confidence to use it immediately</span>
               </div>
             </div>
           </div>
