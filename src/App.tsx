@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Flash from "./pages/programs/Flash";
+import Spark from "./pages/programs/Spark";
 import Ignite from "./pages/programs/Ignite";
 import Compass from "./pages/programs/Compass";
 import Newsletter from "./pages/Newsletter";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/programs/flash" element={<Flash />} />
+          <Route path="/programs/spark" element={<Spark />} />
           <Route path="/programs/ignite" element={<Ignite />} />
           <Route path="/programs/compass" element={<Compass />} />
           <Route path="/pricing" element={<Pricing />} />
