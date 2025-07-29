@@ -8,7 +8,7 @@ const Ignite = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* A) Hero Banner */}
       <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight">
@@ -16,15 +16,75 @@ const Ignite = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto mb-12">
-            Choose your coaching tier. Get strategic guidance plus automations built monthly.
+            Ongoing strategy, automations built monthly, and your path to AI transformation.
           </p>
         </div>
       </section>
 
-      {/* Coaching Tiers */}
+      {/* B) What the Offer Is */}
+      <section className="px-8 py-16 max-w-4xl mx-auto text-center">
+        <div className="animate-slide-in">
+          <h2 className="text-3xl md:text-4xl font-medium mb-8">What Ignite Is</h2>
+          <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+            Ignite is your monthly AI coaching program. Choose your tier, get strategy calls, automations built, 
+            and systems training. It's like having an AI expert on your team without the full-time cost.
+          </p>
+        </div>
+      </section>
+
+      {/* C) Who It's For */}
+      <section className="px-8 py-16 max-w-4xl mx-auto">
+        <div className="animate-slide-in">
+          <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">Perfect If You</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-center">Core ($1K)</h3>
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Need basic automation guidance</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Want to test ongoing support</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-center">Build ($3K)</h3>
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Growing fast and need systems</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Have a team to train</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-center">Architect ($5K)</h3>
+              <div className="space-y-2">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Need complete system overhaul</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span className="text-sm">Want priority access and support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* D) What You Get - Coaching Tiers */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">Choose Your Tier</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">What You Get</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Core */}

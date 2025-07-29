@@ -8,11 +8,11 @@ const Compass = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* A) Hero Banner */}
       <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight">
-            4-Week AI <span className="text-foreground/70">Transformation</span>
+            4-Week AI <span className="text-foreground/70">Sprint</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto mb-12">
@@ -21,10 +21,59 @@ const Compass = () => {
         </div>
       </section>
 
-      {/* Four-Step Breakdown */}
+      {/* B) What the Offer Is */}
+      <section className="px-8 py-16 max-w-4xl mx-auto text-center">
+        <div className="animate-slide-in">
+          <h2 className="text-3xl md:text-4xl font-medium mb-8">What Compass Is</h2>
+          <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+            Compass is an intensive 4-week sprint where we audit your entire operation, design a custom AI system, 
+            build everything for you, and train your team. It's transformation, not just automation.
+          </p>
+        </div>
+      </section>
+
+      {/* C) Who It's For */}
+      <section className="px-8 py-16 max-w-4xl mx-auto">
+        <div className="animate-slide-in">
+          <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">Perfect If You</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Have funding or revenue to invest seriously</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Need a complete system overhaul, not quick fixes</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Have a team ready to learn new systems</span>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Want custom architecture, not off-the-shelf tools</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Need fast results for growth or investor pressure</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-primary">•</span>
+                <span>Serious about AI transformation, not just testing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* D) What You Get - Four-Step Breakdown */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">Discovery → Design → Build → Deliver</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">What You Get: Discovery → Design → Build → Deliver</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="p-6 text-center">
@@ -70,7 +119,7 @@ const Compass = () => {
         </div>
       </section>
 
-      {/* Investment + CTA */}
+      {/* E) CTA */}
       <section className="px-8 py-16 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <Card className="p-8 max-w-md mx-auto">
