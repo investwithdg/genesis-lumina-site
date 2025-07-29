@@ -39,14 +39,14 @@ const Ignite = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Core Card */}
-            <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+            <Card className="p-6 bg-gradient-to-br from-background to-muted border-border">
               <CardContent className="p-0 text-center">
-                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className="w-16 h-16 bg-foreground text-background rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   1K
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-blue-900">Core</h3>
-                <p className="text-lg font-semibold text-blue-800 mb-4">Save 5+ Hours Weekly</p>
-                <div className="space-y-2 text-sm text-blue-700">
+                <h3 className="text-xl font-bold mb-3">Core</h3>
+                <p className="text-lg font-semibold text-foreground/80 mb-4">Save 5+ Hours Weekly</p>
+                <div className="space-y-2 text-sm text-foreground/70">
                   <p>✓ 1 call + async support</p>
                   <p>✓ Basic automation guidance</p>
                   <p>✓ Testing ongoing AI support</p>
@@ -56,14 +56,14 @@ const Ignite = () => {
             </Card>
 
             {/* Build Card */}
-            <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+            <Card className="p-6 bg-gradient-to-br from-muted/50 to-muted border-foreground/20">
               <CardContent className="p-0 text-center">
-                <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className="w-16 h-16 bg-foreground text-background rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   3K
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-green-900">Build</h3>
-                <p className="text-lg font-semibold text-green-800 mb-4">Speed to Market 3x Faster</p>
-                <div className="space-y-2 text-sm text-green-700">
+                <h3 className="text-xl font-bold mb-3">Build</h3>
+                <p className="text-lg font-semibold text-foreground/80 mb-4">Speed to Market 3x Faster</p>
+                <div className="space-y-2 text-sm text-foreground/70">
                   <p>✓ 2 calls + 1 automation/month</p>
                   <p>✓ SOP review included</p>
                   <p>✓ Growing fast, need systems</p>
@@ -73,14 +73,14 @@ const Ignite = () => {
             </Card>
 
             {/* Architect Card */}
-            <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
+            <Card className="p-6 bg-gradient-to-br from-foreground/5 to-foreground/10 border-foreground/30">
               <CardContent className="p-0 text-center">
-                <div className="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className="w-16 h-16 bg-foreground text-background rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                   5K
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-purple-900">Architect</h3>
-                <p className="text-lg font-semibold text-purple-800 mb-4">Complete System Mastery</p>
-                <div className="space-y-2 text-sm text-purple-700">
+                <h3 className="text-xl font-bold mb-3">Architect</h3>
+                <p className="text-lg font-semibold text-foreground/80 mb-4">Complete System Mastery</p>
+                <div className="space-y-2 text-sm text-foreground/70">
                   <p>✓ Embedded ops coach</p>
                   <p>✓ Regular audits + automations</p>
                   <p>✓ Complete system overhaul</p>
