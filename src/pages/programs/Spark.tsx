@@ -98,8 +98,8 @@ const Spark = () => {
                 <span className="text-sm font-bold">1</span>
               </div>
               <div>
-                <h3 className="text-xl font-medium mb-2">15-Minute Strategy Call</h3>
-                <p className="text-foreground/80">We identify your biggest time-waster and design the perfect automation to eliminate it.</p>
+                <h3 className="text-xl font-medium mb-2">Quick Assessment Form</h3>
+                <p className="text-foreground/80">Tell us your biggest time-waster through our simple form. We design the perfect automation solution.</p>
               </div>
             </div>
             

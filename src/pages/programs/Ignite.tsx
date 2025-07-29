@@ -33,50 +33,61 @@ const Ignite = () => {
       </section>
 
       {/* C) Who It's For */}
-      <section className="px-8 py-16 max-w-4xl mx-auto">
+      <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">Perfect If You</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">Perfect If You're</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-center">Core ($1K)</h3>
-              <div className="space-y-2">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Need basic automation guidance</span>
+            {/* Core Card */}
+            <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  1K
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Want to test ongoing support</span>
+                <h3 className="text-xl font-bold mb-3 text-blue-900">Core</h3>
+                <p className="text-lg font-semibold text-blue-800 mb-4">Save 5+ Hours Weekly</p>
+                <div className="space-y-2 text-sm text-blue-700">
+                  <p>✓ 1 call + async support</p>
+                  <p>✓ Basic automation guidance</p>
+                  <p>✓ Testing ongoing AI support</p>
+                  <p>✓ Peace of mind with expert backup</p>
                 </div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-center">Build ($3K)</h3>
-              <div className="space-y-2">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Growing fast and need systems</span>
+              </CardContent>
+            </Card>
+
+            {/* Build Card */}
+            <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  3K
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Have a team to train</span>
+                <h3 className="text-xl font-bold mb-3 text-green-900">Build</h3>
+                <p className="text-lg font-semibold text-green-800 mb-4">Speed to Market 3x Faster</p>
+                <div className="space-y-2 text-sm text-green-700">
+                  <p>✓ 2 calls + 1 automation/month</p>
+                  <p>✓ SOP review included</p>
+                  <p>✓ Growing fast, need systems</p>
+                  <p>✓ Team training for scale</p>
                 </div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-center">Architect ($5K)</h3>
-              <div className="space-y-2">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Need complete system overhaul</span>
+              </CardContent>
+            </Card>
+
+            {/* Architect Card */}
+            <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  5K
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Want priority access and support</span>
+                <h3 className="text-xl font-bold mb-3 text-purple-900">Architect</h3>
+                <p className="text-lg font-semibold text-purple-800 mb-4">Complete System Mastery</p>
+                <div className="space-y-2 text-sm text-purple-700">
+                  <p>✓ Embedded ops coach</p>
+                  <p>✓ Regular audits + automations</p>
+                  <p>✓ Complete system overhaul</p>
+                  <p>✓ Priority access and support</p>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -98,11 +109,7 @@ const Ignite = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span className="text-sm">1 automation per month</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Basic SOPs</span>
+                  <span className="text-sm">Async support between calls</span>
                 </li>
               </ul>
               <Button asChild className="w-full">
@@ -126,15 +133,11 @@ const Ignite = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span className="text-sm">2 automations per month</span>
+                  <span className="text-sm">1 automation/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span className="text-sm">System audits</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Team training included</span>
+                  <span className="text-sm">SOP review</span>
                 </li>
               </ul>
               <Button asChild className="w-full">
@@ -149,15 +152,11 @@ const Ignite = () => {
               <ul className="space-y-3 text-left mb-8">
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span className="text-sm">4 strategy calls per month</span>
+                  <span className="text-sm">Embedded ops coach</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span className="text-sm">3 automations per month</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary">•</span>
-                  <span className="text-sm">Complete system architecture</span>
+                  <span className="text-sm">Audits + automations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>

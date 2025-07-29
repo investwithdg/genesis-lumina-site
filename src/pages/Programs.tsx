@@ -32,23 +32,23 @@ const Programs = () => {
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="animate-slide-in">
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Flash */}
+            {/* Spark */}
             <Card className="border border-foreground/10 shadow-none bg-white p-8 text-center">
               <CardContent>
                 <div className="w-16 h-16 bg-black/5 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-medium mb-4">Flash</h3>
+                <h3 className="text-2xl font-medium mb-4">Spark</h3>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Quick AI automation installs to solve immediate bottlenecks in your business processes.
+                  One high-impact automation delivered in 72 hours. Perfect for testing AI without risk.
                 </p>
                 <div className="space-y-3 text-sm text-foreground/60 mb-8">
-                  <p>• 7-10 day delivery</p>
-                  <p>• Single process automation</p>
-                  <p>• Maximum 3 at a time</p>
-                  <p>• Perfect for testing AI</p>
+                  <p>• 72-hour delivery</p>
+                  <p>• Single workflow automation</p>
+                  <p>• $300 productized service</p>
+                  <p>• Perfect for quick wins</p>
                 </div>
-                <Link to="/programs/flash">
+                <Link to="/programs/spark">
                   <Button className="w-full bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
