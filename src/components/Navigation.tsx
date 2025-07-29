@@ -12,8 +12,8 @@ const Navigation = () => {
     name: "Programs",
     path: "/programs",
     sublinks: [{
-      name: "Flash",
-      path: "/programs/flash"
+      name: "Spark",
+      path: "/programs/spark"
     }, {
       name: "Ignite", 
       path: "/programs/ignite"

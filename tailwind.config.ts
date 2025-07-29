@@ -66,6 +66,8 @@ export default {
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				// Add your custom fonts here:
+				// 'custom': ['YourCustomFont', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

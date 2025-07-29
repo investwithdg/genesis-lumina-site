@@ -93,7 +93,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof Placeholder */}
+      {/* Social Proof Section - Hidden for now */}
+      {/* 
       <section className="px-8 py-16 max-w-6xl mx-auto text-center">
         <div className="animate-fade-in">
           <div className="bg-foreground/5 rounded-lg p-12">
@@ -101,6 +102,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Founder Quote */}
       <section className="px-8 py-16 max-w-4xl mx-auto text-center">
