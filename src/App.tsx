@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Spark from "./pages/programs/Spark";
 import Ignite from "./pages/programs/Ignite";
 import Compass from "./pages/programs/Compass";
+import LuminaFoundations from "./pages/programs/LuminaFoundations";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/programs/spark" element={<Spark />} />
           <Route path="/programs/ignite" element={<Ignite />} />
           <Route path="/programs/compass" element={<Compass />} />
+          <Route path="/programs/lumina-foundations" element={<LuminaFoundations />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
