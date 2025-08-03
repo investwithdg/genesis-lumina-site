@@ -21,7 +21,7 @@ const Navigation = () => {
       name: "Compass",
       path: "/programs/compass"
     }, {
-      name: "Lumina Foundations",
+      name: "Foundations",
       path: "/programs/lumina-foundations"
     }]
   }, {
