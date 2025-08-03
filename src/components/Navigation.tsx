@@ -20,6 +20,9 @@ const Navigation = () => {
     }, {
       name: "Compass",
       path: "/programs/compass"
+    }, {
+      name: "Lumina Foundations",
+      path: "/programs/lumina-foundations"
     }]
   }, {
     name: "Pricing",
