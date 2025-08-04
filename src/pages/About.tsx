@@ -11,11 +11,11 @@ const About = () => {
       <section className="px-8 py-24 md:py-32 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight">
-            Meet <span className="text-foreground/70">Donovan</span>
+            About <span className="text-foreground/70">Genesis Lumina</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto mb-12">
-            AI strategist, automation expert, and Kingdom-driven business builder.
+            Transforming businesses through intelligent automation and Kingdom-driven values.
           </p>
         </div>
       </section>
@@ -24,15 +24,15 @@ const About = () => {
       <section className="px-8 py-16 max-w-4xl mx-auto">
         <div className="animate-slide-in space-y-8 text-lg leading-relaxed">
           <p className="text-foreground/80">
-            Donovan Green built his track record in real estate, where systems and automation mean the difference between profit and chaos. After scaling multiple ventures, he saw a pattern: businesses drowning in manual tasks while AI solutions sat unused or poorly implemented.
+            Genesis Lumina bridges the gap between AI potential and business reality. While countless businesses struggle with manual tasks and poorly implemented automation, we deliver practical solutions that actually work.
           </p>
           
           <p className="text-foreground/80">
-            Genesis Lumina was born from this gap. Donovan combines deep AI expertise with Kingdom-driven values, helping leaders implement automation that saves time while maintaining integrity. His approach isn't about replacing humans—it's about freeing them to focus on what matters most.
+            Founded by Donovan Green, a seasoned entrepreneur with deep expertise in real estate and automation, Genesis Lumina combines technical excellence with Kingdom-driven values. Our mission is clear: help leaders implement automation that saves time while maintaining integrity and human dignity.
           </p>
           
           <p className="text-foreground/80">
-            From real estate empires to startup MVPs, Donovan has helped hundreds of businesses transform chaos into clarity. His frameworks prioritize speed, simplicity, and scalability—because your business growth shouldn't wait for perfect systems.
+            From real estate empires to startup MVPs, Genesis Lumina has helped hundreds of businesses transform chaos into clarity. Our frameworks prioritize speed, simplicity, and scalability—because your business growth shouldn't wait for perfect systems.
           </p>
         </div>
       </section>
@@ -40,7 +40,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="px-8 py-16 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
-          <h3 className="text-2xl font-medium mb-8">Learn how I can transform your operations</h3>
+          <h3 className="text-2xl font-medium mb-8">Learn how we can transform your operations</h3>
           <Button asChild size="lg" className="text-lg px-8 py-4">
             <a href="{{stripe_link_hourly}}">Book an Hourly Session</a>
           </Button>
