@@ -56,6 +56,23 @@
 
     --radius: 0.5rem;
 
+    /* Waypoint Colors - Progressive Intensity */
+    --waypoint-literacy: 230 45% 25%;        /* Darkest - Deep indigo */
+    --waypoint-literacy-glow: 230 60% 40%;
+    --waypoint-literacy-foreground: 0 0% 100%;
+    
+    --waypoint-integration: 200 65% 45%;     /* Medium - Cyan blue */
+    --waypoint-integration-glow: 200 80% 60%;
+    --waypoint-integration-foreground: 0 0% 100%;
+    
+    --waypoint-s3: 190 85% 55%;              /* Brightest - Electric cyan */
+    --waypoint-s3-glow: 190 100% 70%;
+    --waypoint-s3-foreground: 222.2 84% 4.9%;
+
+    --glow-subtle: 0 0% 0% / 0.05;
+    --glow-medium: 0 0% 0% / 0.1;
+    --glow-strong: 0 0% 0% / 0.2;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -76,6 +93,41 @@
 
   .hover-underline {
     @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Waypoint Glow Effects */
+  .glow-literacy {
+    box-shadow: 0 0 20px hsl(var(--waypoint-literacy-glow) / 0.3),
+                0 0 40px hsl(var(--waypoint-literacy-glow) / 0.2),
+                0 0 60px hsl(var(--waypoint-literacy-glow) / 0.1);
+  }
+
+  .glow-integration {
+    box-shadow: 0 0 25px hsl(var(--waypoint-integration-glow) / 0.4),
+                0 0 50px hsl(var(--waypoint-integration-glow) / 0.25),
+                0 0 75px hsl(var(--waypoint-integration-glow) / 0.15);
+  }
+
+  .glow-s3 {
+    box-shadow: 0 0 30px hsl(var(--waypoint-s3-glow) / 0.5),
+                0 0 60px hsl(var(--waypoint-s3-glow) / 0.3),
+                0 0 90px hsl(var(--waypoint-s3-glow) / 0.2);
+  }
+
+  .nav-glow {
+    box-shadow: 0 2px 10px hsl(var(--glow-subtle));
+  }
+
+  .text-glow-literacy {
+    text-shadow: 0 0 10px hsl(var(--waypoint-literacy-glow) / 0.5);
+  }
+
+  .text-glow-integration {
+    text-shadow: 0 0 12px hsl(var(--waypoint-integration-glow) / 0.6);
+  }
+
+  .text-glow-s3 {
+    text-shadow: 0 0 15px hsl(var(--waypoint-s3-glow) / 0.7);
   }
 
   /* Animated Background Particles */

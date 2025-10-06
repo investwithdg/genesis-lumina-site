@@ -1,107 +1,107 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Compass } from "lucide-react";
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navLinks = [{
-    name: "About",
-    path: "/about"
-  }, {
-    name: "Programs",
-    path: "/programs",
-    sublinks: [{
-      name: "Spark",
-      path: "/programs/spark"
-    }, {
-      name: "Ignite", 
-      path: "/programs/ignite"
-    }, {
-      name: "Compass",
-      path: "/programs/compass"
-    }, {
-      name: "Foundations",
-      path: "/programs/lumina-foundations"
-    }]
-  }, {
-    name: "Pricing",
-    path: "/pricing"
-  }, {
-    name: "Newsletter",
-    path: "/newsletter"
-  }, {
-    name: "FAQ",
-    path: "/faq"
-  }];
-  const isCurrentPage = (path: string) => location.pathname === path;
-  return <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-foreground/10">
-      <nav className="px-8 py-6 max-w-6xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-xl font-medium hover-underline flex items-center gap-3">
-          <img alt="Genesis Lumina Icon" className="w-8 h-8" src="/lovable-uploads/4fffd04e-c716-40c9-a33c-cf5acef012dd.png" />
-          Genesis Lumina
-        </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(link => 
-            link.sublinks ? (
-              <div key={link.name} className="relative group">
-                <span className="text-sm font-medium transition-colors hover-underline text-foreground/70 cursor-pointer">
-                  {link.name}
-                </span>
-                <div className="absolute top-full left-0 bg-white border border-foreground/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-2 min-w-[120px]">
-                  {link.sublinks.map(sublink => (
-                    <Link key={sublink.name} to={sublink.path} className={`block px-4 py-3 text-sm font-medium transition-colors hover:bg-black/5 ${isCurrentPage(sublink.path) ? "text-black" : "text-foreground/70"}`}>
-                      {sublink.name}
+  const waypointLinks = [
+    { title: "AI Literacy", path: "/waypoints/ai-literacy" },
+    { title: "System Integration", path: "/waypoints/system-integration" },
+    { title: "S³ (Scale·Sale·Succession)", path: "/waypoints/s3" },
+  ];
+
+  const mainLinks = [
+    { title: "Results", path: "/results" },
+    { title: "About", path: "/about" },
+    { title: "Resources", path: "/resources" },
+  ];
+
+  const isCurrentPage = (path: string) => location.pathname === path;
+  const isWaypointActive = waypointLinks.some(link => location.pathname === link.path);
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm nav-glow">
+      <nav className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="text-xl font-semibold tracking-tight hover:opacity-80 transition-opacity">
+            Genesis Lumina
+          </Link>
+
+          <div className="hidden md:flex items-center gap-8">
+            <div className="relative group">
+              <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${isWaypointActive ? 'text-primary' : 'text-foreground/70 hover:text-foreground'}`}>
+                Waypoints
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-2">
+                  {waypointLinks.map((link) => (
+                    <Link key={link.path} to={link.path} className={`block px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
+                      {link.title}
                     </Link>
                   ))}
                 </div>
               </div>
-            ) : (
-              <Link key={link.name} to={link.path} className={`text-sm font-medium transition-colors hover-underline ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`}>
-                {link.name}
+            </div>
+
+            {mainLinks.map((link) => (
+              <Link key={link.path} to={link.path} className={`text-sm font-medium transition-colors ${isCurrentPage(link.path) ? 'text-primary' : 'text-foreground/70 hover:text-foreground'}`}>
+                {link.title}
               </Link>
-            )
-          )}
-          <Link to="/newsletter">
-            <Button size="sm" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
-              Sign up for our newsletter
+            ))}
+
+            <Button asChild variant="outline" size="sm" className="gap-2">
+              <Link to="/quiz"><Compass className="w-4 h-4" />Find Your Waypoint</Link>
             </Button>
-          </Link>
+
+            <Button asChild size="sm">
+              <a href="{{stripe_link_call}}">Book a Call</a>
+            </Button>
+          </div>
+
+          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {isMenuOpen && <div className="absolute top-full left-0 right-0 bg-white border-b border-foreground/10 md:hidden">
-            <div className="px-8 py-6 space-y-4">
-              {navLinks.map(link => 
-                link.sublinks ? (
-                  <div key={link.name} className="space-y-2">
-                    <span className="block text-sm font-medium text-foreground/50">{link.name}</span>
-                    {link.sublinks.map(sublink => (
-                      <Link key={sublink.name} to={sublink.path} className={`block text-sm font-medium transition-colors ml-4 ${isCurrentPage(sublink.path) ? "text-black" : "text-foreground/70"}`} onClick={() => setIsMenuOpen(false)}>
-                        {sublink.name}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <Link key={link.name} to={link.path} className={`block text-sm font-medium transition-colors ${isCurrentPage(link.path) ? "text-black" : "text-foreground/70"}`} onClick={() => setIsMenuOpen(false)}>
-                    {link.name}
-                  </Link>
-                )
-              )}
-              <Link to="/newsletter" onClick={() => setIsMenuOpen(false)}>
-                <Button size="sm" className="bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
-                  Sign up for our newsletter
-                </Button>
-              </Link>
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-border pt-4">
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Waypoints</div>
+              {waypointLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                  {link.title}
+                </Link>
+              ))}
             </div>
-          </div>}
+
+            <div className="space-y-2 pt-2">
+              {mainLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2 pt-4">
+              <Button asChild variant="outline" size="sm" className="w-full gap-2">
+                <Link to="/quiz" onClick={() => setIsMenuOpen(false)}><Compass className="w-4 h-4" />Find Your Waypoint</Link>
+              </Button>
+              <Button asChild size="sm" className="w-full">
+                <a href="{{stripe_link_call}}">Book a Call</a>
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
-    </header>;
+    </header>
+  );
 };
+
 export default Navigation;

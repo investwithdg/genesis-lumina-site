@@ -5,15 +5,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
-import Spark from "./pages/programs/Spark";
-import Ignite from "./pages/programs/Ignite";
-import Compass from "./pages/programs/Compass";
-import LuminaFoundations from "./pages/programs/LuminaFoundations";
+import AILiteracy from "./pages/waypoints/AILiteracy";
+import SystemIntegration from "./pages/waypoints/SystemIntegration";
+import S3 from "./pages/waypoints/S3";
+import Quiz from "./pages/Quiz";
+import Results from "./pages/Results";
+import Resources from "./pages/Resources";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
-import Programs from "./pages/Programs";
-import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,19 +26,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/waypoints/ai-literacy" element={<AILiteracy />} />
+          <Route path="/waypoints/system-integration" element={<SystemIntegration />} />
+          <Route path="/waypoints/s3" element={<S3 />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/newsletter" element={<Newsletter />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/programs/spark" element={<Spark />} />
-          <Route path="/programs/ignite" element={<Ignite />} />
-          <Route path="/programs/compass" element={<Compass />} />
-          <Route path="/programs/lumina-foundations" element={<LuminaFoundations />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
-          {/* Redirects for old URLs */}
-          <Route path="/ignite" element={<Navigate to="/programs/ignite" replace />} />
-          <Route path="/compass" element={<Navigate to="/programs/compass" replace />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
