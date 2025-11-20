@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import BookCallButton from "@/components/BookCallButton";
 import { TrendingUp, Target, Building2, CheckCircle, ArrowLeft, DollarSign } from "lucide-react";
 
 const S3 = () => {
@@ -28,9 +29,9 @@ const S3 = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="{{stripe_link_call}}">Book Strategy Session</a>
-            </Button>
+            <BookCallButton size="lg" className="text-lg px-8">
+              Book Strategy Session
+            </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/results">View Case Studies</Link>
             </Button>
@@ -204,9 +205,9 @@ const S3 = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="text-lg px-8">
-            <a href="{{stripe_link_call}}">Book Discovery Call</a>
-          </Button>
+          <BookCallButton size="lg" className="text-lg px-8">
+            Book Discovery Call
+          </BookCallButton>
           <Button asChild variant="outline" size="lg" className="text-lg px-8">
             <Link to="/results">View Case Studies</Link>
           </Button>

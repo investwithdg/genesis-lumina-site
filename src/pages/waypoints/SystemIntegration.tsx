@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import BookCallButton from "@/components/BookCallButton";
 import { Network, Zap, RefreshCw, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 const SystemIntegration = () => {
@@ -28,9 +29,9 @@ const SystemIntegration = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="{{stripe_link_call}}">Get Started</a>
-            </Button>
+            <BookCallButton size="lg" className="text-lg px-8">
+              Get Started
+            </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Find Your Stage</Link>
             </Button>
@@ -168,9 +169,9 @@ const SystemIntegration = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="{{stripe_link_call}}">Book Strategy Call</a>
-            </Button>
+            <BookCallButton size="lg" className="text-lg px-8">
+              Book Strategy Call
+            </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/results">See Results</Link>
             </Button>

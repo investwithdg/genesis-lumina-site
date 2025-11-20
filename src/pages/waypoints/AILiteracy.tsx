@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import BookCallButton from "@/components/BookCallButton";
 import { Brain, Book, Users, CheckCircle, ArrowRight } from "lucide-react";
 
 const AILiteracy = () => {
@@ -28,9 +29,9 @@ const AILiteracy = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="{{stripe_link_call}}">Start Your Journey</a>
-            </Button>
+            <BookCallButton size="lg" className="text-lg px-8">
+              Start Your Journey
+            </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Take the Quiz</Link>
             </Button>
@@ -138,9 +139,9 @@ const AILiteracy = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="{{stripe_link_call}}">Book Your Call</a>
-            </Button>
+            <BookCallButton size="lg" className="text-lg px-8">
+              Book Your Call
+            </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Take the Quiz First</Link>
             </Button>
