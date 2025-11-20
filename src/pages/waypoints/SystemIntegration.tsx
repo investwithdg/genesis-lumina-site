@@ -30,7 +30,7 @@ const SystemIntegration = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <BookCallButton size="lg" className="text-lg px-8">
-              Get Started
+              Book Your Free Strategy Call
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Find Your Stage</Link>
@@ -170,7 +170,7 @@ const SystemIntegration = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <BookCallButton size="lg" className="text-lg px-8">
-              Book Strategy Call
+              Claim Your Strategy Session
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/results">See Results</Link>
