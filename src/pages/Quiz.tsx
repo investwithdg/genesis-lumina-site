@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import BookCallButton from "@/components/BookCallButton";
 import { Compass, ArrowRight, ArrowLeft } from "lucide-react";
 
 type Answer = "a" | "b" | "c" | null;
@@ -142,14 +143,14 @@ const Quiz = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="flex-1">
+              <BookCallButton size="lg" className="flex-1">
+                Book Your Free Strategy Session
+              </BookCallButton>
+              <Button asChild variant="outline" size="lg" className="flex-1">
                 <Link to={data.path}>
                   Learn More About {data.waypoint}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="flex-1">
-                <a href="{{stripe_link_call}}">Book a Call</a>
               </Button>
             </div>
           </Card>

@@ -61,7 +61,7 @@ const Navigation = () => {
               <Link to="/quiz"><Compass className="w-4 h-4" />Find Your Waypoint</Link>
             </Button>
 
-            <BookCallButton size="sm" />
+            <BookCallButton size="sm">Book Call</BookCallButton>
           </div>
 
           <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
@@ -92,7 +92,7 @@ const Navigation = () => {
               <Button asChild variant="outline" size="sm" className="w-full gap-2">
                 <Link to="/quiz" onClick={() => setIsMenuOpen(false)}><Compass className="w-4 h-4" />Find Your Waypoint</Link>
               </Button>
-              <BookCallButton size="sm" className="w-full" />
+              <BookCallButton size="sm" className="w-full">Book Free Call</BookCallButton>
             </div>
           </div>
         )}

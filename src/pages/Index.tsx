@@ -34,7 +34,9 @@ const Index = () => {
                 Find Your Waypoint
               </Link>
             </Button>
-            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4" />
+            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4">
+              Book Free Strategy Call
+            </BookCallButton>
           </div>
         </div>
 
@@ -191,7 +193,9 @@ const Index = () => {
                 Find Your Waypoint
               </Link>
             </Button>
-            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4" />
+            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4">
+              Book Your Strategy Call
+            </BookCallButton>
           </div>
         </div>
       </section>

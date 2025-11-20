@@ -30,7 +30,7 @@ const AILiteracy = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <BookCallButton size="lg" className="text-lg px-8">
-              Start Your Journey
+              Book Your Free Strategy Call
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Take the Quiz</Link>
@@ -140,7 +140,7 @@ const AILiteracy = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <BookCallButton size="lg" className="text-lg px-8">
-              Book Your Call
+              Claim Your Strategy Session
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
               <Link to="/quiz">Take the Quiz First</Link>
