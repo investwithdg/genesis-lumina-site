@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Compass } from "lucide-react";
+import BookCallButton from "@/components/BookCallButton";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,9 +61,7 @@ const Navigation = () => {
               <Link to="/quiz"><Compass className="w-4 h-4" />Find Your Waypoint</Link>
             </Button>
 
-            <Button asChild size="sm">
-              <a href="{{stripe_link_call}}">Book a Call</a>
-            </Button>
+            <BookCallButton size="sm" />
           </div>
 
           <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
@@ -93,9 +92,7 @@ const Navigation = () => {
               <Button asChild variant="outline" size="sm" className="w-full gap-2">
                 <Link to="/quiz" onClick={() => setIsMenuOpen(false)}><Compass className="w-4 h-4" />Find Your Waypoint</Link>
               </Button>
-              <Button asChild size="sm" className="w-full">
-                <a href="{{stripe_link_call}}">Book a Call</a>
-              </Button>
+              <BookCallButton size="sm" className="w-full" />
             </div>
           </div>
         )}

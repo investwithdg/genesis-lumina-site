@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import BookCallButton from "@/components/BookCallButton";
 import { ArrowRight, Brain, Network, TrendingUp, Compass } from "lucide-react";
 
 const Index = () => {
@@ -33,9 +34,7 @@ const Index = () => {
                 Find Your Waypoint
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
-              <a href="{{stripe_link_call}}">Book a Call</a>
-            </Button>
+            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4" />
           </div>
         </div>
 
@@ -192,9 +191,7 @@ const Index = () => {
                 Find Your Waypoint
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
-              <a href="{{stripe_link_call}}">Book a Call</a>
-            </Button>
+            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-4" />
           </div>
         </div>
       </section>
