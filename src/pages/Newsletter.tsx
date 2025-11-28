@@ -28,24 +28,40 @@ const Newsletter = () => {
         </div>
       </section>
 
-      {/* Newsletter Embed */}
-      <section className="px-8 py-16 max-w-4xl mx-auto text-center">
+      {/* Newsletter Form */}
+      <section className="px-8 py-16 max-w-2xl mx-auto">
         <div className="animate-fade-in">
-          <div className="flex justify-center mb-12">
-            <iframe 
-              src="https://genesislumina.substack.com/embed" 
-              width="480" 
-              height="320" 
-              style={{border: "1px solid #EEE", background: "white"}} 
-              frameBorder="0" 
-              scrolling="no" 
-              className="rounded-lg shadow-lg"
-            />
+          <div className="bg-accent/30 border border-border rounded-lg p-8 space-y-6">
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium text-foreground">
+                Email Address
+              </label>
+              <div className="flex gap-3">
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  className="flex-1 px-4 py-3 rounded-md border border-border bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <Button size="lg" className="whitespace-nowrap">
+                  Subscribe
+                </Button>
+              </div>
+            </div>
+            
+            <p className="text-xs text-foreground/60 text-center">
+              Free to subscribe. Unsubscribe anytime. We'll never share your email.
+            </p>
           </div>
-          
-          <p className="text-sm text-foreground/60">
-            Free to subscribe. Unsubscribe anytime.
-          </p>
+
+          <div className="mt-12 text-center">
+            <p className="text-sm text-foreground/70 mb-4">Or subscribe via Substack:</p>
+            <Button asChild variant="outline">
+              <a href="https://genesislumina.substack.com" target="_blank" rel="noopener noreferrer">
+                Visit Our Substack
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 

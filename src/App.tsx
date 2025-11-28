@@ -14,6 +14,12 @@ import Resources from "./pages/Resources";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
+import Programs from "./pages/Programs";
+import Pricing from "./pages/Pricing";
+import Spark from "./pages/programs/Spark";
+import Ignite from "./pages/programs/Ignite";
+import Compass from "./pages/programs/Compass";
+import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +41,12 @@ const App = () => (
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/programs/spark" element={<Spark />} />
+          <Route path="/programs/ignite" element={<Ignite />} />
+          <Route path="/programs/compass" element={<Compass />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
