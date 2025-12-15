@@ -102,7 +102,12 @@ const Quiz = () => {
         description: "You're in the curiosity phase. You need clarity on what AI can do for your business and how to think strategically about implementation.",
         path: "/waypoints/ai-literacy",
         color: "waypoint-literacy",
-        icon: "🧠"
+        icon: "🧠",
+        fieldGuide: {
+          name: "Analog",
+          description: "Pre-build system design",
+          url: "#" // Replace with Gumroad/Stripe link
+        }
       },
       integration: {
         waypoint: "System Integration",
@@ -110,7 +115,12 @@ const Quiz = () => {
         description: "You understand the basics. Now you need practical automations that eliminate manual work and connect your systems seamlessly.",
         path: "/waypoints/system-integration",
         color: "waypoint-integration",
-        icon: "🔗"
+        icon: "🔗",
+        fieldGuide: {
+          name: "Harvest",
+          description: "AI harvest infrastructure",
+          url: "#" // Replace with Gumroad/Stripe link
+        }
       },
       s3: {
         waypoint: "S³ (Scale · Sale · Succession)",
@@ -118,7 +128,12 @@ const Quiz = () => {
         description: "You're ready to scale. You need AI infrastructure that supports explosive growth, increases valuation, and runs independently.",
         path: "/waypoints/s3",
         color: "waypoint-s3",
-        icon: "📈"
+        icon: "📈",
+        fieldGuide: {
+          name: "Audit",
+          description: "Enterprise AI readiness",
+          url: "#" // Replace with Gumroad/Stripe link
+        }
       }
     };
 
@@ -142,16 +157,25 @@ const Quiz = () => {
               {data.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <BookCallButton size="lg" className="flex-1">
+            <div className="flex flex-col gap-4">
+              <BookCallButton size="lg" className="w-full">
                 Book Your Free Strategy Session
               </BookCallButton>
-              <Button asChild variant="outline" size="lg" className="flex-1">
-                <Link to={data.path}>
-                  Learn More About {data.waypoint}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild variant="outline" size="lg" className="flex-1">
+                  <Link to={data.path}>
+                    Learn More About {data.waypoint}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="flex-1">
+                  <a href={data.fieldGuide.url} target="_blank" rel="noopener noreferrer">
+                    Get the {data.fieldGuide.name} Guide
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </Card>
 
