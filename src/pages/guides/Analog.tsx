@@ -6,7 +6,7 @@ import BookCallButton from "@/components/BookCallButton";
 import { MapPin, Lightbulb, Target, CheckCircle, ArrowRight, Brain } from "lucide-react";
 
 const Analog = () => {
-  const purchaseUrl = "#";
+  const purchaseUrl = "https://buy.stripe.com/4gM4gz61qfpgaTD4oL1Fe09";
 
   return (
     <div className="min-h-screen bg-white text-foreground">
