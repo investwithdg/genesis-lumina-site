@@ -21,9 +21,11 @@ const Navigation = () => {
   ];
 
   const mainLinks = [
+    { title: "Home", path: "/" },
     { title: "About", path: "/about" },
     { title: "FAQ", path: "/faq" },
     { title: "Newsletter", path: "/newsletter" },
+    { title: "Quiz", path: "/quiz" },
   ];
 
   const isCurrentPage = (path: string) => location.pathname === path;
