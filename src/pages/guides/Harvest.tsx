@@ -6,7 +6,7 @@ import BookCallButton from "@/components/BookCallButton";
 import { Download, FolderSync, Layers, Zap, CheckCircle, ArrowRight, Link as LinkIcon } from "lucide-react";
 
 const Harvest = () => {
-  const purchaseUrl = "#";
+  const purchaseUrl = "https://buy.stripe.com/9B6aEX89ydh8f9T5sP1Fe08";
 
   return (
     <div className="min-h-screen bg-white text-foreground">
