@@ -4,12 +4,13 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import BookCallButton from "@/components/BookCallButton";
-import { Compass, ArrowRight, ArrowLeft } from "lucide-react";
+import { Compass, ArrowRight, ArrowLeft, Zap, Rocket, Target, Clock } from "lucide-react";
 
 type Answer = "a" | "b" | "c" | null;
 type Answers = [Answer, Answer, Answer, Answer, Answer];
 
 const Quiz = () => {
+  const [started, setStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Answers>([null, null, null, null, null]);
   const [showResults, setShowResults] = useState(false);
@@ -57,6 +58,37 @@ const Quiz = () => {
     }
   ];
 
+  const outcomes = [
+    {
+      icon: Zap,
+      name: "Spark",
+      tagline: "Quick clarity session",
+      description: "A focused 90-minute strategy session to identify your biggest AI opportunity.",
+      color: "waypoint-literacy"
+    },
+    {
+      icon: Rocket,
+      name: "Ignite",
+      tagline: "4-week implementation sprint",
+      description: "Build and launch your first AI automation system with hands-on guidance.",
+      color: "waypoint-integration"
+    },
+    {
+      icon: Target,
+      name: "Compass",
+      tagline: "Ongoing strategic partnership",
+      description: "Monthly retainer for continuous AI optimization and scaling support.",
+      color: "waypoint-s3"
+    },
+    {
+      icon: Clock,
+      name: "Hourly",
+      tagline: "Flexible expertise",
+      description: "On-demand access for specific projects or questions as they arise.",
+      color: "foreground"
+    }
+  ];
+
   const handleAnswer = (answer: "a" | "b" | "c") => {
     const newAnswers = [...answers] as Answers;
     newAnswers[currentQuestion] = answer;
@@ -87,10 +119,123 @@ const Quiz = () => {
   };
 
   const resetQuiz = () => {
+    setStarted(false);
     setCurrentQuestion(0);
     setAnswers([null, null, null, null, null]);
     setShowResults(false);
   };
+
+  // Landing Page
+  if (!started) {
+    return (
+      <div className="min-h-screen bg-background text-foreground">
+        <Navigation />
+
+        {/* Hero */}
+        <section className="px-8 py-24 md:py-32 max-w-5xl mx-auto">
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-lg bg-foreground text-background flex items-center justify-center">
+                <Compass className="w-6 h-6" />
+              </div>
+              <span className="text-sm font-medium text-foreground/60">2 minutes • 5 questions</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 tracking-tight">
+              Find Your <span className="font-medium">AI Waypoint</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed mb-8 max-w-2xl">
+              Not sure where to start with AI? This quick assessment reveals exactly where you are in your transformation journey—and the fastest path forward.
+            </p>
+
+            <Button size="lg" className="text-lg px-8" onClick={() => setStarted(true)}>
+              Start the Assessment
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </section>
+
+        {/* What You'll Discover */}
+        <section className="px-8 py-16 bg-foreground/[0.02]">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-light mb-4">What You'll <span className="font-medium">Discover</span></h2>
+            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+              Based on your answers, we'll recommend one of four pathways tailored to your current stage and goals.
+            </p>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {outcomes.map((outcome, idx) => (
+                <Card 
+                  key={idx} 
+                  className="p-6 text-left border-2 hover:border-foreground/20 transition-all"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <div className={`w-10 h-10 rounded-lg bg-[hsl(var(--${outcome.color}))]/10 text-[hsl(var(--${outcome.color}))] flex items-center justify-center mb-4`}>
+                    <outcome.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-medium mb-1">{outcome.name}</h3>
+                  <p className="text-sm text-foreground/60 mb-3">{outcome.tagline}</p>
+                  <p className="text-sm text-foreground/70">{outcome.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="px-8 py-24 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-light mb-12 text-center">How It <span className="font-medium">Works</span></h2>
+
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            {[
+              { step: "1", title: "Answer 5 Questions", desc: "About your current AI understanding and business goals" },
+              { step: "2", title: "Get Your Waypoint", desc: "We identify which of our three waypoints fits your stage" },
+              { step: "3", title: "See Your Path", desc: "Get a recommended program and resources to move forward" }
+            ].map((item, idx) => (
+              <div key={idx} className="animate-fade-in" style={{ animationDelay: `${idx * 150}ms` }}>
+                <div className="w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center mx-auto mb-4 text-lg font-medium">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
+                <p className="text-foreground/60">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="px-8 py-24 bg-gradient-to-b from-background to-foreground/[0.02]">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Ready to Find Your <span className="font-medium">Starting Point</span>?
+            </h2>
+            <p className="text-lg text-foreground/70 mb-8">
+              Take 2 minutes to get clarity on your AI transformation journey.
+            </p>
+            <Button size="lg" className="text-lg px-8" onClick={() => setStarted(true)}>
+              Start the Assessment
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="px-8 py-16 max-w-6xl mx-auto text-center border-t border-foreground/10">
+          <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
+            <Link to="/about" className="hover:text-primary transition-colors">About</Link>
+            <span className="text-foreground/30">│</span>
+            <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
+            <span className="text-foreground/30">│</span>
+            <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
+          </div>
+          <p className="text-xs text-foreground/50">
+            © 2025 Genesis Lumina. All rights reserved.
+          </p>
+        </footer>
+      </div>
+    );
+  }
 
   if (showResults) {
     const result = calculateResult();
@@ -106,7 +251,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Analog",
           description: "Pre-build system design",
-          url: "/field-guides/analog"
+          url: "/guides/analog"
         }
       },
       integration: {
@@ -119,7 +264,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Harvest",
           description: "AI harvest infrastructure",
-          url: "/field-guides/harvest"
+          url: "/guides/harvest"
         }
       },
       s3: {
@@ -132,7 +277,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Audit",
           description: "Enterprise AI readiness",
-          url: "/field-guides/audit"
+          url: "/guides/audit"
         }
       }
     };
@@ -140,7 +285,7 @@ const Quiz = () => {
     const data = resultData[result];
 
     return (
-      <div className="min-h-screen bg-white text-foreground">
+      <div className="min-h-screen bg-background text-foreground">
         <Navigation />
         
         <section className="px-8 py-24 max-w-3xl mx-auto">
@@ -152,7 +297,7 @@ const Quiz = () => {
             <p className="text-xl text-foreground/70">{data.tagline}</p>
           </div>
 
-          <Card className={`p-8 border-2 border-[hsl(var(--${data.color}))] mb-8 animate-slide-in`}>
+          <Card className={`p-8 border-2 border-[hsl(var(--${data.color}))] mb-8 animate-fade-in`}>
             <p className="text-lg text-foreground/80 leading-relaxed mb-6">
               {data.description}
             </p>
@@ -193,7 +338,7 @@ const Quiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
       <section className="px-8 py-24 max-w-3xl mx-auto">
