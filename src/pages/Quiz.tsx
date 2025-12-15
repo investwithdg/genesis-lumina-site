@@ -106,7 +106,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Analog",
           description: "Pre-build system design",
-          url: "/guides/analog"
+          url: "/field-guides/analog"
         }
       },
       integration: {
@@ -119,7 +119,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Harvest",
           description: "AI harvest infrastructure",
-          url: "/guides/harvest"
+          url: "/field-guides/harvest"
         }
       },
       s3: {
@@ -132,7 +132,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Audit",
           description: "Enterprise AI readiness",
-          url: "/guides/audit"
+          url: "/field-guides/audit"
         }
       }
     };

@@ -171,7 +171,7 @@ const Audit = () => {
           <div className="flex gap-6 text-sm text-foreground/60">
             <Link to="/" className="hover:text-foreground">Home</Link>
             <Link to="/quiz" className="hover:text-foreground">Find Your Waypoint</Link>
-            <Link to="/programs" className="hover:text-foreground">Programs</Link>
+            <Link to="/newsletter" className="hover:text-foreground">Newsletter</Link>
           </div>
         </div>
       </footer>

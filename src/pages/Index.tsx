@@ -205,10 +205,6 @@ const Index = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover:text-primary transition-colors">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/results" className="hover:text-primary transition-colors">Results</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
-          <span className="text-foreground/30">│</span>
           <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>

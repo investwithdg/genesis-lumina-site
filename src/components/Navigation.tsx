@@ -14,14 +14,21 @@ const Navigation = () => {
     { title: "S³ (Scale·Sale·Succession)", path: "/waypoints/s3" },
   ];
 
+  const fieldGuideLinks = [
+    { title: "Analog", path: "/field-guides/analog" },
+    { title: "Harvest", path: "/field-guides/harvest" },
+    { title: "Audit", path: "/field-guides/audit" },
+  ];
+
   const mainLinks = [
-    { title: "Results", path: "/results" },
     { title: "About", path: "/about" },
-    { title: "Resources", path: "/resources" },
+    { title: "FAQ", path: "/faq" },
+    { title: "Newsletter", path: "/newsletter" },
   ];
 
   const isCurrentPage = (path: string) => location.pathname === path;
   const isWaypointActive = waypointLinks.some(link => location.pathname === link.path);
+  const isFieldGuideActive = fieldGuideLinks.some(link => location.pathname === link.path);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm nav-glow">
@@ -43,6 +50,25 @@ const Navigation = () => {
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-2">
                   {waypointLinks.map((link) => (
+                    <Link key={link.path} to={link.path} className={`block px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${isFieldGuideActive ? 'text-primary' : 'text-foreground/70 hover:text-foreground'}`}>
+                Field Guides
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-2">
+                  {fieldGuideLinks.map((link) => (
                     <Link key={link.path} to={link.path} className={`block px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
                       {link.title}
                     </Link>
@@ -74,6 +100,15 @@ const Navigation = () => {
             <div className="space-y-2">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Waypoints</div>
               {waypointLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2 pt-2">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Field Guides</div>
+              {fieldGuideLinks.map((link) => (
                 <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
                   {link.title}
                 </Link>

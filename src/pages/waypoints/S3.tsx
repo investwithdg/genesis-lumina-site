@@ -33,7 +33,7 @@ const S3 = () => {
               Book Your Free Strategy Call
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
-              <Link to="/results">View Case Studies</Link>
+              <Link to="/quiz">Take the Quiz</Link>
             </Button>
           </div>
         </div>
@@ -209,7 +209,7 @@ const S3 = () => {
             Claim Your Strategy Session
           </BookCallButton>
           <Button asChild variant="outline" size="lg" className="text-lg px-8">
-            <Link to="/results">View Case Studies</Link>
+            <Link to="/quiz">Take the Quiz</Link>
           </Button>
         </div>
       </section>
@@ -231,9 +231,7 @@ const S3 = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover:text-primary transition-colors">About</Link>
           <span className="text-foreground/30">│</span>
-          <Link to="/results" className="hover:text-primary transition-colors">Results</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
+          <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
         </div>

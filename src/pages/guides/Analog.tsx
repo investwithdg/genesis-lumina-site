@@ -119,13 +119,6 @@ const Analog = () => {
               Book a Strategy Session
             </BookCallButton>
           </div>
-          <p className="text-sm text-foreground/60 mt-6">
-            Ready for hands-on implementation? Check out{" "}
-            <Link to="/programs/compass" className="underline hover:text-foreground">
-              Lumina Compass
-            </Link>
-            —our 4-week implementation sprint.
-          </p>
         </div>
       </section>
 
@@ -136,7 +129,7 @@ const Analog = () => {
           <div className="flex gap-6 text-sm text-foreground/60">
             <Link to="/" className="hover:text-foreground">Home</Link>
             <Link to="/quiz" className="hover:text-foreground">Find Your Waypoint</Link>
-            <Link to="/programs" className="hover:text-foreground">Programs</Link>
+            <Link to="/newsletter" className="hover:text-foreground">Newsletter</Link>
           </div>
         </div>
       </footer>

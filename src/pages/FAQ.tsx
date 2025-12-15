@@ -34,7 +34,7 @@ const FAQ = () => {
                 What exactly does Spark include?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed pb-6">
-                Spark gets you one automation installed in 72 hours. We identify your biggest time-waster, build the automation, and train your team to use it. That's it—fast and simple. <Link to="/programs/spark" className="text-primary hover:underline">Learn more about Spark</Link>.
+                Spark gets you one automation installed in 72 hours. We identify your biggest time-waster, build the automation, and train your team to use it. That's it—fast and simple.
               </AccordionContent>
             </AccordionItem>
 
@@ -90,10 +90,6 @@ const FAQ = () => {
       <footer className="px-8 py-16 max-w-6xl mx-auto text-center border-t border-foreground/10">
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
           <Link to="/about" className="hover:text-primary transition-colors">About</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/programs" className="hover:text-primary transition-colors">Programs</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link>
           <span className="text-foreground/30">│</span>
           <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
           <span className="text-foreground/30">│</span>

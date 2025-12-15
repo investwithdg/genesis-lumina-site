@@ -3,22 +3,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AILiteracy from "./pages/waypoints/AILiteracy";
 import SystemIntegration from "./pages/waypoints/SystemIntegration";
 import S3 from "./pages/waypoints/S3";
 import Quiz from "./pages/Quiz";
-import Results from "./pages/Results";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
-import Programs from "./pages/Programs";
-import Pricing from "./pages/Pricing";
-import Spark from "./pages/programs/Spark";
-import Ignite from "./pages/programs/Ignite";
-import Compass from "./pages/programs/Compass";
-import CaseStudies from "./pages/CaseStudies";
 import Analog from "./pages/guides/Analog";
 import Harvest from "./pages/guides/Harvest";
 import Audit from "./pages/guides/Audit";
@@ -37,20 +30,13 @@ const App = () => (
           <Route path="/waypoints/ai-literacy" element={<AILiteracy />} />
           <Route path="/waypoints/system-integration" element={<SystemIntegration />} />
           <Route path="/waypoints/s3" element={<S3 />} />
+          <Route path="/field-guides/analog" element={<Analog />} />
+          <Route path="/field-guides/harvest" element={<Harvest />} />
+          <Route path="/field-guides/audit" element={<Audit />} />
           <Route path="/quiz" element={<Quiz />} />
-          <Route path="/results" element={<Results />} />
-          <Route path="/guides/analog" element={<Analog />} />
-          <Route path="/guides/harvest" element={<Harvest />} />
-          <Route path="/guides/audit" element={<Audit />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/programs/spark" element={<Spark />} />
-          <Route path="/programs/ignite" element={<Ignite />} />
-          <Route path="/programs/compass" element={<Compass />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
