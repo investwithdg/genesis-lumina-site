@@ -22,7 +22,7 @@ const BookCallButton = ({
   children = "Book a Call"
 }: BookCallButtonProps) => {
   // Replace this URL with your actual booking link
-  const bookingUrl = "https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID";
+  const bookingUrl = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
 
   return (
     <Button 
