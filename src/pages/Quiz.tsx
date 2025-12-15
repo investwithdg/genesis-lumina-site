@@ -106,7 +106,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Analog",
           description: "Pre-build system design",
-          url: "#" // Replace with Gumroad/Stripe link
+          url: "/guides/analog"
         }
       },
       integration: {
@@ -119,7 +119,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Harvest",
           description: "AI harvest infrastructure",
-          url: "#" // Replace with Gumroad/Stripe link
+          url: "/guides/harvest"
         }
       },
       s3: {
@@ -132,7 +132,7 @@ const Quiz = () => {
         fieldGuide: {
           name: "Audit",
           description: "Enterprise AI readiness",
-          url: "#" // Replace with Gumroad/Stripe link
+          url: "/guides/audit"
         }
       }
     };
@@ -170,10 +170,10 @@ const Quiz = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="flex-1">
-                  <a href={data.fieldGuide.url} target="_blank" rel="noopener noreferrer">
+                  <Link to={data.fieldGuide.url}>
                     Get the {data.fieldGuide.name} Guide
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
