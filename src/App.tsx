@@ -10,7 +10,6 @@ import SystemIntegration from "./pages/waypoints/SystemIntegration";
 import S3 from "./pages/waypoints/S3";
 import Quiz from "./pages/Quiz";
 import Results from "./pages/Results";
-import Resources from "./pages/Resources";
 import Newsletter from "./pages/Newsletter";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
@@ -20,6 +19,9 @@ import Spark from "./pages/programs/Spark";
 import Ignite from "./pages/programs/Ignite";
 import Compass from "./pages/programs/Compass";
 import CaseStudies from "./pages/CaseStudies";
+import Analog from "./pages/guides/Analog";
+import Harvest from "./pages/guides/Harvest";
+import Audit from "./pages/guides/Audit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,7 +39,9 @@ const App = () => (
           <Route path="/waypoints/s3" element={<S3 />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/resources" element={<Resources />} />
+          <Route path="/guides/analog" element={<Analog />} />
+          <Route path="/guides/harvest" element={<Harvest />} />
+          <Route path="/guides/audit" element={<Audit />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
