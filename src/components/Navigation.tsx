@@ -21,7 +21,6 @@ const Navigation = () => {
   ];
 
   const mainLinks = [
-    { title: "Home", path: "/" },
     { title: "About", path: "/about" },
     { title: "FAQ", path: "/faq" },
     { title: "Newsletter", path: "/newsletter" },
