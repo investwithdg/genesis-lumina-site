@@ -110,6 +110,44 @@ const AILiteracy = () => {
         </div>
       </section>
 
+      {/* Products for This Stage */}
+      <section className="px-8 py-24 max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Products for <span className="font-medium">This Stage</span></h2>
+        <p className="text-lg text-foreground/60 text-center mb-12">Ready to take action? Choose your path.</p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="p-6 border-2 hover:border-[hsl(var(--waypoint-literacy))] transition-all hover:glow-literacy">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="w-6 h-6 text-[hsl(var(--waypoint-literacy))]" />
+              <span className="text-xs font-medium text-foreground/40">WORKSHOP</span>
+            </div>
+            <h3 className="text-xl font-medium mb-2">Lumina Labs</h3>
+            <p className="text-foreground/70 mb-4 leading-relaxed">2-3 hour hands-on AI workshop for your team. Live or virtual.</p>
+            <div className="flex items-center justify-between">
+              <span className="font-medium text-lg">$1,500 – $3,000</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/products/lumina-labs">Learn More</Link>
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="p-6 border-2 hover:border-[hsl(var(--waypoint-literacy))] transition-all hover:glow-literacy">
+            <div className="flex items-center gap-3 mb-4">
+              <Book className="w-6 h-6 text-[hsl(var(--waypoint-literacy))]" />
+              <span className="text-xs font-medium text-foreground/40">SELF-SERVE</span>
+            </div>
+            <h3 className="text-xl font-medium mb-2">The Analog Method</h3>
+            <p className="text-foreground/70 mb-4 leading-relaxed">Reclaim focus and clarity from digital chaos. A practical guide.</p>
+            <div className="flex items-center justify-between">
+              <span className="font-medium text-lg">$47</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/field-guides/analog">Get the Guide</Link>
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Who This Is For */}
       <section className="px-8 py-24 max-w-4xl mx-auto">
         <h2 className="text-3xl font-light mb-12 text-center">This Waypoint Is <span className="font-medium">For You</span> If:</h2>

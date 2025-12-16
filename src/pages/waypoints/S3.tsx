@@ -196,8 +196,8 @@ const S3 = () => {
         </p>
         
         <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-s3))] rounded-lg glow-s3 mb-8">
-          <div className="text-4xl font-light mb-2">Starting at $50K</div>
-          <div className="text-sm text-foreground/60">Custom enterprise engagements</div>
+          <div className="text-4xl font-light mb-2">$50K – $250K</div>
+          <div className="text-sm text-foreground/60">4-6 month enterprise transformation</div>
         </div>
 
         <p className="text-sm text-foreground/60 mb-12">
