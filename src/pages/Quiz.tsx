@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import BookCallButton from "@/components/BookCallButton";
-import { Compass, ArrowRight, ArrowLeft, Zap, Rocket, Target, Clock } from "lucide-react";
+import { Compass, ArrowRight, ArrowLeft, Brain, Network, TrendingUp } from "lucide-react";
 
 type Answer = "a" | "b" | "c" | null;
 type Answers = [Answer, Answer, Answer, Answer, Answer];
@@ -58,34 +58,27 @@ const Quiz = () => {
     }
   ];
 
-  const outcomes = [
+  const waypoints = [
     {
-      icon: Zap,
-      name: "Spark",
-      tagline: "Quick clarity session",
-      description: "A focused 90-minute strategy session to identify your biggest AI opportunity.",
+      icon: Brain,
+      name: "AI Literacy",
+      tagline: "Build your foundation",
+      description: "Learn what AI can do for your business and develop strategic thinking.",
       color: "waypoint-literacy"
     },
     {
-      icon: Rocket,
-      name: "Ignite",
-      tagline: "4-week implementation sprint",
-      description: "Build and launch your first AI automation system with hands-on guidance.",
+      icon: Network,
+      name: "System Integration",
+      tagline: "Turn knowledge into action",
+      description: "Build automations that eliminate manual work and connect your systems.",
       color: "waypoint-integration"
     },
     {
-      icon: Target,
-      name: "Compass",
-      tagline: "Ongoing strategic partnership",
-      description: "Monthly retainer for continuous AI optimization and scaling support.",
+      icon: TrendingUp,
+      name: "S³ (Scale·Sale·Succession)",
+      tagline: "Build enterprise infrastructure",
+      description: "Create AI systems that scale infinitely and increase business valuation.",
       color: "waypoint-s3"
-    },
-    {
-      icon: Clock,
-      name: "Hourly",
-      tagline: "Flexible expertise",
-      description: "On-demand access for specific projects or questions as they arise.",
-      color: "foreground"
     }
   ];
 
@@ -160,12 +153,12 @@ const Quiz = () => {
         <section className="px-8 py-16 bg-foreground/[0.02]">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-light mb-4">What You'll <span className="font-medium">Discover</span></h2>
-            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Based on your answers, we'll recommend one of four pathways tailored to your current stage and goals.
+              <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+              Based on your answers, we'll recommend one of three waypoints tailored to your current stage and goals.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {outcomes.map((outcome, idx) => (
+              {waypoints.map((outcome, idx) => (
                 <Card 
                   key={idx} 
                   className="p-6 text-left border-2 hover:border-foreground/20 transition-all"
