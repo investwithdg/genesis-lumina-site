@@ -138,6 +138,74 @@ const SystemIntegration = () => {
         </div>
       </section>
 
+      {/* Products for This Stage */}
+      <section className="px-8 py-24 max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Products for <span className="font-medium">This Stage</span></h2>
+        <p className="text-lg text-foreground/60 text-center mb-12">Ready to build your systems? Choose your path.</p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="p-5 border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all hover:glow-integration">
+            <div className="flex items-center gap-2 mb-3">
+              <Network className="w-5 h-5 text-[hsl(var(--waypoint-integration))]" />
+              <span className="text-xs font-medium text-foreground/40">SPRINT</span>
+            </div>
+            <h3 className="text-lg font-medium mb-2">Lumina Compass</h3>
+            <p className="text-foreground/70 text-sm mb-3 leading-relaxed">4-week intensive. Full systems audit, build, and training.</p>
+            <div className="flex flex-col gap-2">
+              <span className="font-medium">Starting at $15K</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/products/lumina-compass">Learn More</Link>
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="p-5 border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all hover:glow-integration">
+            <div className="flex items-center gap-2 mb-3">
+              <RefreshCw className="w-5 h-5 text-[hsl(var(--waypoint-integration))]" />
+              <span className="text-xs font-medium text-foreground/40">RETAINER</span>
+            </div>
+            <h3 className="text-lg font-medium mb-2">Lumina Ignite</h3>
+            <p className="text-foreground/70 text-sm mb-3 leading-relaxed">Monthly AI partner. Ongoing optimization and new builds.</p>
+            <div className="flex flex-col gap-2">
+              <span className="font-medium">$3K–$8K/mo</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/products/lumina-ignite">Learn More</Link>
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="p-5 border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all hover:glow-integration">
+            <div className="flex items-center gap-2 mb-3">
+              <Zap className="w-5 h-5 text-[hsl(var(--waypoint-integration))]" />
+              <span className="text-xs font-medium text-foreground/40">SELF-SERVE</span>
+            </div>
+            <h3 className="text-lg font-medium mb-2">Harvest</h3>
+            <p className="text-foreground/70 text-sm mb-3 leading-relaxed">Automation templates and workflows for DIY implementation.</p>
+            <div className="flex flex-col gap-2">
+              <span className="font-medium">$97</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/field-guides/harvest">Get the Guide</Link>
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="p-5 border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all hover:glow-integration">
+            <div className="flex items-center gap-2 mb-3">
+              <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))]" />
+              <span className="text-xs font-medium text-foreground/40">SELF-SERVE</span>
+            </div>
+            <h3 className="text-lg font-medium mb-2">Audit</h3>
+            <p className="text-foreground/70 text-sm mb-3 leading-relaxed">Self-assessment tool to identify your automation opportunities.</p>
+            <div className="flex flex-col gap-2">
+              <span className="font-medium">$150</span>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/field-guides/audit">Get the Guide</Link>
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Who This Is For */}
       <section className="px-8 py-16 bg-foreground/[0.02]">
         <div className="max-w-4xl mx-auto">

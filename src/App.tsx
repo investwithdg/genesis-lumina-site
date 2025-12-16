@@ -15,6 +15,9 @@ import FAQ from "./pages/FAQ";
 import Analog from "./pages/guides/Analog";
 import Harvest from "./pages/guides/Harvest";
 import Audit from "./pages/guides/Audit";
+import LuminaLabs from "./pages/products/LuminaLabs";
+import LuminaCompass from "./pages/products/LuminaCompass";
+import LuminaIgnite from "./pages/products/LuminaIgnite";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,9 @@ const App = () => (
           <Route path="/field-guides/analog" element={<Analog />} />
           <Route path="/field-guides/harvest" element={<Harvest />} />
           <Route path="/field-guides/audit" element={<Audit />} />
+          <Route path="/products/lumina-labs" element={<LuminaLabs />} />
+          <Route path="/products/lumina-compass" element={<LuminaCompass />} />
+          <Route path="/products/lumina-ignite" element={<LuminaIgnite />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/about" element={<About />} />
