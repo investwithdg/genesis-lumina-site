@@ -157,11 +157,11 @@ const Quiz = () => {
               Based on your answers, we'll recommend one of three waypoints tailored to your current stage and goals.
             </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
               {waypoints.map((outcome, idx) => (
                 <Card 
                   key={idx} 
-                  className="p-6 text-left border-2 hover:border-foreground/20 transition-all"
+                  className="p-6 text-left border-2 hover:border-foreground/20 transition-all h-full flex flex-col"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   <div className={`w-10 h-10 rounded-lg bg-[hsl(var(--${outcome.color}))]/10 text-[hsl(var(--${outcome.color}))] flex items-center justify-center mb-4`}>
@@ -169,7 +169,7 @@ const Quiz = () => {
                   </div>
                   <h3 className="text-lg font-medium mb-1">{outcome.name}</h3>
                   <p className="text-sm text-foreground/60 mb-3">{outcome.tagline}</p>
-                  <p className="text-sm text-foreground/70">{outcome.description}</p>
+                  <p className="text-sm text-foreground/70 flex-grow">{outcome.description}</p>
                 </Card>
               ))}
             </div>
