@@ -33,7 +33,7 @@ const LuminaLabs = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
                 <Link to="/waypoints/ai-literacy">
                   <ArrowLeft className="w-5 h-5 mr-2" />
                   Learn About AI Literacy First
@@ -154,7 +154,7 @@ const LuminaLabs = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               Book Your Workshop Call
             </BookCallButton>
           </div>

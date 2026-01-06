@@ -35,15 +35,17 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+              <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
                 <Link to="/quiz" className="gap-2">
                   <Compass className="w-5 h-5" />
                   Find Your Waypoint
                 </Link>
               </Button>
-              <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+              <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
                 Book Free Strategy Call
-              </BookCallButton>
+              </a>
+            </Button>
             </div>
           </div>
         </div>
@@ -198,15 +200,17 @@ const Index = () => {
             Take the quiz to find your current Waypoint, or book a call to map out your journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+            <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               <Link to="/quiz" className="gap-2">
                 <Compass className="w-5 h-5" />
                 Find Your Waypoint
               </Link>
             </Button>
-            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
-              Book Your Strategy Call
-            </BookCallButton>
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+              <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
+                Book Your Strategy Call
+              </a>
+            </Button>
           </div>
           
           <NewsletterCTA dark compact />
