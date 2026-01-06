@@ -34,10 +34,10 @@ const S3 = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <BookCallButton size="lg" className="text-lg px-10 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+              <BookCallButton size="lg" className="text-lg px-10 py-6 h-auto bg-white !text-black hover:bg-white/90">
                 Book Your Free Strategy Call
               </BookCallButton>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
                 <Link to="/quiz">Take the Quiz</Link>
               </Button>
             </div>
@@ -228,10 +228,10 @@ const S3 = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               Claim Your Strategy Session
             </BookCallButton>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
+            <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
               <Link to="/quiz">Take the Quiz</Link>
             </Button>
           </div>
