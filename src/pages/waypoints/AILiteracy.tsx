@@ -7,32 +7,39 @@ import { Brain, Book, Users, CheckCircle, ArrowRight } from "lucide-react";
 
 const AILiteracy = () => {
   return (
-    <div className="min-h-screen bg-white text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-8 py-24 md:py-32 max-w-5xl mx-auto">
-        <div className="animate-fade-in">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-literacy))] text-[hsl(var(--waypoint-literacy-foreground))] flex items-center justify-center glow-literacy">
-              <Brain className="w-6 h-6" />
+      <section className="relative px-8 pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--waypoint-literacy))]/5 to-transparent pointer-events-none" />
+        <div className="geometric-bg">
+          <div className="geometric-shape shape-circle" />
+          <div className="geometric-shape shape-square" />
+          <div className="geometric-shape shape-triangle" />
+        </div>
+        
+        <div className="relative max-w-5xl mx-auto animate-fade-in">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-literacy))] text-[hsl(var(--waypoint-literacy-foreground))] flex items-center justify-center glow-literacy">
+              <Brain className="w-7 h-7" />
             </div>
-            <span className="text-sm font-medium text-foreground/60">Waypoint 01</span>
+            <span className="text-sm font-medium text-muted-foreground">Waypoint 01</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight">
             AI <span className="font-medium">Literacy</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed mb-12">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-14 max-w-3xl">
             Build the foundational understanding you need to confidently lead AI transformation in your business.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <BookCallButton size="lg" className="text-lg px-8">
+            <BookCallButton size="lg" className="text-lg px-10 py-6 h-auto">
               Book Your Free Strategy Call
             </BookCallButton>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
               <Link to="/quiz">Take the Quiz</Link>
             </Button>
           </div>
