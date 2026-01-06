@@ -1,108 +1,115 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import BookCallButton from "@/components/BookCallButton";
-import { Compass, Map, Wrench, GraduationCap, CheckCircle, ArrowRight } from "lucide-react";
+import SectionDark from "@/components/SectionDark";
+import SectionLight from "@/components/SectionLight";
+import Footer from "@/components/Footer";
+import NewsletterCTA from "@/components/NewsletterCTA";
+import { Compass, Map, Wrench, GraduationCap, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 const LuminaCompass = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative px-8 pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--waypoint-integration))]/5 to-transparent pointer-events-none" />
-        <div className="geometric-bg">
-          <div className="geometric-shape shape-circle" />
-          <div className="geometric-shape shape-square" />
-        </div>
-        
-        <div className="relative max-w-5xl mx-auto animate-fade-in">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
-              <Compass className="w-7 h-7" />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground">System Integration Product</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight">
-            Lumina <span className="font-medium">Compass</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-14 max-w-3xl">
-            A 4-week flagship sprint that maps your systems, builds your automations, and delivers a complete Notion command center.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <BookCallButton size="lg" className="text-lg px-10 py-6 h-auto">
-              Book Your Strategy Call
-            </BookCallButton>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
-              <Link to="/waypoints/system-integration">Learn About System Integration</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* What It Is */}
-      <section className="px-8 py-16 bg-foreground/[0.02]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-light mb-6 text-center">Your <span className="font-medium">AI Sprint</span></h2>
-          <p className="text-lg text-foreground/70 leading-relaxed text-center max-w-3xl mx-auto">
-            Compass is our intensive 4-week engagement where we audit your entire operation, design your AI infrastructure, build your automations, and train your team. You walk away with a complete system, not a plan.
-          </p>
-        </div>
-      </section>
-
-      {/* The 4 Weeks */}
-      <section className="px-8 py-24 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">The <span className="font-medium">4 Weeks</span></h2>
-        <p className="text-lg text-foreground/60 text-center mb-12">Discovery → Design → Build → Deliver</p>
-
-        <div className="grid md:grid-cols-4 gap-6">
-          {[
-            {
-              week: "Week 1",
-              icon: Map,
-              title: "Discovery",
-              desc: "Full systems audit. We map every process, tool, and workflow to identify automation opportunities."
-            },
-            {
-              week: "Week 2",
-              icon: Compass,
-              title: "Design",
-              desc: "Custom automation architecture. We design the systems and integrations specific to your business."
-            },
-            {
-              week: "Week 3",
-              icon: Wrench,
-              title: "Build",
-              desc: "Hands-on implementation. We build and test your automations, integrations, and Notion command center."
-            },
-            {
-              week: "Week 4",
-              icon: GraduationCap,
-              title: "Deliver",
-              desc: "Training and handoff. Your team learns the systems and you get complete documentation."
-            }
-          ].map((item, idx) => (
-            <Card key={idx} className="p-6 border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all hover:glow-integration">
-              <div className="text-xs font-medium text-foreground/40 mb-3">{item.week}</div>
-              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--waypoint-integration))]/10 text-[hsl(var(--waypoint-integration))] flex items-center justify-center mb-4">
-                <item.icon className="w-5 h-5" />
+      {/* Hero Section - DARK */}
+      <SectionDark className="min-h-[70vh] flex items-center" withParticles withShapes>
+        <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
+                <Compass className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-              <p className="text-foreground/70 text-sm leading-relaxed">{item.desc}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
+              <span className="text-sm font-medium text-white/60">System Integration Product</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
+              Lumina <span className="font-medium">Compass</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-14 max-w-3xl">
+              A 4-week flagship sprint that maps your systems, builds your automations, and delivers a complete Notion command center.
+            </p>
 
-      {/* What You Get */}
-      <section className="px-8 py-16 bg-foreground/[0.02]">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white hover:bg-white/10">
+                <Link to="/waypoints/system-integration">
+                  <ArrowLeft className="w-5 h-5 mr-2" />
+                  Learn About System Integration First
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </SectionDark>
+
+      {/* The Problem - LIGHT */}
+      <SectionLight className="px-8 py-24 md:py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-light mb-8">
+            You need systems, <span className="font-medium">not just strategy</span>
+          </h2>
+          <p className="text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+            You've read the books, watched the videos. But theory doesn't save time. You need someone to come in, understand your chaos, and build systems that actually work. That's Compass.
+          </p>
+        </div>
+      </SectionLight>
+
+      {/* The Solution / 4 Weeks - DARK */}
+      <SectionDark className="px-8 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center text-white">
+            Your <span className="font-medium">AI Sprint</span>
+          </h2>
+          <p className="text-lg text-white/60 text-center mb-12">Discovery → Design → Build → Deliver</p>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                week: "Week 1",
+                icon: Map,
+                title: "Discovery",
+                desc: "Full systems audit. We map every process, tool, and workflow to identify automation opportunities."
+              },
+              {
+                week: "Week 2",
+                icon: Compass,
+                title: "Design",
+                desc: "Custom automation architecture. We design the systems and integrations specific to your business."
+              },
+              {
+                week: "Week 3",
+                icon: Wrench,
+                title: "Build",
+                desc: "Hands-on implementation. We build and test your automations, integrations, and Notion command center."
+              },
+              {
+                week: "Week 4",
+                icon: GraduationCap,
+                title: "Deliver",
+                desc: "Training and handoff. Your team learns the systems and you get complete documentation."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+                <div className="text-xs font-medium text-white/40 mb-3">{item.week}</div>
+                <div className="w-10 h-10 rounded-lg bg-[hsl(var(--waypoint-integration))] text-white flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-medium mb-2 text-white">{item.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionDark>
+
+      {/* What You Get - LIGHT */}
+      <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-light mb-12 text-center">What You <span className="font-medium">Get</span></h2>
+          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
+            What You <span className="font-medium">Get</span>
+          </h2>
           
           <div className="space-y-4">
             {[
@@ -116,55 +123,67 @@ const LuminaCompass = () => {
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 p-4 rounded-lg hover:bg-white transition-colors">
                 <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-0.5" />
-                <p className="text-foreground/80">{item}</p>
+                <p className="text-foreground/80 text-lg">{item}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionLight>
 
-      {/* Investment */}
-      <section className="px-8 py-24 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-light mb-6">The <span className="font-medium">Investment</span></h2>
-        
-        <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-integration))] rounded-lg glow-integration mb-8">
-          <div className="text-4xl font-light mb-2">Starting at $15,000</div>
-          <div className="text-sm text-foreground/60">4-week intensive engagement</div>
-        </div>
-
-        <p className="text-sm text-foreground/60 mb-12 max-w-xl mx-auto">
-          Final pricing based on business complexity, number of integrations, and team size. ROI typically realized within 60-90 days.
-        </p>
-
-        <BookCallButton size="lg" className="text-lg px-8">
-          Book Your Strategy Call
-        </BookCallButton>
-      </section>
-
-      {/* Related Waypoint */}
-      <section className="px-8 py-12 bg-foreground/[0.02]">
+      {/* Investment - LIGHT */}
+      <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm text-foreground/60 mb-4">This product is part of the System Integration waypoint</p>
-          <Link to="/waypoints/system-integration" className="font-medium text-[hsl(var(--waypoint-integration))] hover:underline flex items-center justify-center gap-1">
-            Explore System Integration
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <h2 className="text-3xl md:text-4xl font-light mb-6">
+            The <span className="font-medium">Investment</span>
+          </h2>
+          
+          <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-integration))] rounded-2xl glow-integration mb-8">
+            <div className="text-5xl font-light mb-2">Starting at $15,000</div>
+            <div className="text-foreground/60">4-week intensive engagement</div>
+          </div>
+
+          <p className="text-foreground/60 mb-12 max-w-xl mx-auto">
+            Final pricing based on business complexity, number of integrations, and team size. ROI typically realized within 60-90 days.
+          </p>
+
+          <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto">
+            Book Your Strategy Call
+          </BookCallButton>
         </div>
-      </section>
+      </SectionLight>
+
+      {/* CTA Section - DARK */}
+      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-light mb-6 text-white">
+            Ready to <span className="font-medium">Build Your Systems</span>?
+          </h2>
+          <p className="text-lg text-white/70 mb-8">
+            Book a call to discuss your automation needs and see if Compass is right for you.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90">
+              Book Your Strategy Call
+            </BookCallButton>
+          </div>
+
+          <div className="mb-12">
+            <NewsletterCTA dark />
+          </div>
+
+          <div className="flex items-center justify-center gap-2 text-sm text-white/60">
+            <span>Part of the System Integration waypoint</span>
+            <Link to="/waypoints/system-integration" className="font-medium text-[hsl(var(--waypoint-integration))] hover:underline flex items-center gap-1">
+              Explore System Integration
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionDark>
 
       {/* Footer */}
-      <footer className="px-8 py-16 max-w-6xl mx-auto text-center border-t border-foreground/10">
-        <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
-          <Link to="/about" className="hover:text-primary transition-colors">About</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
-          <span className="text-foreground/30">│</span>
-          <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
-        </div>
-        <p className="text-xs text-foreground/50">
-          © 2025 Genesis Lumina. All rights reserved.
-        </p>
-      </footer>
+      <Footer dark />
     </div>
   );
 };
