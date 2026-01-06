@@ -83,6 +83,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
@@ -91,11 +95,63 @@
     @apply bg-white text-foreground font-sans antialiased;
   }
 
-  .hover-underline {
-    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-black after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  /* ========== SECTION PATTERNS ========== */
+  
+  /* Dark sections */
+  .section-dark {
+    @apply bg-foreground text-white;
   }
 
-  /* Waypoint Glow Effects */
+  .section-dark .text-foreground {
+    @apply text-white;
+  }
+
+  .section-dark .text-foreground\/70,
+  .section-dark .text-foreground\/80,
+  .section-dark .text-muted-foreground {
+    @apply text-white/70;
+  }
+
+  .section-dark .text-foreground\/60,
+  .section-dark .text-foreground\/50 {
+    @apply text-white/50;
+  }
+
+  .section-dark .border-foreground\/10 {
+    @apply border-white/10;
+  }
+
+  /* Dark card variant */
+  .section-dark .card-dark {
+    @apply bg-white/5 border-white/10;
+  }
+
+  .section-dark .card-dark:hover {
+    @apply bg-white/10 border-white/20;
+  }
+
+  /* Light sections (default, explicit) */
+  .section-light {
+    @apply bg-white text-foreground;
+  }
+
+  /* Gradient transitions */
+  .section-gradient-to-dark {
+    background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--foreground)));
+  }
+
+  .section-gradient-to-light {
+    background: linear-gradient(to bottom, hsl(var(--foreground)), hsl(var(--background)));
+  }
+
+  /* ========== TYPOGRAPHY UTILITIES ========== */
+
+  .hover-underline {
+    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* ========== WAYPOINT GLOW EFFECTS ========== */
+  
   .glow-literacy {
     box-shadow: 0 0 20px hsl(var(--waypoint-literacy-glow) / 0.3),
                 0 0 40px hsl(var(--waypoint-literacy-glow) / 0.2),
@@ -130,7 +186,8 @@
     text-shadow: 0 0 15px hsl(var(--waypoint-s3-glow) / 0.7);
   }
 
-  /* Animated Background Particles */
+  /* ========== ANIMATED PARTICLES ========== */
+  
   .hero-particles {
     position: absolute;
     top: 0;
@@ -146,9 +203,13 @@
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     animation: float 20s infinite linear;
+  }
+
+  .particle-dark {
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
@@ -178,7 +239,8 @@
     }
   }
 
-  /* Geometric shapes animation */
+  /* ========== GEOMETRIC SHAPES ========== */
+  
   .geometric-bg {
     position: absolute;
     top: 0;
@@ -192,8 +254,12 @@
 
   .geometric-shape {
     position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     animation: drift 30s infinite linear;
+  }
+
+  .geometric-shape-dark {
+    border-color: rgba(0, 0, 0, 0.05);
   }
 
   .shape-circle {
@@ -212,8 +278,12 @@
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-bottom: 43px solid rgba(0, 0, 0, 0.02);
+    border-bottom: 43px solid rgba(255, 255, 255, 0.03);
     border-top: none;
+  }
+
+  .shape-triangle-dark {
+    border-bottom-color: rgba(0, 0, 0, 0.02);
   }
 
   .geometric-shape:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
@@ -239,7 +309,8 @@
     }
   }
 
-  /* Logo Carousel Animation */
+  /* ========== LOGO CAROUSEL ========== */
+  
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -253,15 +324,26 @@
     animation: scroll 30s linear infinite;
   }
 
-  /* Pause animation on hover for better UX */
   .animate-scroll:hover {
     animation-play-state: paused;
   }
 
-  /* Respect user's motion preferences */
   @media (prefers-reduced-motion: reduce) {
     .animate-scroll {
       animation: none;
     }
+  }
+
+  /* ========== FADE IN ON SCROLL ========== */
+  
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
