@@ -134,19 +134,38 @@ const Index = () => {
         </div>
       </SectionLight>
 
-      {/* Social Proof - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <Quote className="w-12 h-12 mx-auto mb-8 text-white/20" />
-          <blockquote className="text-2xl md:text-3xl font-light text-white leading-relaxed mb-8">
-            "Genesis Lumina helped us automate 40+ hours of weekly manual work. Our team now focuses on growth, not data entry."
-          </blockquote>
-          <div className="text-white/60">
-            <p className="font-medium text-white/80">Testimonial Placeholder</p>
-            <p className="text-sm">CEO, Growth Company</p>
+      {/* Stats Bar - DARK */}
+      <SectionDark className="px-8 py-16">
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "{X}+", label: "Clients Served" },
+              { value: "{X}+", label: "Hours Automated" },
+              { value: "{X}M+", label: "Tokens Processed" },
+              { value: "{X}", label: "Years Experience" }
+            ].map((stat, idx) => (
+              <div key={idx}>
+                <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.value}</div>
+                <div className="text-sm text-white/60">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </SectionDark>
+
+      {/* Social Proof - LIGHT */}
+      <SectionLight className="px-8 py-24 md:py-32" muted>
+        <div className="max-w-4xl mx-auto text-center">
+          <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
+          <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
+            "{"{TESTIMONIAL_QUOTE}"}"
+          </blockquote>
+          <div className="text-foreground/60">
+            <p className="font-medium text-foreground/80">{"{CLIENT_NAME}"}</p>
+            <p className="text-sm">{"{CLIENT_TITLE}"}, {"{CLIENT_COMPANY}"}</p>
+          </div>
+        </div>
+      </SectionLight>
 
       {/* The Journey Visual - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32">

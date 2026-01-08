@@ -4,6 +4,10 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import BookCallButton from "@/components/BookCallButton";
+import SectionDark from "@/components/SectionDark";
+import SectionLight from "@/components/SectionLight";
+import Footer from "@/components/Footer";
+import NewsletterCTA from "@/components/NewsletterCTA";
 import { Compass, ArrowRight, ArrowLeft, Brain, Network, TrendingUp } from "lucide-react";
 
 type Answer = "a" | "b" | "c" | null;
@@ -121,39 +125,41 @@ const Quiz = () => {
   // Landing Page
   if (!started) {
     return (
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-white text-foreground">
         <Navigation />
 
-        {/* Hero */}
-        <section className="px-8 py-24 md:py-32 max-w-5xl mx-auto">
-          <div className="animate-fade-in">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-foreground text-background flex items-center justify-center">
-                <Compass className="w-6 h-6" />
+        {/* Hero - DARK */}
+        <SectionDark className="min-h-[70vh] flex items-center" withParticles withShapes>
+          <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
+            <div className="animate-fade-in">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-white/10 text-white flex items-center justify-center">
+                  <Compass className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium text-white/60">2 minutes • 5 questions</span>
               </div>
-              <span className="text-sm font-medium text-foreground/60">2 minutes • 5 questions</span>
+
+              <h1 className="text-5xl md:text-7xl font-light leading-tight mb-6 tracking-tight text-white">
+                Find Your <span className="font-medium">AI Waypoint</span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-8 max-w-2xl">
+                Not sure where to start with AI? This quick assessment reveals exactly where you are in your transformation journey—and the fastest path forward.
+              </p>
+
+              <Button size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90" onClick={() => setStarted(true)}>
+                Start the Assessment
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
             </div>
-
-            <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6 tracking-tight">
-              Find Your <span className="font-medium">AI Waypoint</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed mb-8 max-w-2xl">
-              Not sure where to start with AI? This quick assessment reveals exactly where you are in your transformation journey—and the fastest path forward.
-            </p>
-
-            <Button size="lg" className="text-lg px-8" onClick={() => setStarted(true)}>
-              Start the Assessment
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
           </div>
-        </section>
+        </SectionDark>
 
-        {/* What You'll Discover */}
-        <section className="px-8 py-16 bg-foreground/[0.02]">
+        {/* What You'll Discover - LIGHT */}
+        <SectionLight className="px-8 py-24 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-light mb-4">What You'll <span className="font-medium">Discover</span></h2>
-              <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
               Based on your answers, we'll recommend one of three waypoints tailored to your current stage and goals.
             </p>
 
@@ -162,7 +168,6 @@ const Quiz = () => {
                 <Card 
                   key={idx} 
                   className="p-6 text-left border-2 hover:border-foreground/20 transition-all h-full flex flex-col"
-                  style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   <div className={`w-10 h-10 rounded-lg bg-[hsl(var(--${outcome.color}))]/10 text-[hsl(var(--${outcome.color}))] flex items-center justify-center mb-4`}>
                     <outcome.icon className="w-5 h-5" />
@@ -174,31 +179,33 @@ const Quiz = () => {
               ))}
             </div>
           </div>
-        </section>
+        </SectionLight>
 
-        {/* How It Works */}
-        <section className="px-8 py-24 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-light mb-12 text-center">How It <span className="font-medium">Works</span></h2>
+        {/* How It Works - DARK */}
+        <SectionDark className="px-8 py-24 md:py-32">
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h2 className="text-3xl font-light mb-12 text-center text-white">How It <span className="font-medium">Works</span></h2>
 
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            {[
-              { step: "1", title: "Answer 5 Questions", desc: "About your current AI understanding and business goals" },
-              { step: "2", title: "Get Your Waypoint", desc: "We identify which of our three waypoints fits your stage" },
-              { step: "3", title: "See Your Path", desc: "Get a recommended program and resources to move forward" }
-            ].map((item, idx) => (
-              <div key={idx} className="animate-fade-in" style={{ animationDelay: `${idx * 150}ms` }}>
-                <div className="w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center mx-auto mb-4 text-lg font-medium">
-                  {item.step}
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              {[
+                { step: "1", title: "Answer 5 Questions", desc: "About your current AI understanding and business goals" },
+                { step: "2", title: "Get Your Waypoint", desc: "We identify which of our three waypoints fits your stage" },
+                { step: "3", title: "See Your Path", desc: "Get a recommended program and resources to move forward" }
+              ].map((item, idx) => (
+                <div key={idx}>
+                  <div className="w-12 h-12 rounded-full bg-white text-foreground flex items-center justify-center mx-auto mb-4 text-lg font-medium">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-medium mb-2 text-white">{item.title}</h3>
+                  <p className="text-white/60">{item.desc}</p>
                 </div>
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-foreground/60">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </section>
+        </SectionDark>
 
-        {/* CTA */}
-        <section className="px-8 py-24 bg-gradient-to-b from-background to-foreground/[0.02]">
+        {/* CTA - LIGHT */}
+        <SectionLight className="px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Ready to Find Your <span className="font-medium">Starting Point</span>?
@@ -206,26 +213,15 @@ const Quiz = () => {
             <p className="text-lg text-foreground/70 mb-8">
               Take 2 minutes to get clarity on your AI transformation journey.
             </p>
-            <Button size="lg" className="text-lg px-8" onClick={() => setStarted(true)}>
+            <Button size="lg" className="text-lg px-8 py-6 h-auto" onClick={() => setStarted(true)}>
               Start the Assessment
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
-        </section>
+        </SectionLight>
 
         {/* Footer */}
-        <footer className="px-8 py-16 max-w-6xl mx-auto text-center border-t border-foreground/10">
-          <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
-            <Link to="/about" className="hover:text-primary transition-colors">About</Link>
-            <span className="text-foreground/30">│</span>
-            <Link to="/newsletter" className="hover:text-primary transition-colors">Newsletter</Link>
-            <span className="text-foreground/30">│</span>
-            <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
-          </div>
-          <p className="text-xs text-foreground/50">
-            © 2025 Genesis Lumina. All rights reserved.
-          </p>
-        </footer>
+        <Footer />
       </div>
     );
   }
@@ -278,60 +274,73 @@ const Quiz = () => {
     const data = resultData[result];
 
     return (
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-white text-foreground">
         <Navigation />
         
-        <section className="px-8 py-24 max-w-3xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="text-6xl mb-6">{data.icon}</div>
-            <h1 className="text-4xl md:text-5xl font-light mb-4">
-              Your Waypoint: <span className="font-medium">{data.waypoint}</span>
-            </h1>
-            <p className="text-xl text-foreground/70">{data.tagline}</p>
-          </div>
+        {/* Results - DARK */}
+        <SectionDark className="min-h-[80vh] flex items-center" withParticles withShapes>
+          <div className="px-8 py-24 max-w-3xl mx-auto relative z-10">
+            <div className="text-center mb-12 animate-fade-in">
+              <div className="text-6xl mb-6">{data.icon}</div>
+              <h1 className="text-4xl md:text-5xl font-light mb-4 text-white">
+                Your Waypoint: <span className="font-medium">{data.waypoint}</span>
+              </h1>
+              <p className="text-xl text-white/70">{data.tagline}</p>
+            </div>
 
-          <Card className={`p-8 border-2 border-[hsl(var(--${data.color}))] mb-8 animate-fade-in`}>
-            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-              {data.description}
-            </p>
+            <div className={`p-8 rounded-xl bg-white/5 border-2 border-[hsl(var(--${data.color}))] mb-8 animate-fade-in`}>
+              <p className="text-lg text-white/80 leading-relaxed mb-6">
+                {data.description}
+              </p>
 
-            <div className="flex flex-col gap-4">
-              <BookCallButton size="lg" className="w-full">
-                Book Your Free Strategy Session
-              </BookCallButton>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild variant="outline" size="lg" className="flex-1">
-                  <Link to={data.path}>
-                    Learn More About {data.waypoint}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="flex-1">
-                  <Link to={data.fieldGuide.url}>
-                    Get the {data.fieldGuide.name} Guide
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
+              <div className="flex flex-col gap-4">
+                <BookCallButton size="lg" className="w-full bg-white !text-black hover:bg-white/90">
+                  Book Your Free Strategy Session
+                </BookCallButton>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button asChild size="lg" className="flex-1 border border-white/30 text-white bg-transparent hover:bg-white/10">
+                    <Link to={data.path}>
+                      Learn More About {data.waypoint}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" className="flex-1 border border-white/30 text-white bg-transparent hover:bg-white/10">
+                    <Link to={data.fieldGuide.url}>
+                      Get the {data.fieldGuide.name} Guide
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
-          </Card>
 
-          <div className="text-center">
-            <button 
-              onClick={resetQuiz}
-              className="text-sm text-foreground/60 hover:text-foreground transition-colors"
-            >
-              Retake Quiz
-            </button>
+            <div className="text-center">
+              <button 
+                onClick={resetQuiz}
+                className="text-sm text-white/60 hover:text-white transition-colors"
+              >
+                Retake Quiz
+              </button>
+            </div>
           </div>
-        </section>
+        </SectionDark>
+
+        {/* Newsletter Fallback - LIGHT */}
+        <SectionLight className="px-8 py-16">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-foreground/60 mb-4">Not ready to commit? Stay in the loop:</p>
+            <NewsletterCTA compact />
+          </div>
+        </SectionLight>
+
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
       <section className="px-8 py-24 max-w-3xl mx-auto">
