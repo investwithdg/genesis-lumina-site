@@ -23,17 +23,17 @@ const Index = () => {
                 Your AI Infrastructure Partner
               </span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
               From <span className="font-medium">Curiosity</span>
               <br className="hidden md:block" /> to <span className="font-medium">Capability</span>
               <br className="hidden md:block" /> to <span className="font-medium">Capital</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
               Navigate your AI transformation through three proven Waypoints: AI Literacy, System Integration, and S³.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
                 <Link to="/quiz" className="gap-2">
@@ -41,11 +41,16 @@ const Index = () => {
                   Find Your Waypoint
                 </Link>
               </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
-              <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
-                Book Free Strategy Call
-              </a>
-            </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10"
+              >
+                <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
+                  Book Free Strategy Call
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -71,12 +76,13 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-literacy))] text-[hsl(var(--waypoint-literacy-foreground))] flex items-center justify-center mb-6 group-hover:glow-literacy transition-all">
                   <Brain className="w-6 h-6" />
                 </div>
-                
+
                 <h3 className="text-2xl font-medium mb-4">AI Literacy</h3>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Build foundational understanding. Learn how AI actually works, where it fits in your business, and how to speak the language of intelligent automation.
+                  Build foundational understanding. Learn how AI actually works, where it fits in your business, and how
+                  to speak the language of intelligent automation.
                 </p>
-                
+
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
                   <Link to="/waypoints/ai-literacy" className="flex items-center gap-2">
                     Explore Literacy
@@ -93,12 +99,13 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center mb-6 group-hover:glow-integration transition-all">
                   <Network className="w-6 h-6" />
                 </div>
-                
+
                 <h3 className="text-2xl font-medium mb-4">System Integration</h3>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Connect the dots. Implement AI automations that eliminate manual tasks, integrate with your existing tools, and create seamless workflows.
+                  Connect the dots. Implement AI automations that eliminate manual tasks, integrate with your existing
+                  tools, and create seamless workflows.
                 </p>
-                
+
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
                   <Link to="/waypoints/system-integration" className="flex items-center gap-2">
                     Explore Integration
@@ -115,13 +122,14 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-s3))] text-[hsl(var(--waypoint-s3-foreground))] flex items-center justify-center mb-6 group-hover:glow-s3 transition-all">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                
+
                 <h3 className="text-2xl font-medium mb-4">S³</h3>
                 <p className="text-sm text-foreground/60 mb-2 font-medium">Scale · Sale · Succession</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Transform for growth. Build AI infrastructure that scales with you, increases valuation, and creates enterprise-grade systems.
+                  Transform for growth. Build AI infrastructure that scales with you, increases valuation, and creates
+                  enterprise-grade systems.
                 </p>
-                
+
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
                   <Link to="/waypoints/s3" className="flex items-center gap-2">
                     Explore S³
@@ -139,10 +147,10 @@ const Index = () => {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "40+", label: "Clients Served" },
-              { value: "536+", label: "AI Agents Utilized" },
-              { value: "370M+", label: "Tokens Processed" },
-              { value: "4+", label: "Years Experience" }
+              { value: "{X}+", label: "Clients Served" },
+              { value: "{X}+", label: "Hours Automated" },
+              { value: "{X}M+", label: "Tokens Processed" },
+              { value: "{X}", label: "Years Experience" },
             ].map((stat, idx) => (
               <div key={idx}>
                 <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.value}</div>
@@ -158,11 +166,13 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
           <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
-            "{"{TESTIMONIAL_QUOTE}"}"
+            "{"Donovan *is* AI. He's The Answer. "}"
           </blockquote>
           <div className="text-foreground/60">
-            <p className="font-medium text-foreground/80">{"{CLIENT_NAME}"}</p>
-            <p className="text-sm">{"{CLIENT_TITLE}"}, {"{CLIENT_COMPANY}"}</p>
+            <p className="font-medium text-foreground/80">{"Jamar Wright"}</p>
+            <p className="text-sm">
+              {"Owner/Operator"}, {"Revive Beauty Salon"}
+            </p>
           </div>
         </div>
       </SectionLight>
@@ -173,31 +183,33 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-light mb-16 text-center tracking-tight">
             Your <span className="font-medium">Transformation Journey</span>
           </h2>
-          
+
           <div className="relative">
             {/* Progress line */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[hsl(var(--waypoint-literacy))] via-[hsl(var(--waypoint-integration))] to-[hsl(var(--waypoint-s3))] -translate-y-1/2 hidden md:block rounded-full" />
-            
+
             <div className="grid md:grid-cols-3 gap-8 relative">
               {[
-                { 
-                  title: "Curiosity", 
+                {
+                  title: "Curiosity",
                   desc: "Wondering if AI can help",
-                  color: "waypoint-literacy"
+                  color: "waypoint-literacy",
                 },
-                { 
-                  title: "Capability", 
+                {
+                  title: "Capability",
                   desc: "Building systems that work",
-                  color: "waypoint-integration"
+                  color: "waypoint-integration",
                 },
-                { 
-                  title: "Capital", 
+                {
+                  title: "Capital",
                   desc: "Scaling for maximum value",
-                  color: "waypoint-s3"
-                }
+                  color: "waypoint-s3",
+                },
               ].map((stage, idx) => (
                 <div key={idx} className="text-center relative">
-                  <div className={`w-20 h-20 rounded-full bg-[hsl(var(--${stage.color}))] text-white flex items-center justify-center text-3xl font-light mx-auto mb-6 shadow-xl`}>
+                  <div
+                    className={`w-20 h-20 rounded-full bg-[hsl(var(--${stage.color}))] text-white flex items-center justify-center text-3xl font-light mx-auto mb-6 shadow-xl`}
+                  >
                     {idx + 1}
                   </div>
                   <h3 className="text-2xl font-medium mb-2">{stage.title}</h3>
@@ -213,7 +225,8 @@ const Index = () => {
       <SectionDark className="px-8 py-32 md:py-40" withShapes>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 tracking-tight text-white">
-            Ready to navigate your <br className="hidden md:block" /><span className="font-medium">AI transformation</span>?
+            Ready to navigate your <br className="hidden md:block" />
+            <span className="font-medium">AI transformation</span>?
           </h2>
           <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
             Take the quiz to find your current Waypoint, or book a call to map out your journey.
@@ -225,13 +238,18 @@ const Index = () => {
                 Find Your Waypoint
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10"
+            >
               <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
                 Book Your Strategy Call
               </a>
             </Button>
           </div>
-          
+
           <NewsletterCTA dark compact />
         </div>
       </SectionDark>
