@@ -166,7 +166,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
           <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
-            "{"Donovan *is* AI. He's The Answer. "}"
+            "{"Donovan is AI. He's The Answer."}"
           </blockquote>
           <div className="text-foreground/60">
             <p className="font-medium text-foreground/80">{"Jamar Wright"}</p>
