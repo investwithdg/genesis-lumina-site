@@ -139,10 +139,10 @@ const Index = () => {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "{X}+", label: "Clients Served" },
-              { value: "{X}+", label: "Hours Automated" },
-              { value: "{X}M+", label: "Tokens Processed" },
-              { value: "{X}", label: "Years Experience" }
+              { value: "40+", label: "Clients Served" },
+              { value: "536+", label: "AI Agents Utilized" },
+              { value: "370M+", label: "Tokens Processed" },
+              { value: "4+", label: "Years Experience" }
             ].map((stat, idx) => (
               <div key={idx}>
                 <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.value}</div>
