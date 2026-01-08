@@ -60,26 +60,26 @@ const About = () => {
               {/* Credentials Placeholders */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
-                  <div className="text-2xl font-light text-foreground">{"{X}"}</div>
+                  <div className="text-2xl font-light text-foreground">{"1"}</div>
                   <div className="text-sm text-foreground/60">Years in Business</div>
                 </div>
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
-                  <div className="text-2xl font-light text-foreground">{"{X}"}</div>
+                  <div className="text-2xl font-light text-foreground">{"40+"}</div>
                   <div className="text-sm text-foreground/60">Clients Served</div>
                 </div>
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
-                  <div className="text-2xl font-light text-foreground">{"{X}"}</div>
+                  <div className="text-2xl font-light text-foreground">{"25+"}</div>
                   <div className="text-sm text-foreground/60">Systems Built</div>
                 </div>
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
-                  <div className="text-2xl font-light text-foreground">{"{X}"}+</div>
+                  <div className="text-2xl font-light text-foreground">{"1000+"}+</div>
                   <div className="text-sm text-foreground/60">Hours Automated</div>
                 </div>
               </div>
 
               {/* LinkedIn Placeholder */}
               <a 
-                href="{LINKEDIN_URL}" 
+                href="{https://www.linkedin.com/in/donovan-r-green/}" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary hover:underline"
