@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import ScrollToTop from "./components/ScrollToTop";
 import AILiteracy from "./pages/waypoints/AILiteracy";
 import SystemIntegration from "./pages/waypoints/SystemIntegration";
 import S3 from "./pages/waypoints/S3";
@@ -29,6 +30,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/diagnostic" element={<Diagnostic />} />
