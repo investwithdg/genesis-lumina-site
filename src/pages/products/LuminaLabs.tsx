@@ -157,6 +157,11 @@ const LuminaLabs = () => {
             <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               Book Your Workshop Call
             </BookCallButton>
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+              <Link to="/diagnostic">
+                Not Ready? Take the Diagnostic
+              </Link>
+            </Button>
           </div>
 
           <div className="mb-12">

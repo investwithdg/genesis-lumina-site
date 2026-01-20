@@ -68,7 +68,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 animate-slide-in">
-            {/* Waypoint 1: AI Literacy */}
+            {/* Waypoint 1: Lumina Labs (Literacy) */}
             <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-literacy))] transition-all duration-300 hover:glow-literacy">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-literacy))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative p-8">
@@ -76,23 +76,22 @@ const Index = () => {
                   <Brain className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-2">AI Literacy</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">Once direction is clear</p>
+                <h3 className="text-2xl font-medium mb-1">Lumina Labs</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">For Teams · The Workshop</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Build foundational understanding. Learn how AI actually works, where it fits in your business, and how
-                  to speak the language of intelligent automation.
+                  Build foundational understanding. Hands-on AI training that gets your entire team aligned and ready to execute in a single session.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/waypoints/ai-literacy" className="flex items-center gap-2">
-                    Explore Literacy
+                  <Link to="/products/lumina-labs" className="flex items-center gap-2">
+                    Explore Labs
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>
             </Card>
 
-            {/* Waypoint 2: System Integration */}
+            {/* Waypoint 2: Lumina Compass (Integration) */}
             <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all duration-300 hover:glow-integration">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-integration))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative p-8">
@@ -100,23 +99,22 @@ const Index = () => {
                   <Network className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-2">System Integration</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">Once foundations are set</p>
+                <h3 className="text-2xl font-medium mb-1">Lumina Compass</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">For Business · The Sprint</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Connect the dots. Implement AI automations that eliminate manual tasks, integrate with your existing
-                  tools, and create seamless workflows.
+                  The 4-week flagship sprint. We audit your chaos, design your architecture, and build the automations that run your business.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/waypoints/system-integration" className="flex items-center gap-2">
-                    Explore Integration
+                  <Link to="/products/lumina-compass" className="flex items-center gap-2">
+                    Explore Compass
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>
             </Card>
 
-            {/* Waypoint 3: S³ */}
+            {/* Waypoint 3: Lumina Ignite (Scale) */}
             <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-s3))] transition-all duration-300 hover:glow-s3">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-s3))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative p-8">
@@ -124,16 +122,15 @@ const Index = () => {
                   <TrendingUp className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-2">S³</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">Once systems exist and leadership is aligned</p>
+                <h3 className="text-2xl font-medium mb-1">Lumina Ignite</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Partner</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Transform for growth. Build AI infrastructure that scales with you, increases valuation, and creates
-                  enterprise-grade systems.
+                  Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/waypoints/s3" className="flex items-center gap-2">
-                    Explore S³
+                  <Link to="/products/lumina-ignite" className="flex items-center gap-2">
+                    Explore Ignite
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </Button>

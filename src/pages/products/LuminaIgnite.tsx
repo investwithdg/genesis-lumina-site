@@ -18,10 +18,10 @@ const LuminaIgnite = () => {
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="animate-fade-in">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
+              <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-s3))] text-[hsl(var(--waypoint-s3-foreground))] flex items-center justify-center glow-s3">
                 <Flame className="w-7 h-7" />
               </div>
-              <span className="text-sm font-medium text-white/60">System Integration Product</span>
+              <span className="text-sm font-medium text-white/60">S³ (Scale) Product</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
@@ -34,9 +34,9 @@ const LuminaIgnite = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-                <Link to="/waypoints/system-integration">
+                <Link to="/waypoints/s3">
                   <ArrowLeft className="w-5 h-5 mr-2" />
-                  Learn About System Integration First
+                  Learn About S³ First
                 </Link>
               </Button>
             </div>
@@ -163,6 +163,11 @@ const LuminaIgnite = () => {
             <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               Schedule a Call to Inquire
             </BookCallButton>
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+              <Link to="/diagnostic">
+                Not Ready? Take the Diagnostic
+              </Link>
+            </Button>
           </div>
 
           <div className="mb-12">
@@ -170,9 +175,9 @@ const LuminaIgnite = () => {
           </div>
 
           <div className="flex items-center justify-center gap-2 text-sm text-white/60">
-            <span>Part of the System Integration waypoint</span>
-            <Link to="/waypoints/system-integration" className="font-medium text-[hsl(var(--waypoint-integration))] hover:underline flex items-center gap-1">
-              Explore System Integration
+            <span>Part of the S³ waypoint</span>
+            <Link to="/waypoints/s3" className="font-medium text-[hsl(var(--waypoint-s3))] hover:underline flex items-center gap-1">
+              Explore S³ (Scale)
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
