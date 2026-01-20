@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Compass } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import BookCallButton from "@/components/BookCallButton";
 
 const Navigation = () => {
@@ -21,6 +21,7 @@ const Navigation = () => {
   ];
 
   const mainLinks = [
+    { title: "Diagnostic", path: "/diagnostic" },
     { title: "About", path: "/about" },
     { title: "FAQ", path: "/faq" },
     { title: "Newsletter", path: "/newsletter" },
@@ -84,8 +85,8 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <Button asChild variant="outline" size="sm" className="gap-2">
-              <Link to="/quiz"><Compass className="w-4 h-4" />Find Your Waypoint</Link>
+            <Button asChild size="sm" className="gap-2">
+              <Link to="/diagnostic">Start Here<ArrowRight className="w-4 h-4" /></Link>
             </Button>
 
             <BookCallButton size="sm">Book Call</BookCallButton>
@@ -125,8 +126,8 @@ const Navigation = () => {
             </div>
 
             <div className="space-y-2 pt-4">
-              <Button asChild variant="outline" size="sm" className="w-full gap-2">
-                <Link to="/quiz" onClick={() => setIsMenuOpen(false)}><Compass className="w-4 h-4" />Find Your Waypoint</Link>
+              <Button asChild size="sm" className="w-full gap-2">
+                <Link to="/diagnostic" onClick={() => setIsMenuOpen(false)}>Start Here<ArrowRight className="w-4 h-4" /></Link>
               </Button>
               <BookCallButton size="sm" className="w-full">Book Free Call</BookCallButton>
             </div>

@@ -22,7 +22,7 @@ const SystemIntegration = () => {
               <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
                 <Network className="w-7 h-7" />
               </div>
-              <span className="text-sm font-medium text-white/60">Waypoint 02</span>
+              <span className="text-sm font-medium text-white/60">Waypoint 02 · Once foundations are set</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
@@ -38,7 +38,7 @@ const SystemIntegration = () => {
                 Book Your Free Strategy Call
               </BookCallButton>
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-                <Link to="/quiz">Find Your Stage</Link>
+                <Link to="/diagnostic">Get Your Diagnostic First</Link>
               </Button>
             </div>
           </div>
@@ -267,7 +267,7 @@ const SystemIntegration = () => {
               Claim Your Strategy Session
             </BookCallButton>
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-              <Link to="/quiz">Take the Quiz</Link>
+              <Link to="/diagnostic">Start with the Diagnostic</Link>
             </Button>
           </div>
 

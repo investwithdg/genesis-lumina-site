@@ -7,7 +7,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
-import { ArrowRight, Brain, Network, TrendingUp, Compass, Quote } from "lucide-react";
+import { ArrowRight, Brain, Network, TrendingUp, Quote } from "lucide-react";
 
 const Index = () => {
   return (
@@ -16,29 +16,28 @@ const Index = () => {
 
       {/* Hero Section - DARK */}
       <SectionDark className="min-h-screen flex items-center" withParticles withShapes>
-        <div className="px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10">
+        <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="text-center animate-fade-in">
-            <div className="inline-block mb-6">
-              <span className="text-sm font-medium px-4 py-2 rounded-full bg-white/10 text-white/80">
-                Your AI Infrastructure Partner
-              </span>
-            </div>
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-8">
+              Most organizations don't fail at AI because of tools.
+              <br />
+              They fail because they adopt out of sequence.
+            </p>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
-              From <span className="font-medium">Curiosity</span>
-              <br className="hidden md:block" /> to <span className="font-medium">Capability</span>
-              <br className="hidden md:block" /> to <span className="font-medium">Capital</span>
+              <span className="font-medium">Orientation</span>
+              <br className="hidden md:block" /> Before Execution
             </h1>
 
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Navigate your AI transformation through three proven Waypoints: AI Literacy, System Integration, and S³.
+              Genesis Lumina helps you understand where you are, what comes next, and how to move forward—in the right order.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-                <Link to="/quiz" className="gap-2">
-                  <Compass className="w-5 h-5" />
-                  Find Your Waypoint
+                <Link to="/diagnostic" className="gap-2">
+                  Begin Your Diagnostic
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
               <Button
@@ -61,10 +60,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">
-              The Three <span className="font-medium">Waypoints</span>
+              Once You Have <span className="font-medium">Direction</span>
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              A systematic journey from AI education to enterprise transformation.
+              The Diagnostic tells you where you are. These Waypoints show you what comes next.
             </p>
           </div>
 
@@ -77,7 +76,8 @@ const Index = () => {
                   <Brain className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-4">AI Literacy</h3>
+                <h3 className="text-2xl font-medium mb-2">AI Literacy</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">Once direction is clear</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Build foundational understanding. Learn how AI actually works, where it fits in your business, and how
                   to speak the language of intelligent automation.
@@ -100,7 +100,8 @@ const Index = () => {
                   <Network className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-4">System Integration</h3>
+                <h3 className="text-2xl font-medium mb-2">System Integration</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">Once foundations are set</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Connect the dots. Implement AI automations that eliminate manual tasks, integrate with your existing
                   tools, and create seamless workflows.
@@ -123,8 +124,8 @@ const Index = () => {
                   <TrendingUp className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-4">S³</h3>
-                <p className="text-sm text-foreground/60 mb-2 font-medium">Scale · Sale · Succession</p>
+                <h3 className="text-2xl font-medium mb-2">S³</h3>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">Once systems exist and leadership is aligned</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Transform for growth. Build AI infrastructure that scales with you, increases valuation, and creates
                   enterprise-grade systems.
@@ -181,39 +182,45 @@ const Index = () => {
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light mb-16 text-center tracking-tight">
-            Your <span className="font-medium">Transformation Journey</span>
+            The Right <span className="font-medium">Sequence</span>
           </h2>
 
           <div className="relative">
             {/* Progress line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[hsl(var(--waypoint-literacy))] via-[hsl(var(--waypoint-integration))] to-[hsl(var(--waypoint-s3))] -translate-y-1/2 hidden md:block rounded-full" />
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-foreground/80 via-[hsl(var(--waypoint-integration))] to-[hsl(var(--waypoint-s3))] -translate-y-1/2 hidden md:block rounded-full" />
 
-            <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="grid md:grid-cols-4 gap-6 relative">
               {[
                 {
-                  title: "Curiosity",
-                  desc: "Wondering if AI can help",
+                  title: "Orientation",
+                  desc: "Know where you stand",
+                  color: "foreground",
+                  isForeground: true,
+                },
+                {
+                  title: "Literacy",
+                  desc: "Build understanding",
                   color: "waypoint-literacy",
                 },
                 {
-                  title: "Capability",
-                  desc: "Building systems that work",
+                  title: "Integration",
+                  desc: "Connect systems",
                   color: "waypoint-integration",
                 },
                 {
-                  title: "Capital",
-                  desc: "Scaling for maximum value",
+                  title: "Scale",
+                  desc: "Grow with confidence",
                   color: "waypoint-s3",
                 },
               ].map((stage, idx) => (
                 <div key={idx} className="text-center relative">
                   <div
-                    className={`w-20 h-20 rounded-full bg-[hsl(var(--${stage.color}))] text-white flex items-center justify-center text-3xl font-light mx-auto mb-6 shadow-xl`}
+                    className={`w-16 h-16 rounded-full ${stage.isForeground ? 'bg-foreground' : `bg-[hsl(var(--${stage.color}))]`} text-white flex items-center justify-center text-2xl font-light mx-auto mb-6 shadow-xl`}
                   >
-                    {idx + 1}
+                    {idx}
                   </div>
-                  <h3 className="text-2xl font-medium mb-2">{stage.title}</h3>
-                  <p className="text-foreground/60">{stage.desc}</p>
+                  <h3 className="text-xl font-medium mb-2">{stage.title}</h3>
+                  <p className="text-foreground/60 text-sm">{stage.desc}</p>
                 </div>
               ))}
             </div>
@@ -225,17 +232,17 @@ const Index = () => {
       <SectionDark className="px-8 py-32 md:py-40" withShapes>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 tracking-tight text-white">
-            Ready to navigate your <br className="hidden md:block" />
-            <span className="font-medium">AI transformation</span>?
+            Before you automate. <br className="hidden md:block" />
+            <span className="font-medium">Get clear.</span>
           </h2>
           <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-            Take the quiz to find your current Waypoint, or book a call to map out your journey.
+            The AI Readiness Diagnostic tells you exactly where you stand and what comes next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/quiz" className="gap-2">
-                <Compass className="w-5 h-5" />
-                Find Your Waypoint
+              <Link to="/diagnostic" className="gap-2">
+                Begin Your Diagnostic
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
             <Button

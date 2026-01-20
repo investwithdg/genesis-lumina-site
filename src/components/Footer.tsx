@@ -25,6 +25,8 @@ const Footer = ({ dark = false }: FooterProps) => {
 
         {/* Links */}
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
+          <Link to="/diagnostic" className={`hover:opacity-70 transition-opacity font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
+          <span className={dark ? "text-white/30" : "text-foreground/30"}>│</span>
           <Link to="/waypoints/ai-literacy" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>AI Literacy</Link>
           <Link to="/waypoints/system-integration" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>System Integration</Link>
           <Link to="/waypoints/s3" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>S³</Link>

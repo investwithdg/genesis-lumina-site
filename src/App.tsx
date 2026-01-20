@@ -15,6 +15,7 @@ import FAQ from "./pages/FAQ";
 import Analog from "./pages/guides/Analog";
 import Harvest from "./pages/guides/Harvest";
 import Audit from "./pages/guides/Audit";
+import Diagnostic from "./pages/Diagnostic";
 import LuminaLabs from "./pages/products/LuminaLabs";
 import LuminaCompass from "./pages/products/LuminaCompass";
 import LuminaIgnite from "./pages/products/LuminaIgnite";
@@ -30,6 +31,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/diagnostic" element={<Diagnostic />} />
           <Route path="/waypoints/ai-literacy" element={<AILiteracy />} />
           <Route path="/waypoints/system-integration" element={<SystemIntegration />} />
           <Route path="/waypoints/s3" element={<S3 />} />
