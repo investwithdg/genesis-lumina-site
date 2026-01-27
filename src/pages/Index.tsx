@@ -178,49 +178,74 @@ const Index = () => {
       {/* The Journey Visual - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-16 text-center tracking-tight">
-            The Right <span className="font-medium">Sequence</span>
+          <h2 className="text-3xl md:text-4xl font-light mb-6 text-center tracking-tight">
+            Your Path to <span className="font-medium">AI Clarity</span>
           </h2>
+          <p className="text-lg text-foreground/60 text-center mb-16 max-w-2xl mx-auto">
+            Every engagement follows the same principle: orientation before execution
+          </p>
 
-          <div className="relative">
-            {/* Progress line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-foreground/80 via-[hsl(var(--waypoint-integration))] to-[hsl(var(--waypoint-s3))] -translate-y-1/2 hidden md:block rounded-full" />
-
-            <div className="grid md:grid-cols-4 gap-6 relative">
-              {[
-                {
-                  title: "Orientation",
-                  desc: "Know where you stand",
-                  color: "foreground",
-                  isForeground: true,
-                },
-                {
-                  title: "Literacy",
-                  desc: "Build understanding",
-                  color: "waypoint-literacy",
-                },
-                {
-                  title: "Integration",
-                  desc: "Connect systems",
-                  color: "waypoint-integration",
-                },
-                {
-                  title: "Scale",
-                  desc: "Grow with confidence",
-                  color: "waypoint-s3",
-                },
-              ].map((stage, idx) => (
-                <div key={idx} className="text-center relative">
-                  <div
-                    className={`w-16 h-16 rounded-full ${stage.isForeground ? 'bg-foreground' : `bg-[hsl(var(--${stage.color}))]`} text-white flex items-center justify-center text-2xl font-light mx-auto mb-6 shadow-xl`}
-                  >
-                    {idx}
-                  </div>
-                  <h3 className="text-xl font-medium mb-2">{stage.title}</h3>
-                  <p className="text-foreground/60 text-sm">{stage.desc}</p>
-                </div>
-              ))}
+          {/* Offer Journey */}
+          <div className="space-y-8">
+            {/* Entry Points */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/quiz" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
+                <div className="text-sm text-foreground/50 mb-1">Free</div>
+                <div className="font-medium group-hover:text-foreground/80">AI Readiness Quiz</div>
+              </Link>
+              <Link to="/field-guides/analog" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
+                <div className="text-sm text-foreground/50 mb-1">$47 – $297</div>
+                <div className="font-medium group-hover:text-foreground/80">Field Guides</div>
+              </Link>
             </div>
+
+            {/* Arrow Down */}
+            <div className="flex justify-center">
+              <div className="w-px h-8 bg-foreground/20" />
+            </div>
+
+            {/* Diagnostic */}
+            <Link to="/diagnostic" className="block p-6 rounded-xl border-2 border-foreground hover:bg-foreground/5 transition-all text-center group">
+              <div className="text-sm text-foreground/50 mb-1">$1,500 • The Starting Point</div>
+              <div className="text-xl font-medium mb-2">AI Readiness Diagnostic</div>
+              <div className="text-sm text-foreground/60">Scorecard + Gap Map + Action Plan + Loom Walkthrough</div>
+            </Link>
+
+            {/* Arrow Down with Branch */}
+            <div className="flex justify-center">
+              <div className="w-px h-8 bg-foreground/20" />
+            </div>
+
+            {/* Main Products */}
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/products/lumina-labs" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-literacy))]/30 hover:border-[hsl(var(--waypoint-literacy))] transition-all text-center group">
+                <div className="text-sm text-foreground/50 mb-1">$1,500 – $3,000</div>
+                <div className="font-medium text-[hsl(var(--waypoint-literacy))]">Lumina Labs</div>
+                <div className="text-xs text-foreground/50 mt-1">Team Workshop</div>
+              </Link>
+              <Link to="/products/lumina-compass" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-integration))]/30 hover:border-[hsl(var(--waypoint-integration))] transition-all text-center group">
+                <div className="text-sm text-foreground/50 mb-1">$15,000</div>
+                <div className="font-medium text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
+                <div className="text-xs text-foreground/50 mt-1">4-Week Sprint</div>
+              </Link>
+              <Link to="/waypoints/s3" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
+                <div className="text-sm text-foreground/50 mb-1">$50K – $250K</div>
+                <div className="font-medium text-[hsl(var(--waypoint-s3))]">S³ Transformation</div>
+                <div className="text-xs text-foreground/50 mt-1">Scale • Sale • Succession</div>
+              </Link>
+            </div>
+
+            {/* Arrow Down */}
+            <div className="flex justify-center">
+              <div className="w-px h-8 bg-foreground/20" />
+            </div>
+
+            {/* Ignite */}
+            <Link to="/products/lumina-ignite" className="block p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
+              <div className="text-sm text-foreground/50 mb-1">$3,000 – $7,500/mo</div>
+              <div className="font-medium">Lumina Ignite</div>
+              <div className="text-xs text-foreground/50 mt-1">Ongoing AI Retainer</div>
+            </Link>
           </div>
         </div>
       </SectionLight>

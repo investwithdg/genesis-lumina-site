@@ -97,23 +97,28 @@ const Diagnostic = () => {
             {[
               {
                 icon: FileText,
-                title: "Readiness Scorecard",
+                title: "Readiness Scorecard (PDF)",
                 desc: "A clear assessment of where you stand across key AI readiness dimensions."
               },
               {
                 icon: Map,
-                title: "Gap Map",
+                title: "Gap Map (Visual)",
                 desc: "Visual identification of what's missing between your current state and your goals."
               },
               {
                 icon: ListChecks,
-                title: "30/60/90-Day Action Sequence",
+                title: "30/60/90-Day Action Plan",
                 desc: "Prioritized steps in the right order—what to do now, next, and later."
               },
               {
                 icon: Video,
-                title: "Loom Walkthrough",
+                title: "Loom Walkthrough (20-30 min)",
                 desc: "A recorded explanation of your results and exactly how to move forward."
+              },
+              {
+                icon: ArrowRight,
+                title: "Next Steps Recommendation",
+                desc: "Clear guidance on which path is right for you—Labs, Compass, S³, or Ignite."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white border border-foreground/10 hover:border-foreground/20 transition-all">
@@ -124,6 +129,14 @@ const Diagnostic = () => {
                 <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Credit Toward Larger Engagement */}
+          <div className="mt-12 p-6 rounded-xl bg-foreground text-white text-center">
+            <p className="text-lg font-medium mb-2">Your $1,500 rolls forward</p>
+            <p className="text-white/70">
+              If you proceed to Lumina Compass or S³ within 30 days, your Diagnostic investment is credited toward the larger engagement.
+            </p>
           </div>
         </div>
       </SectionLight>

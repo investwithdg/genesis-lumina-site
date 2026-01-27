@@ -93,53 +93,123 @@ const LuminaLabs = () => {
 
       {/* What's Covered - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
-            What's <span className="font-medium">Covered</span>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
+            What's <span className="font-medium">Included</span>
           </h2>
+          <p className="text-lg text-foreground/60 text-center mb-12">
+            Everything your team needs to get started with AI
+          </p>
           
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             {[
-              "AI fundamentals explained without technical jargon",
-              "Real-world use cases specific to your industry",
-              "Hands-on exercises with AI tools your team can use",
-              "Framework for identifying automation opportunities",
-              "Q&A session to address your team's specific questions",
-              "Resource kit with templates and continued learning materials"
+              {
+                title: "Pre-Workshop Intake Survey",
+                desc: "We learn your team's current knowledge, fears, and goals before the session."
+              },
+              {
+                title: "2-3 Hour Live Workshop",
+                desc: "Focused, interactive training tailored to your industry and team size."
+              },
+              {
+                title: "Slide Deck Provided",
+                desc: "Full presentation materials for your team to reference afterward."
+              },
+              {
+                title: "Hands-On Exercises",
+                desc: "Real practice with AI tools your team can use immediately."
+              },
+              {
+                title: "Follow-Up Resources",
+                desc: "Templates, guides, and continued learning materials."
+              },
+              {
+                title: "Q&A Session",
+                desc: "Dedicated time for your team's specific questions and concerns."
+              }
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4 p-4 rounded-lg hover:bg-white transition-colors">
-                <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-literacy))] flex-shrink-0 mt-0.5" />
-                <p className="text-foreground/80 text-lg">{item}</p>
+              <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-literacy))] transition-all">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-literacy))] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">{item.title}</h3>
+                    <p className="text-foreground/60 text-sm">{item.desc}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </SectionLight>
 
-      {/* Investment - LIGHT */}
+      {/* Investment / Pricing Table - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light mb-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
             The <span className="font-medium">Investment</span>
           </h2>
-          
-          <div className="flex items-center justify-center gap-2 mb-8 text-foreground/60">
-            <Clock className="w-5 h-5" />
-            <span className="text-lg">2-3 hour intensive workshop</span>
-          </div>
-
-          <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-literacy))] rounded-2xl glow-literacy mb-8">
-            <div className="text-5xl font-light mb-2">$1,500 – $3,000</div>
-            <div className="text-foreground/60">Based on team size and format</div>
-          </div>
-
-          <p className="text-foreground/60 mb-12 max-w-xl mx-auto">
-            Pricing varies by team size, location (for in-person), and customization requirements. Enterprise packages available for larger organizations.
+          <p className="text-lg text-foreground/60 text-center mb-12">
+            Pricing based on format and team size
           </p>
 
-          <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto">
-            Schedule Your Workshop
-          </BookCallButton>
+          {/* Pricing Table */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                format: "Virtual",
+                participants: "Up to 15",
+                price: "$1,500",
+                features: ["2-3 hour session", "Zoom/Meet delivery", "Breakout rooms", "Recording provided"]
+              },
+              {
+                format: "Virtual",
+                participants: "16-30",
+                price: "$2,000",
+                features: ["2-3 hour session", "Zoom/Meet delivery", "Multiple breakout rooms", "Recording provided"],
+                popular: true
+              },
+              {
+                format: "In-Person",
+                participants: "Up to 30",
+                price: "$3,000",
+                note: "+ travel",
+                features: ["2-3 hour session", "On-site delivery", "Hands-on collaboration", "Printed materials"]
+              }
+            ].map((item, idx) => (
+              <div key={idx} className={`p-6 rounded-xl border-2 ${item.popular ? 'border-[hsl(var(--waypoint-literacy))]' : 'border-foreground/10'} relative`}>
+                {item.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--waypoint-literacy))] text-white text-xs font-medium rounded-full">
+                    Most Popular
+                  </div>
+                )}
+                <div className="text-center mb-4">
+                  <h3 className="font-medium mb-1">{item.format}</h3>
+                  <p className="text-sm text-foreground/60">{item.participants} participants</p>
+                  <div className="text-3xl font-light mt-2">
+                    {item.price}
+                    {item.note && <span className="text-sm text-foreground/60"> {item.note}</span>}
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {item.features.map((feature, fidx) => (
+                    <div key={fidx} className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-literacy))] flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-foreground/60 mb-8">
+              Enterprise packages available for larger organizations. Contact us for custom pricing.
+            </p>
+            <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto">
+              Schedule Your Workshop
+            </BookCallButton>
+          </div>
         </div>
       </SectionLight>
 

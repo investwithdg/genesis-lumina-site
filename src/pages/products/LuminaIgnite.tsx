@@ -145,19 +145,93 @@ const LuminaIgnite = () => {
 
       {/* Investment - DARK */}
       <SectionDark className="px-8 py-24 md:py-32" withShapes>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-light mb-6 text-white">
-            The <span className="font-medium">Investment</span>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center text-white">
+            Choose Your <span className="font-medium">Tier</span>
           </h2>
-          
-          <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-integration))] rounded-2xl glow-integration mb-8 bg-white/5">
-            <div className="text-5xl font-light mb-2 text-white">$3,000 – $8,000/mo</div>
-            <div className="text-sm text-white/60">3-month minimum commitment</div>
+
+          {/* Tier Table */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                tier: "Standard",
+                price: "$3,000",
+                period: "/month",
+                hours: "15 hours",
+                bestFor: "Post-Compass tune-ups and maintenance",
+                features: [
+                  "Monthly strategy call",
+                  "System health checks",
+                  "1-2 new automations",
+                  "Slack/email support",
+                  "Monthly performance report"
+                ]
+              },
+              {
+                tier: "Plus",
+                price: "$5,000",
+                period: "/month",
+                hours: "25 hours",
+                bestFor: "Active scaling and growth phases",
+                features: [
+                  "Bi-weekly strategy calls",
+                  "Priority system optimization",
+                  "2-3 new automations",
+                  "Priority Slack support",
+                  "Weekly performance snapshots"
+                ],
+                popular: true
+              },
+              {
+                tier: "Phoenix",
+                price: "$7,500",
+                period: "/month",
+                hours: "Engagement-based",
+                bestFor: "Strategic partners and high-growth",
+                features: [
+                  "Weekly strategy sessions",
+                  "Unlimited optimization requests",
+                  "3+ new automations",
+                  "Direct access to founder",
+                  "Quarterly business reviews"
+                ],
+                alt: "or $20,000/quarter"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className={`p-6 rounded-xl border ${item.popular ? 'border-[hsl(var(--waypoint-integration))] bg-white/10' : 'border-white/10 bg-white/5'} relative`}>
+                {item.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--waypoint-integration))] text-white text-xs font-medium rounded-full">
+                    Most Popular
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-medium text-white mb-2">{item.tier}</h3>
+                  <div className="text-4xl font-light text-white">{item.price}<span className="text-lg text-white/60">{item.period}</span></div>
+                  {item.alt && <p className="text-sm text-white/40 mt-1">{item.alt}</p>}
+                  <p className="text-sm text-white/60 mt-2">{item.hours}</p>
+                </div>
+                <p className="text-white/70 text-sm mb-4 text-center">{item.bestFor}</p>
+                <div className="space-y-2">
+                  {item.features.map((feature, fidx) => (
+                    <div key={fidx} className="flex items-start gap-2 text-sm text-white/70">
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
 
-          <p className="text-white/60 mb-12 max-w-xl mx-auto">
-            Tier and pricing based on business size, complexity, and desired scope. Schedule a call to discuss your needs and get a custom quote.
-          </p>
+          {/* Commitment & Hour Banking */}
+          <div className="text-center mb-12 space-y-2">
+            <p className="text-white/60">
+              <span className="font-medium text-white">3-month minimum commitment</span> for all tiers
+            </p>
+            <p className="text-white/60">
+              Unused hours roll forward for up to 60 days
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
