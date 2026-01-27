@@ -106,26 +106,58 @@ const LuminaCompass = () => {
 
       {/* What You Get - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
             What You <span className="font-medium">Get</span>
           </h2>
+          <p className="text-lg text-foreground/60 text-center mb-12">
+            Every deliverable is functional, documented, and team-ready
+          </p>
           
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              "Complete systems audit and process mapping",
-              "Custom automation roadmap prioritized by ROI",
-              "5-10 core automations built and tested",
-              "Notion command center with all documentation",
-              "Tool integrations across your tech stack",
-              "Team training sessions (recorded for future hires)",
-              "30-day post-launch support"
+              {
+                title: "Systems Map (Miro Board)",
+                desc: "Complete visual architecture of your workflows, integrations, and automations."
+              },
+              {
+                title: "Working System v1",
+                desc: "A functional system—not a prototype. 5-10 core automations built and tested."
+              },
+              {
+                title: "Notion \"Clarity Portal\"",
+                desc: "Your command center with all SOPs, documentation, and team resources."
+              },
+              {
+                title: "3-5 Loom Walkthroughs",
+                desc: "Video explanations of each system so your team can learn and iterate."
+              },
+              {
+                title: "60-90 min Team Training Session",
+                desc: "Live training for your team on all new systems and workflows."
+              },
+              {
+                title: "30-Day Post-Launch Support",
+                desc: "We're available for questions, tweaks, and troubleshooting after handoff."
+              }
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4 p-4 rounded-lg hover:bg-white transition-colors">
-                <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-0.5" />
-                <p className="text-foreground/80 text-lg">{item}</p>
+              <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">{item.title}</h3>
+                    <p className="text-foreground/60 text-sm">{item.desc}</p>
+                  </div>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Scarcity Indicator */}
+          <div className="mt-12 p-4 rounded-xl bg-[hsl(var(--waypoint-integration))]/10 border border-[hsl(var(--waypoint-integration))]/30 text-center">
+            <p className="text-foreground/80 font-medium">
+              Limited to 3 Compass engagements per quarter to ensure quality delivery
+            </p>
           </div>
         </div>
       </SectionLight>

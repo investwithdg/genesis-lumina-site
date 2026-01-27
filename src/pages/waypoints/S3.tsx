@@ -95,64 +95,71 @@ const S3 = () => {
         </div>
       </SectionDark>
 
-      {/* What We Build - LIGHT */}
+      {/* What You Get - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
-            What We <span className="font-medium">Build</span>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
+            What You <span className="font-medium">Get</span>
           </h2>
+          <p className="text-lg text-foreground/60 text-center mb-12">
+            Complete enterprise transformation in 6-8 weeks
+          </p>
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "AI Operations Infrastructure",
-                items: [
-                  "Autonomous decision-making systems",
-                  "Predictive analytics for forecasting",
-                  "Real-time business intelligence dashboards",
-                  "Self-optimizing workflows"
-                ]
+                title: "Complete Systems Documentation Suite",
+                desc: "Every process, workflow, and system documented and organized for buyers or successors."
               },
               {
-                title: "Enterprise Documentation",
-                items: [
-                  "Complete system architecture maps",
-                  "Process documentation and playbooks",
-                  "Training protocols for new team members",
-                  "Compliance and audit trails"
-                ]
+                title: "Leadership Dashboard(s)",
+                desc: "Real-time visibility into operations, metrics, and KPIs for decision-making."
               },
               {
-                title: "Scalability Framework",
-                items: [
-                  "Cloud infrastructure that auto-scales",
-                  "Multi-channel customer acquisition systems",
-                  "Revenue operations automation",
-                  "Team expansion playbooks"
-                ]
+                title: "Branded SOP Library",
+                desc: "Standard operating procedures that anyone can follow—your operations manual."
               },
               {
-                title: "Exit-Ready Systems",
-                items: [
-                  "Documented intellectual property",
-                  "Transferable operational knowledge",
-                  "AI-powered business continuity",
-                  "Valuation optimization strategy"
-                ]
+                title: "Data Room Prep",
+                desc: "Investment-grade documentation ready for due diligence, buyers, or board members."
+              },
+              {
+                title: "Succession Architecture",
+                desc: "Systems designed to run without you—clear handoff paths for every function."
+              },
+              {
+                title: "Cultural + Leadership Continuity Design",
+                desc: "Ensure your company culture and values persist through any transition."
               }
-            ].map((section, idx) => (
-              <Card key={idx} className="p-6 border-2 hover:border-[hsl(var(--waypoint-s3))] transition-all">
-                <h3 className="font-medium mb-4 text-lg">{section.title}</h3>
-                <ul className="space-y-2">
-                  {section.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className="flex items-start gap-3 text-foreground/70">
-                      <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-1" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
+            ].map((item, idx) => (
+              <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-s3))] transition-all">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">{item.title}</h3>
+                    <p className="text-foreground/60 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
             ))}
+          </div>
+
+          {/* Post-Launch Support */}
+          <div className="mt-8 p-5 rounded-xl bg-[hsl(var(--waypoint-s3))]/10 border border-[hsl(var(--waypoint-s3))]/30">
+            <div className="flex items-start gap-4">
+              <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-medium mb-1">60 Days Post-Launch Support</h3>
+                <p className="text-foreground/60 text-sm">We stay engaged after delivery to ensure everything runs smoothly and your team is confident.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Scarcity Indicator */}
+          <div className="mt-8 p-4 rounded-xl bg-foreground text-white text-center">
+            <p className="font-medium">
+              Currently accepting 2 new S³ clients per quarter
+            </p>
           </div>
         </div>
       </SectionLight>

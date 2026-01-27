@@ -9,16 +9,18 @@ const Navigation = () => {
   const location = useLocation();
 
   const solutionsLinks = [
-    { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs" },
-    { title: "Lumina Compass (Sprints)", path: "/products/lumina-compass" },
-    { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite" },
+    { title: "Start Here: AI Readiness Audit", path: "/diagnostic", price: "$1,500" },
+    { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs", price: "$1.5K–$3K" },
+    { title: "Lumina Compass (4-Week Sprint)", path: "/products/lumina-compass", price: "$15K" },
+    { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite", price: "$3K–$7.5K/mo" },
+    { title: "S³ Transformation", path: "/waypoints/s3", price: "$50K+" },
   ];
 
   const resourcesLinks = [
-    { title: "Field Guide: Analog", path: "/field-guides/analog" },
-    { title: "Field Guide: Harvest", path: "/field-guides/harvest" },
-    { title: "Field Guide: Audit", path: "/field-guides/audit" },
-    { title: "Quiz", path: "/quiz" },
+    { title: "Field Guide: Analog", path: "/field-guides/analog", price: "$47" },
+    { title: "Field Guide: Harvest", path: "/field-guides/harvest", price: "$97" },
+    { title: "Field Guide: Audit", path: "/field-guides/audit", price: "$297" },
+    { title: "Free Quiz", path: "/quiz" },
     { title: "Newsletter", path: "/newsletter" },
     { title: "FAQ", path: "/faq" },
   ];
@@ -44,11 +46,12 @@ const Navigation = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-2">
                   {solutionsLinks.map((link) => (
-                    <Link key={link.path} to={link.path} className={`block px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
-                      {link.title}
+                    <Link key={link.path} to={link.path} className={`flex items-center justify-between px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
+                      <span>{link.title}</span>
+                      {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                     </Link>
                   ))}
                 </div>
@@ -63,11 +66,12 @@ const Navigation = () => {
                 </svg>
               </button>
               
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-2">
                   {resourcesLinks.map((link) => (
-                    <Link key={link.path} to={link.path} className={`block px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
-                      {link.title}
+                    <Link key={link.path} to={link.path} className={`flex items-center justify-between px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
+                      <span>{link.title}</span>
+                      {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                     </Link>
                   ))}
                 </div>
@@ -95,8 +99,9 @@ const Navigation = () => {
             <div className="space-y-2">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Solutions</div>
               {solutionsLinks.map((link) => (
-                <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
-                  {link.title}
+                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                  <span>{link.title}</span>
+                  {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                 </Link>
               ))}
             </div>
@@ -104,8 +109,9 @@ const Navigation = () => {
             <div className="space-y-2 pt-2">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Resources</div>
               {resourcesLinks.map((link) => (
-                <Link key={link.path} to={link.path} className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
-                  {link.title}
+                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                  <span>{link.title}</span>
+                  {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                 </Link>
               ))}
             </div>
