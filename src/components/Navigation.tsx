@@ -9,17 +9,17 @@ const Navigation = () => {
   const location = useLocation();
 
   const solutionsLinks = [
-    { title: "Start Here: AI Readiness Audit", path: "/diagnostic", price: "$1,500" },
-    { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs", price: "$1.5K–$3K" },
-    { title: "Lumina Compass (4-Week Sprint)", path: "/products/lumina-compass", price: "$15K" },
-    { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite", price: "$3K–$7.5K/mo" },
-    { title: "S³ Transformation", path: "/waypoints/s3", price: "$50K+" },
+    { title: "Start Here: AI Readiness Audit", path: "/diagnostic" },
+    { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs" },
+    { title: "Lumina Compass (4-Week Sprint)", path: "/products/lumina-compass" },
+    { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite" },
+    { title: "S³ Transformation", path: "/waypoints/s3" },
   ];
 
   const resourcesLinks = [
-    { title: "Field Guide: Analog", path: "/field-guides/analog", price: "$47" },
-    { title: "Field Guide: Harvest", path: "/field-guides/harvest", price: "$97" },
-    { title: "Field Guide: Audit", path: "/field-guides/audit", price: "$297" },
+    { title: "Field Guide: Analog", path: "/field-guides/analog" },
+    { title: "Field Guide: Harvest", path: "/field-guides/harvest" },
+    { title: "Field Guide: Audit", path: "/field-guides/audit" },
     { title: "Free Quiz", path: "/quiz" },
     { title: "Newsletter", path: "/newsletter" },
     { title: "FAQ", path: "/faq" },
@@ -51,7 +51,6 @@ const Navigation = () => {
                   {solutionsLinks.map((link) => (
                     <Link key={link.path} to={link.path} className={`flex items-center justify-between px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
                       <span>{link.title}</span>
-                      {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                     </Link>
                   ))}
                 </div>
@@ -71,7 +70,6 @@ const Navigation = () => {
                   {resourcesLinks.map((link) => (
                     <Link key={link.path} to={link.path} className={`flex items-center justify-between px-4 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`}>
                       <span>{link.title}</span>
-                      {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                     </Link>
                   ))}
                 </div>
@@ -101,7 +99,6 @@ const Navigation = () => {
               {solutionsLinks.map((link) => (
                 <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
                   <span>{link.title}</span>
-                  {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                 </Link>
               ))}
             </div>
@@ -111,7 +108,6 @@ const Navigation = () => {
               {resourcesLinks.map((link) => (
                 <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
                   <span>{link.title}</span>
-                  {link.price && <span className="text-xs text-foreground/50">{link.price}</span>}
                 </Link>
               ))}
             </div>
