@@ -87,7 +87,7 @@ const Navigation = () => {
             <BookCallButton size="sm">Book Call</BookCallButton>
           </div>
 
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+          <button className="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -97,23 +97,23 @@ const Navigation = () => {
             <div className="space-y-2">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Solutions</div>
               {solutionsLinks.map((link) => (
-                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-3 py-3 min-h-[44px] text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-primary/10 text-primary font-medium' : 'hover:bg-muted'}`} onClick={() => setIsMenuOpen(false)}>
                   <span>{link.title}</span>
                 </Link>
               ))}
             </div>
 
             <div className="space-y-2 pt-2">
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-2">Resources</div>
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-3">Resources</div>
               {resourcesLinks.map((link) => (
-                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+                <Link key={link.path} to={link.path} className={`flex items-center justify-between px-3 py-3 min-h-[44px] text-sm rounded-md transition-colors ${isCurrentPage(link.path) ? 'bg-primary/10 text-primary font-medium' : 'hover:bg-muted'}`} onClick={() => setIsMenuOpen(false)}>
                   <span>{link.title}</span>
                 </Link>
               ))}
             </div>
 
             <div className="space-y-2 pt-2">
-              <Link to="/about" className={`block px-2 py-2 text-sm rounded-md transition-colors ${isCurrentPage('/about') ? 'bg-accent text-accent-foreground font-medium' : 'hover:bg-accent/50'}`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/about" className={`block px-3 py-3 min-h-[44px] text-sm rounded-md transition-colors ${isCurrentPage('/about') ? 'bg-primary/10 text-primary font-medium' : 'hover:bg-muted'}`} onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
             </div>

@@ -11,7 +11,7 @@ const SectionLight = ({ children, className, muted = false }: SectionLightProps)
   return (
     <section className={cn(
       "relative",
-      muted ? "bg-foreground/[0.02]" : "bg-white",
+      muted ? "bg-secondary" : "bg-background",
       "text-foreground",
       className
     )}>
