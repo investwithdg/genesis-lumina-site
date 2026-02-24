@@ -24,16 +24,16 @@ const Footer = ({ dark = false }: FooterProps) => {
         </div>
 
         {/* Links */}
-        <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
-          <Link to="/diagnostic" className={`hover:opacity-70 transition-opacity font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
-          <span className={dark ? "text-white/30" : "text-foreground/30"}>│</span>
-          <Link to="/waypoints/ai-literacy" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>AI Literacy</Link>
-          <Link to="/waypoints/system-integration" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>System Integration</Link>
-          <Link to="/waypoints/s3" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>S³</Link>
-          <span className={dark ? "text-white/30" : "text-foreground/30"}>│</span>
-          <Link to="/about" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>About</Link>
-          <Link to="/newsletter" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>Newsletter</Link>
-          <Link to="/faq" className={`hover:opacity-70 transition-opacity ${dark ? 'text-white/70' : ''}`}>FAQ</Link>
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-8 mb-8 text-sm">
+          <Link to="/diagnostic" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
+          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
+          <Link to="/waypoints/ai-literacy" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>AI Literacy</Link>
+          <Link to="/waypoints/system-integration" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>System Integration</Link>
+          <Link to="/waypoints/s3" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>S³</Link>
+          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
+          <Link to="/about" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>About</Link>
+          <Link to="/newsletter" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Newsletter</Link>
+          <Link to="/faq" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>FAQ</Link>
         </div>
 
         {/* Copyright */}

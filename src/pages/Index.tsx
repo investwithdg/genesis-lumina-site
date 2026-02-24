@@ -24,7 +24,7 @@ const Index = () => {
               They fail because they adopt out of sequence.
             </p>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
               <span className="font-medium">Orientation</span>
               <br className="hidden md:block" /> Before Execution
             </h1>
@@ -56,7 +56,7 @@ const Index = () => {
       </SectionDark>
 
       {/* The Three Waypoints - LIGHT */}
-      <SectionLight className="px-8 py-24 md:py-32">
+      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">
@@ -141,7 +141,7 @@ const Index = () => {
       </SectionLight>
 
       {/* Stats Bar - DARK */}
-      <SectionDark className="px-8 py-16">
+      <SectionDark className="px-4 md:px-8 py-16">
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -160,7 +160,7 @@ const Index = () => {
       </SectionDark>
 
       {/* Social Proof - LIGHT */}
-      <SectionLight className="px-8 py-24 md:py-32" muted>
+      <SectionLight className="px-4 md:px-8 py-16 md:py-32" muted>
         <div className="max-w-4xl mx-auto text-center">
           <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
           <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
@@ -176,9 +176,9 @@ const Index = () => {
       </SectionLight>
 
       {/* The Journey Visual - LIGHT */}
-      <SectionLight className="px-8 py-24 md:py-32">
+      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-6 text-center tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-light mb-6 text-center tracking-tight">
             Your Path to <span className="font-medium">AI Clarity</span>
           </h2>
           <p className="text-lg text-foreground/60 text-center mb-16 max-w-2xl mx-auto">
@@ -251,9 +251,9 @@ const Index = () => {
       </SectionLight>
 
       {/* Final CTA - DARK */}
-      <SectionDark className="px-8 py-32 md:py-40" withShapes>
+      <SectionDark className="px-4 md:px-8 py-24 md:py-40" withShapes>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light mb-8 tracking-tight text-white">
             Before you automate. <br className="hidden md:block" />
             <span className="font-medium">Get clear.</span>
           </h2>
