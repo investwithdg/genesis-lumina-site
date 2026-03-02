@@ -36,7 +36,7 @@ const Audit = () => {
             
             <div className="flex items-center gap-4 mb-12">
               <p className="text-4xl font-medium text-white">$297</p>
-              <span className="text-sm text-white/40 px-3 py-1 rounded-full border border-white/20">{"0"} copies sold</span>
+              
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -167,7 +167,7 @@ const Audit = () => {
       <SectionDark className="px-8 py-24 md:py-32">
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-12 text-center text-white">
-            Two Ways to <span className="font-medium">Get Audited</span>
+            Two Ways to <span className="font-medium">Get Started</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -202,7 +202,7 @@ const Audit = () => {
             {/* Performed */}
             <div className="p-8 rounded-xl border-2 border-[hsl(var(--waypoint-s3))] bg-white/10 glow-s3">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-medium text-white mb-2">Performed Audit</h3>
+                <h3 className="text-2xl font-medium text-white mb-2">AI Readiness Diagnostic</h3>
                 <div className="text-4xl font-light text-white">$1,500</div>
                 <p className="text-white/60 mt-2">Expert analysis in 72 hours</p>
               </div>
@@ -223,7 +223,7 @@ const Audit = () => {
               </div>
               <Button asChild size="lg" className="w-full text-lg py-6 h-auto bg-[hsl(var(--waypoint-s3))] text-white hover:bg-[hsl(var(--waypoint-s3))]/90">
                 <Link to="/diagnostic">
-                  Book the Performed Audit
+                  Book the AI Readiness Diagnostic
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
@@ -249,7 +249,7 @@ const Audit = () => {
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
               <Link to="/diagnostic">
-                Want Expert Analysis? — $1,500
+                Want the AI Readiness Diagnostic? — $1,500
               </Link>
             </Button>
           </div>
