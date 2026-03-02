@@ -34,11 +34,11 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Headshot */}
             <div className="flex justify-center">
-              <img 
-                src="/images/donovan-green-headshot.jpg" 
-                alt="Donovan Green, Founder of Genesis Lumina" 
-                className="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover object-top shadow-lg"
-              />
+              <img
+                src="/images/donovan-green-headshot.jpg"
+                alt="Donovan Green, Founder of Genesis Lumina"
+                className="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover object-top shadow-lg" />
+
             </div>
 
             {/* Bio */}
@@ -52,8 +52,8 @@ const About = () => {
                 <p>
                   A seasoned entrepreneur with deep expertise in real estate and automation, combining technical excellence with Kingdom-driven values.
                 </p>
-                <p>
-                  Our mission is clear: help leaders implement automation that saves time while maintaining integrity and human dignity.
+                <p>His mission is clear: help leaders implement automation that saves time while maintaining integrity and human dignity.
+
                 </p>
               </div>
 
@@ -78,12 +78,12 @@ const About = () => {
               </div>
 
               {/* LinkedIn Placeholder */}
-              <a 
-                href="{https://www.linkedin.com/in/donovan-r-green/}" 
-                target="_blank" 
+              <a
+                href="{https://www.linkedin.com/in/donovan-r-green/}"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:underline"
-              >
+                className="inline-flex items-center gap-2 text-primary hover:underline">
+
                 <Linkedin className="w-5 h-5" />
                 Connect on LinkedIn
               </a>
@@ -101,16 +101,16 @@ const About = () => {
           
           <div className="space-y-6">
             {[
-              "Bridge the gap between AI potential and business reality",
-              "Deliver practical automation solutions that actually work",
-              "Transform chaos into clarity through proven frameworks",
-              "Prioritize speed, simplicity, and scalability"
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4">
+            "Bridge the gap between AI potential and business reality",
+            "Deliver practical automation solutions that actually work",
+            "Transform chaos into clarity through proven frameworks",
+            "Prioritize speed, simplicity, and scalability"].
+            map((item, idx) =>
+            <div key={idx} className="flex items-start gap-4">
                 <CheckCircle className="w-5 h-5 text-white/60 flex-shrink-0 mt-1" />
                 <p className="text-xl text-white/80">{item}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </SectionDark>
@@ -122,11 +122,11 @@ const About = () => {
           <div className="text-center mb-16">
             <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Featured In</h3>
             <div className="flex flex-wrap justify-center gap-8">
-              {[1, 2, 3, 4].map((idx) => (
-                <div key={idx} className="w-32 h-12 rounded bg-foreground/5 border border-dashed border-foreground/20 flex items-center justify-center text-xs text-foreground/40">
+              {[1, 2, 3, 4].map((idx) =>
+              <div key={idx} className="w-32 h-12 rounded bg-foreground/5 border border-dashed border-foreground/20 flex items-center justify-center text-xs text-foreground/40">
                   {"{LOGO_" + idx + "}"}
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -134,11 +134,11 @@ const About = () => {
           <div className="text-center">
             <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Technologies We Work With</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {["Notion", "Make", "Zapier", "Airtable", "ChatGPT", "Claude"].map((tech, idx) => (
-                <div key={idx} className="px-4 py-2 rounded-full bg-foreground/5 text-foreground/70 text-sm font-medium">
+              {["Notion", "Make", "Zapier", "Airtable", "ChatGPT", "Claude"].map((tech, idx) =>
+              <div key={idx} className="px-4 py-2 rounded-full bg-foreground/5 text-foreground/70 text-sm font-medium">
                   {tech}
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -169,8 +169,8 @@ const About = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default About;
