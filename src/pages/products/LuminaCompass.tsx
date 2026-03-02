@@ -118,27 +118,27 @@ const LuminaCompass = () => {
             {[
               {
                 title: "Systems Map (Miro Board)",
-                desc: "Complete visual architecture of your workflows, integrations, and automations."
+                desc: "Visual architecture of your workflows, bottlenecks, and data flows."
               },
               {
                 title: "Working System v1",
-                desc: "A functional system—not a prototype. 5-10 core automations built and tested."
+                desc: "A functional system built around your #1 operational constraint — not a prototype."
               },
               {
                 title: "Notion \"Clarity Portal\"",
-                desc: "Your command center with all SOPs, documentation, and team resources."
+                desc: "Full documentation, SOPs, troubleshooting guide, and architecture diagram."
               },
               {
                 title: "3-5 Loom Walkthroughs",
-                desc: "Video explanations of each system so your team can learn and iterate."
+                desc: "Video walkthroughs so your team can operate, maintain, and iterate independently."
               },
               {
-                title: "60-90 min Team Training Session",
-                desc: "Live training for your team on all new systems and workflows."
+                title: "60-90 Min Team Training Session",
+                desc: "Live handoff session with your full team."
               },
               {
-                title: "30-Day Post-Launch Support",
-                desc: "We're available for questions, tweaks, and troubleshooting after handoff."
+                title: "30-Day Support Window",
+                desc: "Bug fixes, questions, and minor tweaks after delivery (up to 3 hrs)."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">

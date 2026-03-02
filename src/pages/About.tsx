@@ -32,13 +32,13 @@ const About = () => {
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Headshot Placeholder */}
+            {/* Headshot */}
             <div className="flex justify-center">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-foreground/5 border-2 border-dashed border-foreground/20 flex flex-col items-center justify-center text-foreground/40">
-                <User className="w-16 h-16 mb-4" />
-                <span className="text-sm font-medium">{"{YOUR_HEADSHOT}"}</span>
-                <span className="text-xs mt-1">Upload your photo</span>
-              </div>
+              <img 
+                src="/images/donovan-green-headshot.jpg" 
+                alt="Donovan Green, Founder of Genesis Lumina" 
+                className="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover object-top shadow-lg"
+              />
             </div>
 
             {/* Bio */}
