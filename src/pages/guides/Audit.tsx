@@ -9,7 +9,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import { ClipboardCheck, BarChart3, FileText, Shield, CheckCircle, ArrowRight, ArrowLeft, TrendingUp, ShieldCheck } from "lucide-react";
 
 const Audit = () => {
-  const purchaseUrl = "#";
+  const purchaseUrl = "https://buy.stripe.com/7sY4gzdtS3GygdX3kH1Fe0a";
 
   return (
     <div className="min-h-screen bg-white text-foreground">
@@ -68,29 +68,29 @@ const Audit = () => {
       <SectionDark className="px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center text-white">What You'll <span className="font-medium">Get</span></h2>
-          <p className="text-lg text-white/60 text-center mb-12">A comprehensive organizational readiness assessment</p>
+          <p className="text-lg text-white/60 text-center mb-12">A self-serve diagnostic that tells you exactly where you stand — in under 30 minutes.</p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: ClipboardCheck,
-                title: "30-75 Question Assessment",
-                desc: "Deep dive across five S³ readiness dimensions tailored to your organization."
+                title: "50-Question Diagnostic",
+                desc: "Assesses readiness across five dimensions tailored to your organization."
               },
               {
                 icon: BarChart3,
-                title: "Scoring Breakdown",
-                desc: "Clear metrics across data systems, documentation, succession, culture, and resilience."
+                title: "Automated Scoring",
+                desc: "Instant results, no waiting on a human."
               },
               {
                 icon: FileText,
-                title: "Gap Analysis Report",
-                desc: "Critical gaps prioritized by impact with a roadmap to close them."
+                title: "PDF Scorecard",
+                desc: "Visual breakdown of your score across all five dimensions."
               },
               {
                 icon: Shield,
-                title: "Investment-Grade Read",
-                desc: "Documentation that satisfies investors, buyers, and board members."
+                title: "Recommended Next Steps",
+                desc: "Guided direction based on where your gaps actually are."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-s3))] transition-all">
@@ -180,10 +180,10 @@ const Audit = () => {
               </div>
               <div className="space-y-3 mb-6">
                 {[
-                  "30-75 question assessment",
-                  "Automated scoring system",
-                  "Gap analysis template",
-                  "Self-guided interpretation"
+                  "50-question diagnostic",
+                  "Automated scoring",
+                  "PDF scorecard",
+                  "Recommended next steps"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2 text-white/70">
                     <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-0.5" />
