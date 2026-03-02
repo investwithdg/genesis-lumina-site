@@ -60,7 +60,7 @@ const About = () => {
               {/* Credentials Placeholders */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
-                  <div className="text-2xl font-light text-foreground">{"1"}</div>
+                  <div className="text-2xl font-light text-foreground">{"3+"}</div>
                   <div className="text-sm text-foreground/60">Years in Business</div>
                 </div>
                 <div className="p-4 rounded-lg bg-foreground/5 text-center">
