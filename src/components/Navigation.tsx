@@ -9,7 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const solutionsLinks = [
-    { title: "Start Here: AI Readiness Audit", path: "/diagnostic" },
+    { title: "Start Here: AI Readiness Diagnostic", path: "/diagnostic" },
     { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs" },
     { title: "Lumina Compass (4-Week Sprint)", path: "/products/lumina-compass" },
     { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite" },
@@ -81,7 +81,7 @@ const Navigation = () => {
             </Link>
 
             <Button asChild size="sm" className="gap-2">
-              <Link to="/diagnostic">Start Diagnostic<ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/quiz">Find Your AI Waypoint<ArrowRight className="w-4 h-4" /></Link>
             </Button>
 
             <BookCallButton size="sm">Book Call</BookCallButton>
@@ -120,7 +120,7 @@ const Navigation = () => {
 
             <div className="space-y-2 pt-4">
               <Button asChild size="sm" className="w-full gap-2">
-                <Link to="/diagnostic" onClick={() => setIsMenuOpen(false)}>Start Diagnostic<ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/quiz" onClick={() => setIsMenuOpen(false)}>Find Your AI Waypoint<ArrowRight className="w-4 h-4" /></Link>
               </Button>
               <BookCallButton size="sm" className="w-full">Book Free Call</BookCallButton>
             </div>

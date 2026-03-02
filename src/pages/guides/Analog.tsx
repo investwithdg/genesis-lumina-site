@@ -37,7 +37,7 @@ const Analog = () => {
             
             <div className="flex items-center gap-4 mb-12">
               <p className="text-4xl font-medium text-white">$47</p>
-              <span className="text-sm text-white/40 px-3 py-1 rounded-full border border-white/20">{"0"} copies sold</span>
+              
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
