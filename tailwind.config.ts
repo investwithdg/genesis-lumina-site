@@ -65,10 +65,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
-		fontFamily: {
-			'sans': ['Inter', 'system-ui', 'sans-serif'],
-			'display': ['DM Serif Display', 'Georgia', 'serif'],
-		},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				// Add your custom fonts here:
+				// 'custom': ['YourCustomFont', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

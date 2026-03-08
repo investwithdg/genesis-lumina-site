@@ -8,55 +8,38 @@ interface FooterProps {
 
 const Footer = ({ dark = false }: FooterProps) => {
   return (
-    <footer className={`px-8 py-16 ${dark ? 'bg-foreground text-white' : 'bg-white text-foreground'} border-t border-primary/20`}>
+    <footer className={`px-8 py-16 ${dark ? 'bg-foreground text-white border-white/10' : 'bg-white text-foreground border-foreground/10'} border-t`}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand Column */}
-          <div>
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <img src="/lovable-uploads/3ea3582b-e144-456a-83c9-0103815342aa.png" alt="GL" className="w-8 h-8 rounded" />
-              <span className="text-xl font-display tracking-tight">Genesis Lumina</span>
-            </Link>
-            <p className={`text-sm leading-relaxed ${dark ? 'text-white/60' : 'text-foreground/60'}`}>
-              Orientation before execution. AI fluency and ethical transformation for values-aligned teams.
-            </p>
-          </div>
+        {/* Newsletter CTA */}
+        <div className="text-center mb-12">
+          <p className={`text-sm mb-4 ${dark ? 'text-white/60' : 'text-foreground/60'}`}>
+            Get weekly AI insights delivered to your inbox
+          </p>
+          <Button asChild variant={dark ? "outline" : "default"} size="sm" className={dark ? "border-white/20 text-white hover:bg-white/10" : ""}>
+            <a href="https://genesislumina.substack.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              Subscribe to Newsletter
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </Button>
+        </div>
 
-          {/* Links Column */}
-          <div>
-            <h4 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${dark ? 'text-white/40' : 'text-foreground/40'}`}>Solutions</h4>
-            <div className="space-y-2">
-              <Link to="/diagnostic" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
-              <Link to="/products/lumina-labs" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>Lumina Labs</Link>
-              <Link to="/products/lumina-compass" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>Lumina Compass</Link>
-              <Link to="/products/lumina-ignite" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>Lumina Ignite</Link>
-              <Link to="/waypoints/s3" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>S³ Transformation</Link>
-            </div>
-          </div>
-
-          {/* Newsletter Column */}
-          <div>
-            <h4 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${dark ? 'text-white/40' : 'text-foreground/40'}`}>Stay Connected</h4>
-            <div className="space-y-2 mb-4">
-              <Link to="/about" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>About</Link>
-              <Link to="/newsletter" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>Newsletter</Link>
-              <Link to="/faq" className={`block text-sm min-h-[44px] sm:min-h-0 flex items-center hover:text-primary transition-colors ${dark ? 'text-white/70' : 'text-foreground/70'}`}>FAQ</Link>
-            </div>
-            <Button asChild variant={dark ? "outline" : "default"} size="sm" className={dark ? "border-white/20 text-white hover:bg-white/10" : ""}>
-              <a href="https://genesislumina.substack.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                Subscribe
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-          </div>
+        {/* Links */}
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-8 mb-8 text-sm">
+          <Link to="/diagnostic" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
+          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
+          <Link to="/waypoints/ai-literacy" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>AI Literacy</Link>
+          <Link to="/waypoints/system-integration" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>System Integration</Link>
+          <Link to="/waypoints/s3" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>S³</Link>
+          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
+          <Link to="/about" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>About</Link>
+          <Link to="/newsletter" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Newsletter</Link>
+          <Link to="/faq" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>FAQ</Link>
         </div>
 
         {/* Copyright */}
-        <div className={`pt-8 border-t ${dark ? 'border-white/10' : 'border-foreground/10'}`}>
-          <p className={`text-xs text-center ${dark ? 'text-white/40' : 'text-foreground/40'}`}>
-            © 2025 Genesis Lumina. All rights reserved.
-          </p>
-        </div>
+        <p className={`text-xs text-center ${dark ? 'text-white/40' : 'text-foreground/40'}`}>
+          © 2025 Genesis Lumina. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -348,25 +348,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* Display font for headings */
-  h1, h2 {
-    font-family: 'DM Serif Display', Georgia, serif;
-  }
-
-  /* Section gradient dividers */
-  .section-divider-dark-to-light {
-    height: 80px;
-    background: linear-gradient(to bottom, hsl(var(--foreground)), hsl(var(--background)));
-  }
-
-  .section-divider-light-to-dark {
-    height: 80px;
-    background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--foreground)));
-  }
-
-  .section-divider-cream-to-light {
-    height: 60px;
-    background: linear-gradient(to bottom, hsl(var(--cream)), hsl(var(--background)));
-  }
 }

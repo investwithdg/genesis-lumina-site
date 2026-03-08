@@ -33,9 +33,8 @@ const Navigation = () => {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm nav-glow">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-            <img src="/lovable-uploads/3ea3582b-e144-456a-83c9-0103815342aa.png" alt="GL" className="w-8 h-8 rounded" />
-            <span className="text-xl font-display tracking-tight">Genesis Lumina</span>
+          <Link to="/" className="text-xl font-semibold tracking-tight hover:opacity-80 transition-opacity">
+            Genesis Lumina
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
