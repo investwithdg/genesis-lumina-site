@@ -7,7 +7,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
-import { ArrowRight, Brain, Network, TrendingUp, Quote } from "lucide-react";
+import { ArrowRight, Brain, Network, TrendingUp, Quote, Search, BookOpen, Compass, Flame } from "lucide-react";
 
 const Index = () => {
   return (
@@ -55,6 +55,9 @@ const Index = () => {
         </div>
       </SectionDark>
 
+      {/* Gradient transition */}
+      <div className="section-divider-dark-to-light" />
+
       {/* The Three Waypoints - LIGHT */}
       <SectionLight className="px-4 md:px-8 py-16 md:py-32">
         <div className="max-w-6xl mx-auto">
@@ -69,14 +72,14 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8 animate-slide-in">
             {/* Waypoint 1: Lumina Labs (Literacy) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-literacy))] transition-all duration-300 hover:glow-literacy">
+            <Card className="group relative overflow-hidden border-2 border-t-4 border-t-[hsl(var(--waypoint-literacy))] hover:border-[hsl(var(--waypoint-literacy))] transition-all duration-300 hover:glow-literacy hover:scale-[1.02]">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-literacy))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-literacy))] text-[hsl(var(--waypoint-literacy-foreground))] flex items-center justify-center mb-6 group-hover:glow-literacy transition-all">
-                  <Brain className="w-6 h-6" />
+              <div className="relative p-10">
+                <div className="w-14 h-14 rounded-xl bg-[hsl(var(--waypoint-literacy))]/10 text-[hsl(var(--waypoint-literacy))] flex items-center justify-center mb-6 group-hover:bg-[hsl(var(--waypoint-literacy))] group-hover:text-[hsl(var(--waypoint-literacy-foreground))] group-hover:glow-literacy transition-all duration-300">
+                  <Brain className="w-7 h-7" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-1">Lumina Labs</h3>
+                <h3 className="text-2xl font-medium mb-1 font-sans">Lumina Labs</h3>
                 <p className="text-sm text-foreground/50 mb-4 font-medium">For Teams · The Workshop</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Build foundational understanding. Hands-on AI training that gets your entire team aligned and ready to execute in a single session.
@@ -92,14 +95,14 @@ const Index = () => {
             </Card>
 
             {/* Waypoint 2: Lumina Compass (Integration) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all duration-300 hover:glow-integration">
+            <Card className="group relative overflow-hidden border-2 border-t-4 border-t-[hsl(var(--waypoint-integration))] hover:border-[hsl(var(--waypoint-integration))] transition-all duration-300 hover:glow-integration hover:scale-[1.02]">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-integration))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center mb-6 group-hover:glow-integration transition-all">
-                  <Network className="w-6 h-6" />
+              <div className="relative p-10">
+                <div className="w-14 h-14 rounded-xl bg-[hsl(var(--waypoint-integration))]/10 text-[hsl(var(--waypoint-integration))] flex items-center justify-center mb-6 group-hover:bg-[hsl(var(--waypoint-integration))] group-hover:text-[hsl(var(--waypoint-integration-foreground))] group-hover:glow-integration transition-all duration-300">
+                  <Network className="w-7 h-7" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-1">Lumina Compass</h3>
+                <h3 className="text-2xl font-medium mb-1 font-sans">Lumina Compass</h3>
                 <p className="text-sm text-foreground/50 mb-4 font-medium">For Business · The Sprint</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   The 4-week flagship sprint. We audit your chaos, design your architecture, and build the automations that run your business.
@@ -115,14 +118,14 @@ const Index = () => {
             </Card>
 
             {/* Waypoint 3: Lumina Ignite (Scale) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-s3))] transition-all duration-300 hover:glow-s3">
+            <Card className="group relative overflow-hidden border-2 border-t-4 border-t-[hsl(var(--waypoint-s3))] hover:border-[hsl(var(--waypoint-s3))] transition-all duration-300 hover:glow-s3 hover:scale-[1.02]">
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-s3))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-s3))] text-[hsl(var(--waypoint-s3-foreground))] flex items-center justify-center mb-6 group-hover:glow-s3 transition-all">
-                  <TrendingUp className="w-6 h-6" />
+              <div className="relative p-10">
+                <div className="w-14 h-14 rounded-xl bg-[hsl(var(--waypoint-s3))]/10 text-[hsl(var(--waypoint-s3))] flex items-center justify-center mb-6 group-hover:bg-[hsl(var(--waypoint-s3))] group-hover:text-[hsl(var(--waypoint-s3-foreground))] group-hover:glow-s3 transition-all duration-300">
+                  <TrendingUp className="w-7 h-7" />
                 </div>
 
-                <h3 className="text-2xl font-medium mb-1">Lumina Ignite</h3>
+                <h3 className="text-2xl font-medium mb-1 font-sans">Lumina Ignite</h3>
                 <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Partner</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
@@ -140,6 +143,9 @@ const Index = () => {
         </div>
       </SectionLight>
 
+      {/* Gradient transition */}
+      <div className="section-divider-light-to-dark" />
+
       {/* Stats Bar - DARK */}
       <SectionDark className="px-4 md:px-8 py-16">
         <div className="max-w-5xl mx-auto relative z-10">
@@ -151,7 +157,7 @@ const Index = () => {
               { value: "4+", label: "Years Experience" },
             ].map((stat, idx) => (
               <div key={idx}>
-                <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-display text-white mb-2">{stat.value}</div>
                 <div className="text-sm text-white/60">{stat.label}</div>
               </div>
             ))}
@@ -159,21 +165,25 @@ const Index = () => {
         </div>
       </SectionDark>
 
-      {/* Social Proof - LIGHT */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-32" muted>
-        <div className="max-w-4xl mx-auto text-center">
-          <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
-          <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
-            "{"Donovan is AI. He's The Answer."}"
+      {/* Gradient transition */}
+      <div className="section-divider-dark-to-light" style={{ background: `linear-gradient(to bottom, hsl(var(--foreground)), hsl(var(--cream)))` }} />
+
+      {/* Social Proof - CREAM */}
+      <section className="px-4 md:px-8 py-16 md:py-32 bg-cream relative">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <Quote className="w-16 h-16 mx-auto mb-8 text-primary/20" />
+          <blockquote className="text-2xl md:text-3xl font-display text-foreground leading-relaxed mb-8">
+            "Donovan is AI. He's The Answer."
           </blockquote>
           <div className="text-foreground/60">
-            <p className="font-medium text-foreground/80">{"Jamar Wright"}</p>
-            <p className="text-sm">
-              {"Owner/Operator"}, {"Revive Beauty Salon"}
-            </p>
+            <p className="font-medium text-foreground/80">Jamar Wright</p>
+            <p className="text-sm">Owner/Operator, Revive Beauty Salon</p>
           </div>
         </div>
-      </SectionLight>
+      </section>
+
+      {/* Gradient transition */}
+      <div className="section-divider-cream-to-light" />
 
       {/* The Journey Visual - LIGHT */}
       <SectionLight className="px-4 md:px-8 py-16 md:py-32">
@@ -185,70 +195,101 @@ const Index = () => {
             Every engagement follows the same principle: orientation before execution
           </p>
 
-          {/* Offer Journey */}
-          <div className="space-y-8">
+          {/* Vertical Timeline */}
+          <div className="relative max-w-2xl mx-auto">
+            {/* Timeline line */}
+            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-foreground/10 via-primary/40 to-[hsl(var(--waypoint-s3))]/40" />
+
             {/* Entry Points */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link to="/quiz" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">Free</div>
-                <div className="font-medium group-hover:text-foreground/80">AI Readiness Quiz</div>
+            <div className="space-y-0">
+              {/* Quiz */}
+              <Link to="/quiz" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors border border-foreground/10 group-hover:border-primary/30">
+                  <Search className="w-5 h-5 md:w-6 md:h-6 text-foreground/40 group-hover:text-primary transition-colors" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">Free</div>
+                  <div className="font-medium text-lg group-hover:text-primary transition-colors">AI Readiness Quiz</div>
+                </div>
               </Link>
-              <Link to="/field-guides/analog" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$47 – $297</div>
-                <div className="font-medium group-hover:text-foreground/80">Field Guides</div>
+
+              {/* Field Guides */}
+              <Link to="/field-guides/analog" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors border border-foreground/10 group-hover:border-primary/30">
+                  <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-foreground/40 group-hover:text-primary transition-colors" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$47 – $297</div>
+                  <div className="font-medium text-lg group-hover:text-primary transition-colors">Field Guides</div>
+                </div>
+              </Link>
+
+              {/* Diagnostic - highlighted */}
+              <Link to="/diagnostic" className="group relative flex items-start gap-5 md:gap-6 py-6 bg-foreground/[0.03] hover:bg-foreground/[0.06] rounded-xl px-2 transition-colors border border-foreground/10">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-foreground text-white flex items-center justify-center flex-shrink-0 transition-colors shadow-lg">
+                  <Search className="w-5 h-5 md:w-6 md:h-6" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$1,500 · The Starting Point</div>
+                  <div className="font-medium text-xl">AI Readiness Diagnostic</div>
+                  <div className="text-sm text-foreground/50 mt-1">Scorecard + Gap Map + Action Plan + Loom Walkthrough</div>
+                </div>
+              </Link>
+
+              {/* Lumina Labs */}
+              <Link to="/products/lumina-labs" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[hsl(var(--waypoint-literacy))]/10 flex items-center justify-center flex-shrink-0 transition-colors border border-[hsl(var(--waypoint-literacy))]/20 group-hover:border-[hsl(var(--waypoint-literacy))]/50">
+                  <Brain className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--waypoint-literacy))]" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$1,500 – $3,000</div>
+                  <div className="font-medium text-lg text-[hsl(var(--waypoint-literacy))]">Lumina Labs</div>
+                  <div className="text-xs text-foreground/50 mt-1">Team Workshop</div>
+                </div>
+              </Link>
+
+              {/* Lumina Compass */}
+              <Link to="/products/lumina-compass" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[hsl(var(--waypoint-integration))]/10 flex items-center justify-center flex-shrink-0 transition-colors border border-[hsl(var(--waypoint-integration))]/20 group-hover:border-[hsl(var(--waypoint-integration))]/50">
+                  <Compass className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--waypoint-integration))]" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$15,000</div>
+                  <div className="font-medium text-lg text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
+                  <div className="text-xs text-foreground/50 mt-1">4-Week Sprint</div>
+                </div>
+              </Link>
+
+              {/* S3 */}
+              <Link to="/waypoints/s3" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[hsl(var(--waypoint-s3))]/10 flex items-center justify-center flex-shrink-0 transition-colors border border-[hsl(var(--waypoint-s3))]/20 group-hover:border-[hsl(var(--waypoint-s3))]/50">
+                  <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--waypoint-s3))]" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$50K – $250K</div>
+                  <div className="font-medium text-lg text-[hsl(var(--waypoint-s3))]">S³ Transformation</div>
+                  <div className="text-xs text-foreground/50 mt-1">Scale · Sale · Succession</div>
+                </div>
+              </Link>
+
+              {/* Ignite */}
+              <Link to="/products/lumina-ignite" className="group relative flex items-start gap-5 md:gap-6 py-5 hover:bg-foreground/[0.02] rounded-xl px-2 transition-colors">
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[hsl(var(--waypoint-s3))]/10 flex items-center justify-center flex-shrink-0 transition-colors border border-[hsl(var(--waypoint-s3))]/20 group-hover:border-[hsl(var(--waypoint-s3))]/50">
+                  <Flame className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--waypoint-s3))]" />
+                </div>
+                <div className="pt-1">
+                  <div className="text-xs text-foreground/40 mb-1">$3,000 – $7,500/mo</div>
+                  <div className="font-medium text-lg">Lumina Ignite</div>
+                  <div className="text-xs text-foreground/50 mt-1">Ongoing AI Retainer</div>
+                </div>
               </Link>
             </div>
-
-            {/* Arrow Down */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Diagnostic */}
-            <Link to="/diagnostic" className="block p-6 rounded-xl border-2 border-foreground hover:bg-foreground/5 transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$1,500 • The Starting Point</div>
-              <div className="text-xl font-medium mb-2">AI Readiness Diagnostic</div>
-              <div className="text-sm text-foreground/60">Scorecard + Gap Map + Action Plan + Loom Walkthrough</div>
-            </Link>
-
-            {/* Arrow Down with Branch */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Main Products */}
-            <div className="grid md:grid-cols-3 gap-4">
-              <Link to="/products/lumina-labs" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-literacy))]/30 hover:border-[hsl(var(--waypoint-literacy))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$1,500 – $3,000</div>
-                <div className="font-medium text-[hsl(var(--waypoint-literacy))]">Lumina Labs</div>
-                <div className="text-xs text-foreground/50 mt-1">Team Workshop</div>
-              </Link>
-              <Link to="/products/lumina-compass" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-integration))]/30 hover:border-[hsl(var(--waypoint-integration))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$15,000</div>
-                <div className="font-medium text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
-                <div className="text-xs text-foreground/50 mt-1">4-Week Sprint</div>
-              </Link>
-              <Link to="/waypoints/s3" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$50K – $250K</div>
-                <div className="font-medium text-[hsl(var(--waypoint-s3))]">S³ Transformation</div>
-                <div className="text-xs text-foreground/50 mt-1">Scale • Sale • Succession</div>
-              </Link>
-            </div>
-
-            {/* Arrow Down */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Ignite */}
-            <Link to="/products/lumina-ignite" className="block p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$3,000 – $7,500/mo</div>
-              <div className="font-medium">Lumina Ignite</div>
-              <div className="text-xs text-foreground/50 mt-1">Ongoing AI Retainer</div>
-            </Link>
           </div>
         </div>
       </SectionLight>
+
+      {/* Gradient transition */}
+      <div className="section-divider-light-to-dark" />
 
       {/* Final CTA - DARK */}
       <SectionDark className="px-4 md:px-8 py-24 md:py-40" withShapes>
