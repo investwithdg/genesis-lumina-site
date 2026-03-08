@@ -79,7 +79,7 @@ const About = () => {
 
               {/* LinkedIn Placeholder */}
               <a
-                href="{https://www.linkedin.com/in/donovan-r-green/}"
+                href="https://www.linkedin.com/in/donovan-r-green/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary hover:underline">
@@ -118,18 +118,6 @@ const About = () => {
       {/* Trust Signals - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">
-          {/* Featured In Placeholder */}
-          <div className="text-center mb-16">
-            <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Featured In</h3>
-            <div className="flex flex-wrap justify-center gap-8">
-              {[1, 2, 3, 4].map((idx) =>
-              <div key={idx} className="w-32 h-12 rounded bg-foreground/5 border border-dashed border-foreground/20 flex items-center justify-center text-xs text-foreground/40">
-                  {"{LOGO_" + idx + "}"}
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Technologies We Work With */}
           <div className="text-center">
             <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Technologies We Work With</h3>
