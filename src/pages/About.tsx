@@ -79,7 +79,7 @@ const About = () => {
 
               {/* LinkedIn Placeholder */}
               <a
-                href="{https://www.linkedin.com/in/donovan-r-green/}"
+                href="https://www.linkedin.com/in/donovan-r-green/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary hover:underline">
