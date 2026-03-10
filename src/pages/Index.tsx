@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 import BookCallButton from "@/components/BookCallButton";
 import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
