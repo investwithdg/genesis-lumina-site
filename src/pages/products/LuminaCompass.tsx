@@ -6,7 +6,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
-import { Compass, Map, Wrench, GraduationCap, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
+import { Compass, Map, Wrench, Rocket, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 const LuminaCompass = () => {
   return (
