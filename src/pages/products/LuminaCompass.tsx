@@ -21,7 +21,7 @@ const LuminaCompass = () => {
               <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
                 <Compass className="w-7 h-7" />
               </div>
-              <span className="text-sm font-medium text-white/60">System Integration Product</span>
+              <span className="text-sm font-medium text-white/60">System Integration</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
