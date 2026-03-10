@@ -108,10 +108,10 @@ const LuminaCompass = () => {
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
-            What You <span className="font-medium">Get</span>
+            What Gets <span className="font-medium">Built</span>
           </h2>
           <p className="text-lg text-foreground/60 text-center mb-12">
-            Every deliverable is functional, documented, and team-ready
+            Every deliverable is functional, documented, and runs without you
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
