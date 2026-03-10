@@ -117,28 +117,28 @@ const LuminaCompass = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Systems Map (Miro Board)",
-                desc: "Visual architecture of your workflows, bottlenecks, and data flows."
+                title: "Operational Systems Map",
+                desc: "Visual architecture of your workflows, decision layers, and constraint points — built to inform every system we touch."
               },
               {
                 title: "Working System v1",
-                desc: "A functional system built around your #1 operational constraint — not a prototype."
+                desc: "A fully operational system built around your #1 business constraint. Not a prototype. Not a proof of concept."
               },
               {
-                title: "Notion \"Clarity Portal\"",
-                desc: "Full documentation, SOPs, troubleshooting guide, and architecture diagram."
+                title: "Clarity Portal",
+                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place."
               },
               {
-                title: "3-5 Loom Walkthroughs",
-                desc: "Video walkthroughs so your team can operate, maintain, and iterate independently."
+                title: "3–5 Loom Walkthroughs",
+                desc: "Recorded operational walkthroughs so your team can operate, maintain, and iterate without you in the room."
               },
               {
-                title: "60-90 Min Team Training Session",
-                desc: "Live handoff session with your full team."
+                title: "60–90 Min Team Activation Session",
+                desc: "Live deployment session with your full team. We don't just hand off — we make sure it sticks."
               },
               {
-                title: "30-Day Support Window",
-                desc: "Bug fixes, questions, and minor tweaks after delivery (up to 3 hrs)."
+                title: "30-Day Stability Window",
+                desc: "Post-deployment support covering adjustments, questions, and refinements. Up to 3 hours included."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
