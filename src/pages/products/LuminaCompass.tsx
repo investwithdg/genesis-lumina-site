@@ -29,7 +29,7 @@ const LuminaCompass = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-14 max-w-3xl">
-              A 4-week flagship sprint that maps your systems, builds your automations, and delivers a complete Notion command center.
+              You don't have an automation problem. You have an infrastructure problem. Compass is the 4-week engagement that finally fixes it.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
