@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 import BookCallButton from "@/components/BookCallButton";
 import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
@@ -247,6 +248,14 @@ const Index = () => {
               <div className="text-xs text-foreground/50 mt-1">Ongoing AI Retainer</div>
             </Link>
           </div>
+        </div>
+      </SectionLight>
+
+      {/* Client Logos */}
+      <SectionLight className="px-8 py-16">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8 text-center">Trusted By</h3>
+          <ClientLogoCarousel />
         </div>
       </SectionLight>
 

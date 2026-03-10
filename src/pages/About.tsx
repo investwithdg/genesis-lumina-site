@@ -118,15 +118,18 @@ const About = () => {
       {/* Trust Signals - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">
-          {/* Featured In Placeholder */}
+          {/* Clients We've Worked With */}
           <div className="text-center mb-16">
-            <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Featured In</h3>
-            <div className="flex flex-wrap justify-center gap-8">
-              {[1, 2, 3, 4].map((idx) =>
-              <div key={idx} className="w-32 h-12 rounded bg-foreground/5 border border-dashed border-foreground/20 flex items-center justify-center text-xs text-foreground/40">
-                  {"{LOGO_" + idx + "}"}
-                </div>
-              )}
+            <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Clients We've Worked With</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              {[
+                { src: "/lovable-uploads/1374b12d-98d6-4085-80b1-6caa30980a00.png", alt: "P30" },
+                { src: "/lovable-uploads/4ed02e3c-00f4-457f-b8b7-2e2653ca8d62.png", alt: "Client Logo" },
+                { src: "/lovable-uploads/e71177cb-61cb-42da-a167-f6f9ecccd8f4.png", alt: "Client Logo" },
+                { src: "/lovable-uploads/b6b23e00-ae9c-4c92-b64e-6247fbda79e3.png", alt: "Fox Logo" },
+              ].map((logo, idx) => (
+                <img key={idx} src={logo.src} alt={logo.alt} className="h-16 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
+              ))}
             </div>
           </div>
 

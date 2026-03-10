@@ -26,6 +26,14 @@ const ClientLogoCarousel = () => {
     {
       src: "/lovable-uploads/b6b23e00-ae9c-4c92-b64e-6247fbda79e3.png",
       alt: "Fox Logo"
+    },
+    {
+      src: "/lovable-uploads/4ed02e3c-00f4-457f-b8b7-2e2653ca8d62.png",
+      alt: "Client Logo"
+    },
+    {
+      src: "/lovable-uploads/e71177cb-61cb-42da-a167-f6f9ecccd8f4.png",
+      alt: "Client Logo"
     }
   ];
 
