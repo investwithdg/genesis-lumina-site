@@ -6,7 +6,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
-import { Compass, Map, Wrench, GraduationCap, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
+import { Compass, Map, Wrench, Rocket, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 const LuminaCompass = () => {
   return (
@@ -21,7 +21,7 @@ const LuminaCompass = () => {
               <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center glow-integration">
                 <Compass className="w-7 h-7" />
               </div>
-              <span className="text-sm font-medium text-white/60">System Integration Product</span>
+              <span className="text-sm font-medium text-white/60">System Integration</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
@@ -29,14 +29,14 @@ const LuminaCompass = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-14 max-w-3xl">
-              A 4-week flagship sprint that maps your systems, builds your automations, and delivers a complete Notion command center.
+              You don't have an automation problem. You have an infrastructure problem. Compass is the 4-week engagement that finally fixes it.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
                 <Link to="/waypoints/system-integration">
                   <ArrowLeft className="w-5 h-5 mr-2" />
-                  Learn About System Integration First
+                  Understand the System Integration Waypoint First
                 </Link>
               </Button>
             </div>
@@ -60,9 +60,9 @@ const LuminaCompass = () => {
       <SectionDark className="px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center text-white">
-            Your <span className="font-medium">AI Sprint</span>
+            Your <span className="font-medium">Operational Sprint</span>
           </h2>
-          <p className="text-lg text-white/60 text-center mb-12">Discovery → Design → Build → Deliver</p>
+          <p className="text-lg text-white/60 text-center mb-12">Discovery → Architecture → Build → Deploy</p>
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
@@ -70,25 +70,25 @@ const LuminaCompass = () => {
                 week: "Week 1",
                 icon: Map,
                 title: "Discovery",
-                desc: "Full systems audit. We map every process, tool, and workflow to identify automation opportunities."
+                desc: "Full operational audit. We map every process, workflow, and decision point to identify where your business is leaking capacity and compounding friction."
               },
               {
                 week: "Week 2",
                 icon: Compass,
-                title: "Design",
-                desc: "Custom automation architecture. We design the systems and integrations specific to your business."
+                title: "Architecture",
+                desc: "Custom system design. We engineer the operational blueprint specific to your constraints, your team, and your highest-leverage bottleneck."
               },
               {
                 week: "Week 3",
                 icon: Wrench,
                 title: "Build",
-                desc: "Hands-on implementation. We build and test your automations, integrations, and Notion command center."
+                desc: "Hands-on implementation. We construct and stress-test your operational systems, workflow integrations, and centralized business infrastructure."
               },
               {
                 week: "Week 4",
-                icon: GraduationCap,
-                title: "Deliver",
-                desc: "Training and handoff. Your team learns the systems and you get complete documentation."
+                icon: Rocket,
+                title: "Deploy",
+                desc: "Structured handoff. Your team is trained, your documentation is complete, and your systems are live — not staged."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
@@ -108,37 +108,37 @@ const LuminaCompass = () => {
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
-            What You <span className="font-medium">Get</span>
+            What Gets <span className="font-medium">Built</span>
           </h2>
           <p className="text-lg text-foreground/60 text-center mb-12">
-            Every deliverable is functional, documented, and team-ready
+            Every deliverable is functional, documented, and runs without you
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Systems Map (Miro Board)",
-                desc: "Visual architecture of your workflows, bottlenecks, and data flows."
+                title: "Operational Systems Map",
+                desc: "Visual architecture of your workflows, decision layers, and constraint points — built to inform every system we touch."
               },
               {
                 title: "Working System v1",
-                desc: "A functional system built around your #1 operational constraint — not a prototype."
+                desc: "A fully operational system built around your #1 business constraint. Not a prototype. Not a proof of concept."
               },
               {
-                title: "Notion \"Clarity Portal\"",
-                desc: "Full documentation, SOPs, troubleshooting guide, and architecture diagram."
+                title: "Clarity Portal",
+                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place."
               },
               {
-                title: "3-5 Loom Walkthroughs",
-                desc: "Video walkthroughs so your team can operate, maintain, and iterate independently."
+                title: "3–5 Loom Walkthroughs",
+                desc: "Recorded operational walkthroughs so your team can operate, maintain, and iterate without you in the room."
               },
               {
-                title: "60-90 Min Team Training Session",
-                desc: "Live handoff session with your full team."
+                title: "60–90 Min Team Activation Session",
+                desc: "Live deployment session with your full team. We don't just hand off — we make sure it sticks."
               },
               {
-                title: "30-Day Support Window",
-                desc: "Bug fixes, questions, and minor tweaks after delivery (up to 3 hrs)."
+                title: "30-Day Stability Window",
+                desc: "Post-deployment support covering adjustments, questions, and refinements. Up to 3 hours included."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-5 rounded-xl bg-white border border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
