@@ -70,25 +70,25 @@ const LuminaCompass = () => {
                 week: "Week 1",
                 icon: Map,
                 title: "Discovery",
-                desc: "Full systems audit. We map every process, tool, and workflow to identify automation opportunities."
+                desc: "Full operational audit. We map every process, workflow, and decision point to identify where your business is leaking capacity and compounding friction."
               },
               {
                 week: "Week 2",
                 icon: Compass,
-                title: "Design",
-                desc: "Custom automation architecture. We design the systems and integrations specific to your business."
+                title: "Architecture",
+                desc: "Custom system design. We engineer the operational blueprint specific to your constraints, your team, and your highest-leverage bottleneck."
               },
               {
                 week: "Week 3",
                 icon: Wrench,
                 title: "Build",
-                desc: "Hands-on implementation. We build and test your automations, integrations, and Notion command center."
+                desc: "Hands-on implementation. We construct and stress-test your operational systems, workflow integrations, and centralized business infrastructure."
               },
               {
                 week: "Week 4",
-                icon: GraduationCap,
-                title: "Deliver",
-                desc: "Training and handoff. Your team learns the systems and you get complete documentation."
+                icon: Rocket,
+                title: "Deploy",
+                desc: "Structured handoff. Your team is trained, your documentation is complete, and your systems are live — not staged."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
