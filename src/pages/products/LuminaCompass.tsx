@@ -36,7 +36,7 @@ const LuminaCompass = () => {
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
                 <Link to="/waypoints/system-integration">
                   <ArrowLeft className="w-5 h-5 mr-2" />
-                  Learn About System Integration First
+                  Understand the System Integration Waypoint First
                 </Link>
               </Button>
             </div>
