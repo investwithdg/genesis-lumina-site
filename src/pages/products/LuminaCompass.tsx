@@ -60,9 +60,9 @@ const LuminaCompass = () => {
       <SectionDark className="px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center text-white">
-            Your <span className="font-medium">AI Sprint</span>
+            Your <span className="font-medium">Operational Sprint</span>
           </h2>
-          <p className="text-lg text-white/60 text-center mb-12">Discovery → Design → Build → Deliver</p>
+          <p className="text-lg text-white/60 text-center mb-12">Discovery → Architecture → Build → Deploy</p>
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
