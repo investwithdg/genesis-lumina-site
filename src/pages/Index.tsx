@@ -251,6 +251,14 @@ const Index = () => {
         </div>
       </SectionLight>
 
+      {/* Client Logos */}
+      <SectionLight className="px-8 py-16">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8 text-center">Trusted By</h3>
+          <ClientLogoCarousel />
+        </div>
+      </SectionLight>
+
       {/* Final CTA - DARK */}
       <SectionDark className="px-4 md:px-8 py-24 md:py-40" withShapes>
         <div className="max-w-4xl mx-auto text-center relative z-10">
