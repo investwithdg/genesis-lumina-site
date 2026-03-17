@@ -1,95 +1,69 @@
 
 
-## Color Scheme Update + Mobile Optimization
+## Two Questions, Two Plans
 
-### Color Palette from Your Image
+### 1. "Thumbnails on mobile" — Social Share Previews (Open Graph Images)
 
-| Swatch | Hex | Usage |
-|--------|-----|-------|
-| Light gray | `#ededed` | Muted backgrounds, alternate sections |
-| Warm cream | `#f2eddb` | Secondary backgrounds, subtle warmth |
-| Deep green | `#1c7051` | Primary accent, CTAs, links, active states |
-| Black | `#000000` | Dark sections, hero backgrounds, text |
-| Bright blue | `#243aff` | Secondary accent, hover states, highlights |
+When you share your site link via text, iMessage, LinkedIn, Slack, etc., the preview "thumbnail" shown is controlled by **Open Graph meta tags** in `index.html`. Right now, your site is using the **default Lovable placeholder image**:
 
-### Part 1: Apply Color Scheme
+```
+og:image → https://lovable.dev/opengraph-image-p98pqg.png
+twitter:image → https://lovable.dev/opengraph-image-p98pqg.png
+twitter:site → @lovable_dev
+```
 
-**File: `tailwind.config.ts`**
-- Change `primary.DEFAULT` from `#000000` to `#1c7051` (green becomes the main action color)
-- Change `primary.foreground` stays `#ffffff`
-- Change `background` from `#ffffff` to `#ededed` or keep white and use `#ededed` for muted sections
-- Add `accent` color: `#243aff` (blue)
-- Add `cream` color: `#f2eddb`
-- Keep `foreground` as `#000000` (black for text/dark sections)
+This means every time someone shares your link, they see a generic Lovable branded card — not Genesis Lumina branding.
 
-**File: `src/index.css`**
-- Update CSS variables to match the new palette
-- Update waypoint glow colors to use green/blue from the palette instead of indigo/cyan
+**To fix this:**
+- Create or upload a branded OG image (recommended: 1200x630px) — could feature your logo, tagline, and brand colors (black/green)
+- Update `index.html` meta tags to point to your image (hosted in `/public/` or on your published domain)
+- Update `twitter:site` from `@lovable_dev` to your own Twitter/X handle
+- Optionally add per-page OG tags using `react-helmet-async` so each page (Compass, Audit, etc.) has its own preview when shared
 
-**File: `src/components/ui/button.tsx`**
-- Default button becomes green (`#1c7051`) with white text
-- Outline variant uses green border
-- This cascades to all CTAs site-wide automatically
+### 2. Mobile Conversion Friendliness — Current Issues
 
-**File: `src/components/SectionDark.tsx`**
-- Keep black background (already `#000000` via foreground)
+After reviewing every section on a 390px viewport, here's what needs attention:
 
-**File: `src/components/SectionLight.tsx`**
-- Default: white background
-- Muted variant: use `#ededed` (light gray) or `#f2eddb` (cream) for alternating sections
+**Good already:**
+- Hero CTAs stack vertically and are full-width
+- Navigation hamburger menu has proper tap targets (44px)
+- Waypoint cards stack single-column
+- Font sizes are readable
 
-**File: `src/components/Navigation.tsx`**
-- Active link color becomes green
-- "Start Diagnostic" button becomes green
-- Mobile menu active states use green
+**Issues to fix:**
 
-**File: `src/components/Footer.tsx`**
-- Links and button accents use green
+| Issue | Location | Fix |
+|-------|----------|-----|
+| **Client logos on About page** show in a cramped 3+1 grid, some logos tiny | About page | Use a 2-column grid on mobile, or a horizontal scroll carousel |
+| **Logo carousel on homepage** may scroll too fast to be useful on small screens | Index page | Slow animation on mobile, or show static grid |
+| **"Your Path to AI Clarity" journey cards** — the 3-column product grid is too tight on mobile | Index page | Already stacks via `md:grid-cols-3`, but the 2-column entry points grid (`grid-cols-2 md:grid-cols-2`) could stack to single column on small screens |
+| **No sticky mobile CTA** — users scroll through a long page with no persistent way to convert | All pages | Add a sticky bottom bar on mobile with primary CTA (e.g., "Begin Diagnostic" or "Book Call") |
+| **OG image is Lovable's default** — shared links look unbranded | `index.html` | Replace with branded image |
+| **Twitter site tag is @lovable_dev** | `index.html` | Change to your handle |
 
-**File: `src/pages/Index.tsx`**
-- Hero CTA buttons: white button on dark bg stays, but secondary outline gets green tint
-- Waypoint card hover borders shift to green/blue from the palette
-- Stats bar stays black/dark
+### Implementation Plan
 
-### Part 2: Mobile Optimization
-
-**File: `src/components/Navigation.tsx`**
-- Increase mobile tap targets (min 44px height on links)
-- Add smooth slide-down animation for mobile menu
-- Make mobile menu full-width with better spacing
-- Ensure hamburger is easily tappable
+**File: `index.html`**
+- Replace `og:image` and `twitter:image` URLs with a branded image (you'll need to upload one, or I can create a simple branded card using your colors/logo)
+- Update `twitter:site` to your handle
+- Add `og:url` meta tag pointing to your published domain
 
 **File: `src/pages/Index.tsx`**
-- Reduce hero heading size on mobile (`text-4xl` instead of `text-5xl`)
-- Stack CTA buttons vertically on small screens (already done with `flex-col sm:flex-row`)
-- Ensure journey cards don't overflow on small screens
-- Add horizontal scroll or stack for the 3-column waypoint grid on mobile
+- Add a sticky mobile CTA bar that appears after scrolling past the hero
+- Make the entry points grid (`AI Readiness Quiz` / `Field Guides`) single column on smallest screens
 
-**File: `src/components/Footer.tsx`**
-- Stack footer links vertically on mobile instead of wrapping
-- Increase tap target size for footer links
+**File: `src/pages/About.tsx`**
+- Improve the client logos grid to be 2-column on mobile with better sizing
 
-**File: `src/index.css`**
-- Add touch-friendly tap target utility
-- Ensure text sizes are readable on mobile (min 16px for body to prevent iOS zoom)
+**File: `src/components/ClientLogoCarousel.tsx`**
+- Reduce logo size and animation speed on mobile
 
-**Global mobile fixes across all pages:**
-- Ensure no horizontal overflow on any page
-- Padding adjustments: `px-4` on mobile, `px-8` on desktop
-- Font sizes: reduce heading sizes on mobile breakpoints
-- Button heights: minimum 44px for touch targets
-- Card grids: single column on mobile, multi-column on desktop
+**Optional but high-impact: Per-page OG tags**
+- Install `react-helmet-async` and add unique title/description/image per product page so shared links look professional
 
-### Files to Modify
+### What I Need From You
 
-| File | Changes |
-|------|---------|
-| `tailwind.config.ts` | New color tokens (green, blue, cream, gray) |
-| `src/index.css` | CSS variables, waypoint colors, mobile utilities |
-| `src/components/ui/button.tsx` | Green primary, blue accent variant |
-| `src/components/SectionLight.tsx` | Cream/gray muted variant |
-| `src/components/Navigation.tsx` | Green accents, better mobile tap targets |
-| `src/components/Footer.tsx` | Green accents, mobile-friendly link layout |
-| `src/pages/Index.tsx` | Color updates, mobile sizing |
-| `src/components/BookCallButton.tsx` | No changes needed (inherits button styles) |
+1. **Upload a branded OG image** (1200x630px) — or tell me to generate a simple one using your brand colors, logo text "Genesis Lumina", and tagline
+2. **Your Twitter/X handle** to replace `@lovable_dev`
+3. **Do you want a sticky mobile CTA bar?** (the floating "Book Call" or "Begin Diagnostic" button that stays at the bottom of the screen on phones)
 
