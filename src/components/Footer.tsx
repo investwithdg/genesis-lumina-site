@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer = ({ dark = false }: FooterProps) => {
   return (
-    <footer className={`px-8 py-16 ${dark ? 'bg-foreground text-white border-white/10' : 'bg-white text-foreground border-foreground/10'} border-t`}>
+    <footer className={`px-8 py-16 pb-24 md:pb-16 ${dark ? 'bg-foreground text-white border-white/10' : 'bg-white text-foreground border-foreground/10'} border-t`}>
       <div className="max-w-6xl mx-auto">
         {/* Newsletter CTA */}
         <div className="text-center mb-12">
