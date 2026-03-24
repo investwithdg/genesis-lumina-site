@@ -8,6 +8,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import MobileStickyBar from "@/components/MobileStickyBar";
 import { ArrowRight, Brain, Network, TrendingUp, Quote } from "lucide-react";
 
 const Index = () => {
@@ -189,7 +190,7 @@ const Index = () => {
           {/* Offer Journey */}
           <div className="space-y-8">
             {/* Entry Points */}
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link to="/quiz" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
                 <div className="text-sm text-foreground/50 mb-1">Free</div>
                 <div className="font-medium group-hover:text-foreground/80">AI Readiness Quiz</div>
@@ -294,6 +295,9 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Sticky mobile CTA */}
+      <MobileStickyBar />
     </div>
   );
 };

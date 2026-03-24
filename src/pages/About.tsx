@@ -121,14 +121,14 @@ const About = () => {
           {/* Clients We've Worked With */}
           <div className="text-center mb-16">
             <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8">Clients We've Worked With</h3>
-            <div className="flex flex-wrap justify-center items-center gap-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center items-center max-w-3xl mx-auto">
               {[
                 { src: "/lovable-uploads/1374b12d-98d6-4085-80b1-6caa30980a00.png", alt: "P30" },
                 { src: "/lovable-uploads/4ed02e3c-00f4-457f-b8b7-2e2653ca8d62.png", alt: "Client Logo" },
                 { src: "/lovable-uploads/e71177cb-61cb-42da-a167-f6f9ecccd8f4.png", alt: "Client Logo" },
                 { src: "/lovable-uploads/b6b23e00-ae9c-4c92-b64e-6247fbda79e3.png", alt: "Fox Logo" },
               ].map((logo, idx) => (
-                <img key={idx} src={logo.src} alt={logo.alt} className="h-16 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                <img key={idx} src={logo.src} alt={logo.alt} className="h-14 md:h-16 w-auto max-w-[140px] object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
               ))}
             </div>
           </div>
