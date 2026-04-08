@@ -124,9 +124,6 @@ const Index = () => {
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
                 </p>
-                <p className="text-foreground/50 text-sm mb-6">
-                  Three tiers. One arc. Ember builds your readiness. Blaze scales your systems. Phoenix guides your trajectory. Each stage is earned, not sold.
-                </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
                   <Link to="/products/lumina-ignite" className="flex items-center gap-2">
