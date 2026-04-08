@@ -21,9 +21,9 @@ const Index = () => {
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="text-center animate-fade-in">
             <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-8">
-              Most organizations don't fail at AI because of tools.
+              Most organizations aren't failing at AI because they lack tools.
               <br />
-              They fail because they adopt out of sequence.
+              They're failing because they're becoming dependent instead of capable.
             </p>
 
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
@@ -32,13 +32,13 @@ const Index = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Genesis Lumina helps you understand where you are, what comes next, and how to move forward—in the right order.
+              Genesis Lumina builds the AI literacy and operational infrastructure that lets your organization govern its own intelligence — so you outlast every disruption cycle, vendor shift, and capability change ahead.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
                 <Link to="/diagnostic" className="gap-2">
-                  Begin Your Diagnostic
+                  Begin Your Assessment
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -62,10 +62,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">
-              Once You Have <span className="font-medium">Direction</span>
+              Once You Know <span className="font-medium">Where You Stand</span>
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              The Diagnostic tells you where you are. These Waypoints show you what comes next.
+              The Assessment reveals where you're exposed. These Waypoints show you how to build infrastructure you own.
             </p>
           </div>
 
@@ -79,9 +79,9 @@ const Index = () => {
                 </div>
 
                 <h3 className="text-2xl font-medium mb-1">Lumina Labs</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">For Teams · The Workshop</p>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">For Teams · AI Governance Workshop</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Build foundational understanding. Hands-on AI training that gets your entire team aligned and ready to execute in a single session.
+                  Teach your leadership team to govern AI — not just use it. A 3-hour workshop that builds the organizational capacity to evaluate, deploy, and own AI without becoming dependent on any vendor, tool, or model.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
@@ -104,7 +104,7 @@ const Index = () => {
                 <h3 className="text-2xl font-medium mb-1">Lumina Compass</h3>
                 <p className="text-sm text-foreground/50 mb-4 font-medium">For Business · The Sprint</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
-                  The 4-week flagship sprint. We audit your chaos, design your architecture, and build the automations that run your business.
+                  The 4-week flagship build. We map your operational architecture, identify your highest-leverage constraint, and build the infrastructure your team owns, governs, and extends — without ongoing dependence on us.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
@@ -125,9 +125,12 @@ const Index = () => {
                 </div>
 
                 <h3 className="text-2xl font-medium mb-1">Lumina Ignite</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Partner</p>
+                <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Progression</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
+                </p>
+                <p className="text-foreground/50 text-sm mb-6">
+                  Three tiers. One arc. Ember builds your readiness. Blaze scales your systems. Phoenix guides your trajectory. Each stage is earned, not sold.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
@@ -206,10 +209,10 @@ const Index = () => {
               <div className="w-px h-8 bg-foreground/20" />
             </div>
 
-            {/* Diagnostic */}
+            {/* Assessment */}
             <Link to="/diagnostic" className="block p-6 rounded-xl border-2 border-foreground hover:bg-foreground/5 transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$1,500 • The Starting Point</div>
-              <div className="text-xl font-medium mb-2">AI Readiness Diagnostic</div>
+              <div className="text-sm text-foreground/50 mb-1">$2,500 • The Starting Point</div>
+              <div className="text-xl font-medium mb-2">Vulnerability Assessment</div>
               <div className="text-sm text-foreground/60">Scorecard + Gap Map + Action Plan + Loom Walkthrough</div>
             </Link>
 
@@ -221,14 +224,14 @@ const Index = () => {
             {/* Main Products */}
             <div className="grid md:grid-cols-3 gap-4">
               <Link to="/products/lumina-labs" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-literacy))]/30 hover:border-[hsl(var(--waypoint-literacy))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$1,500 – $3,000</div>
+                <div className="text-sm text-foreground/50 mb-1">$3,000 – $7,500</div>
                 <div className="font-medium text-[hsl(var(--waypoint-literacy))]">Lumina Labs</div>
-                <div className="text-xs text-foreground/50 mt-1">Team Workshop</div>
+                <div className="text-xs text-foreground/50 mt-1">AI Governance Workshop</div>
               </Link>
               <Link to="/products/lumina-compass" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-integration))]/30 hover:border-[hsl(var(--waypoint-integration))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$15,000</div>
+                <div className="text-sm text-foreground/50 mb-1">$20,000</div>
                 <div className="font-medium text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
-                <div className="text-xs text-foreground/50 mt-1">4-Week Sprint</div>
+                <div className="text-xs text-foreground/50 mt-1">4-Week Infrastructure Build</div>
               </Link>
               <Link to="/waypoints/s3" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
                 <div className="text-sm text-foreground/50 mb-1">$50K – $250K</div>
@@ -244,9 +247,9 @@ const Index = () => {
 
             {/* Ignite */}
             <Link to="/products/lumina-ignite" className="block p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$3,000 – $7,500/mo</div>
+              <div className="text-sm text-foreground/50 mb-1">Ember → Blaze → Phoenix</div>
               <div className="font-medium">Lumina Ignite</div>
-              <div className="text-xs text-foreground/50 mt-1">Ongoing AI Retainer</div>
+              <div className="text-xs text-foreground/50 mt-1">Progression Retainer</div>
             </Link>
           </div>
         </div>
@@ -268,12 +271,12 @@ const Index = () => {
             <span className="font-medium">Get clear.</span>
           </h2>
           <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-            The AI Readiness Diagnostic tells you exactly where you stand and what comes next.
+            The Vulnerability Assessment tells you exactly where you stand and what comes next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               <Link to="/diagnostic" className="gap-2">
-                Begin Your Diagnostic
+                Begin Your Assessment
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>

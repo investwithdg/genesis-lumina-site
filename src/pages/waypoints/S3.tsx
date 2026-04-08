@@ -30,15 +30,15 @@ const S3 = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-14 max-w-3xl">
-              Transform your business into an enterprise-grade, AI-powered asset. Build systems that scale infinitely, increase valuation, and enable smooth transitions.
+              Build the infrastructure that makes your organization's intelligence transferable — so what you've built doesn't depend on you being in the room.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <BookCallButton size="lg" className="text-lg px-10 py-6 h-auto bg-white !text-black hover:bg-white/90">
-                Book Your Free Strategy Call
+                Begin the S³ Conversation
               </BookCallButton>
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-                <Link to="/diagnostic">Get Your Diagnostic First</Link>
+                <Link to="/diagnostic">Get Your Assessment First</Link>
               </Button>
             </div>
           </div>
@@ -70,17 +70,17 @@ const S3 = () => {
               {
                 icon: TrendingUp,
                 title: "Scale",
-                desc: "Build AI infrastructure that grows revenue without proportional cost increases. Handle 10x growth with the same core team."
+                desc: "Build AI infrastructure that scales revenue without scaling complexity. Your systems grow with the business. Your team governs them — they don't chase them."
               },
               {
                 icon: DollarSign,
                 title: "Sale",
-                desc: "Increase business valuation through documented systems, automation, and AI-driven operations that buyers love."
+                desc: "Buyers don't just pay for revenue. They pay for transferable infrastructure. Documented systems, institutionalized intelligence, and governance frameworks that survive your departure — these are what command premium valuations."
               },
               {
                 icon: Building2,
                 title: "Succession",
-                desc: "Create systems that run without you. Enable smooth leadership transitions with zero operational disruption."
+                desc: "Leadership transitions fail when organizational intelligence isn't institutionalized. We build the systems, SOPs, and continuity frameworks that let new leadership inherit capability — not confusion."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-s3))] transition-all">
@@ -179,7 +179,8 @@ const S3 = () => {
               "Complete operational transparency for buyers, investors, or successors",
               "Reduced operational risk through redundancy and automation",
               "Faster decision-making through AI-powered insights",
-              "Competitive moat that's difficult for competitors to replicate"
+              "Competitive moat that's difficult for competitors to replicate",
+              "Institutional intelligence that survives any transition — founder departure, leadership change, or acquisition"
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-3" />
@@ -199,7 +200,7 @@ const S3 = () => {
           
           <div className="space-y-6">
             {[
-              "You're generating $1M+ in annual revenue and ready to scale",
+              "You've built something that matters and you need it to outlast your direct involvement in it",
               "Your business is overly dependent on you or key team members",
               "You're considering a future exit or succession plan",
               "You want to maximize business valuation through AI infrastructure",
@@ -239,7 +240,7 @@ const S3 = () => {
               Claim Your Strategy Session
             </BookCallButton>
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-              <Link to="/diagnostic">Start with the Diagnostic</Link>
+              <Link to="/diagnostic">Start with the Assessment</Link>
             </Button>
           </div>
 
