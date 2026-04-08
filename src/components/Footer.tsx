@@ -25,7 +25,7 @@ const Footer = ({ dark = false }: FooterProps) => {
 
         {/* Links */}
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-8 mb-8 text-sm">
-          <Link to="/diagnostic" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>Diagnostic</Link>
+          <Link to="/diagnostic" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>Assessment</Link>
           <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
           <Link to="/waypoints/ai-literacy" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>AI Literacy</Link>
           <Link to="/waypoints/system-integration" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>System Integration</Link>

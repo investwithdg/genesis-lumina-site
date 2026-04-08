@@ -29,7 +29,7 @@ const LuminaCompass = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-14 max-w-3xl">
-              You don't have an automation problem. You have an infrastructure problem. Compass is the 4-week engagement that finally fixes it.
+              You don't have an automation problem. You have an infrastructure problem. Compass is the 4-week build that installs operational infrastructure your team owns, governs, and can extend — without ongoing dependency on us.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -48,10 +48,10 @@ const LuminaCompass = () => {
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-light mb-8">
-            You need systems, <span className="font-medium">not just strategy</span>
+            You need infrastructure, <span className="font-medium">not just automation</span>
           </h2>
           <p className="text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-            You've read the books, watched the videos. But theory doesn't save time. You need someone to come in, understand your chaos, and build systems that actually work. That's Compass.
+            You've tested tools, watched demos, maybe even hired someone to build something. But built for you isn't the same as owned by you. You need someone to come in, map your operational architecture, and build systems your team can govern long after we're gone. That's Compass.
           </p>
         </div>
       </SectionLight>
@@ -82,13 +82,13 @@ const LuminaCompass = () => {
                 week: "Week 3",
                 icon: Wrench,
                 title: "Build",
-                desc: "Hands-on implementation. We construct and stress-test your operational systems, workflow integrations, and centralized business infrastructure."
+                desc: "Hands-on build. We construct and stress-test your operational systems, workflow integrations, and centralized business infrastructure — designed for your team to own and extend, not depend on us to maintain."
               },
               {
                 week: "Week 4",
                 icon: Rocket,
                 title: "Deploy",
-                desc: "Structured handoff. Your team is trained, your documentation is complete, and your systems are live — not staged."
+                desc: "Structured ownership transfer. Your team is trained, your documentation is complete, and your systems are live. You don't just have a system — you understand it, you can govern it, and you can extend it without calling us."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
@@ -126,7 +126,7 @@ const LuminaCompass = () => {
               },
               {
                 title: "Clarity Portal",
-                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place."
+                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place. This is your ownership artifact. Everything your team needs to govern the system without external dependency."
               },
               {
                 title: "3–5 Loom Walkthroughs",
@@ -170,12 +170,12 @@ const LuminaCompass = () => {
           </h2>
           
           <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-integration))] rounded-2xl glow-integration mb-8">
-            <div className="text-5xl font-light mb-2">Starting at $15,000</div>
-            <div className="text-foreground/60">4-week intensive engagement</div>
+            <div className="text-5xl font-light mb-2">Starting at $20,000</div>
+            <div className="text-foreground/60">4-week infrastructure build</div>
           </div>
 
           <p className="text-foreground/60 mb-12 max-w-xl mx-auto">
-            Final pricing based on business complexity, number of integrations, and team size. ROI typically realized within 60-90 days.
+            Final pricing based on business complexity, number of integrations, and team size. ROI typically realized within 60–90 days — and unlike vendor-dependent builds, this one compounds over time because your team owns it.
           </p>
 
           <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto">
@@ -191,7 +191,7 @@ const LuminaCompass = () => {
             Ready to <span className="font-medium">Build Your Systems</span>?
           </h2>
           <p className="text-lg text-white/70 mb-8">
-            Book a call to discuss your automation needs and see if Compass is right for you.
+            Book a call to discuss your infrastructure needs and see if Compass is right for you.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -200,7 +200,7 @@ const LuminaCompass = () => {
             </BookCallButton>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
               <Link to="/diagnostic">
-                Not Ready? Take the Diagnostic
+                Not Ready? Take the Assessment
               </Link>
             </Button>
           </div>
