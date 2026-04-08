@@ -211,12 +211,6 @@ const LuminaIgnite = () => {
             ))}
           </div>
 
-          {/* LTV Note */}
-          <div className="mt-12 p-6 rounded-xl bg-foreground/5 border border-foreground/10">
-            <p className="text-foreground/60 text-sm leading-relaxed italic text-center">
-              A client who moves through the full arc — Ember → Compass → Blaze → Phoenix → S³ — represents potential lifetime value north of $300K. More importantly, each graduation feels earned. Nobody gets sold up. They grow into it.
-            </p>
-          </div>
         </div>
       </SectionLight>
 

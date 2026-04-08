@@ -20,11 +20,6 @@ const Index = () => {
       <SectionDark className="min-h-screen flex items-center" withParticles withShapes>
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="text-center animate-fade-in">
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-8">
-              Most organizations aren't failing at AI because they lack tools.
-              <br />
-              They're failing because they're becoming dependent instead of capable.
-            </p>
 
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
               <span className="font-medium">Orientation</span>
@@ -128,9 +123,6 @@ const Index = () => {
                 <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Progression</p>
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
-                </p>
-                <p className="text-foreground/50 text-sm mb-6">
-                  Three tiers. One arc. Ember builds your readiness. Blaze scales your systems. Phoenix guides your trajectory. Each stage is earned, not sold.
                 </p>
 
                 <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
