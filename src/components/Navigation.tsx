@@ -9,7 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const solutionsLinks = [
-    { title: "Start Here: AI Readiness Diagnostic", path: "/diagnostic" },
+    { title: "Vulnerability Assessment", path: "/diagnostic" },
     { title: "Lumina Labs (Workshops)", path: "/products/lumina-labs" },
     { title: "Lumina Compass (4-Week Sprint)", path: "/products/lumina-compass" },
     { title: "Lumina Ignite (Retainer)", path: "/products/lumina-ignite" },

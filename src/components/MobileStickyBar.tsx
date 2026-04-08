@@ -7,7 +7,7 @@ const MobileStickyBar = () => {
     <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-sm border-t border-border px-4 py-3 flex gap-3">
       <Button asChild size="sm" className="flex-1 gap-1 min-h-[44px]">
         <Link to="/diagnostic">
-          Begin Diagnostic
+          Begin Assessment
           <ArrowRight className="w-4 h-4" />
         </Link>
       </Button>
