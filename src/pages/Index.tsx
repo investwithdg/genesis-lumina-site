@@ -221,12 +221,12 @@ const Index = () => {
                 <div className="text-xs text-foreground/50 mt-1">AI Governance Workshop</div>
               </Link>
               <Link to="/products/lumina-compass" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-integration))]/30 hover:border-[hsl(var(--waypoint-integration))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$20,000</div>
+                <div className="text-sm text-foreground/50 mb-1">$35,000</div>
                 <div className="font-medium text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
                 <div className="text-xs text-foreground/50 mt-1">4-Week Infrastructure Build</div>
               </Link>
               <Link to="/waypoints/s3" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$50K – $250K</div>
+                <div className="text-sm text-foreground/50 mb-1">$150K – $500K</div>
                 <div className="font-medium text-[hsl(var(--waypoint-s3))]">S³ Transformation</div>
                 <div className="text-xs text-foreground/50 mt-1">Scale • Sale • Succession</div>
               </Link>
@@ -239,9 +239,9 @@ const Index = () => {
 
             {/* Ignite */}
             <Link to="/products/lumina-ignite" className="block p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">Ember → Blaze → Phoenix</div>
+              <div className="text-sm text-foreground/50 mb-1">$7.5K – $25K/mo · Ember → Blaze → Phoenix</div>
               <div className="font-medium">Lumina Ignite</div>
-              <div className="text-xs text-foreground/50 mt-1">Progression Retainer</div>
+              <div className="text-xs text-foreground/50 mt-1">Intelligence Platform + Advisory</div>
             </Link>
           </div>
         </div>

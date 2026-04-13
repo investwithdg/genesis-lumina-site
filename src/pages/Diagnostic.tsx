@@ -28,7 +28,7 @@ const Diagnostic = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-12 max-w-2xl">
-              A 72-hour performed assessment for operators who want to know exactly where they're exposed — before the next disruption cycle makes it expensive.
+              A 72-hour Architectural Vulnerability Assessment for operators who want to know exactly where they're exposed — before the next disruption cycle makes it expensive.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -102,7 +102,7 @@ const Diagnostic = () => {
               },
               {
                 icon: Map,
-                title: "Gap Map (Visual)",
+                title: "Gap Map (Miro or Whimsical)",
                 desc: "Visual identification of what's missing between your current state and your goals."
               },
               {
