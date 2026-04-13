@@ -223,12 +223,12 @@ const S3 = () => {
             The <span className="font-medium">Investment</span>
           </h2>
           <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">
-            S³ transformation is a 6-8 week engagement. Pricing is custom based on business size, complexity, and scope.
+            S³ is a 6-8 week engagement that delivers the Defensive Infrastructure Kit at enterprise scale. Pricing is custom based on business size, complexity, and scope.
           </p>
           
           <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-s3))] rounded-2xl glow-s3 mb-8 bg-white/5">
-            <div className="text-5xl font-light mb-2 text-white">$50K – $250K</div>
-            <div className="text-sm text-white/60">6-8 week enterprise transformation</div>
+            <div className="text-5xl font-light mb-2 text-white">$150K – $500K</div>
+            <div className="text-sm text-white/60">Base engagement $150,000 · Full S³ $250K–$500K</div>
           </div>
 
           <p className="text-sm text-white/60 mb-12">

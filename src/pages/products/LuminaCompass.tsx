@@ -108,25 +108,33 @@ const LuminaCompass = () => {
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
-            What Gets <span className="font-medium">Built</span>
+            The Defensive <span className="font-medium">Infrastructure Kit</span>
           </h2>
           <p className="text-lg text-foreground/60 text-center mb-12">
-            Every deliverable is functional, documented, and runs without you
+            Every deliverable is functional, documented, and owned by your team
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Operational Systems Map",
+                title: "Organizational Intelligence Map",
                 desc: "Visual architecture of your workflows, decision layers, and constraint points — built to inform every system we touch."
               },
               {
-                title: "Working System v1",
+                title: "The Governance Framework",
+                desc: "The rules, roles, and review cadences your team needs to govern AI decisions without external dependency."
+              },
+              {
+                title: "The Operating System",
                 desc: "A fully operational system built around your #1 business constraint. Not a prototype. Not a proof of concept."
               },
               {
-                title: "Clarity Portal",
-                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place. This is your ownership artifact. Everything your team needs to govern the system without external dependency."
+                title: "The Institutional Standards Library",
+                desc: "Your central operating hub. SOPs, architecture diagrams, troubleshooting documentation, and team references — all in one place."
+              },
+              {
+                title: "GL Intelligence Dashboard Baseline",
+                desc: "Initial configuration of your proprietary dashboard — readiness metrics, system health, and governance scoring."
               },
               {
                 title: "3–5 Loom Walkthroughs",
@@ -137,7 +145,7 @@ const LuminaCompass = () => {
                 desc: "Live deployment session with your full team. We don't just hand off — we make sure it sticks."
               },
               {
-                title: "30-Day Stability Window",
+                title: "30-Day Continuity Protocol",
                 desc: "Post-deployment support covering adjustments, questions, and refinements. Up to 3 hours included."
               }
             ].map((item, idx) => (
@@ -170,7 +178,7 @@ const LuminaCompass = () => {
           </h2>
           
           <div className="inline-block p-8 border-2 border-[hsl(var(--waypoint-integration))] rounded-2xl glow-integration mb-8">
-            <div className="text-5xl font-light mb-2">Starting at $20,000</div>
+            <div className="text-5xl font-light mb-2">Starting at $35,000</div>
             <div className="text-foreground/60">4-week infrastructure build</div>
           </div>
 
