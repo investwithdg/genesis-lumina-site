@@ -1,69 +1,78 @@
 
 
-## Two Questions, Two Plans
+# V3 Offer Architecture Update
 
-### 1. "Thumbnails on mobile" — Social Share Previews (Open Graph Images)
+The PDF introduces significant pricing changes and a new product reframe (Ignite becomes a platform + intelligence subscription, Compass repriced, S³ repriced). Here's what needs to change across the site.
 
-When you share your site link via text, iMessage, LinkedIn, Slack, etc., the preview "thumbnail" shown is controlled by **Open Graph meta tags** in `index.html`. Right now, your site is using the **default Lovable placeholder image**:
+## Key Changes Summary
 
-```
-og:image → https://lovable.dev/opengraph-image-p98pqg.png
-twitter:image → https://lovable.dev/opengraph-image-p98pqg.png
-twitter:site → @lovable_dev
-```
+| Product | Current Price | V3 Price |
+|---------|--------------|----------|
+| Compass | $20,000 | $35,000 |
+| Ember | shown as readiness tier | $7,500/mo |
+| Blaze | shown as optimization tier | $15,000/mo |
+| Phoenix | shown as advisory tier | $20,000–$25,000/mo |
+| S³ | $50K–$250K | $150K–$500K |
 
-This means every time someone shares your link, they see a generic Lovable branded card — not Genesis Lumina branding.
+New concepts introduced: **AI Governance Report** (monthly deliverable for all Ignite tiers), **GL Intelligence Dashboard** (proprietary platform), **Defensive Infrastructure Kit** (Compass deliverable).
 
-**To fix this:**
-- Create or upload a branded OG image (recommended: 1200x630px) — could feature your logo, tagline, and brand colors (black/green)
-- Update `index.html` meta tags to point to your image (hosted in `/public/` or on your published domain)
-- Update `twitter:site` from `@lovable_dev` to your own Twitter/X handle
-- Optionally add per-page OG tags using `react-helmet-async` so each page (Compass, Audit, etc.) has its own preview when shared
+---
 
-### 2. Mobile Conversion Friendliness — Current Issues
+## File Changes
 
-After reviewing every section on a 390px viewport, here's what needs attention:
+### 1. `src/pages/products/LuminaIgnite.tsx` — Major rewrite
 
-**Good already:**
-- Hero CTAs stack vertically and are full-width
-- Navigation hamburger menu has proper tap targets (44px)
-- Waypoint cards stack single-column
-- Font sizes are readable
+- **Hero**: Change label from "Progression Retainer" to "Intelligence Platform + Advisory"
+- **Hero copy**: Update to reflect Ignite is now a proprietary intelligence platform subscription with an expert service layer, not just a consulting retainer
+- **Every Ignite tier now includes** (add a shared section before the tier cards):
+  - Monthly AI Governance Report
+  - GL Intelligence Dashboard access
+  - Loom video walkthrough (~10 min)
+- **Ember**: Price $7,500/mo. Update includes: Monthly Governance Report (readiness lens), Dashboard access, 10-min Loom, one 60-min call, async Slack/Notion (48hr SLA), readiness score tracking. Commitment: 3-month minimum
+- **Blaze**: Price $15,000/mo. Update includes: Monthly Governance Report (optimization lens), Dashboard access, 10-min Loom, one 60-min call, up to two scoped builds/month from report findings, 24hr async SLA. Commitment: 3-month minimum
+- **Phoenix**: Price $20,000–$25,000/mo. Update includes: Monthly Governance Report (strategic foresight lens), Dashboard access with S³ readiness score, 10-min Loom, one 90-min strategic session, passive monitoring, quarterly S³ assessment. Commitment: 6-month minimum
+- Add pricing to each tier card visually
 
-**Issues to fix:**
+### 2. `src/pages/products/LuminaCompass.tsx` — Price + deliverable updates
 
-| Issue | Location | Fix |
-|-------|----------|-----|
-| **Client logos on About page** show in a cramped 3+1 grid, some logos tiny | About page | Use a 2-column grid on mobile, or a horizontal scroll carousel |
-| **Logo carousel on homepage** may scroll too fast to be useful on small screens | Index page | Slow animation on mobile, or show static grid |
-| **"Your Path to AI Clarity" journey cards** — the 3-column product grid is too tight on mobile | Index page | Already stacks via `md:grid-cols-3`, but the 2-column entry points grid (`grid-cols-2 md:grid-cols-2`) could stack to single column on small screens |
-| **No sticky mobile CTA** — users scroll through a long page with no persistent way to convert | All pages | Add a sticky bottom bar on mobile with primary CTA (e.g., "Begin Diagnostic" or "Book Call") |
-| **OG image is Lovable's default** — shared links look unbranded | `index.html` | Replace with branded image |
-| **Twitter site tag is @lovable_dev** | `index.html` | Change to your handle |
+- Change "Starting at $20,000" to "Starting at $35,000"
+- Update deliverable list to use the **Defensive Infrastructure Kit** framing:
+  - Organizational Intelligence Map (replaces "Operational Systems Map")
+  - The Governance Framework (new)
+  - The Operating System (replaces "Working System v1")
+  - The Institutional Standards Library (replaces current SOPs reference)
+  - GL Intelligence Dashboard Baseline (new)
+  - 30-Day Continuity Protocol (replaces "30-Day Stability Window")
+  - Keep: 3-5 Loom Walkthroughs, 60-90 Min Team Activation Session
+- Add section header: "The Defensive Infrastructure Kit"
+- Update credit note: $2,500 Assessment credit still applies within 30 days
 
-### Implementation Plan
+### 3. `src/pages/waypoints/S3.tsx` — Price update
 
-**File: `index.html`**
-- Replace `og:image` and `twitter:image` URLs with a branded image (you'll need to upload one, or I can create a simple branded card using your colors/logo)
-- Update `twitter:site` to your handle
-- Add `og:url` meta tag pointing to your published domain
+- Change "$50K – $250K" to "$150K – $500K"
+- Update pricing description: base engagement $150,000, full S³ $250K–$500K
+- Add mention of the Defensive Infrastructure Kit as primary deliverable
 
-**File: `src/pages/Index.tsx`**
-- Add a sticky mobile CTA bar that appears after scrolling past the hero
-- Make the entry points grid (`AI Readiness Quiz` / `Field Guides`) single column on smallest screens
+### 4. `src/pages/Index.tsx` — Journey pricing updates
 
-**File: `src/pages/About.tsx`**
-- Improve the client logos grid to be 2-column on mobile with better sizing
+- Compass: "$20,000" → "$35,000"
+- S³: "$50K – $250K" → "$150K – $500K"
+- Ignite subtitle: add "$7.5K – $25K/mo" pricing indicator
 
-**File: `src/components/ClientLogoCarousel.tsx`**
-- Reduce logo size and animation speed on mobile
+### 5. `src/pages/Diagnostic.tsx` — Minor terminology update
 
-**Optional but high-impact: Per-page OG tags**
-- Install `react-helmet-async` and add unique title/description/image per product page so shared links look professional
+- Change "72-hour performed assessment" to "72-hour Architectural Vulnerability Assessment" to match V3 language
+- Update deliverable #2: Gap Map tool reference to "(Miro or Whimsical)"
 
-### What I Need From You
+---
 
-1. **Upload a branded OG image** (1200x630px) — or tell me to generate a simple one using your brand colors, logo text "Genesis Lumina", and tagline
-2. **Your Twitter/X handle** to replace `@lovable_dev`
-3. **Do you want a sticky mobile CTA bar?** (the floating "Book Call" or "Begin Diagnostic" button that stays at the bottom of the screen on phones)
+## What stays unchanged
+
+- Tier 0 (Free lead gen) and Tier 1 (Field Guides $47–$297): no changes
+- Vulnerability Assessment: $2,500, same deliverables, same structure
+- Lumina Labs: same pricing and structure
+
+## Technical details
+
+All changes are copy/pricing updates in existing components. No new components, routes, or dependencies needed. Approximately 5 files edited.
 
