@@ -129,7 +129,7 @@ const PST = () => {
             {[
               { tool: "HubSpot", role: "Central database and pipeline tracker" },
               { tool: "Make (Integromat)", role: "Webhook orchestration and automation engine" },
-              { tool: "Notion", role: "SOPs, documentation, and team knowledge base" },
+              { tool: "Google Drive", role: "SOPs, documentation, and team knowledge base" },
               { tool: "Loom", role: "Walkthrough recordings for team training" },
               { tool: "Webhooks", role: "Real-time event triggers across all stages" },
               { tool: "Custom Forms", role: "Intake and dispatch request capture" },
