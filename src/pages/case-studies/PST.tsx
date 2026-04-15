@@ -127,7 +127,7 @@ const PST = () => {
           <h3 className="text-xl font-medium mb-6">Tech Stack</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { tool: "Airtable", role: "Central database and pipeline tracker" },
+              { tool: "HubSpot", role: "Central database and pipeline tracker" },
               { tool: "Make (Integromat)", role: "Webhook orchestration and automation engine" },
               { tool: "Notion", role: "SOPs, documentation, and team knowledge base" },
               { tool: "Loom", role: "Walkthrough recordings for team training" },
