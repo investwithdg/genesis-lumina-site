@@ -20,6 +20,9 @@ import Diagnostic from "./pages/Diagnostic";
 import LuminaLabs from "./pages/products/LuminaLabs";
 import LuminaCompass from "./pages/products/LuminaCompass";
 import LuminaIgnite from "./pages/products/LuminaIgnite";
+import CaseStudies from "./pages/CaseStudies";
+import PST from "./pages/case-studies/PST";
+import Optimist from "./pages/case-studies/Optimist";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +46,9 @@ const App = () => (
           <Route path="/products/lumina-labs" element={<LuminaLabs />} />
           <Route path="/products/lumina-compass" element={<LuminaCompass />} />
           <Route path="/products/lumina-ignite" element={<LuminaIgnite />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/pst" element={<PST />} />
+          <Route path="/case-studies/optimist" element={<Optimist />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/about" element={<About />} />
