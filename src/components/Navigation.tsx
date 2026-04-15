@@ -17,6 +17,7 @@ const Navigation = () => {
   ];
 
   const resourcesLinks = [
+    { title: "Case Studies", path: "/case-studies" },
     { title: "Field Guide: Analog", path: "/field-guides/analog" },
     { title: "Field Guide: Harvest", path: "/field-guides/harvest" },
     { title: "Field Guide: Audit", path: "/field-guides/audit" },

@@ -115,6 +115,20 @@ const About = () => {
         </div>
       </SectionDark>
 
+      {/* Case Studies Mention */}
+      <SectionLight className="px-8 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-light mb-4">See the work in <span className="font-medium">action</span></h3>
+          <p className="text-foreground/60 mb-6">Read how we built infrastructure for PST and Optimist Business Solutions.</p>
+          <Button asChild variant="outline" className="gap-2">
+            <Link to="/case-studies">
+              View Case Studies
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </SectionLight>
+
       {/* Trust Signals - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32" muted>
         <div className="max-w-5xl mx-auto">

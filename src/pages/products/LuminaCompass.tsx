@@ -170,6 +170,38 @@ const LuminaCompass = () => {
         </div>
       </SectionLight>
 
+      {/* Results in Practice - LIGHT */}
+      <SectionLight className="px-8 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">
+            Results in <span className="font-medium">Practice</span>
+          </h2>
+          <p className="text-lg text-foreground/60 text-center mb-12">
+            Both of these were Compass engagements.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/case-studies/pst" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+              <p className="text-sm text-foreground/50 mb-1">Preferred Solutions Transport</p>
+              <h3 className="text-xl font-medium mb-2 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Manual to Machine.</h3>
+              <p className="text-sm text-foreground/60 mb-4">$15K engagement · 72-hour final build · 7-stage automated pipeline</p>
+              <span className="text-sm font-medium flex items-center gap-1 text-foreground/50 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">
+                Read Case Study <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+
+            <Link to="/case-studies/optimist" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+              <p className="text-sm text-foreground/50 mb-1">Optimist Business Solutions</p>
+              <h3 className="text-xl font-medium mb-2 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Bottleneck to Breakthrough.</h3>
+              <p className="text-sm text-foreground/60 mb-4">$3,750 engagement · 51% steps eliminated · 2 weeks → 1 day</p>
+              <span className="text-sm font-medium flex items-center gap-1 text-foreground/50 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">
+                Read Case Study <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </SectionLight>
+
       {/* Investment - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">

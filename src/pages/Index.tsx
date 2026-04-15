@@ -172,6 +172,64 @@ const Index = () => {
         </div>
       </SectionLight>
 
+      {/* Case Studies - LIGHT */}
+      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
+              Proof of <span className="font-medium">Principle</span>
+            </h2>
+            <p className="text-lg text-foreground/60">Real engagements. Real results.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/case-studies/pst" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+              <p className="text-sm text-foreground/50 mb-2">Preferred Solutions Transport</p>
+              <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Manual to Machine.</h3>
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">$15K</div>
+                  <div className="text-xs text-foreground/50">Engagement</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">72 hrs</div>
+                  <div className="text-xs text-foreground/50">Final Build</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">100%</div>
+                  <div className="text-xs text-foreground/50">Collected</div>
+                </div>
+              </div>
+              <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">
+                Read Case Study <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+
+            <Link to="/case-studies/optimist" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
+              <p className="text-sm text-foreground/50 mb-2">Optimist Business Solutions</p>
+              <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Bottleneck to Breakthrough.</h3>
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">$3,750</div>
+                  <div className="text-xs text-foreground/50">Engagement</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">51%</div>
+                  <div className="text-xs text-foreground/50">Steps Cut</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-foreground/5">
+                  <div className="text-lg font-light">2w→1d</div>
+                  <div className="text-xs text-foreground/50">Time Saved</div>
+                </div>
+              </div>
+              <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">
+                Read Case Study <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </SectionLight>
+
       {/* The Journey Visual - LIGHT */}
       <SectionLight className="px-4 md:px-8 py-16 md:py-32">
         <div className="max-w-5xl mx-auto">
