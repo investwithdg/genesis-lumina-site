@@ -1,78 +1,51 @@
 
 
-# V3 Offer Architecture Update
+# Case Studies: Dedicated Page + Site Integration
 
-The PDF introduces significant pricing changes and a new product reframe (Ignite becomes a platform + intelligence subscription, Compass repriced, S³ repriced). Here's what needs to change across the site.
+## Two Case Studies
 
-## Key Changes Summary
+1. **PST (Preferred Solutions Transport)** — $15K Compass engagement, logistics platform, 72-hour final build, webhook-native architecture
+2. **Optimist Business Solutions** — $3,750 engagement, AI-powered intake system, 51% of process steps eliminated, 2 weeks → 1 day
 
-| Product | Current Price | V3 Price |
-|---------|--------------|----------|
-| Compass | $20,000 | $35,000 |
-| Ember | shown as readiness tier | $7,500/mo |
-| Blaze | shown as optimization tier | $15,000/mo |
-| Phoenix | shown as advisory tier | $20,000–$25,000/mo |
-| S³ | $50K–$250K | $150K–$500K |
+## Plan
 
-New concepts introduced: **AI Governance Report** (monthly deliverable for all Ignite tiers), **GL Intelligence Dashboard** (proprietary platform), **Defensive Infrastructure Kit** (Compass deliverable).
+### 1. Create a Case Studies index page (`src/pages/CaseStudies.tsx`)
 
----
+Route: `/case-studies`
 
-## File Changes
+Follows the site's dark/light section pattern. Lists both case studies as cards with headline, client name, key metric, and a "Read Case Study" link. Each card links to its detail page.
 
-### 1. `src/pages/products/LuminaIgnite.tsx` — Major rewrite
+### 2. Create individual case study pages
 
-- **Hero**: Change label from "Progression Retainer" to "Intelligence Platform + Advisory"
-- **Hero copy**: Update to reflect Ignite is now a proprietary intelligence platform subscription with an expert service layer, not just a consulting retainer
-- **Every Ignite tier now includes** (add a shared section before the tier cards):
-  - Monthly AI Governance Report
-  - GL Intelligence Dashboard access
-  - Loom video walkthrough (~10 min)
-- **Ember**: Price $7,500/mo. Update includes: Monthly Governance Report (readiness lens), Dashboard access, 10-min Loom, one 60-min call, async Slack/Notion (48hr SLA), readiness score tracking. Commitment: 3-month minimum
-- **Blaze**: Price $15,000/mo. Update includes: Monthly Governance Report (optimization lens), Dashboard access, 10-min Loom, one 60-min call, up to two scoped builds/month from report findings, 24hr async SLA. Commitment: 3-month minimum
-- **Phoenix**: Price $20,000–$25,000/mo. Update includes: Monthly Governance Report (strategic foresight lens), Dashboard access with S³ readiness score, 10-min Loom, one 90-min strategic session, passive monitoring, quarterly S³ assessment. Commitment: 6-month minimum
-- Add pricing to each tier card visually
+- **`src/pages/case-studies/PST.tsx`** — Route: `/case-studies/pst`
+  - Hero: "From Manual to Machine."
+  - Sections: The Problem, The Build Journey (4 versions), The Solution (tech stack table, 7-stage pipeline), The Complication (scope discipline), Principles Proved
+  - Stats bar: $15K engagement, 72-hour final build, 100% collected
+  - CTA → Compass page
 
-### 2. `src/pages/products/LuminaCompass.tsx` — Price + deliverable updates
+- **`src/pages/case-studies/Optimist.tsx`** — Route: `/case-studies/optimist`
+  - Hero: "From Bottleneck to Breakthrough."
+  - Sections: The Problem, The Build, The Solution (before/after table, flow diagram), Principles Proved
+  - Stats bar: $3,750 engagement, 51% steps eliminated, 2 weeks → 1 day
+  - CTA → Compass page
 
-- Change "Starting at $20,000" to "Starting at $35,000"
-- Update deliverable list to use the **Defensive Infrastructure Kit** framing:
-  - Organizational Intelligence Map (replaces "Operational Systems Map")
-  - The Governance Framework (new)
-  - The Operating System (replaces "Working System v1")
-  - The Institutional Standards Library (replaces current SOPs reference)
-  - GL Intelligence Dashboard Baseline (new)
-  - 30-Day Continuity Protocol (replaces "30-Day Stability Window")
-  - Keep: 3-5 Loom Walkthroughs, 60-90 Min Team Activation Session
-- Add section header: "The Defensive Infrastructure Kit"
-- Update credit note: $2,500 Assessment credit still applies within 30 days
+### 3. Add routes in `App.tsx`
 
-### 3. `src/pages/waypoints/S3.tsx` — Price update
+Three new routes: `/case-studies`, `/case-studies/pst`, `/case-studies/optimist`
 
-- Change "$50K – $250K" to "$150K – $500K"
-- Update pricing description: base engagement $150,000, full S³ $250K–$500K
-- Add mention of the Defensive Infrastructure Kit as primary deliverable
+### 4. Add "Case Studies" to navigation
 
-### 4. `src/pages/Index.tsx` — Journey pricing updates
+Add link in `Navigation.tsx` and `Footer.tsx`.
 
-- Compass: "$20,000" → "$35,000"
-- S³: "$50K – $250K" → "$150K – $500K"
-- Ignite subtitle: add "$7.5K – $25K/mo" pricing indicator
+### 5. Highlight case studies where relevant
 
-### 5. `src/pages/Diagnostic.tsx` — Minor terminology update
+- **Homepage (`Index.tsx`)**: Add a "Case Studies" section between the social proof quote and the journey visual — two cards side by side with key metrics and links
+- **Compass page (`LuminaCompass.tsx`)**: Add a "Results in Practice" section with both case study cards (both are Compass engagements)
+- **About page (`About.tsx`)**: Brief mention/link in the credibility section
 
-- Change "72-hour performed assessment" to "72-hour Architectural Vulnerability Assessment" to match V3 language
-- Update deliverable #2: Gap Map tool reference to "(Miro or Whimsical)"
+### Technical Details
 
----
-
-## What stays unchanged
-
-- Tier 0 (Free lead gen) and Tier 1 (Field Guides $47–$297): no changes
-- Vulnerability Assessment: $2,500, same deliverables, same structure
-- Lumina Labs: same pricing and structure
-
-## Technical details
-
-All changes are copy/pricing updates in existing components. No new components, routes, or dependencies needed. Approximately 5 files edited.
+- No new dependencies. Uses existing `SectionDark`, `SectionLight`, `Card`, `Button` components
+- Follows the page structure pattern: Dark hero → Light problem → Dark solution → Light deliverables → Dark CTA
+- 5 new files, 4 edited files
 
