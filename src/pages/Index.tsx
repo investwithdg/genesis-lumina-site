@@ -186,18 +186,19 @@ const Index = () => {
             <Link to="/case-studies/pst" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
               <p className="text-sm text-foreground/50 mb-2">Preferred Solutions Transport</p>
               <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Manual to Machine.</h3>
+              <p className="text-sm text-foreground/60 mb-4 leading-relaxed">Compass-grade infrastructure for a live logistics operation — webhook-native, team-owned.</p>
               <div className="grid grid-cols-3 gap-3 mb-4">
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">$15K</div>
-                  <div className="text-xs text-foreground/50">Engagement</div>
+                  <div className="text-sm font-light">7-Stage</div>
+                  <div className="text-xs text-foreground/50">Pipeline</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">72 hrs</div>
-                  <div className="text-xs text-foreground/50">Final Build</div>
+                  <div className="text-sm font-light">Webhook</div>
+                  <div className="text-xs text-foreground/50">Native</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">100%</div>
-                  <div className="text-xs text-foreground/50">Collected</div>
+                  <div className="text-sm font-light">Team</div>
+                  <div className="text-xs text-foreground/50">Owned</div>
                 </div>
               </div>
               <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">
@@ -208,10 +209,11 @@ const Index = () => {
             <Link to="/case-studies/optimist" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
               <p className="text-sm text-foreground/50 mb-2">Optimist Business Solutions</p>
               <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Bottleneck to Breakthrough.</h3>
+              <p className="text-sm text-foreground/60 mb-4 leading-relaxed">An AI-routed intake architecture that compressed a 2-week manual process into a single day.</p>
               <div className="grid grid-cols-3 gap-3 mb-4">
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">$3,750</div>
-                  <div className="text-xs text-foreground/50">Engagement</div>
+                  <div className="text-sm font-light">AI-Routed</div>
+                  <div className="text-xs text-foreground/50">Intake</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
                   <div className="text-lg font-light">51%</div>
@@ -219,7 +221,7 @@ const Index = () => {
                 </div>
                 <div className="text-center p-2 rounded-lg bg-foreground/5">
                   <div className="text-lg font-light">2w→1d</div>
-                  <div className="text-xs text-foreground/50">Time Saved</div>
+                  <div className="text-xs text-foreground/50">Cycle Time</div>
                 </div>
               </div>
               <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">

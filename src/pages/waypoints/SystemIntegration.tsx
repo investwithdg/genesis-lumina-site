@@ -173,7 +173,7 @@ const SystemIntegration = () => {
               <h3 className="text-lg font-medium mb-2 text-white">Lumina Compass</h3>
               <p className="text-white/60 text-sm mb-4 leading-relaxed">4-week intensive. Full systems audit, build, and training.</p>
               <div className="flex flex-col gap-3">
-                <span className="font-medium text-white">Starting at $15K</span>
+                <span className="font-medium text-white">$35,000</span>
                 <Button asChild variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10">
                   <Link to="/products/lumina-compass">Learn More</Link>
                 </Button>

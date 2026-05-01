@@ -184,7 +184,7 @@ const LuminaCompass = () => {
             <Link to="/case-studies/pst" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
               <p className="text-sm text-foreground/50 mb-1">Preferred Solutions Transport</p>
               <h3 className="text-xl font-medium mb-2 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Manual to Machine.</h3>
-              <p className="text-sm text-foreground/60 mb-4">$15K engagement · 72-hour final build · 7-stage automated pipeline</p>
+              <p className="text-sm text-foreground/60 mb-4">Webhook-native operational system · 7-stage automated pipeline · team-owned infrastructure</p>
               <span className="text-sm font-medium flex items-center gap-1 text-foreground/50 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">
                 Read Case Study <ArrowRight className="w-3 h-3" />
               </span>
@@ -193,7 +193,7 @@ const LuminaCompass = () => {
             <Link to="/case-studies/optimist" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
               <p className="text-sm text-foreground/50 mb-1">Optimist Business Solutions</p>
               <h3 className="text-xl font-medium mb-2 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Bottleneck to Breakthrough.</h3>
-              <p className="text-sm text-foreground/60 mb-4">$3,750 engagement · 51% steps eliminated · 2 weeks → 1 day</p>
+              <p className="text-sm text-foreground/60 mb-4">AI-routed intake architecture · 51% steps eliminated · 2 weeks → 1 day</p>
               <span className="text-sm font-medium flex items-center gap-1 text-foreground/50 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">
                 Read Case Study <ArrowRight className="w-3 h-3" />
               </span>
