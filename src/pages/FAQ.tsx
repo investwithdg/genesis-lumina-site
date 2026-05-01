@@ -59,7 +59,7 @@ const FAQ = () => {
                 What's included in Lumina Compass?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70 leading-relaxed pb-6">
-                Lumina Compass is a 4-week flagship sprint that maps your operations, designs a custom AI system, and builds it while you work. You get a complete Notion portal, trained team, and 30 days post-launch support. Investment starts at $15,000. <Link to="/products/lumina-compass" className="text-primary hover:underline">Learn more →</Link>
+                Lumina Compass is a flagship engagement that maps your operations, designs your governance framework, and installs the Defensive Infrastructure Kit your team owns. Investment is $35,000, and the $2,500 Architectural Vulnerability Assessment fee credits toward it if initiated within 30 days. <Link to="/products/lumina-compass" className="text-primary hover:underline">Learn more →</Link>
               </AccordionContent>
             </AccordionItem>
 

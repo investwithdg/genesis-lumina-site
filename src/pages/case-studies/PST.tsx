@@ -24,8 +24,11 @@ const PST = () => {
             <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8 tracking-tight text-white">
               From Manual <span className="font-medium">to Machine.</span>
             </h1>
-            <p className="text-xl text-white/70 max-w-3xl leading-relaxed">
-              A logistics company drowning in manual coordination got a fully automated dispatch-to-invoice pipeline — built, tested, and deployed in a 72-hour final sprint.
+            <p className="text-xl text-white/70 max-w-3xl leading-relaxed mb-6">
+              A logistics operator received a webhook-native, multi-stage operational system — architected, deployed, and transferred into team ownership.
+            </p>
+            <p className="text-base text-[hsl(var(--waypoint-integration))] italic max-w-3xl leading-relaxed border-l-2 border-[hsl(var(--waypoint-integration))] pl-4">
+              This system reflects the type of infrastructure typically delivered through Genesis Lumina's Compass engagements.
             </p>
           </div>
         </div>
@@ -36,12 +39,12 @@ const PST = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-3 gap-8 text-center">
             {[
-              { value: "$15,000", label: "Compass Engagement" },
-              { value: "72 Hours", label: "Final Build Sprint" },
-              { value: "100%", label: "Collected on Delivery" },
+              { value: "7-Stage", label: "Automated Pipeline" },
+              { value: "Webhook-Native", label: "Real-Time Architecture" },
+              { value: "100%", label: "Team Ownership Transfer" },
             ].map((stat, idx) => (
               <div key={idx}>
-                <div className="text-3xl md:text-4xl font-light">{stat.value}</div>
+                <div className="text-2xl md:text-4xl font-light">{stat.value}</div>
                 <div className="text-sm text-foreground/50 mt-1">{stat.label}</div>
               </div>
             ))}
@@ -60,7 +63,7 @@ const PST = () => {
               PST coordinated freight logistics across multiple carriers, brokers, and dispatchers. Every load required manual data entry, phone calls, email threads, and spreadsheet tracking. Invoices were delayed, data was duplicated, and the team spent more time managing the process than running the business.
             </p>
             <p>
-              They'd tried off-the-shelf TMS platforms. Too rigid. They'd hired a developer. Too slow. They needed someone who could understand their operational architecture and build infrastructure that fit — not force them into someone else's workflow.
+              They'd tried off-the-shelf TMS platforms. Too rigid. They'd hired a developer. Too narrow. They needed an operational layer that fit their architecture — not a tool that forced them into someone else's workflow.
             </p>
           </div>
         </div>
@@ -72,14 +75,14 @@ const PST = () => {
           <h2 className="text-3xl md:text-4xl font-light mb-4 text-center text-white">
             The Build <span className="font-medium">Journey</span>
           </h2>
-          <p className="text-lg text-white/60 text-center mb-12">Four versions. Each one tighter than the last.</p>
+          <p className="text-lg text-white/60 text-center mb-12">Four iterations. Each one tighter than the last.</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 version: "V1",
-                title: "Proof of Concept",
-                desc: "Basic automation connecting intake forms to a centralized database. Validated the workflow logic and confirmed the team could adopt a digital-first dispatch process."
+                title: "Proof of Architecture",
+                desc: "Validated the workflow logic by connecting intake forms to a centralized data layer. Confirmed the team could adopt a digital-first dispatch architecture."
               },
               {
                 version: "V2",
@@ -93,8 +96,8 @@ const PST = () => {
               },
               {
                 version: "V4",
-                title: "72-Hour Final Build",
-                desc: "Complete production deployment. Stress-tested with live loads, edge cases, and team walkthroughs. Delivered with full documentation and Loom recordings."
+                title: "Production Deployment & Ownership Transfer",
+                desc: "Full production rollout. Stress-tested with live loads, edge cases, and team walkthroughs. Delivered with documentation and Loom recordings so the team owns and extends it."
               }
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-white/5 border border-white/10">
@@ -146,18 +149,45 @@ const PST = () => {
         </div>
       </SectionLight>
 
-      {/* The Complication - DARK */}
+      {/* Scope of Work - LIGHT muted */}
+      <SectionLight className="px-8 py-24 md:py-32" muted>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4">
+            Scope of Work <span className="font-medium">Included</span>
+          </h2>
+          <p className="text-lg text-foreground/60 mb-10">
+            The full magnitude of infrastructure delivered — so you can feel the weight of what was actually installed.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              "Multi-stage operational system architecture",
+              "CRM and pipeline infrastructure (HubSpot)",
+              "Webhook orchestration layer (Make)",
+              "Automated dispatch-to-invoice flow",
+              "Documentation and SOP environment (Google Drive)",
+              "Team activation and ownership transfer (Loom walkthroughs)",
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-white border border-foreground/10">
+                <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-0.5" />
+                <p className="text-foreground/80 text-sm">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionLight>
+
+      {/* Execution Context - DARK */}
       <SectionDark className="px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-8 text-white">
-            The <span className="font-medium">Complication</span>
+            Execution <span className="font-medium">Context</span>
           </h2>
           <div className="space-y-6 text-lg text-white/80 leading-relaxed">
             <p>
-              Mid-build, the client requested features outside the original scope — additional reporting dashboards, driver-facing portals, and CRM integrations. Each request was valid. None were urgent.
+              This system was delivered inside a live logistics operation with multi-party coordination, active dispatching, and zero downtime tolerance. Scope discipline — knowing what to build now and what to defer — was the architecture decision.
             </p>
             <p>
-              We held the line. The Compass engagement is scoped to solve the #1 constraint. Adding complexity mid-sprint dilutes the build and delays the result. We documented every request, prioritized them for a future phase, and delivered the core system on time.
+              Mid-build, the client requested adjacent capabilities: additional reporting dashboards, driver-facing portals, deeper CRM integrations. Each request was valid. None were urgent. We documented every one, prioritized them for a future phase, and delivered the core infrastructure on time.
             </p>
             <p className="text-white/60 italic">
               Scope discipline is a feature, not a limitation.
@@ -174,10 +204,10 @@ const PST = () => {
           </h2>
           <div className="space-y-4">
             {[
-              "Orientation before execution — the discovery phase shaped every decision that followed.",
+              "Orientation before execution — the discovery phase shaped every architectural decision that followed.",
               "Scope discipline protects the build — saying 'not now' isn't saying 'no.'",
               "Webhook-native architecture eliminates human bottlenecks between stages.",
-              "Ownership transfer is the product — PST runs this system without us.",
+              "Ownership transfer is the product — PST runs and extends this infrastructure without us.",
             ].map((principle, idx) => (
               <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-white border border-foreground/10">
                 <CheckCircle className="w-5 h-5 text-[hsl(var(--waypoint-integration))] flex-shrink-0 mt-0.5" />
@@ -191,16 +221,19 @@ const PST = () => {
       {/* CTA - DARK */}
       <SectionDark className="px-8 py-24 md:py-32" withShapes>
         <div className="max-w-4xl mx-auto text-center relative z-10">
+          <p className="text-base text-white/50 italic mb-10 max-w-2xl mx-auto">
+            Engagements of this nature are typically structured as Compass builds, followed by ongoing optimization through Ignite.
+          </p>
           <h2 className="text-3xl md:text-4xl font-light mb-6 text-white">
-            Your system is <span className="font-medium">next</span>.
+            A foundation, <span className="font-medium">not a finish line</span>.
           </h2>
-          <p className="text-lg text-white/70 mb-8">
-            Compass builds the infrastructure your team owns. Start with an Assessment.
+          <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+            The resulting system provides a foundation for continued optimization, expansion, and monetization — not a one-time build.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
               <Link to="/products/lumina-compass" className="gap-2">
-                Explore Compass
+                Compass builds the infrastructure your team owns
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
