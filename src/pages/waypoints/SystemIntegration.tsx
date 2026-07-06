@@ -253,7 +253,7 @@ const SystemIntegration = () => {
       </SectionLight>
 
       {/* CTA Section - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+      <SectionDark className="px-8 py-24 md:py-32" motif="schematic">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-light mb-6 text-white">
             Ready to <span className="font-medium">Automate Your Business</span>?

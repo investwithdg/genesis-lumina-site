@@ -13,7 +13,7 @@ const PST = () => {
       <Navigation />
 
       {/* Hero - DARK */}
-      <SectionDark className="min-h-[60vh] flex items-center" withParticles withShapes>
+      <SectionDark className="min-h-[60vh] flex items-center" motif="supercar-rear">
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="animate-fade-in">
             <Link to="/case-studies" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white/80 transition-colors mb-8">
@@ -219,7 +219,7 @@ const PST = () => {
       </SectionLight>
 
       {/* CTA - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+      <SectionDark className="px-8 py-24 md:py-32" motif="schematic">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="text-base text-white/50 italic mb-10 max-w-2xl mx-auto">
             Engagements of this nature are typically structured as Compass builds, followed by ongoing optimization through Ignite.

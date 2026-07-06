@@ -18,7 +18,7 @@ const Ignite = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      <SectionDark className="min-h-[60vh] flex items-center" withParticles withShapes>
+      <SectionDark className="min-h-[60vh] flex items-center" motif="supercar-rear">
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <span className="inline-block text-xs tracking-[0.2em] font-semibold text-orange-300 mb-6">
             ONGOING · EMBER → BLAZE → PHOENIX
@@ -91,7 +91,7 @@ const Ignite = () => {
         </div>
       </SectionLight>
 
-      <SectionDark className="px-8 py-24" withShapes>
+      <SectionDark className="px-8 py-24" motif="schematic">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
             Grow the tree. <span className="font-medium">Harvest the compound.</span>

@@ -18,7 +18,7 @@ const Compass = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      <SectionDark className="min-h-[60vh] flex items-center" withParticles withShapes>
+      <SectionDark className="min-h-[60vh] flex items-center" motif="supercar-side">
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <span className="inline-block text-xs tracking-[0.2em] font-semibold text-indigo-300 mb-6">FOR BUSINESS · THE SPRINT</span>
           <h1 className="text-5xl md:text-7xl font-light tracking-tight text-white mb-8">
@@ -102,7 +102,7 @@ const Compass = () => {
         </div>
       </SectionDark>
 
-      <SectionDark className="px-8 py-24" withShapes>
+      <SectionDark className="px-8 py-24" motif="schematic">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
             Every Compass starts with <span className="font-medium">PEAR.</span>
