@@ -8,29 +8,19 @@ interface BookCallButtonProps {
 }
 
 /**
- * BookCallButton - Calendar Booking Link
- * 
- * SETUP: Replace the URL below with your booking link:
- * - Google Calendar: calendar.google.com/calendar/appointments/schedules/[your-id]
- * - Calendly: calendly.com/your-username/meeting
- * - Cal.com: cal.com/your-username/meeting
+ * BookCallButton — books the free PEAR call
+ * (Performance Engineering Analysis & Roadmap, 30 min).
  */
-const BookCallButton = ({ 
-  variant = "default", 
-  size = "default", 
+const BookCallButton = ({
+  variant = "default",
+  size = "default",
   className = "",
-  children = "Book a Call"
+  children = "Book PEAR (free)",
 }: BookCallButtonProps) => {
-  // Replace this URL with your actual booking link
   const bookingUrl = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
 
   return (
-    <Button 
-      asChild
-      variant={variant} 
-      size={size} 
-      className={className}
-    >
+    <Button asChild variant={variant} size={size} className={className}>
       <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
