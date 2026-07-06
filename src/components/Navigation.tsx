@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { SupercarBadge } from "@/components/SupercarMotifs";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,8 +39,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="font-display text-lg font-medium tracking-tight text-white hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-white hover:opacity-80 transition-opacity"
           >
+            <SupercarBadge className="w-9 h-3.5 text-white" />
             <span className="text-white">GENESIS</span>
             <span className="text-white/50"> / </span>
             <span className="text-white">LUMINA</span>

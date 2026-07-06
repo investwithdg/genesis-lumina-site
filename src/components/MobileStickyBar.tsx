@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Compass } from "lucide-react";
+import { SupercarBadge } from "@/components/SupercarMotifs";
 
 const MobileStickyBar = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-foreground/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex gap-2">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-foreground/95 backdrop-blur-md border-t border-white/10 px-3 py-3 flex items-center gap-2">
+      <SupercarBadge className="w-9 h-3.5 text-white/70 shrink-0" />
       <Button asChild size="sm" className="flex-1 gap-1.5 min-h-[44px] bg-white text-foreground hover:bg-white/90 rounded-md label-mono">
         <Link to="/pear">
           Book PEAR

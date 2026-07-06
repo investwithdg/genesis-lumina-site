@@ -14,7 +14,7 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section - DARK */}
-      <SectionDark className="min-h-[60vh] flex items-center" withParticles withShapes>
+      <SectionDark className="min-h-[60vh] flex items-center" motif="supercar-side">
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="animate-fade-in text-center">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
@@ -162,7 +162,7 @@ const About = () => {
       </SectionLight>
 
       {/* CTA Section - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+      <SectionDark className="px-8 py-24 md:py-32" motif="schematic">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-6 text-white">
             Ready to <span className="font-medium">Transform Your Operations</span>?

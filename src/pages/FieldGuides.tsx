@@ -18,7 +18,7 @@ const FieldGuides = () => {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      <SectionDark className="min-h-[50vh] flex items-center" withParticles withShapes>
+      <SectionDark className="min-h-[50vh] flex items-center" motif="supercar-side">
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10 text-center">
           <BookOpen className="w-8 h-8 text-white/50 mx-auto mb-4" />
           <span className="inline-block text-xs tracking-[0.2em] font-semibold text-white/50 mb-6">SELF-SERVE · $47 – $297</span>

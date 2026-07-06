@@ -125,7 +125,7 @@ const FAQ = () => {
         </div>
       </SectionLight>
 
-      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+      <SectionDark className="px-8 py-24 md:py-32" motif="schematic">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-6 text-white">
             Still have <span className="font-medium">questions</span>?
