@@ -1,18 +1,52 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import {
+  SupercarSide,
+  SupercarFront,
+  SupercarRear,
+  ChassisWireframe,
+  TelemetryHUD,
+} from "@/components/SupercarMotifs";
+
+export type Motif =
+  | "supercar-side"
+  | "supercar-front"
+  | "supercar-rear"
+  | "chassis"
+  | "telemetry"
+  | "streaks"
+  | "schematic"
+  | "none";
 
 interface SectionDarkProps {
   children: ReactNode;
   className?: string;
-  /** legacy prop — kept for compat, now renders collage */
+  /** legacy — mapped to nearest motif for backwards compat */
   withParticles?: boolean;
-  /** legacy prop — kept for compat, now renders collage */
   withShapes?: boolean;
-  /** which collage composition to render behind content */
   collage?: "hero" | "geometric" | "streak" | "minimal" | "none";
+  /** primary motif — supercar mascot or supporting motif */
+  motif?: Motif;
   /** show subtle engineered grid overlay */
   grid?: boolean;
+  /** dark scrim to guarantee text contrast when a heavy motif sits behind */
+  scrim?: boolean;
 }
+
+const legacyMap = (
+  collage?: SectionDarkProps["collage"],
+  withParticles?: boolean,
+  withShapes?: boolean
+): Motif => {
+  if (collage === "hero") return "supercar-side";
+  if (collage === "geometric") return "chassis";
+  if (collage === "streak") return "streaks";
+  if (collage === "minimal") return "telemetry";
+  if (withParticles && withShapes) return "supercar-side";
+  if (withShapes) return "chassis";
+  if (withParticles) return "streaks";
+  return "none";
+};
 
 const SectionDark = ({
   children,
@@ -20,18 +54,11 @@ const SectionDark = ({
   withParticles,
   withShapes,
   collage,
+  motif,
   grid = false,
+  scrim = true,
 }: SectionDarkProps) => {
-  // Resolve composition: explicit prop wins, else legacy flags map to defaults
-  const composition =
-    collage ??
-    (withParticles && withShapes
-      ? "hero"
-      : withShapes
-      ? "geometric"
-      : withParticles
-      ? "streak"
-      : "none");
+  const resolved: Motif = motif ?? legacyMap(collage, withParticles, withShapes);
 
   return (
     <section
@@ -40,70 +67,90 @@ const SectionDark = ({
         className
       )}
     >
-      {/* Engineered grid backdrop */}
-      {grid && <div className="collage-layer grid-overlay opacity-60" aria-hidden />}
+      {grid && <div className="motif-layer grid-overlay opacity-50" aria-hidden />}
 
-      {/* Collage composition (static hard-edged geometry, Matisse-inspired) */}
-      {composition !== "none" && (
-        <div className="collage-layer" aria-hidden>
-          {composition === "hero" && (
-            <>
-              {/* Deep-green vertical bar — right edge accent */}
-              <div className="collage-panel collage-green" style={{ top: "12%", right: "6%", width: "3%", height: "44%", opacity: 0.85 }} />
-              {/* Blue rectangle — bottom-left anchor */}
-              <div className="collage-panel collage-blue" style={{ bottom: "8%", left: "-1%", width: "8%", height: "22%", opacity: 0.75 }} />
-              {/* Cream tick */}
-              <div className="collage-panel collage-cream" style={{ top: "20%", left: "3%", width: "40px", height: "3px", opacity: 0.7 }} />
-              {/* Ember dot — brake-light signal */}
-              <div className="collage-panel collage-ember" style={{ top: "16%", right: "22%", width: "8px", height: "8px", borderRadius: "9999px" }} />
-              {/* Streaks */}
-              <div className="streak-line streak-blue" style={{ top: "34%", left: "-10%", width: "45%", animationDelay: "0s" }} />
-              <div className="streak-line" style={{ top: "62%", left: "-10%", width: "70%", animationDelay: "1.4s" }} />
-              <div className="streak-line streak-ember" style={{ top: "78%", left: "-10%", width: "35%", animationDelay: "2.6s" }} />
-              {/* Outlined triangle */}
-              <div
-                className="collage-panel"
+      {resolved !== "none" && (
+        <>
+          <div className="motif-layer" aria-hidden>
+            {resolved === "supercar-side" && (
+              <>
+                <SupercarSide
+                  className="absolute text-white/25"
+                  style={{
+                    right: "-4%",
+                    bottom: "4%",
+                    width: "88%",
+                    maxWidth: "1100px",
+                  }}
+                />
+                <div className="streak-line streak-blue" style={{ top: "28%", left: "-10%", width: "60%", animationDelay: "0s" }} />
+                <div className="streak-line" style={{ top: "54%", left: "-10%", width: "80%", animationDelay: "1.2s" }} />
+                <div className="streak-line streak-ember" style={{ top: "72%", left: "-10%", width: "45%", animationDelay: "2.4s" }} />
+              </>
+            )}
+
+            {resolved === "supercar-front" && (
+              <SupercarFront
+                className="absolute text-white/22"
+                style={{ right: "3%", top: "8%", width: "38%", maxWidth: "540px" }}
+              />
+            )}
+
+            {resolved === "supercar-rear" && (
+              <SupercarRear
+                className="absolute text-white/25"
+                style={{ left: "0", bottom: "6%", width: "100%", maxWidth: "1200px" }}
+              />
+            )}
+
+            {resolved === "chassis" && (
+              <ChassisWireframe
+                className="absolute text-white/18"
                 style={{
-                  bottom: "18%",
-                  right: "10%",
-                  width: 0,
-                  height: 0,
-                  borderLeft: "26px solid transparent",
-                  borderRight: "26px solid transparent",
-                  borderBottom: "45px solid hsl(var(--primary) / 0.55)",
+                  left: "50%",
+                  top: "50%",
+                  width: "108%",
+                  transform: "translate(-50%, -50%)",
                 }}
               />
-              {/* Small outlined circle */}
-              <div className="collage-panel collage-outline" style={{ top: "40%", right: "14%", width: "48px", height: "48px", borderRadius: "9999px" }} />
-            </>
-          )}
+            )}
 
-          {composition === "geometric" && (
-            <>
-              <div className="collage-panel collage-green" style={{ top: "10%", left: "6%", width: "6%", height: "40%", opacity: 0.7 }} />
-              <div className="collage-panel collage-blue" style={{ bottom: "10%", right: "10%", width: "16%", height: "14%", opacity: 0.6 }} />
-              <div className="collage-panel collage-cream" style={{ top: "30%", right: "22%", width: "3%", height: "3%", opacity: 0.9 }} />
-              <div className="collage-panel collage-outline" style={{ top: "18%", right: "8%", width: "80px", height: "80px", borderRadius: "9999px" }} />
-              <div className="streak-line" style={{ top: "72%", left: "-10%", width: "60%", animationDelay: "0.8s" }} />
-            </>
-          )}
+            {resolved === "telemetry" && (
+              <TelemetryHUD className="absolute inset-0 text-white/35" />
+            )}
 
-          {composition === "streak" && (
-            <>
-              <div className="streak-line streak-blue" style={{ top: "22%", left: "-10%", width: "55%", animationDelay: "0s" }} />
-              <div className="streak-line" style={{ top: "48%", left: "-10%", width: "75%", animationDelay: "1.2s" }} />
-              <div className="streak-line streak-ember" style={{ top: "70%", left: "-10%", width: "40%", animationDelay: "2.4s" }} />
-              <div className="collage-panel collage-green" style={{ top: "0", right: "0", width: "3px", height: "35%", opacity: 0.6 }} />
-            </>
-          )}
+            {resolved === "streaks" && (
+              <>
+                <div className="streak-line streak-blue" style={{ top: "22%", left: "-10%", width: "55%", animationDelay: "0s" }} />
+                <div className="streak-line" style={{ top: "48%", left: "-10%", width: "75%", animationDelay: "1.2s" }} />
+                <div className="streak-line streak-ember" style={{ top: "70%", left: "-10%", width: "40%", animationDelay: "2.4s" }} />
+                <div className="streak-line streak-blue" style={{ top: "84%", left: "-10%", width: "62%", animationDelay: "3.2s" }} />
+              </>
+            )}
 
-          {composition === "minimal" && (
-            <>
-              <div className="collage-panel collage-ember" style={{ top: "12%", right: "8%", width: "6px", height: "6px" }} />
-              <div className="collage-panel collage-green" style={{ bottom: "0", left: "0", width: "40%", height: "2px", opacity: 0.7 }} />
-            </>
+            {resolved === "schematic" && (
+              <>
+                <ChassisWireframe
+                  className="absolute text-white/12"
+                  style={{ right: "-8%", top: "0", width: "70%" }}
+                />
+                <TelemetryHUD className="absolute inset-0 text-white/22" />
+              </>
+            )}
+          </div>
+
+          {/* Contrast scrim — a soft radial darkening so text is always legible */}
+          {scrim && (
+            <div
+              className="motif-layer pointer-events-none"
+              aria-hidden
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.35) 0%, hsl(var(--foreground) / 0.72) 60%, hsl(var(--foreground) / 0.86) 100%)",
+              }}
+            />
           )}
-        </div>
+        </>
       )}
 
       {children}
