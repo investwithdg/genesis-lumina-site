@@ -41,7 +41,7 @@ const Navigation = () => {
             to="/"
             className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-white hover:opacity-80 transition-opacity"
           >
-            <SupercarBadge className="w-9 h-3.5 text-white" />
+            <SupercarBadge className="w-7 h-7 text-white" />
             <span className="text-white">GENESIS</span>
             <span className="text-white/50"> / </span>
             <span className="text-white">LUMINA</span>

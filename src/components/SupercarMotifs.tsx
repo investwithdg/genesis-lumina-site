@@ -71,43 +71,12 @@ export const SupercarRear = ({ className, style }: MotifProps) => (
       Kept as SVG so it stays crisp at 20-40px.
    ───────────────────────────────────────────────────────────── */
 export const SupercarBadge = ({ className, style }: MotifProps) => (
-  <svg
-    viewBox="0 0 80 22"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+  <img
+    src="/logo.png"
+    alt="Lumina Logo"
     className={className}
-    style={style}
-    aria-hidden
-  >
-    {/* Filled wedge silhouette — long, low, aggressive */}
-    <path
-      d="M 2 17
-         L 10 15.5
-         L 15 11
-         Q 22 5.5 34 4.5
-         L 52 4.5
-         Q 60 5.5 64 9
-         L 71 13
-         L 76 15
-         L 76 17
-         L 70 17
-         Q 68 14 63 14
-         Q 58 14 56 17
-         L 26 17
-         Q 24 14 19 14
-         Q 14 14 12 17
-         Z"
-      fill="currentColor"
-    />
-    {/* Front wheel arch cutout */}
-    <circle cx="19" cy="17" r="3.2" fill="currentColor" />
-    <circle cx="19" cy="17" r="1.4" fill="hsl(var(--background))" />
-    {/* Rear wheel arch cutout */}
-    <circle cx="63" cy="17" r="3.2" fill="currentColor" />
-    <circle cx="63" cy="17" r="1.4" fill="hsl(var(--background))" />
-    {/* Ember taillight */}
-    <rect x="73" y="11.5" width="4" height="1.6" fill="hsl(var(--ember))" />
-  </svg>
+    style={{ filter: "invert(1)", objectFit: "contain", ...style }}
+  />
 );
 
 /* ─────────────────────────────────────────────────────────────

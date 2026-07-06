@@ -27,13 +27,7 @@ const Index = () => {
           style={{ opacity: 0.5 }}
         />
 
-        {/* Streak trails behind it */}
-        <div className="motif-layer pointer-events-none" aria-hidden>
-          <div className="streak-line streak-blue" style={{ top: "38%", left: "-10%", width: "58%", animationDelay: "0.6s" }} />
-          <div className="streak-line" style={{ top: "58%", left: "-10%", width: "82%", animationDelay: "1.8s" }} />
-          <div className="streak-line streak-ember" style={{ top: "76%", left: "-10%", width: "48%", animationDelay: "3.0s" }} />
-        </div>
-
+        {/* Streak trails removed per user request */}
         <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full on-motif">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-8 bg-ember" />

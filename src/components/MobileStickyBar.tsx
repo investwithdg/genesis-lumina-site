@@ -6,7 +6,7 @@ import { SupercarBadge } from "@/components/SupercarMotifs";
 const MobileStickyBar = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-foreground/95 backdrop-blur-md border-t border-white/10 px-3 py-3 flex items-center gap-2">
-      <SupercarBadge className="w-9 h-3.5 text-white/70 shrink-0" />
+      <SupercarBadge className="w-7 h-7 text-white/70 shrink-0" />
       <Button asChild size="sm" className="flex-1 gap-1.5 min-h-[44px] bg-white text-foreground hover:bg-white/90 rounded-md label-mono">
         <Link to="/pear">
           Book PEAR

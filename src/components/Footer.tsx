@@ -26,7 +26,7 @@ const Footer = (_: FooterProps) => {
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <SupercarBadge className="w-10 h-4 text-white" />
+              <SupercarBadge className="w-8 h-8 text-white" />
               <div className="font-display text-xl tracking-tight">Genesis Lumina</div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
