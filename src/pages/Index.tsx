@@ -11,6 +11,7 @@ import EngineFamiliesGrid from "@/components/EngineFamiliesGrid";
 import EngineHealthBar from "@/components/EngineHealthBar";
 import OfferStackLadder from "@/components/OfferStackLadder";
 import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+import { SupercarSide } from "@/components/SupercarMotifs";
 import { ArrowRight, Quote } from "lucide-react";
 
 const Index = () => {
