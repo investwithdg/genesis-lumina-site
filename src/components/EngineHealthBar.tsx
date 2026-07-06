@@ -12,15 +12,23 @@ interface EngineHealthBarProps {
 
 const EngineHealthBar = ({ dark = false }: EngineHealthBarProps) => {
   return (
-    <div className={`grid grid-cols-2 md:grid-cols-5 gap-4 ${dark ? "text-white" : ""}`}>
+    <div className={`grid grid-cols-2 md:grid-cols-5 gap-3 ${dark ? "text-white" : ""}`}>
       {dimensions.map((d, i) => (
         <div
           key={d.name}
-          className={`p-5 rounded-xl border ${dark ? "bg-white/5 border-white/10" : "bg-white border-foreground/10"}`}
+          className={`edge-hover edge-green p-5 rounded-md border relative ${
+            dark
+              ? "bg-white/[0.03] border-white/10 hover:bg-white/[0.06]"
+              : "bg-white border-foreground/10 hover:border-foreground/25"
+          }`}
         >
-          <div className={`text-xs mb-1 ${dark ? "text-white/40" : "text-foreground/40"}`}>0{i + 1}</div>
-          <div className="font-medium mb-2">{d.name}</div>
-          <p className={`text-xs leading-relaxed ${dark ? "text-white/60" : "text-foreground/60"}`}>{d.desc}</p>
+          <div className={`label-mono mb-3 ${dark ? "text-white/40" : "text-foreground/40"}`}>
+            0{i + 1} / 05
+          </div>
+          <div className="font-display font-medium mb-2 tracking-tight">{d.name}</div>
+          <p className={`text-xs leading-relaxed ${dark ? "text-white/55" : "text-foreground/55"}`}>
+            {d.desc}
+          </p>
         </div>
       ))}
     </div>
