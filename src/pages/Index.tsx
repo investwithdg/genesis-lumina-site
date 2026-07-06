@@ -20,14 +20,21 @@ const Index = () => {
       <Navigation />
 
       {/* Hero — the mascot enters */}
-      <SectionDark className="min-h-[92vh] flex items-center" motif="telemetry" grid>
-        {/* Hero supercar silhouette — the entrance */}
+      <SectionDark className="min-h-[92vh] flex items-center" motif="none" scrim={false}>
+        {/* Hero supercar — full background */}
         <SupercarSide
-          className="absolute right-[-10%] bottom-0 w-[125%] max-w-[1800px] supercar-enter pointer-events-none select-none"
-          style={{ opacity: 0.5 }}
+          className="absolute inset-0 w-full h-full object-cover supercar-enter pointer-events-none select-none"
+          style={{ opacity: 0.75 }}
         />
-
-        {/* Streak trails removed per user request */}
+        {/* Subtle left-side scrim so headline stays legible */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "linear-gradient(90deg, hsl(var(--foreground) / 0.85) 0%, hsl(var(--foreground) / 0.55) 45%, hsl(var(--foreground) / 0.25) 100%)",
+          }}
+        />
         <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full on-motif">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-8 bg-ember" />
