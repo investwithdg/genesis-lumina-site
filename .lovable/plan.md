@@ -1,131 +1,188 @@
-## Goal
+# Full Site Remap — Business Performance Engineering (BPE)
 
-Reposition the PST  and Optimist Business Solution case studies (and aligned surfaces) from a "$15K project" or "$x project" anchor into "Compass-grade infrastructure" or "Ignite level integration." Strip price references, upgrade language from "project/app" to "infrastructure/architecture," and add Compass/Ignite bridge framing. Also sweep the site for V3 architecture consistency.
+The uploaded Doctrine, Lexicon, and offer-stack screenshots are the source of truth. Every page, nav item, and CTA gets rewritten to speak one language: **engines, engine health, performance engineering, PEAR, PEAR Tree**.
 
----
+## 1. New Canonical Language (applied site-wide)
 
-## 1. Rewrite `src/pages/case-studies/PST.tsx` (primary surgery)
+- **Business** = coordinated network of repeatable engines.
+- **Engine** = repeatable mechanism transforming inputs → valuable outputs.
+- **Engine Families**: Growth, Operations, Intelligence, People, Financial, Customer, Product, Leadership.
+- **Engine Health** (5 dims): Reliability, Efficiency, Measurability, Transferability, Adaptability.
+- **BPE** = Business Performance Engineering.
+- **PEAR** = Performance Engineering Analysis & Roadmap (the free 30-min call — replaces "Assessment / AVA / Diagnostic").
+- **PEAR Tree** = the living map of engine architecture, health scores, and roadmap that drives Ignite.
+- **Laws 1–4** used as anchor copy (Potential → Value; scalable via engines; weakest critical engine constrains; every business runs on engines).
 
-**Hero section**
+Retired terms: "Architectural Vulnerability Assessment", "AVA", "Waypoints", "AI Literacy / System Integration / S³ waypoints", "Spark", "diagnostic".
 
-- Keep "From Manual to Machine."
-- Subhead rewrite (no time/sprint anchor): "A logistics operator received a webhook-native, multi-stage operational system — architected, deployed, and transferred into team ownership."
-- Add a prominent reanchor line directly below the subhead:
-  > *"This system reflects the type of infrastructure typically delivered through Genesis Lumina's Compass engagements."*
+## 2. New Offer Stack (replaces current tiering)
 
-**Stats Bar — replace pricing/time with magnitude**
-Replace the three stats (`$15,000`, `72 Hours`, `100% Collected`) with:
+```text
+ENTRY
+  PEAR           Free · 30 min       Performance Engineering Analysis & Roadmap
+  Field Guides   $47 – $297          Self-serve BPE literacy
 
-- `7-Stage` — Automated Pipeline
-- `Webhook-Native` — Real-Time Architecture
-- `100%` — Team Ownership Transfer
+ENGAGEMENTS
+  Lumina Labs    $7.5K – $15K        For Teams · Workshop (engine literacy + governance)
+  Lumina Compass Starting $35K       4-week engine engagement — modes: Build / Optimize / Supercharge
 
-**The Problem** — keep, minor edit: replace "off-the-shelf TMS" project framing with infrastructure language ("they needed an operational layer that fit their architecture, not a tool that forced them into someone else's").
+ONGOING
+  Lumina Ignite  $7.5K – $25K/mo     Ember → Blaze → Phoenix, driven by the PEAR Tree
 
-**The Build Journey** — keep the four-version arc but rename V4 from "72-Hour Final Build" to "Production Deployment & Ownership Transfer," and remove the "72-hour" phrase from its description.
+TRANSFORMATION
+  S³             $150K – $500K       Scale · Sale · Succession
+```
 
-**The Solution** — keep 7-stage pipeline + tech stack. No changes (HubSpot/Google Drive already applied).
+## 3. Information Architecture
 
-**NEW section: Scope of Work** (between Solution and Complication, LIGHT)
-Header: "Scope of Work Included"
-Bulleted infrastructure inventory:
+New nav:
 
-- Multi-stage operational system architecture
-- CRM and pipeline infrastructure (HubSpot)
-- Webhook orchestration layer (Make)
-- Automated dispatch-to-invoice flow
-- Documentation and SOP environment (Google Drive)
-- Team activation and ownership transfer (Loom walkthroughs)
+```text
+Approach            → /approach            (BPE doctrine, Laws, Engine Families, Engine Health)
+Engines             → /engines             (Engine Library overview + families)
+Offers              → dropdown
+   PEAR (free call) → /pear
+   Field Guides     → /field-guides
+   Lumina Labs      → /labs
+   Lumina Compass   → /compass
+   Lumina Ignite    → /ignite
+   S³ Transformation→ /s3
+Case Studies        → /case-studies        (reframed as Engine Installations)
+About               → /about
+Resources           → Newsletter, FAQ
+CTA (nav):          Book PEAR (free)
+```
 
-**NEW section: Execution Context** (replaces or augments "The Complication," DARK)
-Header: "Execution Context"
+Redirects (keep old URLs alive):
+`/diagnostic`, `/waypoints/*`, `/products/lumina-*` → new equivalents.
 
-> "This system was delivered inside a live logistics operation with multi-party coordination, active dispatching, and zero downtime tolerance. Scope discipline — knowing what to build now and what to defer — was the architecture decision."
-> Keep the "scope discipline is a feature, not a limitation" line.
+## 4. Page-by-Page Remap
 
-**Principles Proved** — keep, swap "Ownership transfer is the product — PST runs this system without us" wording stays (already aligned).
+### Home (`src/pages/Index.tsx`)
 
-**NEW: Silent Compass/Ignite bridge** (just above the CTA)
-A single italic line in muted treatment:
+- Hero: "Every business runs on engines. We engineer the ones that determine performance." Primary CTA: **Book your PEAR call (free)**. Secondary: Explore the doctrine.
+- Section 2 — The Reality: Laws 1–4 as four cards.
+- Section 3 — The Engines: 8 Engine Family tiles.
+- Section 4 — Engine Health: 5-dimension bar (Reliability / Efficiency / Measurability / Transferability / Adaptability).
+- Section 5 — The Offer Stack: the 4-tier ladder with the PEAR Tree banner beneath.
+- Section 6 — Proof: Case study cards reframed as engine installations.
+- Section 7 — Founder/About teaser.
+- Section 8 — Newsletter + PEAR CTA.
 
-> *"Engagements of this nature are typically structured as Compass builds, followed by ongoing optimization through Ignite."*
+### /approach (new — replaces Waypoints spine)
 
-**NEW: Forward-looking close** (lead-in to CTA)
+Doctrine page. Sections: Reality → Principles → Architecture → Laws → What BPE is → Human role vs AI (force multiplier). Long-form, dark/light alternating.
 
-> "The resulting system provides a foundation for continued optimization, expansion, and monetization — not a one-time build."
+### /engines (new — Engine Library)
 
-**CTA** — keep, but change "Explore Compass" framing copy to: "Compass builds the infrastructure your team owns and extends."
+Grid of 8 Engine Families (Growth, Operations, Intelligence, People, Financial, Customer, Product, Leadership) with 1-liner + example engines from lexicon (Opportunity Discovery, Sales, Hiring, Knowledge, Client Delivery, Referral, Decision Support). Each family opens a section describing typical engines, health signals, and which offer installs them. Public catalog framing, no per-engine sub-pages yet.
 
-**Global find/replace inside PST.tsx**
+### /pear (replaces /diagnostic)
 
-- "built, tested, and deployed in a 72-hour final sprint" → remove time anchor
-- "$15,000" / "$15K" → removed entirely
-- "developed a solution" / "built an app" / "completed a project" → "architected," "installed," "designed" variants
-- "project" (when describing the engagement) → "engagement" or "infrastructure build"
+- Hero: "PEAR — Performance Engineering Analysis & Roadmap. Free · 30 min."
+- What it is: live diagnostic call, identify critical engines, assess health across 5 dimensions, map highest-leverage constraint.
+- Outcome bullets: Engine health snapshot + prioritized constraint map + recommended next step.
+- Single CTA: Google Calendar link (existing `calendar.app.google/XXdQMZcNjYjnACuz5`). No form.
 
----
+### /field-guides (new hub) + existing guide pages
 
-## 2. `src/pages/CaseStudies.tsx` — index page
+Hub lists Field Guides as "the doctrine in your hands — engine families, health criteria, force multiplier principles." Keep Analog/Audit/Harvest guides, rewrite intros to BPE language and price band $47–$297.
 
-PST card:
+### /labs (rename from Lumina Labs product page)
 
-- Description: remove "$15K Compass engagement" phrasing → "A Compass-grade engagement that installed a webhook-native, 7-stage operational system in a live logistics environment."
-- Stats: replace `$15K / 72 hrs / 100%` with `7-Stage / Webhook-Native / Team-Owned`
+- Positioning: For Teams · Workshop. "Your leadership team learns to see, diagnose, and govern their business engines. Not AI training — engine performance literacy."
+- Outcome: team-wide engine literacy + governance framework + first engine diagnosis completed in-room.
+- Price: $7.5K – $15K.
 
-Optimist card:
+### /compass (rename from Lumina Compass)
 
-- Description: remove "$3,750 engagement" → "An infrastructure rebuild that compressed a 2-week manual intake into a 1-day AI-routed system."
-- Stats: replace `$3,750` with `AI-Routed` (keep `51%` and `2wk → 1d`)
+- Positioning: For Business · The Sprint. 4-week engine engagement.
+- Three modes as tabs/cards:
+  - **Build** — you don't have the engine.
+  - **Optimize** — you have one that needs to perform better.
+  - **Supercharge** — strong engine, needs tuning + red-line testing.
+- Outcome: engineered business capability — built, optimized, or supercharged — that your team owns, governs, and extends.
+- Price: Starting at $35,000. PEAR credit ($0 since PEAR is free — remove old $2,500 credit language).
 
----
+### /ignite (rename from Lumina Ignite)
 
-## 3. `src/pages/Index.tsx` (Proof of Principle section, ~line 187)
+- Positioning: Ongoing engine development partner.
+- Tiers **Ember → Blaze → Phoenix** ($7.5K / $15K / $25K per month — confirm exact split during build).
+- Introduce **PEAR Tree**: "your engine health home base — the living map of engine architecture, health scores, and engineering roadmap." Visual: tree diagram with families as branches, health dots as leaves.
+- Outcome: continuous engine development + measurable performance gains + institutional intelligence that compounds monthly.
 
-PST card:
+### /s3
 
-- Remove `$15K` stat → replace with `7-Stage Pipeline`
-- Update one-line description to drop price implication, use "infrastructure" framing
+- Positioning: The culmination of BPE. Three connected results — **Scale · Sale · Succession**.
+- Copy: engineer your business to scale without you, become acquirable on your terms, transfer institutional intelligence to next-gen leadership.
+- Outcome: a business that performs independently of its founder — scalable, sellable, succession-ready.
+- Price band: $150K – $500K.
 
-Optimist card:
+### /case-studies + /case-studies/pst + /case-studies/optimist
 
-- Remove `$3,750` stat → replace with `AI-Routed Intake`
-- Same language sweep
+Reframe as **Engine Installations**. For each: which Engine Family, which engines installed, which health dimensions moved, which offer delivered it (Compass), and what Ignite would continue. Remove any residual pricing anchors <$35K. Keep the V3 architecture framing already in PST.
 
----
+### /about
 
-## 4. `src/pages/products/LuminaCompass.tsx` (Results in Practice, ~line 185–196)
+Reposition Donovan as **Business Performance Engineer**. Founder Intelligence framing from lexicon. Keep existing stats/social proof.
 
-- PST line: "$15K engagement · 72-hour final build · 7-stage automated pipeline" → **"Webhook-native operational system · 7-stage automated pipeline · team-owned infrastructure"**
-- Optimist line: "$3,750 engagement · 51% steps eliminated · 2 weeks → 1 day" → **"AI-routed intake architecture · 51% steps eliminated · 2 weeks → 1 day"**
+### /faq
 
----
+Rewrite Q&A around new offers, PEAR, engine language. Remove AVA/$2,500 credit references. Update pricing to match new stack.
 
-## 5. `src/pages/About.tsx`
+### /newsletter
 
-Line 122 already references infrastructure correctly. No edit needed beyond confirmation.
+Copy tune to "Weekly notes on Business Performance Engineering." Keep Substack link.
 
----
+### Retired / redirected pages
 
-## 6. V3 architecture consistency sweep
+- `/diagnostic` → 301 to `/pear` (in-app redirect).
+- `/waypoints/ai-literacy`, `/waypoints/system-integration`, `/waypoints/s3` → redirect to `/engines` (first two) and `/s3`.
+- `/products/lumina-compass|ignite|labs` → redirect to `/compass`, `/ignite`, `/labs`.
+- Quiz page: keep, but re-map outcomes to Engine Families + recommend PEAR call as the terminal CTA.
 
-Quick verification pass (read-only confirmation, edit only if drift found):
+## 5. Shared Components to Update
 
-- `Diagnostic.tsx` — confirm "Architectural Vulnerability Assessment" naming, $2,500 price, credit toward Compass/S³
-- `LuminaIgnite.tsx` — confirm Ember $7,500 / Blaze $15,000 / Phoenix $20K–$25K tiers and Intelligence Platform framing
-- `LuminaCompass.tsx` — confirm $35,000 + Defensive Infrastructure Kit deliverables
-- `S3.tsx` — confirm $150K–$500K range
-- `SystemIntegration.tsx` line 176 ("Starting at $15K") — **flag for rewrite**: this is stale Compass pricing language. Update to "Starting at $35K" to match V3 Compass pricing, or reframe as "Compass-grade infrastructure" with no number.
-- `FAQ.tsx` — scan for any remaining `$15K` Compass references and update to $35K
+- **Navigation.tsx** — new nav structure + "Book PEAR" CTA.
+- **Footer.tsx** — new link set (Approach, Engines, PEAR, Labs, Compass, Ignite, S³, Case Studies, About, Newsletter, FAQ).
+- **MobileStickyBar.tsx** — primary CTA becomes "Book PEAR (free)"; secondary "Explore Engines".
+- **BookCallButton.tsx** — default label "Book PEAR (free)".
+- **NewsletterCTA.tsx** — copy tweak only.
+- **WaypointDiagram.tsx** — repurpose as **PEAR Tree diagram** (engine families as branches).
+- New component: **OfferStackLadder** (renders the four-tier stack + PEAR thread banner) — used on Home and each offer page as cross-sell.
+- New component: **EngineHealthBar** (5 dimensions).
+- New component: **LawsGrid** (Laws 1–4).
 
----
+## 6. SEO / Metadata
 
-## Files edited (estimated)
+Per-page `<title>`, `<meta description>`, OG title/description rewritten around BPE vocabulary. Home title example: "Genesis Lumina — Business Performance Engineering". Keep index.html defaults app-specific.
 
-1. `src/pages/case-studies/PST.tsx` — major rewrite
-2. `src/pages/CaseStudies.tsx` — card descriptions + stats
-3. `src/pages/Index.tsx` — Proof of Principle stats + copy
-4. `src/pages/products/LuminaCompass.tsx` — Results in Practice copy
-5. `src/pages/waypoints/SystemIntegration.tsx` — fix stale $15K Compass price
-6. `src/pages/FAQ.tsx` — sweep for stale pricing (only if found)
+## 7. Memory Updates (after approval)
 
-No price numbers will remain on the PST case study page or the case study index card. Compass page and pricing pages keep the official $35K (per V3 memory).
+- Rewrite `mem://index.md` Core: replace S³/AVA/Waypoint terminology rules with BPE, PEAR, Engine Families, PEAR Tree.
+- Add memories: `mem://doctrine/lexicon`, `mem://offers/stack-v2`, `mem://offers/pear-thread`.
+- Retire: visual-direction rules unchanged; offer-stack-and-pricing rewritten; quiz-conversion-flow rewritten.
+
+## 8. Technical Details
+
+- Stack unchanged: React 18 + Vite + Tailwind + shadcn.
+- Add routes in `src/App.tsx` for `/approach`, `/engines`, `/pear`, `/field-guides`, `/labs`, `/compass`, `/ignite`, `/s3`. Add `<Navigate>` redirects for legacy paths.
+- Preserve `src/index.css` design tokens (Deep Green primary, Bright Blue secondary). No hardcoded colors.
+- No backend needed — this is copy + IA + component work.
+
+## 9. Build Order
+
+1. Doctrine + Lexicon adopted in shared components (Nav, Footer, MobileStickyBar, BookCallButton).
+2. New shared components (OfferStackLadder, EngineHealthBar, LawsGrid, PEAR Tree diagram).
+3. New pages: `/approach`, `/engines`, `/pear`, `/field-guides`, `/labs`, `/compass`, `/ignite`, `/s3`.
+4. Legacy routes → redirects.
+5. Home rewrite consuming new components.
+6. Case Studies, About, FAQ, Newsletter, Quiz rewrites.
+7. SEO/meta pass.
+8. Memory update.
+
+## Open Items to Confirm Before Build
+
+1. **Ignite tier prices**: Ember / Blaze / Phoenix exact monthly split (screenshot shows $7.5K–$25K/mo band only).
+2. **Field Guides**: keep the three existing (Analog / Audit / Harvest) reframed, or introduce new guides matched to Engine Families?
+3. **Quiz**: keep and remap to Engine Families, or retire entirely in favor of PEAR?

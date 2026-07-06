@@ -94,12 +94,12 @@ const CaseStudies = () => {
             Ready to build <span className="font-medium">your case study</span>?
           </h2>
           <p className="text-lg text-white/70 mb-8">
-            Start with the Vulnerability Assessment and see where your systems need infrastructure.
+            Book a free 30-minute PEAR call and see which engines your business runs on — and which one is bounding the rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/diagnostic" className="gap-2">
-                Begin Your Assessment
+              <Link to="/pear" className="gap-2">
+                Book PEAR (free)
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>

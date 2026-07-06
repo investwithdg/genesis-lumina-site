@@ -222,7 +222,7 @@ const Audit = () => {
                 ))}
               </div>
               <Button asChild size="lg" className="w-full text-lg py-6 h-auto bg-[hsl(var(--waypoint-s3))] text-white hover:bg-[hsl(var(--waypoint-s3))]/90">
-                <Link to="/diagnostic">
+                <Link to="/pear">
                   Book the AI Readiness Diagnostic
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
@@ -248,7 +248,7 @@ const Audit = () => {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
-              <Link to="/diagnostic">
+              <Link to="/pear">
                 Want the AI Readiness Diagnostic? — $1,500
               </Link>
             </Button>
