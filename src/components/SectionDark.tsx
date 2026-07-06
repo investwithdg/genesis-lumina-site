@@ -75,12 +75,13 @@ const SectionDark = ({
             {resolved === "supercar-side" && (
               <>
                 <SupercarSide
-                  className="absolute text-white/25"
+                  className="absolute select-none"
                   style={{
-                    right: "-4%",
-                    bottom: "4%",
-                    width: "88%",
-                    maxWidth: "1100px",
+                    right: "-8%",
+                    bottom: "0",
+                    width: "115%",
+                    maxWidth: "1600px",
+                    opacity: 0.45,
                   }}
                 />
                 <div className="streak-line streak-blue" style={{ top: "28%", left: "-10%", width: "60%", animationDelay: "0s" }} />
@@ -91,15 +92,15 @@ const SectionDark = ({
 
             {resolved === "supercar-front" && (
               <SupercarFront
-                className="absolute text-white/22"
-                style={{ right: "3%", top: "8%", width: "38%", maxWidth: "540px" }}
+                className="absolute select-none"
+                style={{ right: "-6%", top: "0", width: "62%", maxWidth: "820px", opacity: 0.38 }}
               />
             )}
 
             {resolved === "supercar-rear" && (
               <SupercarRear
-                className="absolute text-white/25"
-                style={{ left: "0", bottom: "6%", width: "100%", maxWidth: "1200px" }}
+                className="absolute select-none"
+                style={{ left: "-4%", bottom: "0", width: "108%", maxWidth: "1500px", opacity: 0.42 }}
               />
             )}
 

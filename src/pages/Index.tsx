@@ -23,9 +23,10 @@ const Index = () => {
       <SectionDark className="min-h-[92vh] flex items-center" motif="telemetry" grid>
         {/* Hero supercar silhouette — the entrance */}
         <SupercarSide
-          className="absolute right-[-6%] bottom-[8%] w-[105%] max-w-[1400px] text-white/28 supercar-enter pointer-events-none"
-          aria-hidden
+          className="absolute right-[-10%] bottom-0 w-[125%] max-w-[1800px] supercar-enter pointer-events-none select-none"
+          style={{ opacity: 0.5 }}
         />
+
         {/* Streak trails behind it */}
         <div className="motif-layer pointer-events-none" aria-hidden>
           <div className="streak-line streak-blue" style={{ top: "38%", left: "-10%", width: "58%", animationDelay: "0.6s" }} />
