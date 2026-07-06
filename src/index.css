@@ -185,6 +185,12 @@
   100% { transform: translateX(130%); opacity: 0; }
 }
 
+@keyframes supercar-enter {
+  0%   { transform: translateX(-8%) scale(0.98); opacity: 0; filter: blur(6px); }
+  60%  { opacity: 1; filter: blur(1px); }
+  100% { transform: translateX(0) scale(1); opacity: 1; filter: blur(0); }
+}
+
 @keyframes scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
