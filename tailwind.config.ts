@@ -46,6 +46,8 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				cream: 'hsl(var(--cream))',
+				ember: 'hsl(var(--ember))',
+				surface: 'hsl(var(--surface))',
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -67,8 +69,8 @@ export default {
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				// Add your custom fonts here:
-				// 'custom': ['YourCustomFont', 'sans-serif'],
+				'display': ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
+				'mono': ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

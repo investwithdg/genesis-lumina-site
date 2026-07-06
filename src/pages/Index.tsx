@@ -15,79 +15,99 @@ import { ArrowRight, Quote } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white text-foreground">
+    <div className="min-h-screen bg-foreground text-white">
       <Navigation />
 
       {/* Hero */}
-      <SectionDark className="min-h-screen flex items-center" withParticles withShapes>
-        <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
-          <div className="text-center animate-fade-in">
-            <span className="inline-block text-xs md:text-sm tracking-[0.2em] font-semibold text-white/60 mb-6">
-              BUSINESS PERFORMANCE ENGINEERING
-            </span>
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
-              Every business runs on <span className="font-medium">engines.</span>
-              <br className="hidden md:block" />
-              We engineer the ones that <span className="font-medium">determine performance.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Genesis Lumina diagnoses, engineers, measures, and governs the business engines that decide how your organization actually performs — so growth compounds instead of leaks.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-                <Link to="/pear" className="gap-2">
-                  Book PEAR (free)
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
-                <Link to="/approach">Read the doctrine</Link>
-              </Button>
-            </div>
+      <SectionDark className="min-h-[92vh] flex items-center" collage="hero" grid>
+        <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="h-px w-8 bg-ember" />
+            <span className="label-mono text-white/60">BUSINESS PERFORMANCE ENGINEERING</span>
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light leading-[0.98] mb-10 tracking-tight text-white max-w-5xl">
+            Every business runs on <span className="font-semibold">engines.</span>
+            <br className="hidden md:block" />
+            We engineer the ones that <span className="font-semibold">determine performance.</span>
+          </h1>
+          <p className="text-lg md:text-xl text-white/65 leading-relaxed max-w-2xl mb-12">
+            Genesis Lumina diagnoses, engineers, measures, and governs the business engines that decide how your organization actually performs — so growth compounds instead of leaks.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button asChild size="lg" className="text-base px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90 rounded-md gap-2 label-mono">
+              <Link to="/pear">Book PEAR — Free<ArrowRight className="w-4 h-4" /></Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="text-base px-8 py-6 h-auto border-white/25 text-white bg-transparent hover:bg-white/10 rounded-md label-mono">
+              <Link to="/approach">Read the Doctrine</Link>
+            </Button>
+          </div>
+
+          {/* Telemetry-style micro-stats */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+            {[
+              { k: "08", v: "Engine families" },
+              { k: "05", v: "Health dimensions" },
+              { k: "04", v: "Governing laws" },
+              { k: "30m", v: "PEAR call" },
+            ].map((s) => (
+              <div key={s.v} className="border-t border-white/15 pt-4">
+                <div className="font-display text-3xl md:text-4xl font-medium metric-mono">{s.k}</div>
+                <div className="label-mono text-white/45 mt-1">{s.v}</div>
+              </div>
+            ))}
           </div>
         </div>
       </SectionDark>
 
       {/* Laws */}
-      <SectionLight className="px-4 md:px-8 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">THE REALITY</div>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight max-w-3xl">
-              Four laws govern how <span className="font-medium">every business</span> performs.
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32" collage="geometric">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="mb-14 max-w-3xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-6 bg-ember" />
+              <span className="label-mono text-white/50">01 — THE REALITY</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight text-white leading-[1.02]">
+              Four laws govern how <span className="font-semibold">every business</span> performs.
             </h2>
           </div>
-          <LawsGrid />
+          <LawsGrid dark />
         </div>
-      </SectionLight>
+      </SectionDark>
 
       {/* Engine Families */}
-      <SectionDark className="px-4 md:px-8 py-24 md:py-32">
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32" collage="streak">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="mb-12">
-            <div className="text-xs tracking-[0.2em] font-semibold text-white/40 mb-3">THE ARCHITECTURE</div>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white max-w-3xl">
-              Eight engine families. <span className="font-medium">One shared language.</span>
+          <div className="mb-14 max-w-3xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-6 bg-ember" />
+              <span className="label-mono text-white/50">02 — THE ARCHITECTURE</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight text-white leading-[1.02]">
+              Eight engine families. <span className="font-semibold">One shared language.</span>
             </h2>
           </div>
           <EngineFamiliesGrid dark />
           <div className="mt-10">
-            <Button asChild variant="outline" className="border-white/30 text-white bg-transparent hover:bg-white/10 gap-2">
-              <Link to="/engines">Explore the Engine Library <ArrowRight className="w-4 h-4" /></Link>
+            <Button asChild variant="outline" className="border-white/25 text-white bg-transparent hover:bg-white/10 gap-2 rounded-md label-mono">
+              <Link to="/engines">Explore the Engine Library <ArrowRight className="w-3.5 h-3.5" /></Link>
             </Button>
           </div>
         </div>
       </SectionDark>
 
-      {/* Engine Health */}
+      {/* Engine Health — cream reveal (rare light break) */}
       <SectionLight className="px-4 md:px-8 py-24 md:py-32" muted>
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 max-w-3xl">
-            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">THE MEASUREMENT</div>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-6">
-              Every engine is scored on <span className="font-medium">five dimensions.</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-6 bg-ember" />
+              <span className="label-mono text-foreground/50">03 — THE MEASUREMENT</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight mb-6 leading-[1.02]">
+              Every engine is scored on <span className="font-semibold">five dimensions.</span>
             </h2>
-            <p className="text-lg text-foreground/60">
+            <p className="text-lg text-foreground/60 max-w-2xl">
               Engine health is not an opinion. It's a read on how the mechanism is currently operating — and where the next unit of engineering effort should go.
             </p>
           </div>
@@ -96,90 +116,102 @@ const Index = () => {
       </SectionLight>
 
       {/* Offer Stack */}
-      <SectionLight className="px-4 md:px-8 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">HOW WE WORK WITH YOU</div>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-4">
-              The <span className="font-medium">offer stack.</span>
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32" collage="minimal">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-6 bg-ember" />
+              <span className="label-mono text-white/50">04 — HOW WE WORK WITH YOU</span>
+              <span className="h-px w-6 bg-ember" />
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight text-white mb-6 leading-[1.02]">
+              The <span className="font-semibold">offer stack.</span>
             </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            <p className="text-lg text-white/60">
               A single ladder — from a free 30-minute call to a full network transformation. Every rung serves a specific stage of engine work.
             </p>
           </div>
-          <OfferStackLadder />
+          <OfferStackLadder dark />
         </div>
-      </SectionLight>
+      </SectionDark>
 
       {/* Proof — Case Studies */}
-      <SectionDark className="px-4 md:px-8 py-24 md:py-32">
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32" collage="geometric">
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="mb-12">
-            <div className="text-xs tracking-[0.2em] font-semibold text-white/40 mb-3">PROOF</div>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">
-              Engines <span className="font-medium">installed.</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-6 bg-ember" />
+              <span className="label-mono text-white/50">05 — PROOF</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light tracking-tight text-white leading-[1.02]">
+              Engines <span className="font-semibold">installed.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            <Link to="/case-studies/pst" className="group block p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-              <p className="text-xs text-white/50 mb-2">Preferred Solutions Transport · Operations engine</p>
-              <h3 className="text-2xl font-medium text-white mb-3 group-hover:text-emerald-300 transition-colors">From Manual to Machine.</h3>
-              <p className="text-sm text-white/60 leading-relaxed mb-4">A webhook-native, 7-stage operational engine installed in a live logistics environment — architected, deployed, and transferred into team ownership.</p>
-              <span className="text-sm font-medium text-white flex items-center gap-1">Read installation <ArrowRight className="w-4 h-4" /></span>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link to="/case-studies/pst" className="edge-hover edge-green group block p-7 rounded-md bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-all relative">
+              <p className="label-mono text-white/45 mb-3">PST · OPERATIONS ENGINE</p>
+              <h3 className="font-display text-2xl font-medium text-white mb-3 tracking-tight">From Manual to Machine.</h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-5">A webhook-native, 7-stage operational engine installed in a live logistics environment — architected, deployed, and transferred into team ownership.</p>
+              <span className="label-mono text-white flex items-center gap-2">Read installation <ArrowRight className="w-3.5 h-3.5" /></span>
             </Link>
-            <Link to="/case-studies/optimist" className="group block p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-              <p className="text-xs text-white/50 mb-2">Optimist Business Solutions · Intake engine</p>
-              <h3 className="text-2xl font-medium text-white mb-3 group-hover:text-emerald-300 transition-colors">From Bottleneck to Breakthrough.</h3>
-              <p className="text-sm text-white/60 leading-relaxed mb-4">An AI-routed intake engine that compressed a 2-week manual process into a single day — 51% of process steps eliminated by design.</p>
-              <span className="text-sm font-medium text-white flex items-center gap-1">Read installation <ArrowRight className="w-4 h-4" /></span>
+            <Link to="/case-studies/optimist" className="edge-hover edge-blue group block p-7 rounded-md bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-all relative">
+              <p className="label-mono text-white/45 mb-3">OPTIMIST · INTAKE ENGINE</p>
+              <h3 className="font-display text-2xl font-medium text-white mb-3 tracking-tight">From Bottleneck to Breakthrough.</h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-5">An AI-routed intake engine that compressed a 2-week manual process into a single day — 51% of process steps eliminated by design.</p>
+              <span className="label-mono text-white flex items-center gap-2">Read installation <ArrowRight className="w-3.5 h-3.5" /></span>
             </Link>
           </div>
         </div>
       </SectionDark>
 
       {/* Testimonial */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-24" muted>
-        <div className="max-w-4xl mx-auto text-center">
-          <Quote className="w-10 h-10 mx-auto mb-6 text-foreground/20" />
-          <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-6">
+      <SectionDark className="px-4 md:px-8 py-16 md:py-24" collage="minimal">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <Quote className="w-8 h-8 mx-auto mb-6 text-white/20" />
+          <blockquote className="font-display text-2xl md:text-4xl font-light text-white leading-snug mb-6 tracking-tight">
             "Donovan is AI. He's The Answer."
           </blockquote>
-          <div className="text-foreground/60">
-            <p className="font-medium text-foreground/80">Jamar Wright</p>
-            <p className="text-sm">Owner/Operator, Revive Beauty Salon</p>
+          <div>
+            <p className="font-medium text-white/80">Jamar Wright</p>
+            <p className="label-mono text-white/45 mt-1">Owner/Operator · Revive Beauty Salon</p>
           </div>
         </div>
-      </SectionLight>
+      </SectionDark>
 
       {/* Logos */}
-      <SectionLight className="px-8 py-16">
+      <SectionDark className="px-8 py-14 border-t border-white/5">
         <div className="max-w-5xl mx-auto">
           <ClientLogoCarousel />
         </div>
-      </SectionLight>
+      </SectionDark>
 
       {/* Final CTA */}
-      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+      <SectionDark className="px-8 py-24 md:py-32" collage="hero">
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
-            Start with a <span className="font-medium">clear read.</span>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-6 bg-ember" />
+            <span className="label-mono text-white/50">START THE READ</span>
+            <span className="h-px w-6 bg-ember" />
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-6 tracking-tight leading-[1.02]">
+            Start with a <span className="font-semibold">clear read.</span>
           </h2>
-          <p className="text-lg text-white/70 mb-10">
+          <p className="text-lg text-white/65 mb-10">
             Thirty minutes. Free. You leave with an engine health snapshot, the current constraint, and the honest next step — even if it isn't us.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
+            <Button asChild size="lg" className="text-base px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90 rounded-md gap-2 label-mono">
+              <Link to="/pear">Book PEAR — Free<ArrowRight className="w-4 h-4" /></Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
-              <Link to="/field-guides">Prefer to read? Field Guides</Link>
+            <Button asChild variant="outline" size="lg" className="text-base px-8 py-6 h-auto border-white/25 text-white bg-transparent hover:bg-white/10 rounded-md label-mono">
+              <Link to="/field-guides">Field Guides</Link>
             </Button>
           </div>
           <NewsletterCTA dark compact />
         </div>
       </SectionDark>
 
-      <Footer dark />
+      <Footer />
       <MobileStickyBar />
     </div>
   );
