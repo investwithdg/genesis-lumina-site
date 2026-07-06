@@ -234,7 +234,7 @@ const Quiz = () => {
         waypoint: "AI Literacy",
         tagline: "Build your foundation",
         description: "You're in the curiosity phase. You need clarity on what AI can do for your business and how to think strategically about implementation.",
-        path: "/waypoints/ai-literacy",
+        path: "/engines",
         color: "waypoint-literacy",
         icon: "🧠",
         fieldGuide: {
@@ -247,7 +247,7 @@ const Quiz = () => {
         waypoint: "System Integration",
         tagline: "Turn knowledge into action",
         description: "You understand the basics. Now you need practical automations that eliminate manual work and connect your systems seamlessly.",
-        path: "/waypoints/system-integration",
+        path: "/engines",
         color: "waypoint-integration",
         icon: "🔗",
         fieldGuide: {
@@ -260,7 +260,7 @@ const Quiz = () => {
         waypoint: "S³ (Scale · Sale · Succession)",
         tagline: "Build enterprise infrastructure",
         description: "You're ready to scale. You need AI infrastructure that supports explosive growth, increases valuation, and runs independently.",
-        path: "/waypoints/s3",
+        path: "/s3",
         color: "waypoint-s3",
         icon: "📈",
         fieldGuide: {

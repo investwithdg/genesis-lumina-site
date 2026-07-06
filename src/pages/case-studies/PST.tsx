@@ -232,13 +232,13 @@ const PST = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/products/lumina-compass" className="gap-2">
+              <Link to="/compass" className="gap-2">
                 Compass builds the infrastructure your team owns
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
-              <Link to="/diagnostic">Start with an Assessment</Link>
+              <Link to="/pear">Start with an Assessment</Link>
             </Button>
           </div>
           <NewsletterCTA dark compact />
