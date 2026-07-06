@@ -1,357 +1,185 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-import ClientLogoCarousel from "@/components/ClientLogoCarousel";
-import BookCallButton from "@/components/BookCallButton";
 import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import MobileStickyBar from "@/components/MobileStickyBar";
-import { ArrowRight, Brain, Network, TrendingUp, Quote } from "lucide-react";
+import LawsGrid from "@/components/LawsGrid";
+import EngineFamiliesGrid from "@/components/EngineFamiliesGrid";
+import EngineHealthBar from "@/components/EngineHealthBar";
+import OfferStackLadder from "@/components/OfferStackLadder";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+import { ArrowRight, Quote } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
 
-      {/* Hero Section - DARK */}
+      {/* Hero */}
       <SectionDark className="min-h-screen flex items-center" withParticles withShapes>
         <div className="px-8 py-32 md:py-40 max-w-5xl mx-auto relative z-10">
           <div className="text-center animate-fade-in">
-
+            <span className="inline-block text-xs md:text-sm tracking-[0.2em] font-semibold text-white/60 mb-6">
+              BUSINESS PERFORMANCE ENGINEERING
+            </span>
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 tracking-tight text-white">
-              <span className="font-medium">Orientation</span>
-              <br className="hidden md:block" /> Before Execution
+              Every business runs on <span className="font-medium">engines.</span>
+              <br className="hidden md:block" />
+              We engineer the ones that <span className="font-medium">determine performance.</span>
             </h1>
-
             <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Genesis Lumina builds the AI literacy and operational infrastructure that lets your organization govern its own intelligence — so you outlast every disruption cycle, vendor shift, and capability change ahead.
+              Genesis Lumina diagnoses, engineers, measures, and governs the business engines that decide how your organization actually performs — so growth compounds instead of leaks.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-                <Link to="/diagnostic" className="gap-2">
-                  Begin Your Assessment
+                <Link to="/pear" className="gap-2">
+                  Book PEAR (free)
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10"
-              >
-                <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
-                  Book Free Strategy Call
-                </a>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+                <Link to="/approach">Read the doctrine</Link>
               </Button>
             </div>
           </div>
         </div>
       </SectionDark>
 
-      {/* The Three Waypoints - LIGHT */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
+      {/* Laws */}
+      <SectionLight className="px-4 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight">
-              Once You Know <span className="font-medium">Where You Stand</span>
+          <div className="mb-12">
+            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">THE REALITY</div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight max-w-3xl">
+              Four laws govern how <span className="font-medium">every business</span> performs.
             </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              The Assessment reveals where you're exposed. These Waypoints show you how to build infrastructure you own.
-            </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 animate-slide-in">
-            {/* Waypoint 1: Lumina Labs (Literacy) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-literacy))] transition-all duration-300 hover:glow-literacy">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-literacy))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-literacy))] text-[hsl(var(--waypoint-literacy-foreground))] flex items-center justify-center mb-6 group-hover:glow-literacy transition-all">
-                  <Brain className="w-6 h-6" />
-                </div>
-
-                <h3 className="text-2xl font-medium mb-1">Lumina Labs</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">For Teams · AI Governance Workshop</p>
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Teach your leadership team to govern AI — not just use it. A 3-hour workshop that builds the organizational capacity to evaluate, deploy, and own AI without becoming dependent on any vendor, tool, or model.
-                </p>
-
-                <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/products/lumina-labs" className="flex items-center gap-2">
-                    Explore Labs
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Waypoint 2: Lumina Compass (Integration) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-integration))] transition-all duration-300 hover:glow-integration">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-integration))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-integration))] text-[hsl(var(--waypoint-integration-foreground))] flex items-center justify-center mb-6 group-hover:glow-integration transition-all">
-                  <Network className="w-6 h-6" />
-                </div>
-
-                <h3 className="text-2xl font-medium mb-1">Lumina Compass</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">For Business · The Sprint</p>
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  The 4-week flagship build. We map your operational architecture, identify your highest-leverage constraint, and build the infrastructure your team owns, governs, and extends — without ongoing dependence on us.
-                </p>
-
-                <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/products/lumina-compass" className="flex items-center gap-2">
-                    Explore Compass
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Waypoint 3: Lumina Ignite (Scale) */}
-            <Card className="group relative overflow-hidden border-2 hover:border-[hsl(var(--waypoint-s3))] transition-all duration-300 hover:glow-s3">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--waypoint-s3))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-8">
-                <div className="w-12 h-12 rounded-lg bg-[hsl(var(--waypoint-s3))] text-[hsl(var(--waypoint-s3-foreground))] flex items-center justify-center mb-6 group-hover:glow-s3 transition-all">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-
-                <h3 className="text-2xl font-medium mb-1">Lumina Ignite</h3>
-                <p className="text-sm text-foreground/50 mb-4 font-medium">For Growth · The Progression</p>
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  Your ongoing AI partner. Monthly optimization, new builds, and strategic guidance to scale your systems as you grow.
-                </p>
-
-                <Button asChild variant="ghost" className="group/btn p-0 h-auto font-medium">
-                  <Link to="/products/lumina-ignite" className="flex items-center gap-2">
-                    Explore Ignite
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </div>
-            </Card>
-          </div>
+          <LawsGrid />
         </div>
       </SectionLight>
 
-      {/* Stats Bar - DARK */}
-      <SectionDark className="px-4 md:px-8 py-16">
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "40+", label: "Clients Served" },
-              { value: "536+", label: "AI Agents Deployed" },
-              { value: "370M+", label: "Tokens Processed" },
-              { value: "4+", label: "Years Experience" },
-            ].map((stat, idx) => (
-              <div key={idx}>
-                <div className="text-3xl md:text-4xl font-light text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-white/60">{stat.label}</div>
-              </div>
-            ))}
+      {/* Engine Families */}
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="mb-12">
+            <div className="text-xs tracking-[0.2em] font-semibold text-white/40 mb-3">THE ARCHITECTURE</div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white max-w-3xl">
+              Eight engine families. <span className="font-medium">One shared language.</span>
+            </h2>
+          </div>
+          <EngineFamiliesGrid dark />
+          <div className="mt-10">
+            <Button asChild variant="outline" className="border-white/30 text-white bg-transparent hover:bg-white/10 gap-2">
+              <Link to="/engines">Explore the Engine Library <ArrowRight className="w-4 h-4" /></Link>
+            </Button>
           </div>
         </div>
       </SectionDark>
 
-      {/* Social Proof - LIGHT */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-32" muted>
-        <div className="max-w-4xl mx-auto text-center">
-          <Quote className="w-12 h-12 mx-auto mb-8 text-foreground/20" />
-          <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-8">
-            "{"Donovan is AI. He's The Answer."}"
-          </blockquote>
-          <div className="text-foreground/60">
-            <p className="font-medium text-foreground/80">{"Jamar Wright"}</p>
-            <p className="text-sm">
-              {"Owner/Operator"}, {"Revive Beauty Salon"}
+      {/* Engine Health */}
+      <SectionLight className="px-4 md:px-8 py-24 md:py-32" muted>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12 max-w-3xl">
+            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">THE MEASUREMENT</div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-6">
+              Every engine is scored on <span className="font-medium">five dimensions.</span>
+            </h2>
+            <p className="text-lg text-foreground/60">
+              Engine health is not an opinion. It's a read on how the mechanism is currently operating — and where the next unit of engineering effort should go.
             </p>
           </div>
+          <EngineHealthBar />
         </div>
       </SectionLight>
 
-      {/* Case Studies - LIGHT */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
-              Proof of <span className="font-medium">Principle</span>
+      {/* Offer Stack */}
+      <SectionLight className="px-4 md:px-8 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="text-xs tracking-[0.2em] font-semibold text-foreground/40 mb-3">HOW WE WORK WITH YOU</div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-4">
+              The <span className="font-medium">offer stack.</span>
             </h2>
-            <p className="text-lg text-foreground/60">Real engagements. Real results.</p>
+            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+              A single ladder — from a free 30-minute call to a full network transformation. Every rung serves a specific stage of engine work.
+            </p>
           </div>
+          <OfferStackLadder />
+        </div>
+      </SectionLight>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <Link to="/case-studies/pst" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
-              <p className="text-sm text-foreground/50 mb-2">Preferred Solutions Transport</p>
-              <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Manual to Machine.</h3>
-              <p className="text-sm text-foreground/60 mb-4 leading-relaxed">Compass-grade infrastructure for a live logistics operation — webhook-native, team-owned.</p>
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-sm font-light">7-Stage</div>
-                  <div className="text-xs text-foreground/50">Pipeline</div>
-                </div>
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-sm font-light">Webhook</div>
-                  <div className="text-xs text-foreground/50">Native</div>
-                </div>
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-sm font-light">Team</div>
-                  <div className="text-xs text-foreground/50">Owned</div>
-                </div>
-              </div>
-              <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">
-                Read Case Study <ArrowRight className="w-3 h-3" />
-              </span>
+      {/* Proof — Case Studies */}
+      <SectionDark className="px-4 md:px-8 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="mb-12">
+            <div className="text-xs tracking-[0.2em] font-semibold text-white/40 mb-3">PROOF</div>
+            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">
+              Engines <span className="font-medium">installed.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            <Link to="/case-studies/pst" className="group block p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              <p className="text-xs text-white/50 mb-2">Preferred Solutions Transport · Operations engine</p>
+              <h3 className="text-2xl font-medium text-white mb-3 group-hover:text-emerald-300 transition-colors">From Manual to Machine.</h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-4">A webhook-native, 7-stage operational engine installed in a live logistics environment — architected, deployed, and transferred into team ownership.</p>
+              <span className="text-sm font-medium text-white flex items-center gap-1">Read installation <ArrowRight className="w-4 h-4" /></span>
             </Link>
+            <Link to="/case-studies/optimist" className="group block p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              <p className="text-xs text-white/50 mb-2">Optimist Business Solutions · Intake engine</p>
+              <h3 className="text-2xl font-medium text-white mb-3 group-hover:text-emerald-300 transition-colors">From Bottleneck to Breakthrough.</h3>
+              <p className="text-sm text-white/60 leading-relaxed mb-4">An AI-routed intake engine that compressed a 2-week manual process into a single day — 51% of process steps eliminated by design.</p>
+              <span className="text-sm font-medium text-white flex items-center gap-1">Read installation <ArrowRight className="w-4 h-4" /></span>
+            </Link>
+          </div>
+        </div>
+      </SectionDark>
 
-            <Link to="/case-studies/optimist" className="group p-6 rounded-xl border-2 border-foreground/10 hover:border-[hsl(var(--waypoint-integration))] transition-all">
-              <p className="text-sm text-foreground/50 mb-2">Optimist Business Solutions</p>
-              <h3 className="text-xl font-medium mb-3 group-hover:text-[hsl(var(--waypoint-integration))] transition-colors">From Bottleneck to Breakthrough.</h3>
-              <p className="text-sm text-foreground/60 mb-4 leading-relaxed">An AI-routed intake architecture that compressed a 2-week manual process into a single day.</p>
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-sm font-light">AI-Routed</div>
-                  <div className="text-xs text-foreground/50">Intake</div>
-                </div>
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">51%</div>
-                  <div className="text-xs text-foreground/50">Steps Cut</div>
-                </div>
-                <div className="text-center p-2 rounded-lg bg-foreground/5">
-                  <div className="text-lg font-light">2w→1d</div>
-                  <div className="text-xs text-foreground/50">Cycle Time</div>
-                </div>
-              </div>
-              <span className="text-sm font-medium text-foreground/60 group-hover:text-[hsl(var(--waypoint-integration))] flex items-center gap-1 transition-colors">
-                Read Case Study <ArrowRight className="w-3 h-3" />
-              </span>
-            </Link>
+      {/* Testimonial */}
+      <SectionLight className="px-4 md:px-8 py-16 md:py-24" muted>
+        <div className="max-w-4xl mx-auto text-center">
+          <Quote className="w-10 h-10 mx-auto mb-6 text-foreground/20" />
+          <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-relaxed mb-6">
+            "Donovan is AI. He's The Answer."
+          </blockquote>
+          <div className="text-foreground/60">
+            <p className="font-medium text-foreground/80">Jamar Wright</p>
+            <p className="text-sm">Owner/Operator, Revive Beauty Salon</p>
           </div>
         </div>
       </SectionLight>
 
-      {/* The Journey Visual - LIGHT */}
-      <SectionLight className="px-4 md:px-8 py-16 md:py-32">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-light mb-6 text-center tracking-tight">
-            Your Path to <span className="font-medium">AI Clarity</span>
-          </h2>
-          <p className="text-lg text-foreground/60 text-center mb-16 max-w-2xl mx-auto">
-            Every engagement follows the same principle: orientation before execution
-          </p>
-
-          {/* Offer Journey */}
-          <div className="space-y-8">
-            {/* Entry Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link to="/quiz" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">Free</div>
-                <div className="font-medium group-hover:text-foreground/80">AI Readiness Quiz</div>
-              </Link>
-              <Link to="/field-guides/analog" className="p-4 rounded-xl border-2 border-foreground/10 hover:border-foreground/30 transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$47 – $297</div>
-                <div className="font-medium group-hover:text-foreground/80">Field Guides</div>
-              </Link>
-            </div>
-
-            {/* Arrow Down */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Assessment */}
-            <Link to="/diagnostic" className="block p-6 rounded-xl border-2 border-foreground hover:bg-foreground/5 transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$2,500 • The Starting Point</div>
-              <div className="text-xl font-medium mb-2">Vulnerability Assessment</div>
-              <div className="text-sm text-foreground/60">Scorecard + Gap Map + Action Plan + Loom Walkthrough</div>
-            </Link>
-
-            {/* Arrow Down with Branch */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Main Products */}
-            <div className="grid md:grid-cols-3 gap-4">
-              <Link to="/products/lumina-labs" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-literacy))]/30 hover:border-[hsl(var(--waypoint-literacy))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$3,000 – $7,500</div>
-                <div className="font-medium text-[hsl(var(--waypoint-literacy))]">Lumina Labs</div>
-                <div className="text-xs text-foreground/50 mt-1">AI Governance Workshop</div>
-              </Link>
-              <Link to="/products/lumina-compass" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-integration))]/30 hover:border-[hsl(var(--waypoint-integration))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$35,000</div>
-                <div className="font-medium text-[hsl(var(--waypoint-integration))]">Lumina Compass</div>
-                <div className="text-xs text-foreground/50 mt-1">4-Week Infrastructure Build</div>
-              </Link>
-              <Link to="/waypoints/s3" className="p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-                <div className="text-sm text-foreground/50 mb-1">$150K – $500K</div>
-                <div className="font-medium text-[hsl(var(--waypoint-s3))]">S³ Transformation</div>
-                <div className="text-xs text-foreground/50 mt-1">Scale • Sale • Succession</div>
-              </Link>
-            </div>
-
-            {/* Arrow Down */}
-            <div className="flex justify-center">
-              <div className="w-px h-8 bg-foreground/20" />
-            </div>
-
-            {/* Ignite */}
-            <Link to="/products/lumina-ignite" className="block p-4 rounded-xl border-2 border-[hsl(var(--waypoint-s3))]/30 hover:border-[hsl(var(--waypoint-s3))] transition-all text-center group">
-              <div className="text-sm text-foreground/50 mb-1">$7.5K – $25K/mo · Ember → Blaze → Phoenix</div>
-              <div className="font-medium">Lumina Ignite</div>
-              <div className="text-xs text-foreground/50 mt-1">Intelligence Platform + Advisory</div>
-            </Link>
-          </div>
-        </div>
-      </SectionLight>
-
-      {/* Client Logos */}
+      {/* Logos */}
       <SectionLight className="px-8 py-16">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-sm font-medium text-foreground/40 uppercase tracking-wider mb-8 text-center">Trusted By</h3>
           <ClientLogoCarousel />
         </div>
       </SectionLight>
 
-      {/* Final CTA - DARK */}
-      <SectionDark className="px-4 md:px-8 py-24 md:py-40" withShapes>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light mb-8 tracking-tight text-white">
-            Before you automate. <br className="hidden md:block" />
-            <span className="font-medium">Get clear.</span>
+      {/* Final CTA */}
+      <SectionDark className="px-8 py-24 md:py-32" withShapes>
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
+            Start with a <span className="font-medium">clear read.</span>
           </h2>
-          <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-            The Vulnerability Assessment tells you exactly where you stand and what comes next.
+          <p className="text-lg text-white/70 mb-10">
+            Thirty minutes. Free. You leave with an engine health snapshot, the current constraint, and the honest next step — even if it isn't us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/diagnostic" className="gap-2">
-                Begin Your Assessment
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10"
-            >
-              <a href="https://calendar.app.google/XXdQMZcNjYjnACuz5" target="_blank" rel="noopener noreferrer">
-                Book Your Strategy Call
-              </a>
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
+              <Link to="/field-guides">Prefer to read? Field Guides</Link>
             </Button>
           </div>
-
           <NewsletterCTA dark compact />
         </div>
       </SectionDark>
 
-      {/* Footer */}
-      <Footer />
-
-      {/* Sticky mobile CTA */}
+      <Footer dark />
       <MobileStickyBar />
     </div>
   );
