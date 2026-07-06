@@ -17,9 +17,10 @@ const Footer = (_: FooterProps) => {
 
       {/* Mascot silhouette drifts across the bottom */}
       <SupercarRear
-        className="absolute right-0 bottom-0 w-[65%] max-w-[720px] text-white/10 pointer-events-none"
-        aria-hidden
+        className="absolute right-[-4%] bottom-0 w-[70%] max-w-[820px] pointer-events-none select-none"
+        style={{ opacity: 0.18 }}
       />
+
 
       <div className="max-w-6xl mx-auto relative on-motif">
         <div className="grid md:grid-cols-3 gap-10 mb-12">
