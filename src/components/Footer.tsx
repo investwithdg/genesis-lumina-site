@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { SupercarRear, SupercarBadge } from "@/components/SupercarMotifs";
 
 interface FooterProps {
   /** legacy prop — footer is dark by default in the new identity */
@@ -14,11 +15,20 @@ const Footer = (_: FooterProps) => {
       <div className="absolute top-0 left-0 w-24 h-px bg-ember/70" aria-hidden />
       <div className="absolute top-0 right-8 h-8 w-px bg-primary/60" aria-hidden />
 
-      <div className="max-w-6xl mx-auto relative">
+      {/* Mascot silhouette drifts across the bottom */}
+      <SupercarRear
+        className="absolute right-0 bottom-0 w-[65%] max-w-[720px] text-white/10 pointer-events-none"
+        aria-hidden
+      />
+
+      <div className="max-w-6xl mx-auto relative on-motif">
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           <div>
-            <div className="font-display text-xl tracking-tight mb-3">Genesis Lumina</div>
-            <p className="text-sm text-white/55 leading-relaxed max-w-xs">
+            <div className="flex items-center gap-2.5 mb-3">
+              <SupercarBadge className="w-10 h-4 text-white" />
+              <div className="font-display text-xl tracking-tight">Genesis Lumina</div>
+            </div>
+            <p className="text-sm text-white/60 leading-relaxed max-w-xs">
               Business Performance Engineering. We diagnose, engineer, and govern the engines that determine how your organization performs.
             </p>
           </div>
