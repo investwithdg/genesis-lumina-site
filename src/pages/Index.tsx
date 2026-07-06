@@ -19,19 +19,31 @@ const Index = () => {
     <div className="min-h-screen bg-foreground text-white">
       <Navigation />
 
-      {/* Hero */}
-      <SectionDark className="min-h-[92vh] flex items-center" collage="hero" grid>
-        <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full">
+      {/* Hero — the mascot enters */}
+      <SectionDark className="min-h-[92vh] flex items-center" motif="telemetry" grid>
+        {/* Hero supercar silhouette — the entrance */}
+        <SupercarSide
+          className="absolute right-[-6%] bottom-[8%] w-[105%] max-w-[1400px] text-white/28 supercar-enter pointer-events-none"
+          aria-hidden
+        />
+        {/* Streak trails behind it */}
+        <div className="motif-layer pointer-events-none" aria-hidden>
+          <div className="streak-line streak-blue" style={{ top: "38%", left: "-10%", width: "58%", animationDelay: "0.6s" }} />
+          <div className="streak-line" style={{ top: "58%", left: "-10%", width: "82%", animationDelay: "1.8s" }} />
+          <div className="streak-line streak-ember" style={{ top: "76%", left: "-10%", width: "48%", animationDelay: "3.0s" }} />
+        </div>
+
+        <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full on-motif">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-8 bg-ember" />
-            <span className="label-mono text-white/60">BUSINESS PERFORMANCE ENGINEERING</span>
+            <span className="label-mono text-white/75">BUSINESS PERFORMANCE ENGINEERING</span>
           </div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light leading-[0.98] mb-10 tracking-tight text-white max-w-5xl">
             Every business runs on <span className="font-semibold">engines.</span>
             <br className="hidden md:block" />
             We engineer the ones that <span className="font-semibold">determine performance.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/65 leading-relaxed max-w-2xl mb-12">
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mb-12">
             Genesis Lumina diagnoses, engineers, measures, and governs the business engines that decide how your organization actually performs — so growth compounds instead of leaks.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -51,9 +63,9 @@ const Index = () => {
               { k: "04", v: "Governing laws" },
               { k: "30m", v: "PEAR call" },
             ].map((s) => (
-              <div key={s.v} className="border-t border-white/15 pt-4">
+              <div key={s.v} className="border-t border-white/20 pt-4">
                 <div className="font-display text-3xl md:text-4xl font-medium metric-mono">{s.k}</div>
-                <div className="label-mono text-white/45 mt-1">{s.v}</div>
+                <div className="label-mono text-white/65 mt-1">{s.v}</div>
               </div>
             ))}
           </div>
