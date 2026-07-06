@@ -3,44 +3,60 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 interface FooterProps {
+  /** legacy prop — footer is dark by default in the new identity */
   dark?: boolean;
 }
 
-const Footer = ({ dark = false }: FooterProps) => {
+const Footer = (_: FooterProps) => {
   return (
-    <footer className={`px-8 py-16 pb-24 md:pb-16 ${dark ? 'bg-foreground text-white border-white/10' : 'bg-white text-foreground border-foreground/10'} border-t`}>
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <p className={`text-sm mb-4 ${dark ? 'text-white/60' : 'text-foreground/60'}`}>
-            Weekly notes on Business Performance Engineering
-          </p>
-          <Button asChild variant={dark ? "outline" : "default"} size="sm" className={dark ? "border-white/20 text-white hover:bg-white/10" : ""}>
-            <a href="https://genesislumina.substack.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              Subscribe to Newsletter
-              <ArrowRight className="w-4 h-4" />
+    <footer className="relative bg-foreground text-white border-t border-white/10 px-6 md:px-8 py-16 pb-24 md:pb-16 overflow-hidden">
+      {/* subtle collage marker */}
+      <div className="absolute top-0 left-0 w-24 h-px bg-ember/70" aria-hidden />
+      <div className="absolute top-0 right-8 h-8 w-px bg-primary/60" aria-hidden />
+
+      <div className="max-w-6xl mx-auto relative">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
+          <div>
+            <div className="font-display text-xl tracking-tight mb-3">Genesis Lumina</div>
+            <p className="text-sm text-white/55 leading-relaxed max-w-xs">
+              Business Performance Engineering. We diagnose, engineer, and govern the engines that determine how your organization performs.
+            </p>
+          </div>
+
+          <div>
+            <div className="label-mono text-white/40 mb-4">Offers</div>
+            <div className="flex flex-col gap-2 text-sm">
+              <Link to="/pear" className="text-white hover:text-ember transition-colors">PEAR (free)</Link>
+              <Link to="/field-guides" className="text-white/70 hover:text-white transition-colors">Field Guides</Link>
+              <Link to="/labs" className="text-white/70 hover:text-white transition-colors">Lumina Labs</Link>
+              <Link to="/compass" className="text-white/70 hover:text-white transition-colors">Lumina Compass</Link>
+              <Link to="/ignite" className="text-white/70 hover:text-white transition-colors">Lumina Ignite</Link>
+              <Link to="/s3" className="text-white/70 hover:text-white transition-colors">S³ Transformation</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="label-mono text-white/40 mb-4">Resources</div>
+            <div className="flex flex-col gap-2 text-sm">
+              <Link to="/approach" className="text-white/70 hover:text-white transition-colors">The Approach</Link>
+              <Link to="/engines" className="text-white/70 hover:text-white transition-colors">Engine Library</Link>
+              <Link to="/case-studies" className="text-white/70 hover:text-white transition-colors">Case Studies</Link>
+              <Link to="/about" className="text-white/70 hover:text-white transition-colors">About</Link>
+              <Link to="/newsletter" className="text-white/70 hover:text-white transition-colors">Newsletter</Link>
+              <Link to="/faq" className="text-white/70 hover:text-white transition-colors">FAQ</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p className="label-mono text-white/40">© 2026 · Genesis Lumina · Business Performance Engineering</p>
+          <Button asChild variant="outline" size="sm" className="border-white/20 bg-transparent text-white hover:bg-white/10 rounded-md">
+            <a href="https://genesislumina.substack.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 label-mono">
+              Weekly Notes
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </Button>
         </div>
-
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-6 mb-8 text-sm">
-          <Link to="/pear" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors font-medium ${dark ? 'text-white' : ''}`}>PEAR (free)</Link>
-          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
-          <Link to="/approach" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Approach</Link>
-          <Link to="/engines" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Engines</Link>
-          <Link to="/labs" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Labs</Link>
-          <Link to="/compass" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Compass</Link>
-          <Link to="/ignite" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Ignite</Link>
-          <Link to="/s3" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>S³</Link>
-          <span className={`hidden sm:inline ${dark ? "text-white/30" : "text-foreground/30"}`}>│</span>
-          <Link to="/case-studies" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Case Studies</Link>
-          <Link to="/about" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>About</Link>
-          <Link to="/newsletter" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>Newsletter</Link>
-          <Link to="/faq" className={`min-h-[44px] sm:min-h-0 flex items-center justify-center hover:text-primary transition-colors ${dark ? 'text-white/70' : ''}`}>FAQ</Link>
-        </div>
-
-        <p className={`text-xs text-center ${dark ? 'text-white/40' : 'text-foreground/40'}`}>
-          © 2026 Genesis Lumina. Business Performance Engineering.
-        </p>
       </div>
     </footer>
   );
