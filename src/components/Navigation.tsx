@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { SupercarBadge } from "@/components/SupercarMotifs";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
