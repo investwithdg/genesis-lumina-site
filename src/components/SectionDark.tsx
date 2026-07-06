@@ -4,8 +4,10 @@ import {
   SupercarSide,
   SupercarFront,
   SupercarRear,
-  ChassisWireframe,
-  TelemetryHUD,
+  EngineMotif,
+  TelemetryMotif,
+  AirflowMotif,
+  WheelMotif,
 } from "@/components/SupercarMotifs";
 
 export type Motif =
@@ -81,7 +83,7 @@ const SectionDark = ({
                     bottom: "0",
                     width: "115%",
                     maxWidth: "1600px",
-                    opacity: 0.45,
+                    opacity: 0.85,
                   }}
                 />
                 <div className="streak-line streak-blue" style={{ top: "28%", left: "-10%", width: "60%", animationDelay: "0s" }} />
@@ -93,50 +95,69 @@ const SectionDark = ({
             {resolved === "supercar-front" && (
               <SupercarFront
                 className="absolute select-none"
-                style={{ right: "-6%", top: "0", width: "62%", maxWidth: "820px", opacity: 0.38 }}
+                style={{ right: "-6%", top: "0", width: "62%", maxWidth: "820px", opacity: 0.75 }}
               />
             )}
 
             {resolved === "supercar-rear" && (
               <SupercarRear
                 className="absolute select-none"
-                style={{ left: "-4%", bottom: "0", width: "108%", maxWidth: "1500px", opacity: 0.42 }}
+                style={{ left: "-4%", bottom: "0", width: "108%", maxWidth: "1500px", opacity: 0.8 }}
               />
             )}
 
             {resolved === "chassis" && (
-              <ChassisWireframe
-                className="absolute text-white/18"
+              <EngineMotif
+                className="absolute select-none"
                 style={{
-                  left: "50%",
-                  top: "50%",
-                  width: "108%",
-                  transform: "translate(-50%, -50%)",
+                  right: "-5%",
+                  bottom: "0",
+                  width: "70%",
+                  maxWidth: "900px",
+                  opacity: 0.8,
                 }}
               />
             )}
 
             {resolved === "telemetry" && (
-              <TelemetryHUD className="absolute inset-0 text-white/35" />
+              <TelemetryMotif 
+                className="absolute select-none" 
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  width: "100%",
+                  minWidth: "1200px",
+                  transform: "translate(-50%, -50%)",
+                  opacity: 0.8,
+                }} 
+              />
             )}
 
             {resolved === "streaks" && (
-              <>
-                <div className="streak-line streak-blue" style={{ top: "22%", left: "-10%", width: "55%", animationDelay: "0s" }} />
-                <div className="streak-line" style={{ top: "48%", left: "-10%", width: "75%", animationDelay: "1.2s" }} />
-                <div className="streak-line streak-ember" style={{ top: "70%", left: "-10%", width: "40%", animationDelay: "2.4s" }} />
-                <div className="streak-line streak-blue" style={{ top: "84%", left: "-10%", width: "62%", animationDelay: "3.2s" }} />
-              </>
+              <AirflowMotif 
+                className="absolute select-none" 
+                style={{
+                  left: "-5%",
+                  bottom: "-10%",
+                  width: "110%",
+                  maxWidth: "1400px",
+                  opacity: 0.85,
+                }} 
+              />
             )}
 
             {resolved === "schematic" && (
-              <>
-                <ChassisWireframe
-                  className="absolute text-white/12"
-                  style={{ right: "-8%", top: "0", width: "70%" }}
-                />
-                <TelemetryHUD className="absolute inset-0 text-white/22" />
-              </>
+              <WheelMotif 
+                className="absolute select-none" 
+                style={{
+                  right: "-10%",
+                  top: "50%",
+                  width: "80%",
+                  maxWidth: "900px",
+                  transform: "translateY(-50%)",
+                  opacity: 0.75,
+                }} 
+              />
             )}
           </div>
 

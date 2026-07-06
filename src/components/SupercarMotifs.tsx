@@ -9,15 +9,19 @@
 import supercarSideImg from "@/assets/supercar-side.png";
 import supercarFrontImg from "@/assets/supercar-front.png";
 import supercarRearImg from "@/assets/supercar-rear.png";
+import motifEngineImg from "@/assets/motif-engine.png";
+import motifWheelImg from "@/assets/motif-wheel.png";
+import motifAirflowImg from "@/assets/motif-airflow.png";
+import motifTelemetryImg from "@/assets/motif-telemetry.png";
 
 interface MotifProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-/* Shared invert filter — makes dark line-art render white on dark surfaces. */
-const invertOnDark: React.CSSProperties = {
-  filter: "invert(1) brightness(1.15) contrast(1.05)",
+/* Shared styling for photorealistic images to blend cleanly with dark surfaces. */
+const imageBlend: React.CSSProperties = {
+  mixBlendMode: "lighten",
 };
 
 /* ─────────────────────────────────────────────────────────────
@@ -30,7 +34,7 @@ export const SupercarSide = ({ className, style }: MotifProps) => (
     aria-hidden
     loading="lazy"
     className={className}
-    style={{ ...invertOnDark, ...style }}
+    style={{ ...imageBlend, ...style }}
   />
 );
 
@@ -44,7 +48,7 @@ export const SupercarFront = ({ className, style }: MotifProps) => (
     aria-hidden
     loading="lazy"
     className={className}
-    style={{ ...invertOnDark, ...style }}
+    style={{ ...imageBlend, ...style }}
   />
 );
 
@@ -58,7 +62,7 @@ export const SupercarRear = ({ className, style }: MotifProps) => (
     aria-hidden
     loading="lazy"
     className={className}
-    style={{ ...invertOnDark, ...style }}
+    style={{ ...imageBlend, ...style }}
   />
 );
 
@@ -107,87 +111,59 @@ export const SupercarBadge = ({ className, style }: MotifProps) => (
 );
 
 /* ─────────────────────────────────────────────────────────────
-   5. CHASSIS WIREFRAME — top-down, houses engine components
+   5. ENGINE MOTIF (replaces Chassis Wireframe)
    ───────────────────────────────────────────────────────────── */
-export const ChassisWireframe = ({ className, style }: MotifProps) => (
-  <svg
-    viewBox="0 0 900 500"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
+export const EngineMotif = ({ className, style }: MotifProps) => (
+  <img
+    src={motifEngineImg}
+    alt=""
     aria-hidden
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <path
-      d="M 100 250 Q 100 130 260 100 L 640 100 Q 800 130 800 250 Q 800 370 640 400 L 260 400 Q 100 370 100 250 Z"
-      stroke="currentColor"
-      strokeWidth="1"
-      opacity="0.7"
-    />
-    <path
-      d="M 200 250 Q 210 175 300 160 L 600 160 Q 690 175 700 250 Q 690 325 600 340 L 300 340 Q 210 325 200 250 Z"
-      stroke="currentColor"
-      strokeWidth="0.6"
-      opacity="0.4"
-    />
-    <line x1="100" y1="250" x2="800" y2="250" stroke="currentColor" strokeWidth="0.4" opacity="0.3" strokeDasharray="3 4" />
-    <line x1="260" y1="100" x2="260" y2="400" stroke="currentColor" strokeWidth="0.4" opacity="0.3" strokeDasharray="3 4" />
-    <line x1="450" y1="105" x2="450" y2="395" stroke="currentColor" strokeWidth="0.4" opacity="0.3" strokeDasharray="3 4" />
-    <line x1="640" y1="100" x2="640" y2="400" stroke="currentColor" strokeWidth="0.4" opacity="0.3" strokeDasharray="3 4" />
-    <rect x="70" y="140" width="45" height="30" rx="4" stroke="currentColor" strokeWidth="0.8" opacity="0.65" />
-    <rect x="70" y="330" width="45" height="30" rx="4" stroke="currentColor" strokeWidth="0.8" opacity="0.65" />
-    <rect x="785" y="140" width="45" height="30" rx="4" stroke="currentColor" strokeWidth="0.8" opacity="0.65" />
-    <rect x="785" y="330" width="45" height="30" rx="4" stroke="currentColor" strokeWidth="0.8" opacity="0.65" />
-    <g opacity="0.5">
-      <text x="120" y="90" fontSize="8" fontFamily="ui-monospace, monospace" fill="currentColor">FRONT</text>
-      <text x="760" y="90" fontSize="8" fontFamily="ui-monospace, monospace" fill="currentColor">REAR</text>
-    </g>
-  </svg>
+    loading="lazy"
+    className={className}
+    style={{ ...imageBlend, ...style }}
+  />
 );
 
 /* ─────────────────────────────────────────────────────────────
-   6. TELEMETRY HUD
+   6. TELEMETRY MOTIF
    ───────────────────────────────────────────────────────────── */
-export const TelemetryHUD = ({ className, style }: MotifProps) => (
-  <svg
-    viewBox="0 0 1000 600"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
+export const TelemetryMotif = ({ className, style }: MotifProps) => (
+  <img
+    src={motifTelemetryImg}
+    alt=""
     aria-hidden
-    preserveAspectRatio="none"
-  >
-    <g stroke="currentColor" strokeWidth="1" opacity="0.4">
-      <path d="M 30 30 L 30 60 M 30 30 L 60 30" />
-      <path d="M 970 30 L 970 60 M 970 30 L 940 30" />
-      <path d="M 30 570 L 30 540 M 30 570 L 60 570" />
-      <path d="M 970 570 L 970 540 M 970 570 L 940 570" />
-    </g>
-    <g stroke="currentColor" strokeWidth="0.5" opacity="0.35">
-      {Array.from({ length: 24 }).map((_, i) => (
-        <line key={i} x1={100 + i * 34} y1="40" x2={100 + i * 34} y2={i % 5 === 0 ? "56" : "48"} />
-      ))}
-    </g>
-    <g stroke="currentColor" strokeWidth="0.35" opacity="0.25">
-      <line x1="500" y1="280" x2="500" y2="320" />
-      <line x1="480" y1="300" x2="520" y2="300" />
-      <circle cx="500" cy="300" r="14" fill="none" />
-    </g>
-    <g stroke="currentColor" strokeWidth="0.4" opacity="0.3">
-      <line x1="30" y1="200" x2="30" y2="400" />
-      {Array.from({ length: 8 }).map((_, i) => (
-        <line key={i} x1="30" y1={210 + i * 25} x2="42" y2={210 + i * 25} />
-      ))}
-    </g>
-    <g fontFamily="ui-monospace, 'JetBrains Mono', monospace" fontSize="10" fill="currentColor" opacity="0.5">
-      <text x="70" y="42">T+00:34.812</text>
-      <text x="880" y="42">SECTOR 03</text>
-      <text x="70" y="568">ENGINE·03  RELIABILITY 0.72  Δ+14%</text>
-      <text x="820" y="568">STATUS · OK</text>
-    </g>
-  </svg>
+    loading="lazy"
+    className={className}
+    style={{ ...imageBlend, ...style }}
+  />
+);
+
+/* ─────────────────────────────────────────────────────────────
+   6b. AIRFLOW MOTIF
+   ───────────────────────────────────────────────────────────── */
+export const AirflowMotif = ({ className, style }: MotifProps) => (
+  <img
+    src={motifAirflowImg}
+    alt=""
+    aria-hidden
+    loading="lazy"
+    className={className}
+    style={{ ...imageBlend, ...style }}
+  />
+);
+
+/* ─────────────────────────────────────────────────────────────
+   6c. WHEEL MOTIF
+   ───────────────────────────────────────────────────────────── */
+export const WheelMotif = ({ className, style }: MotifProps) => (
+  <img
+    src={motifWheelImg}
+    alt=""
+    aria-hidden
+    loading="lazy"
+    className={className}
+    style={{ ...imageBlend, ...style }}
+  />
 );
 
 /* ─────────────────────────────────────────────────────────────
