@@ -48,14 +48,14 @@ const SectionDark = ({
         <div className="collage-layer" aria-hidden>
           {composition === "hero" && (
             <>
-              {/* Deep-green vertical bar */}
-              <div className="collage-panel collage-green" style={{ top: "-4%", right: "8%", width: "14%", height: "62%", opacity: 0.85 }} />
-              {/* Blue rectangle offset */}
-              <div className="collage-panel collage-blue" style={{ bottom: "-6%", left: "-2%", width: "22%", height: "38%", opacity: 0.75 }} />
-              {/* Cream slab */}
-              <div className="collage-panel collage-cream" style={{ top: "18%", left: "12%", width: "5%", height: "4px", opacity: 0.85 }} />
+              {/* Deep-green vertical bar — right edge accent */}
+              <div className="collage-panel collage-green" style={{ top: "12%", right: "6%", width: "3%", height: "44%", opacity: 0.85 }} />
+              {/* Blue rectangle — bottom-left anchor */}
+              <div className="collage-panel collage-blue" style={{ bottom: "8%", left: "-1%", width: "8%", height: "22%", opacity: 0.75 }} />
+              {/* Cream tick */}
+              <div className="collage-panel collage-cream" style={{ top: "20%", left: "3%", width: "40px", height: "3px", opacity: 0.7 }} />
               {/* Ember dot — brake-light signal */}
-              <div className="collage-panel collage-ember" style={{ top: "22%", right: "26%", width: "10px", height: "10px", borderRadius: "9999px" }} />
+              <div className="collage-panel collage-ember" style={{ top: "16%", right: "22%", width: "8px", height: "8px", borderRadius: "9999px" }} />
               {/* Streaks */}
               <div className="streak-line streak-blue" style={{ top: "34%", left: "-10%", width: "45%", animationDelay: "0s" }} />
               <div className="streak-line" style={{ top: "62%", left: "-10%", width: "70%", animationDelay: "1.4s" }} />
@@ -64,15 +64,17 @@ const SectionDark = ({
               <div
                 className="collage-panel"
                 style={{
-                  bottom: "22%",
-                  right: "6%",
+                  bottom: "18%",
+                  right: "10%",
                   width: 0,
                   height: 0,
-                  borderLeft: "40px solid transparent",
-                  borderRight: "40px solid transparent",
-                  borderBottom: "70px solid hsl(var(--primary) / 0.55)",
+                  borderLeft: "26px solid transparent",
+                  borderRight: "26px solid transparent",
+                  borderBottom: "45px solid hsl(var(--primary) / 0.55)",
                 }}
               />
+              {/* Small outlined circle */}
+              <div className="collage-panel collage-outline" style={{ top: "40%", right: "14%", width: "48px", height: "48px", borderRadius: "9999px" }} />
             </>
           )}
 
