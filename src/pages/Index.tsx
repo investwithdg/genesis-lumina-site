@@ -57,20 +57,6 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* Telemetry-style micro-stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
-            {[
-              { k: "08", v: "Engine families" },
-              { k: "05", v: "Health dimensions" },
-              { k: "04", v: "Governing laws" },
-              { k: "30m", v: "PEAR call" },
-            ].map((s) => (
-              <div key={s.v} className="border-t border-white/20 pt-4">
-                <div className="font-display text-3xl md:text-4xl font-medium metric-mono">{s.k}</div>
-                <div className="label-mono text-white/65 mt-1">{s.v}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </SectionDark>
 
