@@ -105,14 +105,14 @@ const Compass = () => {
       <SectionDark className="px-8 py-24" motif="schematic">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
-            Every Compass starts with <span className="font-medium">PEAR.</span>
+            Every Compass starts with a <span className="font-medium">Strategy Session.</span>
           </h2>
           <p className="text-lg text-white/70 mb-10">
-            Free 30-minute call to confirm the mode, name the engine, and decide whether Compass is even the right move.
+            No-fee session to confirm the mode, name the engine, and decide whether Compass is even the right move.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
+              <Link to="/strategy-session" className="gap-2">Reserve a Strategy Session<ArrowRight className="w-5 h-5" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
               <Link to="/case-studies">See Compass engine installations</Link>

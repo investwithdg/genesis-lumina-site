@@ -51,7 +51,7 @@ const FieldGuides = () => {
               Outcome: foundational BPE literacy + self-assessment capability.
             </p>
             <Button asChild variant="outline" size="sm">
-              <Link to="/pear" className="gap-2">Prefer a live diagnosis? Book PEAR (free)<ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/strategy-session" className="gap-2">Prefer a live diagnosis? Reserve a Strategy Session<ArrowRight className="w-4 h-4" /></Link>
             </Button>
           </div>
         </div>

@@ -43,7 +43,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button asChild size="lg" className="text-base px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90 rounded-md gap-2 label-mono">
-              <Link to="/pear">Book PEAR — Free<ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/strategy-session">Strategy Session — No Fee<ArrowRight className="w-4 h-4" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-base px-8 py-6 h-auto border-white/25 text-white bg-transparent hover:bg-white/10 rounded-md label-mono">
               <Link to="/approach">Read the Doctrine</Link>
@@ -56,7 +56,7 @@ const Index = () => {
               { k: "08", v: "Engine families" },
               { k: "05", v: "Health dimensions" },
               { k: "04", v: "Governing laws" },
-              { k: "30m", v: "PEAR call" },
+              { k: "45m", v: "Strategy Session" },
             ].map((s) => (
               <div key={s.v} className="border-t border-white/20 pt-4">
                 <div className="font-display text-3xl md:text-4xl font-medium metric-mono">{s.k}</div>
@@ -205,11 +205,11 @@ const Index = () => {
             Start with a <span className="font-semibold">clear read.</span>
           </h2>
           <p className="text-lg text-white/65 mb-10">
-            Thirty minutes. Free. You leave with an engine health snapshot, the current constraint, and the honest next step — even if it isn't us.
+            Forty-five minutes. No fee. You leave with an engine health snapshot, the current constraint, and the honest next step — even if it isn't us.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <Button asChild size="lg" className="text-base px-8 py-6 h-auto bg-white text-foreground hover:bg-white/90 rounded-md gap-2 label-mono">
-              <Link to="/pear">Book PEAR — Free<ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/strategy-session">Reserve a Strategy Session<ArrowRight className="w-4 h-4" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-base px-8 py-6 h-auto border-white/25 text-white bg-transparent hover:bg-white/10 rounded-md label-mono">
               <Link to="/field-guides">Field Guides</Link>

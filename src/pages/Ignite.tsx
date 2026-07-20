@@ -8,7 +8,7 @@ import MobileStickyBar from "@/components/MobileStickyBar";
 import { ArrowRight, Flame, Sprout } from "lucide-react";
 
 const tiers = [
-  { name: "Ember", price: "$7,500 / mo", tag: "Governance + one active engine track", desc: "Monthly engine measurement, PEAR Tree updates, and one active engineering track — Build, Optimize, or Supercharge — moving forward every month." },
+  { name: "Ember", price: "$7,500 / mo", tag: "Governance + one active engine track", desc: "Monthly engine measurement, Engine Tree updates, and one active engineering track — Build, Optimize, or Supercharge — moving forward every month." },
   { name: "Blaze", price: "$15,000 / mo", tag: "Two active engine tracks + governance cadence", desc: "Two engines under active engineering at any time, plus a bi-weekly governance ritual with your leadership. Institutional intelligence starts compounding." },
   { name: "Phoenix", price: "$25,000 / mo", tag: "Multi-engine network + embedded partner", desc: "Full engine network under continuous engineering. Weekly cadence, embedded governance, and roadmap ownership at the network level. This is the tier that produces S³-grade businesses." },
 ];
@@ -27,7 +27,7 @@ const Ignite = () => {
             <span className="font-medium">Lumina Ignite.</span>
           </h1>
           <p className="text-xl text-white/70 max-w-3xl leading-relaxed mb-4">
-            Your ongoing engine development partner. Every month is driven by your PEAR Tree — the living map of your engine architecture, health scores, and engineering roadmap. We don't just advise. We build, measure, and govern alongside you.
+            Your ongoing engine development partner. Every month is driven by your Engine Tree — the living map of your engine architecture, health scores, and engineering roadmap. We don't just advise. We build, measure, and govern alongside you.
           </p>
           <p className="text-2xl text-white/80 font-light">$7.5K – $25K / month</p>
         </div>
@@ -37,7 +37,7 @@ const Ignite = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-4">
             <Sprout className="w-6 h-6 text-emerald-600" />
-            <h2 className="text-3xl md:text-4xl font-light">The PEAR Tree.</h2>
+            <h2 className="text-3xl md:text-4xl font-light">The Engine Tree.</h2>
           </div>
           <p className="text-lg text-foreground/60 mb-10 max-w-3xl">
             Your engine health home base. Every engine on the tree carries live scores across the five dimensions, an engineering priority, and a roadmap. It's the living map we work from every month — not a slide deck we update quarterly.
@@ -97,11 +97,11 @@ const Ignite = () => {
             Grow the tree. <span className="font-medium">Harvest the compound.</span>
           </h2>
           <p className="text-lg text-white/70 mb-10">
-            Most Ignite engagements start after a Compass sprint installs the first engine. Some start straight from PEAR when the roadmap is already clear.
+            Most Ignite engagements start after a Compass sprint installs the first engine. Some start straight from a Strategy Session when the roadmap is already clear.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
+              <Link to="/strategy-session" className="gap-2">Reserve a Strategy Session<ArrowRight className="w-5 h-5" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
               <Link to="/s3">See where Ignite leads → S³</Link>

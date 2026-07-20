@@ -28,10 +28,10 @@ const faqs = [
     a: <>A repeatable mechanism that transforms organizational potential into measurable business value. Sales is an engine. Hiring is an engine. Client Delivery is an engine. Every meaningful outcome your business produces flows through one.</>,
   },
   {
-    q: "What is PEAR and how do I book it?",
+    q: "What is a Strategy Session and how do I book it?",
     a: (
       <>
-        PEAR is the Performance Engineering Analysis & Roadmap — a free 30-minute live diagnostic call. You leave with an engine health snapshot, a prioritized constraint map, and a recommended next step. <Link to="/pear" className="text-primary hover:underline">Book PEAR here →</Link>
+        The Strategy Session is a no-fee, 45-minute live diagnostic session — the entry point to Genesis Lumina. You leave with an engine health snapshot, your weakest critical engine identified, and a recommended next step. There's no payment, but your slot is confirmed by completing a short doctrine video and intake within 24 hours of booking — miss that window and the slot releases automatically. <Link to="/strategy-session" className="text-primary hover:underline">Reserve a Strategy Session →</Link>
       </>
     ),
   },
@@ -55,7 +55,7 @@ const faqs = [
     q: "How does Lumina Ignite work?",
     a: (
       <>
-        Ongoing engine development partnership at $7.5K – $25K/month across three tiers: <strong>Ember → Blaze → Phoenix</strong>. Every month is driven by your PEAR Tree — the living map of your engine architecture, health scores, and engineering roadmap. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
+        Ongoing engine development partnership at $7.5K – $25K/month across three tiers: <strong>Ember → Blaze → Phoenix</strong>. Every month is driven by your Engine Tree — the living map of your engine architecture, health scores, and engineering roadmap. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
       </>
     ),
   },
@@ -79,7 +79,7 @@ const faqs = [
     q: "Which offer is right for me?",
     a: (
       <>
-        Start with PEAR. It's free, it's thirty minutes, and it produces an honest routing — including "none of the above" if that's the accurate answer. Most operators discover they need Compass or Ignite, but a meaningful minority leave with a Field Guide and a to-do list they can run themselves.
+        Start with a Strategy Session. There's no fee, it's forty-five minutes, and it produces an honest routing — including "none of the above" if that's the accurate answer. Most operators discover they need Compass or Ignite, but a meaningful minority leave with a Field Guide and a to-do list they can run themselves.
       </>
     ),
   },
@@ -131,11 +131,11 @@ const FAQ = () => {
             Still have <span className="font-medium">questions</span>?
           </h2>
           <p className="text-lg text-white/70 mb-8">
-            Book PEAR. Ask them live.
+            Reserve a Strategy Session. Ask them live.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
+              <Link to="/strategy-session" className="gap-2">Reserve a Strategy Session<ArrowRight className="w-5 h-5" /></Link>
             </Button>
           </div>
           <NewsletterCTA dark compact />

@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import Approach from "./pages/Approach";
 import Engines from "./pages/Engines";
-import PEAR from "./pages/PEAR";
+import StrategySession from "./pages/StrategySession";
 import FieldGuides from "./pages/FieldGuides";
 import Labs from "./pages/Labs";
 import Compass from "./pages/Compass";
@@ -42,7 +42,7 @@ const App = () => (
           <Route path="/engines" element={<Engines />} />
 
           {/* Offer stack */}
-          <Route path="/pear" element={<PEAR />} />
+          <Route path="/strategy-session" element={<StrategySession />} />
           <Route path="/field-guides" element={<FieldGuides />} />
           <Route path="/labs" element={<Labs />} />
           <Route path="/compass" element={<Compass />} />
@@ -66,7 +66,8 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
 
           {/* Legacy redirects */}
-          <Route path="/diagnostic" element={<Navigate to="/pear" replace />} />
+          <Route path="/pear" element={<Navigate to="/strategy-session" replace />} />
+          <Route path="/diagnostic" element={<Navigate to="/strategy-session" replace />} />
           <Route path="/waypoints/ai-literacy" element={<Navigate to="/engines" replace />} />
           <Route path="/waypoints/system-integration" element={<Navigate to="/engines" replace />} />
           <Route path="/waypoints/s3" element={<Navigate to="/s3" replace />} />

@@ -62,7 +62,7 @@ const S3Transformation = () => {
 
           <h3 className="text-2xl font-light mb-6">Who qualifies</h3>
           <p className="text-lg text-foreground/70 leading-relaxed mb-6">
-            S³ is not an entry point. It's the tier operators arrive at once their engine network is mature enough to be re-engineered as a whole. Every S³ engagement begins with a PEAR call, a full engine audit, and a scoping conversation about which of the three results is the actual mandate.
+            S³ is not an entry point. It's the tier operators arrive at once their engine network is mature enough to be re-engineered as a whole. Every S³ engagement begins with a Strategy Session, a full engine audit, and a scoping conversation about which of the three results is the actual mandate.
           </p>
           <p className="text-sm italic text-foreground/50">
             Most S³ engagements follow at least six months of Ignite at the Blaze or Phoenix tier.
@@ -77,7 +77,7 @@ const S3Transformation = () => {
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-              <Link to="/pear" className="gap-2">Book PEAR to scope<ArrowRight className="w-5 h-5" /></Link>
+              <Link to="/strategy-session" className="gap-2">Reserve a Strategy Session to scope<ArrowRight className="w-5 h-5" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
               <Link to="/ignite">Start at Ignite instead</Link>

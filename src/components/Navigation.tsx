@@ -9,7 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const offersLinks = [
-    { title: "PEAR — Free 30-min Call", path: "/pear" },
+    { title: "Strategy Session — No Fee", path: "/strategy-session" },
     { title: "Field Guides ($47 – $297)", path: "/field-guides" },
     { title: "Lumina Labs — Team Workshop", path: "/labs" },
     { title: "Lumina Compass — 4-Week Sprint", path: "/compass" },
@@ -114,7 +114,7 @@ const Navigation = () => {
             </Link>
 
             <Button asChild size="sm" className="gap-2 bg-white text-foreground hover:bg-white/90 rounded-md label-mono">
-              <Link to="/pear">Book PEAR<ArrowRight className="w-3.5 h-3.5" /></Link>
+              <Link to="/strategy-session">Strategy Session<ArrowRight className="w-3.5 h-3.5" /></Link>
             </Button>
           </div>
 
@@ -175,7 +175,7 @@ const Navigation = () => {
 
             <div className="pt-4">
               <Button asChild size="sm" className="w-full gap-2 bg-white text-foreground hover:bg-white/90 rounded-md">
-                <Link to="/pear" onClick={() => setIsMenuOpen(false)}>Book PEAR (free)<ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/strategy-session" onClick={() => setIsMenuOpen(false)}>Reserve a Strategy Session<ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
           </div>

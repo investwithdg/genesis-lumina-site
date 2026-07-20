@@ -8,14 +8,18 @@ interface BookCallButtonProps {
 }
 
 /**
- * BookCallButton — books the free PEAR call
- * (Performance Engineering Analysis & Roadmap, 30 min).
+ * BookCallButton — books a Strategy Session (Tier 0, no fee).
+ * Renamed from the retired "PEAR" call, 2026-07-15.
+ * NOTE: this links straight to a Google Calendar booking link. The
+ * confirmation-gate mechanic (doctrine video + intake within 24 hours)
+ * described in Offer Architecture v4 is not yet wired to this button —
+ * see StrategySession.tsx for the flagged build gap.
  */
 const BookCallButton = ({
   variant = "default",
   size = "default",
   className = "",
-  children = "Book PEAR (free)",
+  children = "Book a Strategy Session",
 }: BookCallButtonProps) => {
   const bookingUrl = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
 

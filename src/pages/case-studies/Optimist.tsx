@@ -190,7 +190,7 @@ const Optimist = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10">
-              <Link to="/pear">Start with an Assessment</Link>
+              <Link to="/strategy-session">Start with a Strategy Session</Link>
             </Button>
           </div>
           <NewsletterCTA dark compact />

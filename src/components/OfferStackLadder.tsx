@@ -20,12 +20,12 @@ const CREAM = "hsl(39 45% 82%)";
 const tiers: Tier[] = [
   {
     band: "ENTRY",
-    title: "PEAR",
-    price: "Free · 30 min",
-    tag: "PERFORMANCE ENGINEERING ANALYSIS & ROADMAP",
-    desc: "Live diagnostic call. We identify your critical engines, assess health across 5 dimensions, and map the highest-leverage constraint. You leave with a clear read on where performance is leaking and what to engineer first.",
-    outcome: "Engine health snapshot + prioritized constraint map + recommended next step",
-    href: "/pear",
+    title: "Strategy Session",
+    price: "No fee · 45 min",
+    tag: "CONFIRMATION-GATED DIAGNOSTIC",
+    desc: "A working session, not a sales call. We walk through your business as a set of engines, assess health across 5 dimensions, and identify the weakest critical engine. No payment — the slot is confirmed by completing a short doctrine video + intake within 24 hours of booking.",
+    outcome: "Engine health snapshot + weakest engine identified + a specific next step",
+    href: "/strategy-session",
     edgeColor: GREEN,
   },
   {
@@ -63,7 +63,7 @@ const tiers: Tier[] = [
     title: "Lumina Ignite",
     price: "$7.5K – $25K / mo",
     tag: "EMBER → BLAZE → PHOENIX",
-    desc: "Your ongoing engine development partner. Every month is driven by your PEAR Tree — the living map of your engine architecture, health scores, and engineering roadmap. We don't just advise. We build, measure, and govern alongside you.",
+    desc: "Your ongoing engine development partner. Every month is driven by your Engine Tree — the living map of your engine architecture, health scores, and engineering roadmap. We don't just advise. We build, measure, and govern alongside you.",
     outcome: "Continuous engine development + measurable performance gains + institutional intelligence that compounds monthly",
     href: "/ignite",
     edgeColor: EMBER,
@@ -148,10 +148,10 @@ const OfferStackLadder = ({ dark = true }: OfferStackLadderProps) => {
       >
         <div className="flex items-center justify-center gap-2 mb-2">
           <Sprout className="w-5 h-5" style={{ color: GREEN }} />
-          <span className="font-display font-medium">The PEAR thread</span>
+          <span className="font-display font-medium">The Engine Thread</span>
         </div>
         <p className={`text-sm ${descCls}`}>
-          Free call plants the seed · Compass and Labs reference it · Ignite grows and governs it · S³ harvests the compound result
+          Strategy Session plants the seed · Compass and Labs reference it · Ignite grows and governs it · S³ harvests the compound result
         </p>
       </div>
     </div>

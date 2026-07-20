@@ -163,75 +163,6 @@ const Audit = () => {
         </div>
       </SectionLight>
 
-      {/* Self-Serve vs Performed - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32">
-        <div className="max-w-5xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-4xl font-light mb-12 text-center text-white">
-            Two Ways to <span className="font-medium">Get Started</span>
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Self-Serve */}
-            <div className="p-8 rounded-xl border-2 border-white/20 bg-white/5">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-medium text-white mb-2">Self-Serve Audit</h3>
-                <div className="text-4xl font-light text-white">$297</div>
-                <p className="text-white/60 mt-2">DIY diagnostic guide</p>
-              </div>
-              <div className="space-y-3 mb-6">
-                {[
-                  "50-question diagnostic",
-                  "Automated scoring",
-                  "PDF scorecard",
-                  "Recommended next steps"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-white/70">
-                    <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <Button asChild size="lg" className="w-full text-lg py-6 h-auto bg-white !text-black hover:bg-white/90">
-                <a href={purchaseUrl} target="_blank" rel="noopener noreferrer">
-                  Get the Audit Guide
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-            </div>
-
-            {/* Performed */}
-            <div className="p-8 rounded-xl border-2 border-[hsl(var(--waypoint-s3))] bg-white/10 glow-s3">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-medium text-white mb-2">AI Readiness Diagnostic</h3>
-                <div className="text-4xl font-light text-white">$1,500</div>
-                <p className="text-white/60 mt-2">Expert analysis in 72 hours</p>
-              </div>
-              <div className="space-y-3 mb-6">
-                {[
-                  "Everything in Self-Serve, plus:",
-                  "Expert analysis & interpretation",
-                  "Custom gap map visualization",
-                  "30/60/90-day action plan",
-                  "20-30 min Loom walkthrough",
-                  "Credits toward Compass/S³"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-white/70">
-                    <CheckCircle className="w-4 h-4 text-[hsl(var(--waypoint-s3))] flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <Button asChild size="lg" className="w-full text-lg py-6 h-auto bg-[hsl(var(--waypoint-s3))] text-white hover:bg-[hsl(var(--waypoint-s3))]/90">
-                <Link to="/pear">
-                  Book the AI Readiness Diagnostic
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </SectionDark>
-
       {/* CTA - LIGHT */}
       <SectionLight className="px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
@@ -239,7 +170,7 @@ const Audit = () => {
           <p className="text-lg text-foreground/70 mb-8">
             Get the pre-flight check for S³ engagements and uncover your organization's true readiness.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto">
               <a href={purchaseUrl} target="_blank" rel="noopener noreferrer">
@@ -247,11 +178,9 @@ const Audit = () => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
-              <Link to="/pear">
-                Want the AI Readiness Diagnostic? — $1,500
-              </Link>
-            </Button>
+            <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
+              Book a Strategy Session
+            </BookCallButton>
           </div>
 
           <div className="inline-flex items-center gap-2 text-sm text-foreground/60 mb-12">

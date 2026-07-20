@@ -48,7 +48,7 @@ const Engines = () => {
             {[
               { t: "Labs", d: "Team learns to see and diagnose engines across the eight families.", href: "/labs" },
               { t: "Compass", d: "One engine gets built, optimized, or supercharged over four weeks.", href: "/compass" },
-              { t: "Ignite", d: "Multiple engines developed and governed over months — driven by the PEAR Tree.", href: "/ignite" },
+              { t: "Ignite", d: "Multiple engines developed and governed over months — driven by the Engine Tree.", href: "/ignite" },
               { t: "S³", d: "The full network re-engineered for scale, sale, or succession.", href: "/s3" },
             ].map((x) => (
               <Link key={x.t} to={x.href} className="block p-5 rounded-xl border border-foreground/10 bg-white hover:border-foreground/30 transition-colors">
@@ -69,10 +69,10 @@ const Engines = () => {
             Not sure which engine to engineer first?
           </h2>
           <p className="text-lg text-white/70 mb-10">
-            That's what PEAR is for. Thirty minutes, five dimensions, one clear next step.
+            That's what a Strategy Session is for. Forty-five minutes, five dimensions, one clear next step.
           </p>
           <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
-            <Link to="/pear" className="gap-2">Book PEAR (free)<ArrowRight className="w-5 h-5" /></Link>
+            <Link to="/strategy-session" className="gap-2">Reserve a Strategy Session<ArrowRight className="w-5 h-5" /></Link>
           </Button>
         </div>
       </SectionDark>

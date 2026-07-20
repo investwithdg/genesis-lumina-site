@@ -37,7 +37,7 @@ const Footer = (_: FooterProps) => {
           <div>
             <div className="label-mono text-white/40 mb-4">Offers</div>
             <div className="flex flex-col gap-2 text-sm">
-              <Link to="/pear" className="text-white hover:text-ember transition-colors">PEAR (free)</Link>
+              <Link to="/strategy-session" className="text-white hover:text-ember transition-colors">Strategy Session</Link>
               <Link to="/field-guides" className="text-white/70 hover:text-white transition-colors">Field Guides</Link>
               <Link to="/labs" className="text-white/70 hover:text-white transition-colors">Lumina Labs</Link>
               <Link to="/compass" className="text-white/70 hover:text-white transition-colors">Lumina Compass</Link>
