@@ -20,14 +20,21 @@ const Index = () => {
       <Navigation />
 
       {/* Hero — the mascot enters */}
-      <SectionDark className="min-h-[92vh] flex items-center" motif="telemetry" grid>
-        {/* Hero supercar silhouette — the entrance */}
+      <SectionDark className="min-h-[92vh] flex items-center" motif="none" scrim={false}>
+        {/* Hero supercar — full background */}
         <SupercarSide
-          className="absolute right-[-10%] bottom-0 w-[125%] max-w-[1800px] supercar-enter pointer-events-none select-none"
-          style={{ opacity: 0.5 }}
+          className="absolute inset-0 w-full h-full object-cover supercar-enter pointer-events-none select-none"
+          style={{ opacity: 0.75 }}
         />
-
-        {/* Streak trails removed per user request */}
+        {/* Subtle left-side scrim so headline stays legible */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "linear-gradient(90deg, hsl(var(--foreground) / 0.85) 0%, hsl(var(--foreground) / 0.55) 45%, hsl(var(--foreground) / 0.25) 100%)",
+          }}
+        />
         <div className="px-6 md:px-8 py-32 md:py-40 max-w-6xl mx-auto relative z-10 w-full on-motif">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-8 bg-ember" />
@@ -48,21 +55,6 @@ const Index = () => {
             <Button asChild variant="outline" size="lg" className="text-base px-8 py-6 h-auto border-white/25 text-white bg-transparent hover:bg-white/10 rounded-md label-mono">
               <Link to="/approach">Read the Doctrine</Link>
             </Button>
-          </div>
-
-          {/* Telemetry-style micro-stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
-            {[
-              { k: "08", v: "Engine families" },
-              { k: "05", v: "Health dimensions" },
-              { k: "04", v: "Governing laws" },
-              { k: "45m", v: "Strategy Session" },
-            ].map((s) => (
-              <div key={s.v} className="border-t border-white/20 pt-4">
-                <div className="font-display text-3xl md:text-4xl font-medium metric-mono">{s.k}</div>
-                <div className="label-mono text-white/65 mt-1">{s.v}</div>
-              </div>
-            ))}
           </div>
         </div>
       </SectionDark>
