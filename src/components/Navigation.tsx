@@ -10,7 +10,6 @@ const Navigation = () => {
 
   const offersLinks = [
     { title: "Strategy Session — No Fee", path: "/strategy-session" },
-    { title: "Field Guides ($47 – $297)", path: "/field-guides" },
     { title: "Lumina Labs — Team Workshop", path: "/labs" },
     { title: "Lumina Compass — 4-Week Sprint", path: "/compass" },
     { title: "Lumina Ignite — Ongoing Partner", path: "/ignite" },
@@ -20,6 +19,7 @@ const Navigation = () => {
   const resourcesLinks = [
     { title: "The Approach (BPE Doctrine)", path: "/approach" },
     { title: "Engine Library", path: "/engines" },
+    { title: "Field Guides", path: "/field-guides" },
     { title: "Case Studies", path: "/case-studies" },
     { title: "Newsletter", path: "/newsletter" },
     { title: "FAQ", path: "/faq" },

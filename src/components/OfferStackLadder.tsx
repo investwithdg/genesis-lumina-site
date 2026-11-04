@@ -29,16 +29,6 @@ const tiers: Tier[] = [
     edgeColor: GREEN,
   },
   {
-    band: "ENTRY",
-    title: "Field Guides",
-    price: "$47 – $297",
-    tag: "SELF-SERVE",
-    desc: "Structured frameworks for identifying and diagnosing your own engine performance gaps. The doctrine in your hands — engine families, health criteria, force multiplier principles.",
-    outcome: "Foundational BPE literacy + self-assessment capability",
-    href: "/field-guides",
-    edgeColor: CREAM,
-  },
-  {
     band: "ENGAGEMENTS",
     title: "Lumina Labs",
     price: "$7,500 – $15,000",
@@ -153,6 +143,18 @@ const OfferStackLadder = ({ dark = true }: OfferStackLadderProps) => {
         <p className={`text-sm ${descCls}`}>
           Strategy Session plants the seed · Compass and Labs reference it · Ignite grows and governs it · S³ harvests the compound result
         </p>
+      </div>
+
+      <div className="pt-4 text-center">
+        <p className={`text-xs ${bandCls} mb-2 tracking-wider`}>LOOKING FOR SELF-GUIDED FRAMEWORKS?</p>
+        <Link
+          to="/field-guides"
+          className={`text-sm underline underline-offset-4 transition-colors ${
+            dark ? "text-white/70 hover:text-white" : "text-foreground/70 hover:text-foreground"
+          }`}
+        >
+          Explore our self-serve Field Guides ($47 – $297) →
+        </Link>
       </div>
     </div>
   );
