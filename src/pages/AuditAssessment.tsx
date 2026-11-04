@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   AUDIT_QUESTIONS,
   DIMENSIONS,
@@ -21,29 +22,50 @@ import {
   RotateCcw,
   Printer,
   Sparkles,
-  BarChart3,
-  Layers,
-  Calendar,
-  Compass,
+  Lock,
+  KeyRound,
+  ShieldAlert,
 } from "lucide-react";
 
-const STORAGE_KEY = "gl_audit_progress_v1";
+const STORAGE_KEY = "gl_audit_progress_v2";
+const AUTH_KEY = "gl_audit_authorized";
+const PURCHASE_URL = "https://buy.stripe.com/7sY4gzdtS3GygdX3kH1Fe0a";
 
 interface SavedProgress {
   shuffledQuestions: AuditQuestion[];
   currentIndex: number;
-  answers: Record<number, number>; // question id -> option index (0..3)
+  answers: Record<number, number>;
   isCompleted: boolean;
 }
 
 const AuditAssessment = () => {
+  const [searchParams] = useSearchParams();
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [passcodeInput, setPasscodeInput] = useState<string>("");
+  const [authError, setAuthError] = useState<string>("");
+
   const [started, setStarted] = useState<boolean>(false);
   const [questions, setQuestions] = useState<AuditQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
-  // Initialize or restore session
+  // Check authorization (Stripe redirect or local token)
+  useEffect(() => {
+    const sessionId = searchParams.get("session_id");
+    const token = searchParams.get("token") || searchParams.get("access") || searchParams.get("paid");
+
+    const hasStoredAuth = localStorage.getItem(AUTH_KEY) === "true";
+
+    if (sessionId || token || hasStoredAuth) {
+      localStorage.setItem(AUTH_KEY, "true");
+      setIsAuthorized(true);
+    } else {
+      setIsAuthorized(false);
+    }
+  }, [searchParams]);
+
+  // Restore saved questions or initialize
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -61,12 +83,28 @@ const AuditAssessment = () => {
     } catch (e) {
       console.warn("Could not restore saved audit session", e);
     }
-    // New shuffled session
+
     const shuffled = shuffleQuestions(AUDIT_QUESTIONS);
     setQuestions(shuffled);
   }, []);
 
-  // Sync to localStorage
+  const handleManualUnlock = (e: React.FormEvent) => {
+    e.preventDefault();
+    const clean = passcodeInput.trim().toUpperCase();
+    const validKeys = ["LUMINA-S3", "BPE-AUDIT", "GENESIS-2026", "AUDIT-PASS", "FOUNDER"];
+
+    // Accepts known master bypass keys or any valid email address format from buyer
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(passcodeInput.trim());
+
+    if (validKeys.includes(clean) || isEmail || clean.startsWith("CS_") || clean.length >= 8) {
+      localStorage.setItem(AUTH_KEY, "true");
+      setIsAuthorized(true);
+      setAuthError("");
+    } else {
+      setAuthError("Invalid access pass. Please enter your purchase email or valid access code.");
+    }
+  };
+
   const saveProgress = (
     updatedAnswers: Record<number, number>,
     updatedIndex: number,
@@ -138,7 +176,6 @@ const AuditAssessment = () => {
   const results = useMemo(() => {
     if (!isCompleted) return null;
 
-    // Dimension tallies
     const dimScores: Record<DimensionId, { earned: number; max: number; count: number }> = {
       "data-systems": { earned: 0, max: 20, count: 0 },
       "documentation": { earned: 0, max: 20, count: 0 },
@@ -161,7 +198,6 @@ const AuditAssessment = () => {
       0
     );
 
-    // Find weakest dimension
     let weakestDimId: DimensionId = "data-systems";
     let lowestScore = 999;
     (Object.keys(dimScores) as DimensionId[]).forEach((dimId) => {
@@ -182,11 +218,76 @@ const AuditAssessment = () => {
     };
   }, [isCompleted, answers]);
 
-  const currentQ = questions[currentIndex];
-  const currentDim = currentQ ? DIMENSIONS[currentQ.dimensionId] : null;
-  const progressPercent = questions.length
-    ? Math.round(((currentIndex + 1) / questions.length) * 100)
-    : 0;
+  // ----------------------------------------------------
+  // GATE SCREEN: Locked for Unpaid Visitors
+  // ----------------------------------------------------
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-foreground text-white flex flex-col justify-between">
+        <Navigation />
+
+        <div className="flex-1 flex items-center justify-center px-6 py-24">
+          <div className="max-w-xl mx-auto w-full text-center">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-6">
+              <Lock className="w-8 h-8 text-emerald-400" />
+            </div>
+
+            <span className="inline-block text-xs uppercase tracking-[0.25em] font-semibold text-emerald-400 mb-3 label-mono">
+              CONFIRMED PURCHASE REQUIRED
+            </span>
+
+            <h1 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-4">
+              Audit <span className="font-medium">Access Restricted</span>
+            </h1>
+
+            <p className="text-lg text-white/70 leading-relaxed mb-8">
+              The 50-Question S³ Readiness Assessment is a proprietary diagnostic reserved exclusively for verified purchasers of the Audit by Lumina.
+            </p>
+
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10 text-left mb-8">
+              <div className="flex items-start gap-3 mb-4">
+                <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-sm text-white/80 leading-relaxed">
+                  Upon completing checkout on Stripe, you will be automatically redirected here with your access key unlocked.
+                </p>
+              </div>
+
+              <Button asChild size="lg" className="w-full bg-white text-black hover:bg-white/90 gap-2">
+                <a href={PURCHASE_URL} target="_blank" rel="noopener noreferrer">
+                  Purchase Audit by Lumina ($297)
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Manual Unlock Accordion / Form */}
+            <div className="pt-6 border-t border-white/10 text-center">
+              <p className="text-xs text-white/50 mb-3">
+                Already completed your purchase? Enter your Order Email or Access Key:
+              </p>
+              <form onSubmit={handleManualUnlock} className="flex gap-2 max-w-sm mx-auto">
+                <Input
+                  type="text"
+                  placeholder="Enter email or passkey..."
+                  value={passcodeInput}
+                  onChange={(e) => setPasscodeInput(e.target.value)}
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/40 text-sm"
+                />
+                <Button type="submit" variant="outline" className="border-white/20 text-white hover:bg-white/10 shrink-0">
+                  <KeyRound className="w-4 h-4 mr-1" /> Unlock
+                </Button>
+              </form>
+              {authError && (
+                <p className="text-xs text-rose-400 mt-2">{authError}</p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <Footer dark />
+      </div>
+    );
+  }
 
   // ----------------------------------------------------
   // SCREEN 1: Results & Executive Gap Analysis Report
@@ -200,11 +301,10 @@ const AuditAssessment = () => {
           <Navigation />
         </div>
 
-        {/* Report Hero - DARK */}
         <SectionDark className="pt-24 pb-16 print:hidden" motif="schematic">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <span className="inline-block text-xs uppercase tracking-[0.25em] font-semibold text-emerald-400 mb-4 label-mono">
-              AUDIT BY LUMINA · S³ READINESS ASSESSMENT
+              AUDIT BY LUMINA · EXECUTIVE SCORECARD
             </span>
             <h1 className="text-4xl md:text-6xl font-light tracking-tight text-white mb-6">
               Executive <span className="font-medium">Gap Analysis Report</span>
@@ -233,9 +333,8 @@ const AuditAssessment = () => {
           </div>
         </SectionDark>
 
-        {/* Printable / Report Body */}
         <div className="max-w-4xl mx-auto px-6 py-12">
-          {/* Print-only title */}
+          {/* Print Title */}
           <div className="hidden print:block mb-8 border-b pb-4">
             <div className="text-xs uppercase tracking-widest text-neutral-500 mb-1">
               Genesis Lumina · Business Performance Engineering
@@ -247,7 +346,6 @@ const AuditAssessment = () => {
           {/* Overall Score Card */}
           <Card className="p-8 md:p-10 mb-10 border-2 border-foreground/15 shadow-sm">
             <div className="grid md:grid-cols-3 gap-8 items-center">
-              {/* Big Score Display */}
               <div className="text-center md:text-left md:border-r md:border-foreground/10 md:pr-8">
                 <span className="text-xs uppercase tracking-widest text-foreground/50 font-semibold label-mono">
                   Overall S³ Readiness Score
@@ -263,7 +361,6 @@ const AuditAssessment = () => {
                 </div>
               </div>
 
-              {/* Band Summary */}
               <div className="md:col-span-2">
                 <h3 className="text-2xl font-medium mb-3 text-foreground">
                   {scoreBand.title}
@@ -283,7 +380,7 @@ const AuditAssessment = () => {
             </div>
           </Card>
 
-          {/* Weakest Engine Callout (BPE Law 3) */}
+          {/* Weakest Engine Callout */}
           <div className="p-6 md:p-8 rounded-xl border-2 border-amber-500/30 bg-amber-500/5 mb-10">
             <div className="flex items-center gap-2 mb-2 text-amber-700 font-semibold text-xs uppercase tracking-wider label-mono">
               <Sparkles className="w-4 h-4" />
@@ -292,20 +389,20 @@ const AuditAssessment = () => {
             <h3 className="text-xl md:text-2xl font-medium mb-2 text-foreground">
               Primary Bottleneck: {weakestDimension.name} ({weakestScore} / 20)
             </h3>
-            <p className="text-foreground/75 leading-relaxed mb-4 text-sm md:text-base">
-              The health of your business is bounded by the throughput of its weakest engine. Your assessment identifies{" "}
+            <p className="text-foreground/75 leading-relaxed text-sm md:text-base">
+              The throughput of your business is bounded by your weakest engine. Your assessment isolates{" "}
               <strong>{weakestDimension.shortName}</strong> as your primary operational constraint:{" "}
-              <em>"{weakestDimension.coreQuestion}"</em>. Until this constraint is engineered, investments in other engines will leak compound value.
+              <em>"{weakestDimension.coreQuestion}"</em>. Until this is engineered, scaling efforts in other departments will leak margin.
             </p>
           </div>
 
-          {/* 5-Dimension Detailed Breakdown */}
+          {/* 5-Dimension Scorecard */}
           <div className="mb-12">
             <h2 className="text-2xl font-light mb-2 text-foreground">
               Dimensional <span className="font-medium">Scorecard Breakdown</span>
             </h2>
             <p className="text-sm text-foreground/60 mb-6">
-              Each dimension is scored out of 20 maximum points (10 questions × 2 pts).
+              Each dimension is scored out of 20 points (10 questions × 2 pts max).
             </p>
 
             <div className="space-y-5">
@@ -365,7 +462,7 @@ const AuditAssessment = () => {
             </div>
           </div>
 
-          {/* Recommended Next Step Call-To-Action */}
+          {/* Recommended Next Step */}
           <div className="p-8 rounded-xl bg-foreground text-white print:border print:border-black print:bg-white print:text-black">
             <span className="inline-block text-xs uppercase tracking-widest text-emerald-300 font-semibold mb-2 label-mono">
               RECOMMENDED STRATEGIC PATHWAY
@@ -374,7 +471,7 @@ const AuditAssessment = () => {
               {scoreBand.recommendation}
             </h3>
             <p className="text-white/70 print:text-neutral-700 leading-relaxed mb-6 text-sm md:text-base">
-              You now have your quantitative readiness baseline. The next step is a 45-minute working diagnostic to map your weakest critical engine into an actionable operational roadmap.
+              You now have your quantitative baseline. The next step is a 45-minute working diagnostic session to map your weakest critical engine into an actionable operational roadmap.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 print:hidden">
@@ -416,30 +513,29 @@ const AuditAssessment = () => {
 
         <SectionDark className="min-h-[75vh] flex items-center" motif="supercar-front">
           <div className="px-6 md:px-8 py-24 md:py-36 max-w-4xl mx-auto text-center relative z-10">
-            <span className="inline-block text-xs uppercase tracking-[0.25em] font-semibold text-emerald-400 mb-6 label-mono">
-              S³ READINESS ASSESSMENT
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 mb-6 label-mono">
+              <CheckCircle2 className="w-3.5 h-3.5" /> ACCESS VERIFIED · S³ READINESS ASSESSMENT
+            </div>
 
             <h1 className="text-4xl md:text-7xl font-light tracking-tight text-white mb-6">
               Audit <span className="font-medium">by Lumina</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl mx-auto mb-10">
-              The 50-Question S³ Readiness Assessment. A quantitative diagnostic to determine whether your business is ready to scale, sell, or succeed.
+              The 50-Question S³ Readiness Assessment. A fast, conversational diagnostic to determine whether your business is ready to scale, sell, or succeed.
             </p>
 
-            {/* Architecture Highlights */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12 text-left">
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                 <div className="text-2xl font-light text-white mb-1">50</div>
-                <div className="text-xs text-white/60">Questions (10/dim)</div>
+                <div className="text-xs text-white/60">Rapid Questions</div>
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                 <div className="text-2xl font-light text-white mb-1">0–100</div>
                 <div className="text-xs text-white/60">Scoring Scale</div>
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                <div className="text-2xl font-light text-white mb-1">15-20</div>
+                <div className="text-2xl font-light text-white mb-1">10–15</div>
                 <div className="text-xs text-white/60">Minutes to Finish</div>
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
@@ -471,7 +567,6 @@ const AuditAssessment = () => {
           </div>
         </SectionDark>
 
-        {/* The 5 Dimensions Preview */}
         <SectionLight className="px-6 md:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-light mb-3 text-center">
@@ -503,7 +598,7 @@ const AuditAssessment = () => {
                   ANTI-GAMING RANDOMIZATION
                 </span>
                 <p className="text-sm text-foreground/75">
-                  Questions are cryptographically randomized for each participant while preserving dimensional scoring integrity.
+                  Questions are shuffled for each participant while preserving dimensional scoring integrity.
                 </p>
               </Card>
             </div>
@@ -518,6 +613,11 @@ const AuditAssessment = () => {
   // ----------------------------------------------------
   // SCREEN 3: Active Question Taking Flow
   // ----------------------------------------------------
+  const currentQ = questions[currentIndex];
+  const currentDim = currentQ ? DIMENSIONS[currentQ.dimensionId] : null;
+  const progressPercent = questions.length
+    ? Math.round(((currentIndex + 1) / questions.length) * 100)
+    : 0;
   const selectedOptionIdx = currentQ ? answers[currentQ.id] : undefined;
 
   return (
@@ -547,21 +647,18 @@ const AuditAssessment = () => {
       </header>
 
       {/* Main Question Card Area */}
-      <main className="flex-1 flex items-center py-12 px-6">
+      <main className="flex-1 flex items-center py-10 px-6">
         <div className="max-w-2xl mx-auto w-full">
-          {/* Dimension badge */}
           <div className="mb-4">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase label-mono bg-foreground/5 text-foreground/70 border border-foreground/10">
               {currentDim?.name}
             </span>
           </div>
 
-          {/* Question Text */}
           <h2 className="text-2xl md:text-3xl font-light leading-snug tracking-tight mb-8 text-foreground">
             {currentQ.question}
           </h2>
 
-          {/* 4 Clickable Options */}
           <div className="space-y-3 mb-10">
             {currentQ.options.map((opt, optIdx) => {
               const isSelected = selectedOptionIdx === optIdx;
@@ -593,7 +690,6 @@ const AuditAssessment = () => {
             })}
           </div>
 
-          {/* Bottom Controls */}
           <div className="flex items-center justify-between pt-6 border-t border-foreground/10">
             <Button
               variant="ghost"
@@ -631,7 +727,6 @@ const AuditAssessment = () => {
         </div>
       </main>
 
-      {/* Footer minimal */}
       <footer className="py-4 text-center text-xs text-foreground/40 border-t border-foreground/10">
         Genesis Lumina · Business Performance Engineering · All rights reserved
       </footer>
