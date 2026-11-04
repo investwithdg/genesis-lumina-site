@@ -20,6 +20,7 @@ import FAQ from "./pages/FAQ";
 import Analog from "./pages/guides/Analog";
 import Harvest from "./pages/guides/Harvest";
 import Audit from "./pages/guides/Audit";
+import AuditAssessment from "./pages/AuditAssessment";
 import CaseStudies from "./pages/CaseStudies";
 import PST from "./pages/case-studies/PST";
 import Optimist from "./pages/case-studies/Optimist";
@@ -53,6 +54,11 @@ const App = () => (
           <Route path="/field-guides/analog" element={<Analog />} />
           <Route path="/field-guides/harvest" element={<Harvest />} />
           <Route path="/field-guides/audit" element={<Audit />} />
+
+          {/* Audit Assessment Tool */}
+          <Route path="/audit/assessment" element={<AuditAssessment />} />
+          <Route path="/audit" element={<AuditAssessment />} />
+          <Route path="/field-guides/audit/assessment" element={<AuditAssessment />} />
 
           {/* Case studies */}
           <Route path="/case-studies" element={<CaseStudies />} />

@@ -50,6 +50,15 @@ const Audit = () => {
                 Book a Strategy Session
               </BookCallButton>
             </div>
+
+            <div className="mt-6">
+              <Link
+                to="/audit/assessment"
+                className="text-xs text-white/50 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                Already purchased Audit? Access your live 50-question assessment here →
+              </Link>
+            </div>
           </div>
         </div>
       </SectionDark>
@@ -171,7 +180,7 @@ const Audit = () => {
             Get the pre-flight check for S³ engagements and uncover your organization's true readiness.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto">
               <a href={purchaseUrl} target="_blank" rel="noopener noreferrer">
                 Get the Audit Guide — $297
@@ -181,6 +190,15 @@ const Audit = () => {
             <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
               Book a Strategy Session
             </BookCallButton>
+          </div>
+
+          <div className="mb-10">
+            <Link
+              to="/audit/assessment"
+              className="text-xs text-foreground/50 hover:text-foreground underline underline-offset-4 transition-colors"
+            >
+              Already completed purchase? Launch your 50-Question Assessment →
+            </Link>
           </div>
 
           <div className="inline-flex items-center gap-2 text-sm text-foreground/60 mb-12">
