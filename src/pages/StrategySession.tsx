@@ -27,6 +27,7 @@ import {
 const CALENDAR_BOOKING_URL = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
 const NOTIFICATION_EMAIL = "info@wearegenesislumina.com";
 const QUALIFIED_STORAGE_KEY = "gl_strategy_session_qualified_v1";
+const AUDIT_PURCHASE_URL = "https://buy.stripe.com/7sY4gzdtS3GygdX3kH1Fe0a";
 
 type Step = "scale" | "bottleneck" | "role" | "commitment" | "details" | "result-qualified" | "result-disqualified";
 
@@ -181,24 +182,71 @@ const StrategySession = () => {
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed">
             A working diagnostic session, not a sales call. We inspect your business as an interconnected mechanical system, isolate the single engine constraining performance, and score it.
           </p>
-          <p className="text-sm text-white/50 max-w-xl mx-auto mb-10 flex items-center justify-center gap-2">
+          <p className="text-sm text-white/50 max-w-xl mx-auto mb-8 flex items-center justify-center gap-2">
             <Clock className="w-4 h-4 text-emerald-400" />
             45 minutes · No fee · Reserved exclusively for verified operating businesses
           </p>
-          <Button
-            size="lg"
-            onClick={scrollToWidget}
-            className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90 gap-2 font-medium"
-          >
-            Begin Prequalification
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-xl mx-auto">
+            <Button
+              size="lg"
+              onClick={scrollToWidget}
+              className="text-base md:text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90 gap-2 font-medium w-full sm:w-auto"
+            >
+              Book 45-Min Session (Live with Donovan)
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="text-base md:text-lg px-8 py-6 h-auto border-white/30 text-white bg-transparent hover:bg-white/10 gap-2 w-full sm:w-auto"
+            >
+              <a href={AUDIT_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
+                Skip Call · Take 50-Q Audit ($297)
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-white/60">
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-emerald-400" />
+              Live Strategy Session: 45 min · Free · Qualification-gated
+            </span>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <span className="flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              Self-Serve Audit: 50 Questions · $297 · Instant automated scoring
+            </span>
+          </div>
         </div>
       </SectionDark>
 
       {/* INTERACTIVE PREQUALIFICATION GATE */}
       <section id="diagnostic-intake" className="px-6 md:px-8 py-20 bg-neutral-50 border-y border-foreground/10">
         <div className="max-w-3xl mx-auto">
+          {/* Asynchronous No-Call Banner */}
+          <div className="mb-8 p-5 rounded-2xl bg-white border border-foreground/15 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-700 label-mono mb-1">
+                <Sparkles className="w-4 h-4 text-amber-500" />
+                Asynchronous Self-Serve Option
+              </div>
+              <p className="text-sm font-medium text-foreground">
+                Don't want to get on a phone call? Run the diagnostic directly.
+              </p>
+              <p className="text-xs text-foreground/60 mt-0.5 max-w-lg">
+                The 50-Question S³ Readiness Assessment delivers the exact same 5-dimension scorecard on your own time with instant automated scoring.
+              </p>
+            </div>
+            <Button asChild size="sm" className="whitespace-nowrap bg-foreground text-white hover:bg-foreground/90 shrink-0">
+              <a href={AUDIT_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
+                Launch Audit ($297) →
+              </a>
+            </Button>
+          </div>
+
           <div className="text-center mb-10">
             <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700 label-mono mb-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600" /> PRE-SESSION QUALIFICATION
@@ -222,9 +270,21 @@ const StrategySession = () => {
                 <h3 className="text-xl md:text-2xl font-light mb-2 text-foreground">
                   What is your business's current annual revenue or operating scale?
                 </h3>
-                <p className="text-sm text-foreground/60 mb-6">
+                <p className="text-sm text-foreground/60 mb-4">
                   Select your current run-rate to ensure appropriate diagnostic modeling.
                 </p>
+
+                <div className="p-3 mb-5 rounded-lg bg-neutral-100/70 border border-foreground/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <span className="text-foreground/70">Prefer immediate automated scoring without waiting on a calendar call?</span>
+                  <a
+                    href={AUDIT_PURCHASE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-emerald-700 hover:text-emerald-800 underline underline-offset-4 flex items-center gap-1 whitespace-nowrap"
+                  >
+                    Take 50-Question Self-Serve Audit ($297) →
+                  </a>
+                </div>
 
                 <div className="space-y-3">
                   {[
@@ -493,30 +553,56 @@ const StrategySession = () => {
                   <ShieldCheck className="w-8 h-8" />
                 </div>
                 <span className="inline-block text-xs uppercase tracking-widest font-semibold text-emerald-700 label-mono mb-2">
-                  PROFILE APPROVED · DIAGNOSTIC SLOT UNLOCKED
+                  PROFILE APPROVED · DIAGNOSTIC UNLOCKED
                 </span>
                 <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-3">
-                  You're Pre-Qualified for a Strategy Session
+                  You're Pre-Qualified for a Diagnostic
                 </h3>
-                <p className="text-foreground/70 leading-relaxed max-w-lg mx-auto mb-8 text-sm md:text-base">
-                  Your operational profile meets our diagnostic criteria. Whether you're scaling an established team or operating as a high-leverage solopreneur ready to decouple from delivery, your intake dossier has been delivered directly to <strong>Donovan Green</strong>. Select your 45-minute working session on Google Calendar below:
+                <p className="text-foreground/70 leading-relaxed max-w-xl mx-auto mb-8 text-sm md:text-base">
+                  Your operational profile meets our diagnostic criteria. Your intake dossier has been delivered directly to <strong>Donovan Green</strong>. Choose how you would like to proceed:
                 </p>
 
-                <div className="p-6 rounded-xl bg-emerald-50/50 border border-emerald-200 mb-8 max-w-lg mx-auto text-left">
-                  <div className="flex items-start gap-3 text-xs md:text-sm text-foreground/80 leading-relaxed mb-4">
-                    <Clock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Please pick a time when you can be at a computer with your core operating metrics accessible.</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8 text-left">
+                  {/* Option 1: Live Working Session */}
+                  <div className="p-6 rounded-xl bg-emerald-50/60 border-2 border-emerald-300 flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 label-mono block mb-1">
+                        PATHWAY A · LIVE WORKING SESSION
+                      </span>
+                      <h4 className="font-medium text-lg text-foreground mb-1">Book with Donovan Green</h4>
+                      <p className="text-xs text-foreground/70 leading-relaxed mb-4">
+                        45-minute working diagnostic session. Come with core operating metrics accessible.
+                      </p>
+                    </div>
+                    <Button asChild size="lg" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2 text-sm font-medium">
+                      <a href={CALENDAR_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                        Open Google Calendar
+                        <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </Button>
                   </div>
-                  <Button asChild size="lg" className="w-full py-6 text-base bg-emerald-600 hover:bg-emerald-700 text-white gap-2 font-medium">
-                    <a href={CALENDAR_BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                      Open Google Calendar to Select Time
-                      <ExternalLink className="w-5 h-5 ml-1" />
-                    </a>
-                  </Button>
+
+                  {/* Option 2: Self-Serve Immediately */}
+                  <div className="p-6 rounded-xl bg-white border-2 border-foreground/15 flex flex-col justify-between hover:border-foreground/30 transition-all">
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 label-mono block mb-1">
+                        PATHWAY B · ASYNCHRONOUS AUDIT
+                      </span>
+                      <h4 className="font-medium text-lg text-foreground mb-1">Skip the Call · Run Audit Now</h4>
+                      <p className="text-xs text-foreground/70 leading-relaxed mb-4">
+                        Get the exact same 50-question readiness read without scheduling or waiting. Instant automated scoring ($297).
+                      </p>
+                    </div>
+                    <Button asChild variant="outline" size="lg" className="w-full border-foreground/20 hover:bg-neutral-50 text-foreground gap-2 text-sm font-medium">
+                      <a href={AUDIT_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
+                        Purchase Audit ($297) →
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 <p className="text-xs text-foreground/50">
-                  Need to review the engine doctrine before the call?{" "}
+                  Need to review the engine doctrine before proceeding?{" "}
                   <Link to="/approach" className="underline underline-offset-4 hover:text-foreground">
                     Read the BPE Doctrine here
                   </Link>
@@ -537,15 +623,17 @@ const StrategySession = () => {
                   Foundational Self-Serve Pathway Recommended
                 </h3>
                 <p className="text-foreground/70 leading-relaxed max-w-lg mx-auto mb-6 text-sm md:text-base">
-                  Our 1:1 Strategy Sessions are engineered specifically for operational businesses with active commercial operations, live client delivery, and compounding bottlenecks. At your current stage, 1:1 advisory creates unnecessary overhead. We recommend starting with our self-serve Field Guides and Doctrine:
+                  Our 1:1 Strategy Sessions are engineered specifically for operational businesses with active commercial operations and live client delivery. If you want the diagnostic read without scheduling a phone call, you can purchase and complete our self-serve 50-Question Audit directly:
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-md mx-auto">
-                  <Button asChild size="lg" className="w-full sm:w-auto bg-foreground text-white hover:bg-foreground/90">
-                    <Link to="/field-guides">Explore Field Guides ($47 – $297) →</Link>
+                  <Button asChild size="lg" className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-medium">
+                    <a href={AUDIT_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
+                      Take 50-Question Audit ($297) →
+                    </a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="w-full sm:w-auto border-foreground/20">
-                    <Link to="/approach">Read the Doctrine</Link>
+                    <Link to="/field-guides">Browse All Guides</Link>
                   </Button>
                 </div>
 

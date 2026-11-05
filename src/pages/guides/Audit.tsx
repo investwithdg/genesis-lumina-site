@@ -23,32 +23,45 @@ const Audit = () => {
               <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--waypoint-s3))] text-[hsl(var(--waypoint-s3-foreground))] flex items-center justify-center glow-s3">
                 <TrendingUp className="w-7 h-7" />
               </div>
-              <span className="text-sm font-medium text-white/60">S³ Waypoint • Field Guide</span>
+              <span className="text-sm font-medium text-white/70 tracking-wider label-mono uppercase">
+                S³ Waypoint · Self-Serve 50-Question Diagnostic
+              </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-light leading-tight mb-6 tracking-tight text-white">
               Audit <span className="font-medium">by Lumina</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-4">
-              The organizational readiness diagnostic.
+            <p className="text-xl md:text-2xl text-white/80 leading-relaxed mb-4">
+              The organizational readiness diagnostic — 100% self-serve.
+            </p>
+
+            <p className="text-base text-white/60 max-w-2xl mb-8 leading-relaxed">
+              The exact same 5-dimension operational read as our 1:1 Strategy Sessions, without scheduling delays or phone calls. Complete the 50-question assessment in 20 minutes and receive an instant automated scorecard across Reliability, Efficiency, Measurability, Transferability, and Adaptability.
             </p>
             
-            <div className="flex items-center gap-4 mb-12">
+            <div className="flex items-center gap-4 mb-8">
               <p className="text-4xl font-medium text-white">$297</p>
-              
+              <span className="text-xs uppercase tracking-widest text-emerald-300 font-mono">Instant Access · No Phone Call Needed</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button asChild size="lg" className="text-lg px-8 py-6 h-auto bg-white !text-black hover:bg-white/90">
                 <a href={purchaseUrl} target="_blank" rel="noopener noreferrer">
-                  Get the Audit Guide
+                  Purchase Diagnostic — $297
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
               </Button>
               <BookCallButton size="lg" className="text-lg px-8 py-6 h-auto border border-white/30 text-white bg-transparent hover:bg-white/10">
-                Book a Strategy Session
+                Prefer a Live Call? Book Strategy Session
               </BookCallButton>
+            </div>
+
+            <div className="flex items-center gap-2 text-xs text-white/50">
+              <span>Already purchased Audit?</span>
+              <Link to="/audit/assessment" className="text-emerald-300 hover:text-white underline underline-offset-4">
+                Launch your 50-question assessment here →
+              </Link>
             </div>
           </div>
         </div>
@@ -174,12 +187,12 @@ const Audit = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="text-lg px-8 py-6 h-auto">
               <a href={purchaseUrl} target="_blank" rel="noopener noreferrer">
-                Get the Audit Guide — $297
+                Launch 50-Question Diagnostic — $297
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
             <BookCallButton variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
-              Book a Strategy Session
+              Prefer a Live Call? Book Strategy Session
             </BookCallButton>
           </div>
 
