@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 interface BookCallButtonProps {
@@ -8,12 +9,8 @@ interface BookCallButtonProps {
 }
 
 /**
- * BookCallButton — books a Strategy Session (Tier 0, no fee).
- * Renamed from the retired "PEAR" call, 2026-07-15.
- * NOTE: this links straight to a Google Calendar booking link. The
- * confirmation-gate mechanic (doctrine video + intake within 24 hours)
- * described in Offer Architecture v4 is not yet wired to this button —
- * see StrategySession.tsx for the flagged build gap.
+ * BookCallButton — routes to the Strategy Session qualification gate.
+ * Ensures every prospect completes operational screening before accessing the calendar.
  */
 const BookCallButton = ({
   variant = "default",
@@ -21,13 +18,11 @@ const BookCallButton = ({
   className = "",
   children = "Book a Strategy Session",
 }: BookCallButtonProps) => {
-  const bookingUrl = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
-
   return (
     <Button asChild variant={variant} size={size} className={className}>
-      <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+      <Link to="/strategy-session#diagnostic-intake">
         {children}
-      </a>
+      </Link>
     </Button>
   );
 };
