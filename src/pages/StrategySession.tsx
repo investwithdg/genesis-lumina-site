@@ -61,7 +61,7 @@ const StrategySession = () => {
   // 1. Revenue Scale
   const handleSelectScale = (selected: string) => {
     setRevenue(selected);
-    if (selected === "under-250k") {
+    if (selected === "pre-revenue") {
       setStep("result-disqualified");
       scrollToWidget();
     } else {
@@ -231,7 +231,8 @@ const StrategySession = () => {
                     { key: "5m-25m", label: "$5M – $25M+ / year", desc: "Multi-tiered operations, institutional scaling, or succession prep." },
                     { key: "1m-5m", label: "$1M – $5M / year", desc: "Proven product-market fit, hitting severe manual delivery bottlenecks." },
                     { key: "250k-1m", label: "$250k – $1M / year", desc: "Active recurring revenue, founder currently operating as the primary engine." },
-                    { key: "under-250k", label: "Under $250k / Pre-Revenue", desc: "Early-stage validation, idea phase, or pre-launch." },
+                    { key: "solopreneur", label: "Solopreneur / Boutique Operator (Under $250k)", desc: "Solo practice, consultant, or agency founder ready for systems architecture & diagnostic." },
+                    { key: "pre-revenue", label: "Pre-Revenue / Idea Stage ($0)", desc: "Unlaunched concept, pre-client validation, or early exploratory phase." },
                   ].map((opt) => (
                     <button
                       key={opt.key}
@@ -313,6 +314,7 @@ const StrategySession = () => {
                 <div className="space-y-3">
                   {[
                     { key: "founder-ceo", label: "Founder / CEO / Managing Partner", desc: "Direct enterprise ownership and final decision authority." },
+                    { key: "solopreneur", label: "Solopreneur / Solo Operator / Principal Consultant", desc: "Solo business owner managing client delivery, looking to engineer systems & leverage." },
                     { key: "coo-operations", label: "COO / VP of Operations / General Manager", desc: "Leadership authority over systems, delivery, and team workflows." },
                     { key: "team-member", label: "Team Member / Individual Contributor / Researcher", desc: "Staff or departmental contributor exploring tools." },
                   ].map((opt) => (
@@ -497,7 +499,7 @@ const StrategySession = () => {
                   You're Pre-Qualified for a Strategy Session
                 </h3>
                 <p className="text-foreground/70 leading-relaxed max-w-lg mx-auto mb-8 text-sm md:text-base">
-                  Your operational scale and bottleneck meet our diagnostic criteria. Your intake dossier has been routed to <strong>Donovan Green</strong>. Select your 45-minute working session on Google Calendar below:
+                  Your operational profile meets our diagnostic criteria. Whether you're scaling an established team or operating as a high-leverage solopreneur ready to decouple from delivery, your intake dossier has been delivered directly to <strong>Donovan Green</strong>. Select your 45-minute working session on Google Calendar below:
                 </p>
 
                 <div className="p-6 rounded-xl bg-emerald-50/50 border border-emerald-200 mb-8 max-w-lg mx-auto text-left">
@@ -534,17 +536,37 @@ const StrategySession = () => {
                 <h3 className="text-2xl md:text-3xl font-light text-foreground mb-3">
                   Foundational Self-Serve Pathway Recommended
                 </h3>
-                <p className="text-foreground/70 leading-relaxed max-w-lg mx-auto mb-8 text-sm md:text-base">
-                  Our 1:1 Strategy Sessions are engineered specifically for operational businesses with active recurring revenue, live team handoffs, and compounding bottlenecks. At your current stage, 1:1 advisory creates unnecessary overhead. We recommend starting with our self-serve Field Guides and Doctrine:
+                <p className="text-foreground/70 leading-relaxed max-w-lg mx-auto mb-6 text-sm md:text-base">
+                  Our 1:1 Strategy Sessions are engineered specifically for operational businesses with active commercial operations, live client delivery, and compounding bottlenecks. At your current stage, 1:1 advisory creates unnecessary overhead. We recommend starting with our self-serve Field Guides and Doctrine:
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8 max-w-md mx-auto">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-md mx-auto">
                   <Button asChild size="lg" className="w-full sm:w-auto bg-foreground text-white hover:bg-foreground/90">
                     <Link to="/field-guides">Explore Field Guides ($47 – $297) →</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="w-full sm:w-auto border-foreground/20">
                     <Link to="/approach">Read the Doctrine</Link>
                   </Button>
+                </div>
+
+                <div className="p-4 rounded-xl bg-neutral-100 border border-foreground/10 max-w-md mx-auto text-left mb-6">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-foreground mb-1 label-mono">
+                    Solopreneur or Operator Ready for Diagnostic?
+                  </div>
+                  <p className="text-xs text-foreground/70 mb-3 leading-relaxed">
+                    If you are an active solopreneur or boutique practice seeking our <strong>$2,500 Diagnostic Assessment</strong> to systematically untangle your delivery, you can proceed directly to scheduling:
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRevenue("Solopreneur / Ready for $2,500 Diagnostic");
+                      setStep("bottleneck");
+                      scrollToWidget();
+                    }}
+                    className="text-xs font-medium text-emerald-700 hover:text-emerald-800 underline underline-offset-4 flex items-center gap-1"
+                  >
+                    Proceed with Diagnostic Intake →
+                  </button>
                 </div>
 
                 <button
