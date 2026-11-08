@@ -24,7 +24,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 
-const CALENDAR_BOOKING_URL = "https://calendar.app.google/XXdQMZcNjYjnACuz5";
+const CALENDAR_BOOKING_URL = "https://calendar.app.google/wPxj3Ct5uukBsjuc6";
 const NOTIFICATION_EMAIL = "info@wearegenesislumina.com";
 const QUALIFIED_STORAGE_KEY = "gl_strategy_session_qualified_v1";
 const AUDIT_PURCHASE_URL = "https://buy.stripe.com/7sY4gzdtS3GygdX3kH1Fe0a";
