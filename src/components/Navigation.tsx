@@ -19,6 +19,7 @@ const Navigation = () => {
   const resourcesLinks = [
     { title: "The Approach (BPE Doctrine)", path: "/approach" },
     { title: "Engine Library", path: "/engines" },
+    { title: "Operations Benchmark", path: "/benchmark" },
     { title: "Field Guides", path: "/field-guides" },
     { title: "Case Studies", path: "/case-studies" },
     { title: "Newsletter", path: "/newsletter" },

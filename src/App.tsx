@@ -21,6 +21,7 @@ import Analog from "./pages/guides/Analog";
 import Harvest from "./pages/guides/Harvest";
 import Audit from "./pages/guides/Audit";
 import AuditAssessment from "./pages/AuditAssessment";
+import BenchmarkSurvey from "./pages/BenchmarkSurvey";
 import CaseStudies from "./pages/CaseStudies";
 import PST from "./pages/case-studies/PST";
 import Optimist from "./pages/case-studies/Optimist";
@@ -59,6 +60,11 @@ const App = () => (
           <Route path="/audit/assessment" element={<AuditAssessment />} />
           <Route path="/audit" element={<AuditAssessment />} />
           <Route path="/field-guides/audit/assessment" element={<AuditAssessment />} />
+
+          {/* Executive Operations Benchmark / Survey */}
+          <Route path="/benchmark" element={<BenchmarkSurvey />} />
+          <Route path="/survey" element={<BenchmarkSurvey />} />
+          <Route path="/midwest-benchmark" element={<BenchmarkSurvey />} />
 
           {/* Case studies */}
           <Route path="/case-studies" element={<CaseStudies />} />
