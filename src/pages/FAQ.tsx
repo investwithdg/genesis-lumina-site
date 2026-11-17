@@ -55,7 +55,7 @@ const faqs = [
     q: "How does Lumina Ignite work?",
     a: (
       <>
-        Ongoing engine development partnership at $7.5K – $25K/month across three tiers: <strong>Ember → Blaze → Phoenix</strong>. Every month is driven by your Engine Tree — the living map of your engine architecture, health scores, and engineering roadmap. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
+        Dedicated Systems Architecture partnership at $7.5K – $25K/month across three tiers: <strong>Ember → Blaze → Phoenix</strong>. We act as your external Chief Systems Architect: every 30 days we inspect your operational telemetry, deliver complete Systems Specifications for your team or contractors to execute, and run executive governance to systematically decouple the founder from daily operations. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
       </>
     ),
   },
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Do you offer any guarantees?",
-    a: <>Yes. For every paid engagement, if you're not satisfied after the diagnosis phase we refund the deposit. Compass and Ignite include ownership transfer as a deliverable — you leave operating what we built, not depending on us to run it.</>,
+    a: <>Yes. For every paid engagement, if you're not satisfied after the diagnosis phase we refund the deposit. Compass and Ignite include architectural transfer as a deliverable — your team leaves owning and operating the systems, not depending on an outside agency to run them.</>,
   },
 ];
 
