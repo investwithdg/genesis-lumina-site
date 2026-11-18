@@ -27,16 +27,16 @@ const tiers = [
   {
     name: "Ember",
     price: "$7,500 / mo",
-    tag: "Systems Architecture & Foundation",
+    tag: "Foundation & Single Engine Track",
     highlight: false,
-    desc: "For businesses ($1M–$5M) ready to eliminate founder bottleneck and install architectural discipline. We map your Engine Tree, deliver 1 production-ready Systems Specification every month, and run bi-weekly executive steering.",
+    desc: "For operators ($1M–$5M) ready to eliminate founder bottlenecks and install operational discipline. We map your Engine Tree, deliver 1 production-ready Systems Specification every month, and run bi-weekly executive steering.",
     deliverables: [
-      "Master Engine Tree & Living Systems Blueprint",
-      "1 Monthly Systems Specification (logic, triggers & build order)",
-      "Monthly Operational Telemetry Scorecard (5 BPE dimensions)",
-      "Bi-weekly 45-minute Executive Steering & Governance sessions",
-      "Async Architectural Gatekeeping & tool vetting (Slack/Notion)",
-      "Quarterly founder-decoupling milestone tracking",
+      "Asset 1: Master Engine Tree (Visual Schematic + PDF)",
+      "Asset 2: 1 Monthly Systems Specification (3–5 page technical build order)",
+      "Asset 3: Operational Telemetry Cockpit (5-dimension audit & margin review)",
+      "Asset 4: Executive Steering (Two 45-min strategic sessions/mo)",
+      "Asset 5: Async Architecture Gatekeeping & tool vetting (Slack/Notion)",
+      "Outcome: Systematically decouples founder from 15–25 hrs/wk of delivery drag",
     ],
   },
   {
@@ -46,27 +46,27 @@ const tiers = [
     highlight: true,
     desc: "For scaling operators ($5M–$20M) managing multi-department handoffs. We actively steer multiple engine tracks concurrently, vet all internal tool/code implementations before production, and hold leadership leads accountable to telemetry.",
     deliverables: [
-      "Master Engine Tree across multi-department network",
-      "Up to 2 Monthly Systems Specifications (engineered for internal/contractor build)",
-      "Bi-weekly Steering with full leadership team (Ops, Sales, Delivery)",
-      "Pre-production Dyno Testing & Quality Gatekeeping on all internal deployments",
-      "Vendor & Software Purchase Vetting (preventing SaaS tool sprawl)",
-      "Real-time Telemetry Dashboard & margin-leak anomaly tracking",
+      "Asset 1: Multi-Department Engine Tree & Systems Network",
+      "Asset 2: Up to 2 Monthly Systems Specifications (Full technical work orders)",
+      "Asset 3: Real-Time Telemetry Cockpit & margin-leak anomaly alerts",
+      "Asset 4: Leadership Steering & Implementation Dyno Testing (Two 45-min sessions)",
+      "Asset 5: Vendor & Software Purchase Vetting (Zero tool sprawl)",
+      "Outcome: Synchronizes sales, ops & delivery without adding C-suite payroll",
     ],
   },
   {
     name: "Phoenix",
     price: "$25,000 / mo",
-    tag: "Embedded Chief Systems Architect (S³ Track)",
+    tag: "Full-Network Architecture & S³ Track",
     highlight: false,
     desc: "For institutional organizations ($15M–$50M+) preparing for scale, acquisition, or founder succession. Full-network engine governance, weekly executive cadence, and comprehensive institutional intelligence transfer to multiply enterprise valuation.",
     deliverables: [
-      "Full engine network under continuous architectural governance",
-      "Weekly strategic cadence at the right hand of the CEO / Board",
-      "M&A & Succession Readiness: engineering systems to run 100% without founder",
-      "Comprehensive oversight of all internal engineering leads & external contractors",
-      "Quarterly S³ Investment-Grade Diligence & Data Room Readiness",
-      "Direct architectural sign-off on enterprise infrastructure & capital allocation",
+      "Asset 1: Full-Network Continuous Systems Architecture & Living Tree",
+      "Asset 2: Weekly Strategic Executive Steering with CEO / Board",
+      "Asset 3: Complete Oversight of Internal Tech Leads & External Contractors",
+      "Asset 4: Quarterly S³ Diligence Scorecard & Data Room Readiness",
+      "Asset 5: Direct Architectural Sign-Off on Infrastructure Capital Allocation",
+      "Outcome: Prepares business for institutional scale or 6x–8x EBITDA sale",
     ],
   },
 ];
@@ -119,7 +119,7 @@ const Ignite = () => {
       <SectionDark className="min-h-[65vh] flex items-center" motif="supercar-rear">
         <div className="px-6 md:px-8 py-28 md:py-36 max-w-5xl mx-auto relative z-10">
           <span className="inline-block text-xs tracking-[0.25em] font-semibold text-orange-400 mb-6 label-mono uppercase">
-            ONGOING EXECUTIVE PARTNERSHIP · EMBER → BLAZE → PHOENIX
+            FOR LEADERSHIP · THE ARCHITECTURAL RETAINER
           </span>
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-6">
             Lumina <span className="font-medium">Ignite.</span>
@@ -198,14 +198,30 @@ const Ignite = () => {
                   <Sprout className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-800 block mb-1">
-                  DELIVERABLE 01
+                  DELIVERABLE 01 · LIVING ARCHITECTURE
                 </span>
-                <h3 className="text-xl font-medium text-foreground mb-3">
-                  The Master Engine Tree & Living Blueprint
+                <h3 className="text-xl font-medium text-foreground mb-4">
+                  The Master Engine Tree Schematic
                 </h3>
-                <p className="text-sm text-foreground/65 leading-relaxed mb-4">
-                  The living schematic mapping all critical engines across your organization (Acquisition, Fulfillment, Telemetry, Cash Flow, and Governance). Tracks current health scores, bottleneck constraints, and founder-dependency ratings (1–10).
-                </p>
+                
+                <div className="space-y-3 mb-4">
+                  <div className="p-3.5 rounded-xl bg-neutral-50 border border-foreground/10 text-xs">
+                    <span className="font-semibold text-foreground uppercase tracking-wider label-mono block mb-1">
+                      Tangible Asset Shipped:
+                    </span>
+                    <span className="text-foreground/75 leading-relaxed">
+                      Visual systems schematic (interactive Notion/Whimsical + PDF) mapping all 5 engine families, handoff latency friction points, and founder-dependency scores (1–10).
+                    </span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 text-xs">
+                    <span className="font-semibold text-emerald-900 uppercase tracking-wider label-mono block mb-1">
+                      Measurable Business Outcome:
+                    </span>
+                    <span className="text-emerald-800/85 leading-relaxed">
+                      Complete single-screen operational visibility. Eliminates organizational blindspots and pinpoints the exact operational bottleneck choking company throughput.
+                    </span>
+                  </div>
+                </div>
               </div>
               <div className="pt-4 border-t border-foreground/10 text-xs text-foreground/50 font-mono">
                 Updated monthly · Single source of operational truth
@@ -219,14 +235,30 @@ const Ignite = () => {
                   <FileText className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-orange-800 block mb-1">
-                  DELIVERABLE 02
+                  DELIVERABLE 02 · TECHNICAL WORK ORDER
                 </span>
-                <h3 className="text-xl font-medium text-foreground mb-3">
+                <h3 className="text-xl font-medium text-foreground mb-4">
                   The Monthly Systems Specification ("The Build Spec")
                 </h3>
-                <p className="text-sm text-foreground/65 leading-relaxed mb-4">
-                  A structured 3–5 page technical and operational blueprint for the target engine: exact logic trees, data triggers, stack requirements, and acceptance testing criteria. Hand this directly to your internal staff or an outsourced builder to execute right the first time.
-                </p>
+                
+                <div className="space-y-3 mb-4">
+                  <div className="p-3.5 rounded-xl bg-neutral-50 border border-foreground/10 text-xs">
+                    <span className="font-semibold text-foreground uppercase tracking-wider label-mono block mb-1">
+                      Tangible Asset Shipped:
+                    </span>
+                    <span className="text-foreground/75 leading-relaxed">
+                      A structured 3–5 page technical work order detailing exact logic trees, data schemas, API/tool triggers, and acceptance testing checklists for your chosen monthly engine.
+                    </span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-orange-50/60 border border-orange-200/80 text-xs">
+                    <span className="font-semibold text-orange-950 uppercase tracking-wider label-mono block mb-1">
+                      Measurable Business Outcome:
+                    </span>
+                    <span className="text-orange-900/85 leading-relaxed">
+                      Handed directly to internal staff or low-cost contractors. Your team builds the right system in days instead of wasting 3–6 months on trial-and-error and broken SaaS tools.
+                    </span>
+                  </div>
+                </div>
               </div>
               <div className="pt-4 border-t border-foreground/10 text-xs text-foreground/50 font-mono">
                 Shipped every 30 days · Zero developer trial-and-error
@@ -240,14 +272,30 @@ const Ignite = () => {
                   <BarChart3 className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-blue-800 block mb-1">
-                  DELIVERABLE 03
+                  DELIVERABLE 03 · OPERATIONAL AUDIT
                 </span>
-                <h3 className="text-xl font-medium text-foreground mb-3">
+                <h3 className="text-xl font-medium text-foreground mb-4">
                   The Operational Telemetry Cockpit
                 </h3>
-                <p className="text-sm text-foreground/65 leading-relaxed mb-4">
-                  An unvarnished executive scorecard scoring your operational performance across the 5 universal BPE dimensions: Reliability, Efficiency, Measurability, Transferability, and Adaptability. Instantly exposes where margin and time are leaking.
-                </p>
+                
+                <div className="space-y-3 mb-4">
+                  <div className="p-3.5 rounded-xl bg-neutral-50 border border-foreground/10 text-xs">
+                    <span className="font-semibold text-foreground uppercase tracking-wider label-mono block mb-1">
+                      Tangible Asset Shipped:
+                    </span>
+                    <span className="text-foreground/75 leading-relaxed">
+                      Monthly executive scorecard auditing your operating performance across the 5 universal BPE dimensions (Reliability, Efficiency, Measurability, Transferability, and Adaptability).
+                    </span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200/80 text-xs">
+                    <span className="font-semibold text-blue-950 uppercase tracking-wider label-mono block mb-1">
+                      Measurable Business Outcome:
+                    </span>
+                    <span className="text-blue-900/85 leading-relaxed">
+                      Hard operational numbers and dollar margin-leak estimates. Replaces manager opinions with unvarnished telemetry to stop revenue bleed and track throughput velocity.
+                    </span>
+                  </div>
+                </div>
               </div>
               <div className="pt-4 border-t border-foreground/10 text-xs text-foreground/50 font-mono">
                 Delivered monthly · Hard operational telemetry
@@ -261,14 +309,30 @@ const Ignite = () => {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-purple-800 block mb-1">
-                  DELIVERABLE 04
+                  DELIVERABLE 04 · EXECUTIVE OVERSIGHT
                 </span>
-                <h3 className="text-xl font-medium text-foreground mb-3">
+                <h3 className="text-xl font-medium text-foreground mb-4">
                   Executive Steering & Quality Gatekeeping
                 </h3>
-                <p className="text-sm text-foreground/65 leading-relaxed mb-4">
-                  Bi-weekly structured executive sessions holding your leadership leads accountable to operating telemetry. Includes async architectural sign-off: we stress-test and approve all internal software, tools, and workflows before they touch production.
-                </p>
+                
+                <div className="space-y-3 mb-4">
+                  <div className="p-3.5 rounded-xl bg-neutral-50 border border-foreground/10 text-xs">
+                    <span className="font-semibold text-foreground uppercase tracking-wider label-mono block mb-1">
+                      Tangible Asset Shipped:
+                    </span>
+                    <span className="text-foreground/75 leading-relaxed">
+                      Two 45-minute structured steering sessions per month + written architectural approvals or rejections on all internal tool, software, and vendor purchases.
+                    </span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-purple-50/60 border border-purple-200/80 text-xs">
+                    <span className="font-semibold text-purple-950 uppercase tracking-wider label-mono block mb-1">
+                      Measurable Business Outcome:
+                    </span>
+                    <span className="text-purple-900/85 leading-relaxed">
+                      Prevents expensive tool sprawl, holds department leads accountable to numbers, and systematically buys back 15–25 hours/week of founder delivery time.
+                    </span>
+                  </div>
+                </div>
               </div>
               <div className="pt-4 border-t border-foreground/10 text-xs text-foreground/50 font-mono">
                 Two 45-min sessions/mo + continuous gatekeeping
