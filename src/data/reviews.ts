@@ -2,6 +2,7 @@ export interface ClientReview {
   id: string;
   clientName: string;
   clientTitle: string;
+  participantRole?: string; // "Executive Sponsor", "Operations Lead", "Frontline Specialist", "Team Member"
   companyName: string;
   operatingModel?: string;
   rating: number; // 1-5
@@ -28,6 +29,7 @@ export const INITIAL_REVIEWS: ClientReview[] = [
     id: "pst-propane",
     clientName: "Mark Vance",
     clientTitle: "Director of Field Operations",
+    participantRole: "Operations Lead",
     companyName: "Propane Service Technologies (PST)",
     operatingModel: "Industrial Logistics & Field Service",
     rating: 5,
@@ -53,6 +55,7 @@ export const INITIAL_REVIEWS: ClientReview[] = [
     id: "cafe-indy",
     clientName: "Executive Leadership",
     clientTitle: "Executive Leadership Team",
+    participantRole: "Executive Sponsor",
     companyName: "Community Alliance of the Far East (CAFE)",
     operatingModel: "Non-Profit & Community Operations",
     rating: 5,
@@ -78,6 +81,7 @@ export const INITIAL_REVIEWS: ClientReview[] = [
     id: "optimist-performance",
     clientName: "David Sterling",
     clientTitle: "Managing Partner",
+    participantRole: "Executive Sponsor",
     companyName: "Optimist Performance Group",
     operatingModel: "B2B Strategic Advisory",
     rating: 5,

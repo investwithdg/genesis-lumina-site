@@ -231,7 +231,14 @@ export default function Reviews() {
 
                   {/* Client Bio */}
                   <div>
-                    <div className="text-xs font-bold text-foreground">{rev.clientName}</div>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-xs font-bold text-foreground">{rev.clientName}</div>
+                      {rev.participantRole && (
+                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-foreground/5 text-foreground/70 border border-foreground/10">
+                          {rev.participantRole}
+                        </span>
+                      )}
+                    </div>
                     <div className="text-[11px] text-foreground/60">{rev.clientTitle}</div>
                     <div className="text-[11px] font-mono text-ember font-medium mt-0.5">
                       {rev.companyName}

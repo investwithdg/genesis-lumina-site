@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   Award,
   Sparkles,
-  BarChart3,
+  Users,
   TrendingUp,
   AlertCircle,
 } from "lucide-react";
@@ -25,6 +25,29 @@ const NOTIFICATION_EMAIL = "info@wearegenesislumina.com";
 const SUPABASE_URL = "https://bqsfdgfstkzbjxdotquo.supabase.co";
 const SUPABASE_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxc2ZkZ2ZzdGt6Ymp4ZG90cXVvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTk3NTMyMiwiZXhwIjoyMDk3NTUxMzIyfQ.vRXrYuAvYu0iuECLR54Y71BqigYpJnRauLOLIeMt-Nw";
+
+const PARTICIPANT_ROLES = [
+  {
+    key: "Executive Sponsor",
+    label: "Executive Leadership / Owner / Sponsor",
+    sub: "Strategic governance, decision-making, and organizational performance",
+  },
+  {
+    key: "Operations Lead",
+    label: "Department / Operations Lead / Manager",
+    sub: "Directing workflow pipelines, operational systems, and team capacity",
+  },
+  {
+    key: "Frontline Specialist",
+    label: "Frontline Operator / Team Specialist",
+    sub: "Hands-on execution of daily tasks, client/donor interactions, and data entry",
+  },
+  {
+    key: "Team Participant",
+    label: "Cross-Functional Partner / Key Contributor",
+    sub: "Collaborating across departments and participating in engagement sprints",
+  },
+];
 
 const ENGAGEMENT_TYPES = [
   "Strategy Session / Executive Working Session",
@@ -36,9 +59,10 @@ const ENGAGEMENT_TYPES = [
 ];
 
 export default function PostEngagementReview() {
-  // Client Details
-  const [clientName, setClientName] = useState("");
-  const [clientTitle, setClientTitle] = useState("");
+  // Participant & Organization Details
+  const [participantName, setParticipantName] = useState("");
+  const [participantTitle, setParticipantTitle] = useState("");
+  const [participantRole, setParticipantRole] = useState("Operations Lead");
   const [companyName, setCompanyName] = useState("");
   const [workEmail, setWorkEmail] = useState("");
   const [operatingModel, setOperatingModel] = useState("");
@@ -60,9 +84,9 @@ export default function PostEngagementReview() {
   const [rating, setRating] = useState<number>(5);
   const [headline, setHeadline] = useState("");
   const [testimonial, setTestimonial] = useState("");
-  const [attributionPermission, setAttributionPermission] = useState<"full" | "anonymous">("full");
+  const [attributionPermission, setAttributionPermission] = useState<"full" | "title_only" | "anonymous">("full");
 
-  // Executive Peer Referrals
+  // Referrals
   const [referral1Name, setReferral1Name] = useState("");
   const [referral1Company, setReferral1Company] = useState("");
   const [referral1Email, setReferral1Email] = useState("");
@@ -84,8 +108,8 @@ export default function PostEngagementReview() {
     e.preventDefault();
     setErrorMsg("");
 
-    if (!clientName.trim() || !companyName.trim() || !workEmail.trim()) {
-      setErrorMsg("Please provide your name, company name, and email.");
+    if (!participantName.trim() || !companyName.trim() || !workEmail.trim()) {
+      setErrorMsg("Please provide your name, company name, and work email.");
       return;
     }
     if (!headline.trim() || !testimonial.trim()) {
@@ -96,14 +120,23 @@ export default function PostEngagementReview() {
     setSubmitting(true);
 
     const reviewId = `rev-${Date.now()}`;
-    const displayName = attributionPermission === "full" ? clientName.trim() : "Executive Leadership";
-    const displayTitle = attributionPermission === "full" ? clientTitle.trim() : `${operatingModel || "Operating"} Leader`;
-    const displayCompany = attributionPermission === "full" ? companyName.trim() : "Mid-Market Enterprise";
+    let displayName = participantName.trim();
+    let displayTitle = participantTitle.trim() || participantRole;
+    let displayCompany = companyName.trim();
+
+    if (attributionPermission === "title_only") {
+      displayName = `${participantRole} / Team Member`;
+    } else if (attributionPermission === "anonymous") {
+      displayName = "Team Participant";
+      displayTitle = participantRole;
+      displayCompany = operatingModel ? `${operatingModel} Organization` : "Mid-Market Enterprise";
+    }
 
     const newReview: ClientReview = {
       id: reviewId,
       clientName: displayName,
       clientTitle: displayTitle,
+      participantRole,
       companyName: displayCompany,
       operatingModel: operatingModel.trim() || "Operations",
       rating,
@@ -129,9 +162,10 @@ export default function PostEngagementReview() {
     saveSubmittedReview(newReview);
 
     const payload = {
-      formType: "Post-Engagement Review, Impact Audit & Executive Referral",
-      client_name: clientName.trim(),
-      client_title: clientTitle.trim(),
+      formType: "Post-Engagement Review, Impact Audit & Referral",
+      participant_name: participantName.trim(),
+      participant_title: participantTitle.trim(),
+      participant_role: participantRole,
       company_name: companyName.trim(),
       work_email: workEmail.trim(),
       operating_model: operatingModel.trim(),
@@ -199,7 +233,7 @@ export default function PostEngagementReview() {
           Prefer: "return=minimal",
         },
         body: JSON.stringify({
-          client_name: clientName.trim(),
+          client_name: `${participantName.trim()} (${participantRole})`,
           company_name: companyName.trim(),
           rating,
           headline: headline.trim(),
@@ -227,8 +261,8 @@ export default function PostEngagementReview() {
       <SectionDark className="pt-28 md:pt-36 pb-16 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-mono text-white/80 mb-6 tracking-wide uppercase">
-            <Award className="w-3.5 h-3.5 text-ember" />
-            Verified Impact &amp; Executive Peer Referrals
+            <Users className="w-3.5 h-3.5 text-ember" />
+            All-Participant Impact Standard · Leadership &amp; Frontline Reviews
           </div>
 
           <h1 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-6 leading-tight">
@@ -236,19 +270,18 @@ export default function PostEngagementReview() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Documenting the concrete operational capacity returned to your business. Your verified metrics
-            help us establish peer benchmarks and celebrate your team's engineered transformation.
+            Designed for <strong>everyone who participated in the engagement</strong>. Whether you lead the organization or run daily execution on the front lines, your direct experience measures the real-world operational capacity we returned to your workday.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-white/60">
             <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-              <TrendingUp className="w-3.5 h-3.5 text-emerald-400" /> Verified ROI Capture
+              <TrendingUp className="w-3.5 h-3.5 text-emerald-400" /> Real-World Capacity Unlocked
             </span>
             <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-400" /> Optional Anonymous Attribution
+              <Users className="w-3.5 h-3.5 text-blue-400" /> For Every Team Participant
             </span>
             <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-              <UserPlus className="w-3.5 h-3.5 text-amber-400" /> Executive Referral Program
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> Granular Privacy Controls
             </span>
           </div>
         </div>
@@ -266,12 +299,13 @@ export default function PostEngagementReview() {
                 REVIEW &amp; IMPACT LOGGED
               </div>
               <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4">
-                Thank You for Engineering the Standard
+                Thank You, {participantName}
               </h2>
               <p className="text-foreground/70 max-w-xl mx-auto mb-8 leading-relaxed">
-                Your review and impact metrics have been recorded. Your review is now live in the verified results showcase on Genesis Lumina!
+                Your feedback from the <strong>{participantRole}</strong> seat at <strong>{companyName}</strong> has been recorded.
+                Your verified testimonial and metrics are now live on Genesis Lumina!
                 {referral1Name && (
-                  <> We will also reach out with utmost discretion to the peers you recommended.</>
+                  <> We will also reach out with utmost discretion to the colleagues you recommended.</>
                 )}
               </p>
 
@@ -296,13 +330,13 @@ export default function PostEngagementReview() {
                 </div>
               )}
 
-              {/* SECTION 1: ENGAGEMENT & CLIENT PROFILE */}
+              {/* SECTION 1: PARTICIPANT IDENTITY & SEAT */}
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-ember font-semibold tracking-wider uppercase mb-2">
-                  <span>01 // Engagement &amp; Leadership Profile</span>
+                  <span>01 // Participant Identity &amp; Role in the Organization</span>
                 </div>
                 <p className="text-sm text-foreground/60 mb-6">
-                  Confirming your engagement details so we attribute the transformation properly.
+                  Please identify yourself and the seat you hold in the organization.
                 </p>
 
                 <Card className="p-6 md:p-8 space-y-6 border border-foreground/15 bg-white">
@@ -312,23 +346,62 @@ export default function PostEngagementReview() {
                         Your Full Name <span className="text-red-500">*</span>
                       </label>
                       <Input
-                        placeholder="e.g. Mark Vance"
-                        value={clientName}
-                        onChange={(e) => setClientName(e.target.value)}
+                        placeholder="e.g. Mark Vance or Sarah Jenkins"
+                        value={participantName}
+                        onChange={(e) => setParticipantName(e.target.value)}
                         required
                         className="bg-neutral-50"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-1.5 text-foreground">
-                        Your Executive Title
+                        Your Job Title / Position <span className="text-red-500">*</span>
                       </label>
                       <Input
-                        placeholder="e.g. Director of Operations"
-                        value={clientTitle}
-                        onChange={(e) => setClientTitle(e.target.value)}
+                        placeholder="e.g. Director of Operations, Intake Lead, Dispatcher"
+                        value={participantTitle}
+                        onChange={(e) => setParticipantTitle(e.target.value)}
+                        required
                         className="bg-neutral-50"
                       />
+                    </div>
+                  </div>
+
+                  {/* Seat in Organization */}
+                  <div>
+                    <label className="block text-sm font-semibold text-foreground mb-1">
+                      Your Primary Seat / Role <span className="text-red-500">*</span>
+                    </label>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {PARTICIPANT_ROLES.map((role) => {
+                        const isSelected = participantRole === role.key;
+                        return (
+                          <button
+                            type="button"
+                            key={role.key}
+                            onClick={() => setParticipantRole(role.key)}
+                            className={`p-3.5 rounded-md border text-left transition-all ${
+                              isSelected
+                                ? "border-foreground bg-foreground/5 ring-1 ring-foreground"
+                                : "border-foreground/15 hover:border-foreground/40 bg-white"
+                            }`}
+                          >
+                            <div className="flex items-start gap-2.5">
+                              <span
+                                className={`w-3.5 h-3.5 mt-0.5 rounded-full border flex-shrink-0 flex items-center justify-center ${
+                                  isSelected ? "border-foreground bg-foreground" : "border-foreground/40"
+                                }`}
+                              >
+                                {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                              </span>
+                              <div>
+                                <div className="text-xs font-semibold text-foreground">{role.label}</div>
+                                <div className="text-[11px] text-foreground/60 mt-0.5">{role.sub}</div>
+                              </div>
+                            </div>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -338,7 +411,7 @@ export default function PostEngagementReview() {
                         Company / Organization Name <span className="text-red-500">*</span>
                       </label>
                       <Input
-                        placeholder="e.g. Propane Service Technologies"
+                        placeholder="e.g. Propane Service Technologies, CAFE"
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
                         required
@@ -347,11 +420,11 @@ export default function PostEngagementReview() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-1.5 text-foreground">
-                        Work Email <span className="text-red-500">*</span>
+                        Your Work Email <span className="text-red-500">*</span>
                       </label>
                       <Input
                         type="email"
-                        placeholder="executive@company.com"
+                        placeholder="yourname@company.com"
                         value={workEmail}
                         onChange={(e) => setWorkEmail(e.target.value)}
                         required
@@ -396,10 +469,10 @@ export default function PostEngagementReview() {
               {/* SECTION 2: TANGIBLE ROI & OPERATIONAL GAINS */}
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-ember font-semibold tracking-wider uppercase mb-2">
-                  <span>02 // Tangible ROI &amp; Operational Gains</span>
+                  <span>02 // Tangible Operational Gains &amp; Relief</span>
                 </div>
                 <p className="text-sm text-foreground/60 mb-6">
-                  What did we physically unlock for your business in terms of capacity, time, and revenue?
+                  What did this work physically unlock for you or your team in terms of time, capacity, and clarity?
                 </p>
 
                 <Card className="p-6 md:p-8 space-y-6 border border-foreground/15 bg-white">
@@ -409,43 +482,43 @@ export default function PostEngagementReview() {
                         Weekly Hours Saved
                       </label>
                       <Input
-                        placeholder="e.g. 22 hrs/wk saved"
+                        placeholder="e.g. 5 hrs/wk saved for me (or 22 hrs team)"
                         value={hoursSavedPerWeek}
                         onChange={(e) => setHoursSavedPerWeek(e.target.value)}
                         className="bg-neutral-50 text-sm"
                       />
                       <span className="text-[11px] text-foreground/50 mt-1 block">
-                        Direct staff/founder time returned
+                        Hours returned from manual admin/firefighting
                       </span>
                     </div>
 
                     <div>
                       <label className="block text-xs font-mono font-semibold text-foreground uppercase mb-1.5">
-                        Financial / Capacity ROI
+                        Financial / Capacity Relief
                       </label>
                       <Input
-                        placeholder="e.g. $140,000+ unlocked"
+                        placeholder="e.g. Zero duplicate spreadsheets, $140K capacity"
                         value={roiGenerated}
                         onChange={(e) => setRoiGenerated(e.target.value)}
                         className="bg-neutral-50 text-sm"
                       />
                       <span className="text-[11px] text-foreground/50 mt-1 block">
-                        Payroll avoided or capacity gained
+                        Capacity gained or friction eliminated
                       </span>
                     </div>
 
                     <div>
                       <label className="block text-xs font-mono font-semibold text-foreground uppercase mb-1.5">
-                        Primary Engine Transformed
+                        Primary Workflow Transformed
                       </label>
                       <Input
-                        placeholder="e.g. Field Dispatch Engine"
+                        placeholder="e.g. Client Intake Pipeline, Field Dispatch"
                         value={engineTransformed}
                         onChange={(e) => setEngineTransformed(e.target.value)}
                         className="bg-neutral-50 text-sm"
                       />
                       <span className="text-[11px] text-foreground/50 mt-1 block">
-                        The core workflow engineered
+                        The core workflow or engine engineered
                       </span>
                     </div>
                   </div>
@@ -453,10 +526,10 @@ export default function PostEngagementReview() {
                   {/* 5-Dimension Post Scorecard */}
                   <div className="pt-4 border-t border-foreground/10">
                     <div className="text-sm font-semibold text-foreground mb-1">
-                      Post-Engagement 5-Dimension Health (1 to 5)
+                      Post-Engagement 5-Dimension Health (From Your Vantage Point: 1 to 5)
                     </div>
                     <p className="text-xs text-foreground/60 mb-4">
-                      How does your operational engine score today following our architecture work?
+                      How does your operational workflow score today following our architecture work?
                     </p>
 
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
@@ -495,17 +568,17 @@ export default function PostEngagementReview() {
               {/* SECTION 3: TESTIMONIAL & REVIEW */}
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-ember font-semibold tracking-wider uppercase mb-2">
-                  <span>03 // Executive Testimonial &amp; Quote</span>
+                  <span>03 // Your Perspective &amp; Testimonial</span>
                 </div>
                 <p className="text-sm text-foreground/60 mb-6">
-                  In your own words: what was the experience like and what would you tell an executive considering Genesis Lumina?
+                  In your own words: what was your workflow like before Genesis Lumina, and what is your daily execution like now?
                 </p>
 
                 <Card className="p-6 md:p-8 space-y-6 border border-foreground/15 bg-white">
                   {/* Star Rating */}
                   <div>
                     <label className="block text-sm font-semibold text-foreground mb-2">
-                      Overall Rating
+                      Overall Experience Rating
                     </label>
                     <div className="flex items-center gap-2">
                       {[1, 2, 3, 4, 5].map((star) => (
@@ -532,10 +605,10 @@ export default function PostEngagementReview() {
 
                   <div>
                     <label className="block text-sm font-semibold text-foreground mb-1">
-                      One-Sentence Headline / Summary <span className="text-red-500">*</span>
+                      One-Sentence Headline / Key Result <span className="text-red-500">*</span>
                     </label>
                     <Input
-                      placeholder="e.g. Eliminated our dispatch bottleneck and saved 22 hours of weekly chaos."
+                      placeholder="e.g. Completely removed the manual data entry bottleneck from our team."
                       value={headline}
                       onChange={(e) => setHeadline(e.target.value)}
                       required
@@ -545,13 +618,13 @@ export default function PostEngagementReview() {
 
                   <div>
                     <label className="block text-sm font-semibold text-foreground mb-1">
-                      Detailed Review / Testimonial <span className="text-red-500">*</span>
+                      Detailed Review &amp; Experience <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       rows={5}
                       value={testimonial}
                       onChange={(e) => setTestimonial(e.target.value)}
-                      placeholder="Describe the operational challenge before Genesis Lumina, how Donovan engineered the solution, and what the concrete difference has been for you and your team..."
+                      placeholder="Describe what was frustrating before Genesis Lumina, how Donovan engineered the solution, and what the concrete difference has been in your day-to-day work..."
                       required
                       className="w-full p-3 rounded-md border border-foreground/15 text-sm bg-neutral-50 text-foreground focus:ring-1 focus:ring-foreground"
                     />
@@ -560,7 +633,7 @@ export default function PostEngagementReview() {
                   {/* Attribution Permissions */}
                   <div className="pt-2 border-t border-foreground/10">
                     <label className="block text-xs font-mono font-semibold text-foreground uppercase mb-2">
-                      Publishing &amp; Attribution Permission
+                      Publishing &amp; Attribution Options
                     </label>
                     <div className="space-y-2">
                       <label className="flex items-center gap-3 text-xs text-foreground cursor-pointer">
@@ -572,7 +645,19 @@ export default function PostEngagementReview() {
                           className="text-foreground focus:ring-foreground"
                         />
                         <span>
-                          <strong>Full Attribution:</strong> You may feature my name, title, and company on Genesis Lumina.
+                          <strong>Full Attribution:</strong> Feature my name, title, and organization on Genesis Lumina.
+                        </span>
+                      </label>
+                      <label className="flex items-center gap-3 text-xs text-foreground cursor-pointer">
+                        <input
+                          type="radio"
+                          name="attribution"
+                          checked={attributionPermission === "title_only"}
+                          onChange={() => setAttributionPermission("title_only")}
+                          className="text-foreground focus:ring-foreground"
+                        />
+                        <span>
+                          <strong>Title &amp; Organization Only:</strong> Feature my role and organization (e.g. &ldquo;{participantRole}, {companyName || "Organization"}&rdquo;).
                         </span>
                       </label>
                       <label className="flex items-center gap-3 text-xs text-foreground cursor-pointer">
@@ -584,7 +669,7 @@ export default function PostEngagementReview() {
                           className="text-foreground focus:ring-foreground"
                         />
                         <span>
-                          <strong>Sanitized Attribution:</strong> Publish with my title and industry only (e.g. &ldquo;Director of Operations, Industrial Logistics&rdquo;).
+                          <strong>Sanitized / Anonymous:</strong> Feature role and industry only (e.g. &ldquo;{participantRole}, {operatingModel || "Operations"}&rdquo;).
                         </span>
                       </label>
                     </div>
@@ -592,31 +677,31 @@ export default function PostEngagementReview() {
                 </Card>
               </div>
 
-              {/* SECTION 4: EXECUTIVE PEER REFERRALS */}
+              {/* SECTION 4: PEER & DEPARTMENT REFERRALS */}
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-ember font-semibold tracking-wider uppercase mb-2">
                   <UserPlus className="w-3.5 h-3.5" />
-                  <span>04 // Executive Peer Referrals (The Circle)</span>
+                  <span>04 // Executive &amp; Peer Referrals</span>
                 </div>
                 <p className="text-sm text-foreground/60 mb-6">
-                  Do you know 1 or 2 fellow founders, business owners, or operational executives whose organizations are currently drowning in manual friction?
+                  Do you know another founder, business owner, department head, or colleague whose team is currently drowning in manual friction?
                 </p>
 
                 <Card className="p-6 md:p-8 space-y-6 border border-foreground/15 bg-white">
                   {/* Referral 1 */}
                   <div className="p-4 bg-neutral-50 rounded-md border border-foreground/10 space-y-3">
                     <div className="text-xs font-mono font-semibold text-foreground uppercase">
-                      Executive Peer #1
+                      Colleague / Leader #1
                     </div>
                     <div className="grid md:grid-cols-3 gap-3">
                       <Input
-                        placeholder="Leader Name"
+                        placeholder="Leader / Colleague Name"
                         value={referral1Name}
                         onChange={(e) => setReferral1Name(e.target.value)}
                         className="bg-white text-xs"
                       />
                       <Input
-                        placeholder="Company / Org"
+                        placeholder="Company / Department"
                         value={referral1Company}
                         onChange={(e) => setReferral1Company(e.target.value)}
                         className="bg-white text-xs"
@@ -630,7 +715,7 @@ export default function PostEngagementReview() {
                       />
                     </div>
                     <Input
-                      placeholder="Brief context: what engine or workflow is giving them headaches?"
+                      placeholder="Brief note: what workflow or headache are they dealing with?"
                       value={referral1Note}
                       onChange={(e) => setReferral1Note(e.target.value)}
                       className="bg-white text-xs"
@@ -640,17 +725,17 @@ export default function PostEngagementReview() {
                   {/* Referral 2 */}
                   <div className="p-4 bg-neutral-50 rounded-md border border-foreground/10 space-y-3">
                     <div className="text-xs font-mono font-semibold text-foreground uppercase">
-                      Executive Peer #2 (Optional)
+                      Colleague / Leader #2 (Optional)
                     </div>
                     <div className="grid md:grid-cols-3 gap-3">
                       <Input
-                        placeholder="Leader Name"
+                        placeholder="Leader / Colleague Name"
                         value={referral2Name}
                         onChange={(e) => setReferral2Name(e.target.value)}
                         className="bg-white text-xs"
                       />
                       <Input
-                        placeholder="Company / Org"
+                        placeholder="Company / Department"
                         value={referral2Company}
                         onChange={(e) => setReferral2Company(e.target.value)}
                         className="bg-white text-xs"
@@ -664,7 +749,7 @@ export default function PostEngagementReview() {
                       />
                     </div>
                     <Input
-                      placeholder="Brief context: what engine or workflow is giving them headaches?"
+                      placeholder="Brief note: what workflow or headache are they dealing with?"
                       value={referral2Note}
                       onChange={(e) => setReferral2Note(e.target.value)}
                       className="bg-white text-xs"
@@ -693,11 +778,11 @@ export default function PostEngagementReview() {
                   disabled={submitting}
                   className="w-full text-base py-6 bg-foreground text-white hover:bg-foreground/90 gap-2 font-medium"
                 >
-                  {submitting ? "Logging Review & Referrals..." : "Submit Review & Operational Impact"}
+                  {submitting ? "Logging Review & Impact..." : "Submit My Operational Review"}
                   <ArrowRight className="w-5 h-5 text-ember" />
                 </Button>
                 <p className="text-center text-xs font-mono text-foreground/50 mt-3">
-                  Transmits directly to Donovan Green · Thank you for your leadership and partnership.
+                  Transmits directly to Donovan Green · Thank you for helping engineer the standard.
                 </p>
               </div>
             </form>
