@@ -22,6 +22,7 @@ const Navigation = () => {
     { title: "Operations Benchmark", path: "/benchmark" },
     { title: "Field Guides", path: "/field-guides" },
     { title: "Case Studies", path: "/case-studies" },
+    { title: "Client Reviews & ROI", path: "/reviews" },
     { title: "Newsletter", path: "/newsletter" },
     { title: "FAQ", path: "/faq" },
   ];

@@ -25,6 +25,9 @@ import BenchmarkSurvey from "./pages/BenchmarkSurvey";
 import CaseStudies from "./pages/CaseStudies";
 import PST from "./pages/case-studies/PST";
 import Optimist from "./pages/case-studies/Optimist";
+import PreEngagementIntake from "./pages/PreEngagementIntake";
+import PostEngagementReview from "./pages/PostEngagementReview";
+import Reviews from "./pages/Reviews";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -70,6 +73,19 @@ const App = () => (
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/pst" element={<PST />} />
           <Route path="/case-studies/optimist" element={<Optimist />} />
+
+          {/* Pre-engagement diagnostic intake */}
+          <Route path="/intake" element={<PreEngagementIntake />} />
+          <Route path="/pre-survey" element={<PreEngagementIntake />} />
+
+          {/* Post-engagement review & referral collector */}
+          <Route path="/review" element={<PostEngagementReview />} />
+          <Route path="/feedback" element={<PostEngagementReview />} />
+          <Route path="/post-survey" element={<PostEngagementReview />} />
+
+          {/* Client Reviews & Verified Telemetry */}
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/client-results" element={<Reviews />} />
 
           {/* Standard */}
           <Route path="/quiz" element={<Quiz />} />

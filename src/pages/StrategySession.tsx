@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import EngineHealthBar from "@/components/EngineHealthBar";
+import ClientReviewsSection from "@/components/ClientReviewsSection";
 import {
   ArrowRight,
   ArrowLeft,
@@ -721,6 +722,9 @@ const StrategySession = () => {
           </div>
         </div>
       </SectionLight>
+
+      {/* Verified Client Reviews & ROI */}
+      <ClientReviewsSection limit={3} showAllLink={true} />
 
       {/* Final Callout */}
       <SectionDark className="px-8 py-24" motif="schematic">

@@ -52,6 +52,7 @@ const Footer = (_: FooterProps) => {
               <Link to="/approach" className="text-white/70 hover:text-white transition-colors">The Approach</Link>
               <Link to="/engines" className="text-white/70 hover:text-white transition-colors">Engine Library</Link>
               <Link to="/case-studies" className="text-white/70 hover:text-white transition-colors">Case Studies</Link>
+              <Link to="/reviews" className="text-white/70 hover:text-white transition-colors">Client Reviews &amp; ROI</Link>
               <Link to="/about" className="text-white/70 hover:text-white transition-colors">About</Link>
               <Link to="/newsletter" className="text-white/70 hover:text-white transition-colors">Newsletter</Link>
               <Link to="/faq" className="text-white/70 hover:text-white transition-colors">FAQ</Link>

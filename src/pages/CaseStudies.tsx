@@ -6,6 +6,7 @@ import SectionDark from "@/components/SectionDark";
 import SectionLight from "@/components/SectionLight";
 import Footer from "@/components/Footer";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import ClientReviewsSection from "@/components/ClientReviewsSection";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 const caseStudies = [
@@ -86,6 +87,9 @@ const CaseStudies = () => {
           ))}
         </div>
       </SectionLight>
+
+      {/* Verified Client Reviews & ROI */}
+      <ClientReviewsSection limit={3} showAllLink={true} />
 
       {/* CTA - DARK */}
       <SectionDark className="px-4 md:px-8 py-24 md:py-32" motif="schematic">

@@ -11,6 +11,7 @@ import EngineFamiliesGrid from "@/components/EngineFamiliesGrid";
 import EngineHealthBar from "@/components/EngineHealthBar";
 import OfferStackLadder from "@/components/OfferStackLadder";
 import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+import ClientReviewsSection from "@/components/ClientReviewsSection";
 import { SupercarSide } from "@/components/SupercarMotifs";
 import { ArrowRight, Quote } from "lucide-react";
 
@@ -184,6 +185,9 @@ const Index = () => {
           <ClientLogoCarousel />
         </div>
       </SectionDark>
+
+      {/* Verified Client Reviews & ROI Telemetry */}
+      <ClientReviewsSection limit={3} showAllLink={true} />
 
       {/* Final CTA */}
       <SectionDark className="px-8 py-24 md:py-32" collage="hero">
