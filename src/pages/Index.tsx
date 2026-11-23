@@ -179,12 +179,12 @@ const Index = () => {
         </div>
       </SectionDark>
 
-      {/* Logos */}
-      <SectionDark className="px-8 py-14 border-t border-white/5">
+      {/* Logos — crisp white background to display client logos cleanly */}
+      <section className="bg-white py-14 px-8 border-y border-foreground/10">
         <div className="max-w-5xl mx-auto">
           <ClientLogoCarousel />
         </div>
-      </SectionDark>
+      </section>
 
       {/* Verified Client Reviews & ROI Telemetry */}
       <ClientReviewsSection limit={3} showAllLink={true} />
