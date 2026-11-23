@@ -110,7 +110,7 @@ const About = () => {
       </SectionLight>
 
       {/* The BPE Standard - DARK */}
-      <SectionDark className="px-8 py-24 md:py-32" motif="geometric">
+      <SectionDark className="px-8 py-24 md:py-32" motif="chassis">
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <span className="label-mono text-white/50 text-xs mb-3 block">01 — GOVERNING PHILOSOPHY</span>

@@ -7,7 +7,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     // Immediate scroll to top without animation for page changes
     // This prevents the "smooth scroll" from taking too long if the page is long
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return null;

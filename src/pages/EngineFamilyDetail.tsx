@@ -82,14 +82,19 @@ export default function EngineFamilyDetail() {
       {/* Hero Section — Dark with Telemetry / Supercar Motif */}
       <SectionDark className="pt-28 md:pt-36 pb-20" motif="chassis">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-8">
-            <Link to="/engines" className="hover:text-white transition-colors flex items-center gap-1">
-              <ArrowLeft className="w-3.5 h-3.5" />
-              Engine Library
-            </Link>
-            <span>/</span>
-            <span className="text-ember font-semibold tracking-wider uppercase">
+          {/* Engine Room navigation */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-8">
+            <Button
+              asChild
+              variant="outline"
+              className="min-h-[44px] gap-2 border-white/25 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+            >
+              <Link to="/engines" aria-label="Back to the Engine Room">
+                <ArrowLeft className="w-4 h-4" />
+                Back to Engine Room
+              </Link>
+            </Button>
+            <span className="text-xs font-mono text-ember font-semibold tracking-wider uppercase">
               Family {family.number} · {family.name}
             </span>
           </div>
@@ -454,39 +459,50 @@ export default function EngineFamilyDetail() {
 
       {/* SECTION 7: NEXT & PREVIOUS ENGINE FAMILY NAVIGATION */}
       <section className="px-6 md:px-8 py-12 bg-white border-t border-foreground/10">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link
-            to={`/engines/${prevFamily.slug}`}
-            className="flex items-center gap-3 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group"
-          >
-            <div className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center group-hover:border-foreground transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="text-[10px] font-mono text-foreground/40 uppercase block">Previous Family</span>
-              <span>{prevFamily.name}</span>
-            </div>
-          </Link>
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-8 flex justify-center sm:hidden">
+            <Button asChild variant="outline" className="min-h-[44px] gap-2">
+              <Link to="/engines">
+                <ArrowLeft className="w-4 h-4" />
+                Back to Engine Room
+              </Link>
+            </Button>
+          </div>
 
-          <Link
-            to="/engines"
-            className="hidden sm:inline-block text-xs font-mono text-foreground/50 hover:text-foreground uppercase tracking-wider"
-          >
-            All 8 Engine Families
-          </Link>
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              to={`/engines/${prevFamily.slug}`}
+              className="flex items-center gap-3 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group"
+            >
+              <div className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center group-hover:border-foreground transition-colors">
+                <ArrowLeft className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-foreground/40 uppercase block">Previous Family</span>
+                <span>{prevFamily.name}</span>
+              </div>
+            </Link>
 
-          <Link
-            to={`/engines/${nextFamily.slug}`}
-            className="flex items-center gap-3 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group text-right"
-          >
-            <div>
-              <span className="text-[10px] font-mono text-foreground/40 uppercase block">Next Family</span>
-              <span>{nextFamily.name}</span>
-            </div>
-            <div className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center group-hover:border-foreground transition-colors">
-              <ArrowRight className="w-4 h-4" />
-            </div>
-          </Link>
+            <Link
+              to="/engines"
+              className="hidden sm:inline-flex min-h-[44px] items-center text-xs font-mono text-foreground/50 hover:text-foreground uppercase tracking-wider"
+            >
+              Back to Engine Room
+            </Link>
+
+            <Link
+              to={`/engines/${nextFamily.slug}`}
+              className="flex items-center gap-3 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors group text-right"
+            >
+              <div>
+                <span className="text-[10px] font-mono text-foreground/40 uppercase block">Next Family</span>
+                <span>{nextFamily.name}</span>
+              </div>
+              <div className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center group-hover:border-foreground transition-colors">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 
