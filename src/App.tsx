@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import Approach from "./pages/Approach";
 import Engines from "./pages/Engines";
+import EngineFamilyDetail from "./pages/EngineFamilyDetail";
 import StrategySession from "./pages/StrategySession";
 import FieldGuides from "./pages/FieldGuides";
 import Labs from "./pages/Labs";
@@ -45,6 +46,7 @@ const App = () => (
           {/* Doctrine + Library */}
           <Route path="/approach" element={<Approach />} />
           <Route path="/engines" element={<Engines />} />
+          <Route path="/engines/:familySlug" element={<EngineFamilyDetail />} />
 
           {/* Offer stack */}
           <Route path="/strategy-session" element={<StrategySession />} />
