@@ -23,9 +23,6 @@ import {
 } from "lucide-react";
 
 const NOTIFICATION_EMAIL = "info@wearegenesislumina.com";
-const SUPABASE_URL = "https://bqsfdgfstkzbjxdotquo.supabase.co";
-const SUPABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxc2ZkZ2ZzdGt6Ymp4ZG90cXVvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTk3NTMyMiwiZXhwIjoyMDk3NTUxMzIyfQ.vRXrYuAvYu0iuECLR54Y71BqigYpJnRauLOLIeMt-Nw";
 const STORAGE_KEY = "gl_pre_intake_v1";
 
 const PARTICIPANT_ROLES = [
@@ -252,33 +249,7 @@ export default function PreEngagementIntake() {
       console.warn("FormSubmit notice", err);
     }
 
-    // 2. Synchronize to Supabase client_intakes table
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/client_intakes`, {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json",
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
-          client_name: orgName.trim(),
-          leader_name: `${participantName.trim()} (${participantTitle.trim() || participantRole})`,
-          team_size: teamSize || "Not specified",
-          primary_bottleneck: bottleneck,
-          ai_status: aiStatus,
-          drag_hours: dragHours,
-          win_definition: winDefinition.trim(),
-          raw_payload: payload,
-          created_at: new Date().toISOString(),
-        }),
-      });
-    } catch (err) {
-      console.warn("Supabase intake sync notice", err);
-    }
-
-    // 3. Cache locally
+    // 2. Cache locally
     try {
       localStorage.setItem(
         STORAGE_KEY,

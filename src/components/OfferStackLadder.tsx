@@ -51,10 +51,10 @@ const tiers: Tier[] = [
   {
     band: "ONGOING",
     title: "Lumina Ignite",
-    price: "$7.5K – $25K / mo",
+    price: "$3.5K – $25K / mo",
     tag: "FOR LEADERSHIP · THE RETAINER",
-    desc: "Your dedicated Systems Architecture & Operations Partner. We act as your external Chief Systems Architect: every 30 days we inspect your operational telemetry, deliver complete Systems Specifications for your team or contractors to execute, and run executive governance to systematically decouple the founder from daily operations.",
-    outcome: "Shipped monthly: Master Engine Tree Schematics + 3–5 page technical build specifications + live Telemetry Cockpit + bi-weekly steering to decouple founder",
+    desc: "Your dedicated Systems Architecture & Operations Partner. We act as your external Chief Systems Architect: every 30 days we inspect your operational telemetry, deliver complete Systems Specifications for your team or contractors to execute, and run executive governance to systematically decouple the founder from daily operations. Available in 90-Day Transitional Sprints ($3.5K/mo) up to Enterprise Governance ($25K/mo).",
+    outcome: "Shipped monthly: Master Engine Tree Schematics + 3–5 page technical build specifications + live Telemetry Cockpit + executive steering to decouple founder",
     href: "/ignite",
     edgeColor: EMBER,
   },

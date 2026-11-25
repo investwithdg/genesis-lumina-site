@@ -22,9 +22,6 @@ import {
 } from "lucide-react";
 
 const NOTIFICATION_EMAIL = "info@wearegenesislumina.com";
-const SUPABASE_URL = "https://bqsfdgfstkzbjxdotquo.supabase.co";
-const SUPABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxc2ZkZ2ZzdGt6Ymp4ZG90cXVvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTk3NTMyMiwiZXhwIjoyMDk3NTUxMzIyfQ.vRXrYuAvYu0iuECLR54Y71BqigYpJnRauLOLIeMt-Nw";
 
 const PARTICIPANT_ROLES = [
   {
@@ -220,32 +217,6 @@ export default function PostEngagementReview() {
       });
     } catch (err) {
       console.warn("FormSubmit notice", err);
-    }
-
-    // 3. Sync to Supabase table
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/client_reviews`, {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json",
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
-          client_name: `${participantName.trim()} (${participantRole})`,
-          company_name: companyName.trim(),
-          rating,
-          headline: headline.trim(),
-          testimonial: testimonial.trim(),
-          metrics: newReview.metrics,
-          referrals: payload.executive_referrals,
-          raw_payload: payload,
-          created_at: new Date().toISOString(),
-        }),
-      });
-    } catch (err) {
-      console.warn("Supabase review sync notice", err);
     }
 
     setSubmitting(false);

@@ -25,6 +25,21 @@ import {
 
 const tiers = [
   {
+    name: "Spark",
+    price: "$3,500 / mo",
+    tag: "The 90-Day Transitional Sprint",
+    highlight: false,
+    desc: "For emerging operators ($500k–$3M) with operational 911s or founder delivery drag. A focused 90-day sprint: we map your Engine Tree, ship 1 core Systems Build Specification every month, deploy your Telemetry Cockpit, and run monthly executive steering.",
+    deliverables: [
+      "Asset 1: Master Engine Tree (Visual Schematic + PDF)",
+      "Asset 2: 1 Monthly Systems Specification (3–5 page technical build order)",
+      "Asset 3: Operational Telemetry Cockpit (Throughput & bottleneck tracking)",
+      "Asset 4: Executive Steering (One 60-min strategic session/mo)",
+      "Asset 5: Async Systems Advisory & tool vetting (Slack/Email)",
+      "Outcome: Solves operational 911s & decouples founder from initial 10–15 hrs/wk drag",
+    ],
+  },
+  {
     name: "Ember",
     price: "$7,500 / mo",
     tag: "Foundation & Single Engine Track",
@@ -138,7 +153,7 @@ const Ignite = () => {
               </Link>
             </Button>
             <p className="text-xs text-white/50 font-mono">
-              $7.5K – $25K / month · Zero code overhead · Pure architectural leverage
+              $3.5K – $25K / month · Zero code overhead · Pure architectural leverage
             </p>
           </div>
         </div>
@@ -210,7 +225,7 @@ const Ignite = () => {
                       Tangible Asset Shipped:
                     </span>
                     <span className="text-foreground/75 leading-relaxed">
-                      Visual systems schematic (interactive Notion/Whimsical + PDF) mapping all 5 engine families, handoff latency friction points, and founder-dependency scores (1–10).
+                      Visual systems schematic (interactive Notion/Whimsical + PDF) mapping all 8 engine families, handoff latency friction points, and founder-dependency scores (1–10).
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 text-xs">
@@ -378,14 +393,14 @@ const Ignite = () => {
               ENGAGEMENT TIERS
             </span>
             <h2 className="text-3xl md:text-5xl font-light text-foreground">
-              Three Tiers. <span className="font-medium">One Progression.</span>
+              Four Tiers. <span className="font-medium">One Progression.</span>
             </h2>
             <p className="text-base text-foreground/60 max-w-2xl mx-auto mt-3">
               Calibrated to your operating scale, complexity, and founder-decoupling velocity.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {tiers.map((t) => (
               <div
                 key={t.name}

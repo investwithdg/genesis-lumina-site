@@ -426,7 +426,7 @@ export default function EngineFamilyDetail() {
                   TIER 3 · ONGOING PARTNER
                 </span>
                 <h3 className="text-xl font-medium mb-1">Lumina Ignite</h3>
-                <div className="text-2xl font-light font-mono text-white mb-4">$3.5K – $6.5K/mo</div>
+                <div className="text-2xl font-light font-mono text-white mb-4">$3.5K – $25K/mo</div>
                 <p className="text-xs text-white/70 leading-relaxed mb-6">
                   Fractional Chief Systems Architect. Every 30 days, we architect and tune an operational engine to protect margins and unlock capacity.
                 </p>

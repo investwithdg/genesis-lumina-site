@@ -370,7 +370,7 @@ export const ENGINE_FAMILIES_DATA: Record<string, EngineFamilyData> = {
       description:
         "We serve as your dedicated Chief Systems Architect, managing your telemetry, data pipelines, and intelligence engines month over month.",
       href: "/ignite",
-      cta: "Explore Lumina Ignite ($3,500 – $6,500/mo)",
+      cta: "Explore Lumina Ignite ($3,500 – $25,000/mo)",
     },
   },
 
@@ -676,7 +676,7 @@ export const ENGINE_FAMILIES_DATA: Record<string, EngineFamilyData> = {
       description:
         "Every 30 days, we build and tune an operational or customer engine to protect margins and compound lifetime value.",
       href: "/ignite",
-      cta: "Explore Lumina Ignite ($3,500 – $6,500/mo)",
+      cta: "Explore Lumina Ignite ($3,500 – $25,000/mo)",
     },
   },
 

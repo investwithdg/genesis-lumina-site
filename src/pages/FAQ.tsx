@@ -55,7 +55,7 @@ const faqs = [
     q: "How does Lumina Ignite work?",
     a: (
       <>
-        Dedicated Systems Architecture partnership at $7.5K – $25K/month across three tiers: <strong>Ember → Blaze → Phoenix</strong>. We act as your external Chief Systems Architect: every 30 days we inspect your operational telemetry, deliver complete Systems Specifications for your team or contractors to execute, and run executive governance to systematically decouple the founder from daily operations. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
+        Dedicated Systems Architecture partnership at $3.5K – $25K/month across four tiers: <strong>Spark → Ember → Blaze → Phoenix</strong>. We act as your external Chief Systems Architect: every 30 days we inspect your operational telemetry, deliver complete Systems Specifications for your team or contractors to execute, and run executive governance to systematically decouple the founder from daily operations. <Link to="/ignite" className="text-primary hover:underline">Learn more →</Link>
       </>
     ),
   },
